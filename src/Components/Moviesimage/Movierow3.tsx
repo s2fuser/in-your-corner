@@ -5,7 +5,7 @@ const Movierow3 = () => {
     <div>
             <div className='w-full h-48 mb-8 '>
                 <h1 className=' text-4xl font-semibold text-center mt-8 pb-4  '>
-                    COLLECTIONS
+                    COLLECTION
                 </h1>
                <div className='flex justify-between mt-4'>
                 
