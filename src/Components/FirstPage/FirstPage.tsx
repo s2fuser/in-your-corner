@@ -89,7 +89,7 @@ const FirstPageComponent = () => {
                     <VideoSlider prop1="true" />
                 </div>
                 <div className="relative h-screen flex items-center lg:justify-start justify-center mt-[0px] z-[-9]">
-                    <div className="absolute inset-0 bg-black" style={{ backgroundImage: `url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                    <div className="absolute inset-0 bg-black" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                     
                     <div className="z-20 text-white lg:pl-36">
                         <div className="text-center lg:text-left">
