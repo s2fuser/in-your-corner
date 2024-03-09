@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
                         <h2 className='md:text-5xl lg:text-5xl text-3xl font-bold pt-2'>production requirements</h2>
                     </div>
                     <div className="mt-14 text-center lg:text-left">
-                        <button className="border border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl" >Contact Us</button>
+                        <button className=" border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl" >Contact Us</button>
                     </div>
                 </div>
             </div>
