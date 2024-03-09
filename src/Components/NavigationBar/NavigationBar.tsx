@@ -8,9 +8,9 @@ const NavigationBar = () => {
 
       </div>
       <div className=''>
-        <input type='text' placeholder='search' />
+        <input className='w-96 border rounded-lg px-64' type='text' placeholder='search' />
       </div>
-      <div className=''>
+      <div className='space-x-3 font-serif font-bold'>
         <span>Home</span>
         <span>Team</span>
         <span>Blogs</span>
