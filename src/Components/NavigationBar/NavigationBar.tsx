@@ -10,7 +10,7 @@ const NavigationBar = () => {
       <div className=''>
         <input className='rounded-full px-6 py-2 w-96 focus:outline-none focus:ring focus:border-blue-300' type='text' placeholder='search' />
       </div>
-      <div className='space-x-3 font-sans font-bold'>
+      <div className='space-x-4 font-sans font-bold'>
         <span>Home</span>
         <span>Team</span>
         <span>Blogs</span>

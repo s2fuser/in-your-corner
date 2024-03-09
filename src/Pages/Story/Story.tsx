@@ -25,8 +25,8 @@ const Story = () => {
             <div className="px-2 flex justify-center">
                 <h5 className="text-center text-red-900 w-[424px]">Check back here throughout the day for more interviews
                     with special guests,short films and a bunch of surprises.
-                    Remember,you can go from VIEWING TO DOING.
-                    <span className="font-semibold">And today is the day to start!</span></h5>
+                    Remember, you can go from VIEWING TO DOING.
+                    <span className="font-semibold"> <br /> And today is the day to start!</span></h5>
             </div>
             <VideoPlayer />
             <div className="flex justify-center px-2 pt-2 pb-8">
