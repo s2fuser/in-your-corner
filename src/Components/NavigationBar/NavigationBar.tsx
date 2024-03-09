@@ -1,5 +1,4 @@
 import React from 'react'
-import SearchBarComponent from '../SearchBar/SearchBar'
 
 const NavigationBar = () => {
   return (
@@ -8,11 +7,10 @@ const NavigationBar = () => {
         <img className='w-32 h-15 ' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
 
       </div>
-      <div className='w-3/5'>
-        {/* <input type='text' placeholder='search' /> */}
-        <SearchBarComponent/>
+      <div className=''>
+        <input className='w-96 border rounded-lg px-64' type='text' placeholder='search' />
       </div>
-      <div className='gap-x-2.5'>
+      <div className='space-x-3 font-serif font-bold'>
         <span>Home</span>
         <span>Team</span>
         <span>Blogs</span>
