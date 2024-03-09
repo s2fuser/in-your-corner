@@ -2,13 +2,13 @@ import React from 'react';
 
 type Props = {
     name: string,
-    style: object
+    style?: string;
 }
 
 const ButtonComponent  = ( {name, style } :Props ) => {
     return (
         <div>
-            <button className="{style}">{name}</button>
+            <button className={style}>{name}</button>
         </div>
     )
 }
