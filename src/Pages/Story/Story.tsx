@@ -4,6 +4,7 @@ import VideoPlayer from "../../Components/VideoPlayer/VideoPlayer";
 import Header from "../../Components/Header/Header";
 import FooterComponent from "../../Components/Footer/Footer";
 import Footer2 from "../../Components/Footer2/Footer2";
+import { Link } from "react-router-dom";
 
 const Story = () => {
     return (
@@ -25,7 +26,9 @@ const Story = () => {
             </div>
             <VideoPlayer />
             <div className="flex justify-center px-2 pt-2 pb-8">
-                <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 border border-2 border-red-700 rounded-3xl font-medium" />
+                <Link to="/Videos">
+                    <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 border border-2 border-red-700 rounded-3xl font-medium" />
+                </Link>
             </div>
             <div>
                 <Contact />

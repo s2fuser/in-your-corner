@@ -75,17 +75,17 @@ export const SliderComponent = () => {
 
 export const SliderComponentForImage = () => {
     return (
-        <Slider {...settingsForImage} className="w-screen flex items-center justify-center">
-            <div className="px-1">
+        <Slider {...settingsForImage} className="w-screen flex items-center justify-center mr-[-20px]">
+            <div className="px-1 ml-[45px]">
                 <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
             </div>
-            <div className="px-1">
+            <div className="px-1 ml-[45px]">
                 <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
             </div>
-            <div className="px-1">
+            <div className="px-1 ml-[45px]">
                 <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" /> 
             </div>
-            <div className="px-1">
+            <div className="px-1 ml-[45px]">
                 <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
             </div>
         </Slider>

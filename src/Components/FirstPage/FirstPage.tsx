@@ -85,7 +85,7 @@ const FirstPageComponent = () => {
                 </div>
 
                 <div>
-                <div className="mt-[-60px] pb-[40px]">
+                <div className="mt-[-60px] pb-[60px]">
                     <VideoSlider prop1="true" />
                 </div>
                 <div className="relative h-screen flex items-center lg:justify-start justify-center mt-[0px] z-[-9]">
