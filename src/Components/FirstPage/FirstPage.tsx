@@ -14,19 +14,19 @@ const FirstPageComponent = () => {
         <div className="h-screen relative" style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }}>
             <div className='pt-32 pl-20'>
                 <div>
-                    <p className='text-white text-3xl font-light'>
+                    <p className='text-white text-3xl font-light font-sans'>
                         featuring
                     </p>
-                    <p className='text-white text-3xl font-medium'>
+                    <p className='text-white text-3xl font-medium font-sans'>
                         the testimonies of
                     </p>
-                    <p className='text-white text-3xl font-light'>
-                        men and women <span className='text-white text-3xl font-medium'>of faith</span> 
+                    <p className='text-white text-3xl font-light font-sans'>
+                        men and women <span className='text-white text-3xl font-medium font-sans'>of faith</span> 
                     </p>
                 </div>
                 <div className='pt-8'>
                     <Link  to="/KnowMore">
-                        <button className='border-solid rounded-3xl border-2 border-white text-white pl-7 pr-7 pt-2 pb-2'>
+                        <button className='border-solid rounded-3xl border-2 border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
                             Know More
                         </button>
                     </Link>
@@ -38,10 +38,10 @@ const FirstPageComponent = () => {
                     <ImQuotesLeft className='text-pink-100 h-52 w-52' />
                 </div>
                 <div className='text-center mt-80'>
-                    <p className='text-red-900 text-3xl font-medium'>
-                        In Your Corner <span className='font-light'>Productions</span>
+                    <p className='text-red-900 text-3xl font-medium font-sans'>
+                        In Your Corner <span className='font-light font-sans'>Productions</span>
                     </p>
-                    <p className='text-sm'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
+                    <p className='text-sm font-sans'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
                         acclaimed documentaries, gospel music, and ministry videos to help promote other faith-based non-profits.</p>
                 </div>
             </div>
@@ -62,20 +62,20 @@ const FirstPageComponent = () => {
                         </div>
                         <div className="text-center mt-[-100px] text-lg pb-24">
                             <Link to="/Videos">
-                                <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl">View All Videos</button>
+                                <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans">View All Videos</button>
                             </Link>
                         </div>
-                        <div className="text-center pb-40">
-                            <p className="text-red-900 text-4xl font-light mb-7">
-                                How Kerry Came to Faith in <span className="text-red-900 text-4xl font-semibold">Jesus Christ</span>
+                        <div className="text-center pb-40 font-sans">
+                            <p className="text-red-900 text-4xl font-light mb-7 font-sans">
+                                How Kerry Came to Faith in <span className="text-red-900 text-4xl font-semibold font-sans">Jesus Christ</span>
                             </p>
-                            <p>
+                            <p className='font-sans'>
                                 Beyond the weekly TV show, Kerry Pharr expanded his ministry impact by creating compelling documentary
                             </p>
-                            <p>
+                            <p className='font-sans'>
                                 films. Among them are the award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,” a docu-
                             </p>
-                            <p>
+                            <p className='font-sans'>
                                 mentary highlighting champion boxers who discovered hope in Jesus Christ.
                             </p>
                         </div>
@@ -93,12 +93,12 @@ const FirstPageComponent = () => {
                     
                     <div className="z-20 text-white lg:pl-36">
                         <div className="text-center lg:text-left">
-                            <h2 className='md:text-5xl lg:text-5xl text-3xl font-bold py-2'>Reach out to us today</h2>
-                            <p className='md:text-5xl lg:text-5xl text-3xl font-light'>to fulfill all your ministry <span className='md:text-5xl lg:text-5xl text-4xl font-semibold'>video</span></p>
-                            <h2 className='md:text-5xl lg:text-5xl text-3xl font-bold pt-2'>production requirements</h2>
+                            <h2 className='md:text-5xl lg:text-5xl text-3xl font-bold py-2 font-sans'>Reach out to us today</h2>
+                            <p className='md:text-5xl lg:text-5xl text-3xl font-light font-sans'>to fulfill all your ministry <span className='md:text-5xl lg:text-5xl text-4xl font-semibold font-sans'>video</span></p>
+                            <h2 className='md:text-5xl lg:text-5xl text-3xl font-bold pt-2 font-sans'>production requirements</h2>
                         </div>
                         <div className="mt-14 text-center lg:text-left">
-                            <button className="border border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl" >Contact Us</button>
+                            <button className="border border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans" >Contact Us</button>
                         </div>
                     </div>
                 </div>

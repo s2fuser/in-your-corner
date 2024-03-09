@@ -8,7 +8,7 @@ const LandingPageNavigationBar = () => {
         <img className='w-32 h-15 ' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
 
       </div>
-      <div className='flex gap-x-3 mr-3 ml-3'>
+      <div className='flex gap-x-3 mr-3 ml-3 font-sans'>
         <span>Home</span>
         <span>Team</span>
         <span>Blogs</span>
