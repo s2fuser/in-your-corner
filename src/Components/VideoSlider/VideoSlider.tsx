@@ -14,10 +14,31 @@ export const settings = {
     centerMode: false,
 };
 
-const VideoSlider: React.FC = () => {
+export const settingsForImage = {
+    dots: false,
+    // infinite: true,
+    // speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+    centerMode: false,
+};
+
+type ChildProps = {
+    prop1: string;
+  }
+
+const VideoSlider: React.FC<ChildProps> = ( { prop1 } ) => {
     return (
         <div className="absolute flex justify-center m-auto overflow-x-hidden mt-[20px]">
-            <SliderComponent />
+            {
+                prop1 == "true" ? (
+                    <SliderComponentForImage />
+                ) : (
+                    <SliderComponent />
+                )
+            }
         </div>
     );
 };
@@ -47,6 +68,25 @@ export const SliderComponent = () => {
             </div>
             <div className="px-1">
                 <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe>
+            </div>
+        </Slider>
+    );
+};
+
+export const SliderComponentForImage = () => {
+    return (
+        <Slider {...settingsForImage} className="w-screen flex items-center justify-center">
+            <div className="px-1">
+                <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+            </div>
+            <div className="px-1">
+                <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+            </div>
+            <div className="px-1">
+                <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" /> 
+            </div>
+            <div className="px-1">
+                <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
             </div>
         </Slider>
     );

@@ -1,18 +1,21 @@
 import HeaderComponent from "../Components/Header/Header"
 import FooterComponent from "../Components/Footer/Footer"
 import NavigationBarComponent from "../Components/NavigationBar/NavigationBar"
+import FirstPageComponent from "../Components/FirstPage/FirstPage"
+import Footer2 from "../Components/Footer2/Footer2"
+import LandingPageNavigationBar from "../Components/LandingPageNavigation/LandingPageNavigation"
 
 const LandingPageComponet = () => {
     return (
-        <div>
+        <div className="">
             <div>
                 <HeaderComponent/>
             </div>
             <div>
-                <FooterComponent/>
+                <LandingPageNavigationBar/>
             </div>
             <div>
-                <NavigationBarComponent/>
+                <FirstPageComponent/>
             </div>
         </div>
     )

@@ -1,10 +1,16 @@
 import ButtonComponent from "../../Components/Button/Button";
 import Contact from "../../Components/Contact/Contact";
 import VideoPlayer from "../../Components/VideoPlayer/VideoPlayer";
+import Header from "../../Components/Header/Header";
+import FooterComponent from "../../Components/Footer/Footer";
+import Footer2 from "../../Components/Footer2/Footer2";
 
 const Story = () => {
     return (
         <div>
+            <div>
+                <Header/>
+            </div>
             <div className="text-center pt-10 pb-4">
                 <h2 className="font-bold text-4xl font-nunito">I Am Second Day</h2>
             </div>
@@ -23,6 +29,12 @@ const Story = () => {
             </div>
             <div>
                 <Contact />
+            </div>
+            <div>
+                <FooterComponent/>
+            </div>
+            <div>
+                <Footer2/>
             </div>
         </div>
     );

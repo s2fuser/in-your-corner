@@ -1,28 +1,33 @@
 
 import './App.css';
-import Header from './Components/Header/Header';
-import Mainheading from './Components/Mainheading/Mainheading';
-import NavigationBar from './Components/NavigationBar/NavigationBar';
-import Movierow1 from './Components/Moviesimage/Movierow1';
-import Movierow2 from './Components/Moviesimage/Movierow2';
-import Movierow3 from './Components/Moviesimage/Movierow3';
-import BrowseVideoPage from './Components/BrowseVideoPage/BrowseVideo';
-import Footer from './Components/Footer/Footer';
+import LandingPageComponent from './Pages/LandingPage';
+import FirstPageComponent from './Components/FirstPage/FirstPage';
+import HeaderComponent from './Components/Header/Header';
+import FooterComponent from './Components/Footer/Footer';
+import LandingPageNavigationBar from './Components/LandingPageNavigation/LandingPageNavigation';
 import Footer2 from './Components/Footer2/Footer2';
+import { Routes1 } from './Routes';
 
 function App() {
   return (
-    <div className=""> 
-    <Header/>
-    <NavigationBar/>
-    <Mainheading/>
-    <Movierow1/>
-    <Movierow2/>
-    <Movierow3/>
-    <BrowseVideoPage/>
-    <Footer/>
-    <Footer2/>
-    </div>
+    <Routes1/>
+    // <div className="">
+    //   <div>
+    //     <HeaderComponent/>
+    //   </div>
+    //   <div>
+    //     <LandingPageNavigationBar/>
+    //   </div>
+    //   <div>
+    //     <FirstPageComponent/>
+    //   </div>
+    //   <div>
+    //     <FooterComponent/>
+    //   </div>
+    //   <div >
+    //     <Footer2/>
+    //   </div>
+    // </div>
   );
 }
 

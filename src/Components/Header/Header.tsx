@@ -1,11 +1,11 @@
 import React from 'react'
+import { FaInstagram } from 'react-icons/fa';
 
 const Header = () => {
     return (
-        <div className='bg-red-700 w- full h-10 text-white  flex items-center justify-between'>
+        <div className='bg-red-700 w- full h-10 text-white flex items-center justify-between'>
             <div className=' ml-14 flex items-center space-x-3'>
-                <img src="https://www.svgrepo.com/show/424911/instagram-logo-facebook-2.svg"
-                    alt="insta logo" className='w-5 h-5'></img>
+            <FaInstagram className="text-white" />
                 <span>Follow Us On Instagram</span>
             </div>
             <div className='mr-10 flex items-center space-x-20  '>

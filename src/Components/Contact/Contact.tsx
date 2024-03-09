@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
     return (
         <div className="relative overflow-x-hidden">
             <div className="absolute">
-                <VideoSlider />
+                <VideoSlider prop1="false" />
             </div>
             <div className="relative h-screen flex items-center lg:justify-start justify-center mt-[130px] z-[-9]">
                 <div className="absolute inset-0 bg-black" style={{ backgroundImage: `url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
