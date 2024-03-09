@@ -8,7 +8,7 @@ const NavigationBar = () => {
 
       </div>
       <div className=''>
-        <input className='w-96 border rounded-lg px-64' type='text' placeholder='Search' />
+        <input className='rounded-full px-6 py-2 w-96 focus:outline-none focus:ring focus:border-blue-300' type='text' placeholder='search' />
       </div>
       <div className='space-x-3 font-sans font-bold'>
         <span>Home</span>
@@ -20,5 +20,5 @@ const NavigationBar = () => {
     </div>
   )
 }
-
+// w-96 border rounded-lg px-32 py-2
 export default NavigationBar
