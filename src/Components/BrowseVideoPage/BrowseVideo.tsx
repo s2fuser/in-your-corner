@@ -17,7 +17,7 @@ const TopicButton: React.FC<ButtonProps> = ({ label }) => {
     fontWeight: 'bold', // Make text bold
   };
 
-  return <button style={buttonStyle}>{label}</button>;
+  return <button style={buttonStyle} >{label}</button>;
 };
 
 
@@ -27,7 +27,7 @@ const SearchBox: React.FC = () => {
     borderRadius: '25px', // Adjust the value to control the curvature
     padding: '5px 15px', // Adjust the padding to control the height
     margin: '15px 0', // Add space above and below the search box
-    width: '400px', // Maintain the earlier length
+    // width: '400px', // Maintain the earlier length
     display: 'flex',
     alignItems: 'center',
   };
@@ -35,14 +35,15 @@ const SearchBox: React.FC = () => {
   const inputStyle: React.CSSProperties = {
     border: 'none',
     outline: 'none',
-    width: '100%',
+    // width: '100%',
     height: '100%', // Ensure the input takes full height
   };
 
   return (
     <div style={searchBoxStyle}>
-      <input type="text" placeholder="Search" style={inputStyle} />
+      <input type="text" placeholder="Search"  className='w-[100%] h-[100%] border-none outline-none lg:w-[400px]' />
     </div>
+    // style={inputStyle}
   );
 };
 
