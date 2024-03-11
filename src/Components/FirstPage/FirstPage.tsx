@@ -6,14 +6,15 @@ import LandingPageVideosComponent from '../LandingPageVideos/LandingPageVideos';
 import Footer2 from '../Footer2/Footer2';
 import FooterComponent from '../Footer/Footer';
 import VideoSlider from '../VideoSlider/VideoSlider';
+import VideoSlider2 from '../VideoSlider2/VideoSlider2';
 
 export const image_url = 'https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992';
 
 const FirstPageComponent = () => {
     return (
-        <div className="h-screen relative" style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }}>
-            <div className='pt-32 pl-20'>
-                <div>
+        <div className="h-screen relative sm:h-[500px]" style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }}>
+            <div className='pt-32 pl-20 sm:ml-[-45px]'>
+                <div className='sm:mt-[-45px]'>
                     <p className='text-white text-3xl font-light font-sans'>
                         featuring
                     </p>
@@ -34,11 +35,11 @@ const FirstPageComponent = () => {
                 </div>
             </div>
             <div className='relative mt-36'>
-                <div className="absolute top-auto right-auto mt-[-110px]">
-                    <ImQuotesLeft className='text-pink-100 h-52 w-52' />
+                <div className="absolute top-auto right-auto mt-[-60px]">
+                    <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[10px]' />
                 </div>
-                <div className='text-center mt-80'>
-                    <p className='text-red-900 text-3xl font-medium font-sans'>
+                <div className='text-center mt-80 sm:mt-[170px] sm:pt-[20px]'>
+                    <p className='text-red-900 text-3xl font-medium font-sans sm:mt-[40px]'>
                         In Your Corner <span className='font-light font-sans'>Productions</span>
                     </p>
                     <p className='text-sm font-sans'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
@@ -50,17 +51,20 @@ const FirstPageComponent = () => {
             </div>
             <div className='mt-16'>
 
-                <div className="h-5/6">
+                <div className="h-5/6 ">
                     <div className=" bg-pink-100 pt-40 h-5/6">
-                        <div className='flex items-center justify-center relative'>
-                            <iframe width="720" height="365" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl absolute top-[-220px]" ></iframe>
+                        <div className='flex justify-center py-8 px-2'>
+                            <iframe width="720" height="365" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mt-[-300px] rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" ></iframe>
                         </div>
-                        <div className="flex items-center justify-center pb-40 pt-48">
-                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl" ></iframe>
-                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl" ></iframe>
-                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl" ></iframe>
+                        {/* <div className="flex justify-center py-8 px-2 rounded-[20px] overflow-x-hidden">
+                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl sm:w-1/2 sm:h-1/2 lg:w-[450px] lg:h-[225px]  md:h-[130px] md:w-[260px] overflow-x-hidden" ></iframe>
+                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl sm:w-1/2 sm:h-1/2 lg:w-[450px] lg:h-[225px]  md:h-[130px] md:w-[260px] overflow-x-hidden" ></iframe>
+                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl sm:w-1/2 sm:h-1/2 lg:w-[450px] lg:h-[225px]  md:h-[130px] md:w-[260px] overflow-x-hidden" ></iframe>
+                        </div> */}
+                        <div className='overflow-x-hidden'>
+                            <VideoSlider2 />
                         </div>
-                        <div className="text-center mt-[-100px] text-lg pb-24">
+                        <div className="text-center mt-[150px] text-lg pb-24">
                             <Link to="/Videos">
                                 <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans">View All Videos</button>
                             </Link>
@@ -85,8 +89,26 @@ const FirstPageComponent = () => {
                 </div>
 
                 <div>
-                <div className="mt-[-60px] pb-[60px]">
+                {/* <div className="mt-[-60px] pb-[60px]">
                     <VideoSlider prop1="true" />
+                </div> */}
+                <div className="mt-[-20px] pb-[20px] relative">
+                    <div className="px-1 lg:ml-[130px] mt-[150px] absolute mt-[-40px] sm:ml-[5px] sm:w-[90px] sm:h-[90px] ">
+                    {/* lg:ml-[100px] */}
+                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+                    </div>
+                    <div className="px-1 lg:ml-[440px] mt-[150px] absolute mt-[-40px] sm:ml-[96px] sm:w-[90px] sm:h-[90px]">
+                    {/* lg:ml-[320px] */}
+                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+                    </div>
+                    <div className="px-1 lg:ml-[750px] mt-[150px] absolute mt-[-40px] sm:ml-[188px] sm:w-[90px] sm:h-[90px]">
+                    {/* lg:ml-[550px] */}
+                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+                    </div>
+                    <div className="px-1 lg:ml-[1040px] mt-[150px] absolute mt-[-40px] sm:ml-[280px] sm:w-[90px] sm:h-[90px]">
+                    {/* lg:ml-[770px] */}
+                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+                    </div>
                 </div>
                 <div className="relative h-screen flex items-center lg:justify-start justify-center mt-[0px] z-[-9]">
                     <div className="absolute inset-0 bg-black" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
@@ -105,7 +127,7 @@ const FirstPageComponent = () => {
                 </div>
             </div>
 
-            <div>
+            <div className=''>
                 <FooterComponent/>
             </div>
             <div className="">

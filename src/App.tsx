@@ -11,23 +11,6 @@ import { Routes1 } from './Routes';
 function App() {
   return (
     <Routes1/>
-    // <div className="">
-    //   <div>
-    //     <HeaderComponent/>
-    //   </div>
-    //   <div>
-    //     <LandingPageNavigationBar/>
-    //   </div>
-    //   <div>
-    //     <FirstPageComponent/>
-    //   </div>
-    //   <div>
-    //     <FooterComponent/>
-    //   </div>
-    //   <div >
-    //     <Footer2/>
-    //   </div>
-    // </div>
   );
 }
 
