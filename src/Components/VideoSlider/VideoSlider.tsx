@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 export const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 3000,
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
@@ -27,7 +27,7 @@ export const settingsForImage = {
 
 type ChildProps = {
     prop1: string;
-  }
+}
 
 const VideoSlider: React.FC<ChildProps> = ( { prop1 } ) => {
     return (

@@ -10,7 +10,7 @@ import Footer2 from "../Components/Footer2/Footer2";
 
 const AllVideosPageComponet = () => {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Header/>
             <NavigationBar/>
             <Mainheading/>

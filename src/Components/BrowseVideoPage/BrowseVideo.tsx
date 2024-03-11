@@ -1,4 +1,5 @@
 import React from 'react';
+import VideoSlider from '../VideoSlider/VideoSlider';
 
 interface ButtonProps {
   label: string;
@@ -93,54 +94,160 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
       </div>
       <SearchBox />
       <div style={subHeadingContainerStyle}>
-        <div>
-        <h1 style={subHeadingStyle}>ABUSE</h1>
-        <div className='flex justify-between mt-4 ml-0'>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+        <div className='ml-[-50px]'>
+        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>ABUSE</h1>
+        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
+            {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/> */}
+
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+
+
+            {/* <div className="">
+              <VideoSlider prop1='false' />
+            </div>  */}
+
         </div>
         </div>
-        <div>
-        <h1 style={subHeadingStyle}>ADDICTION</h1>
-        <div className='flex justify-between mt-4 ml-0'>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+        <div className='ml-[-50px]'>
+        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>ADDICTION</h1>
+        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
+            {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/> */}
+
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+
+            {/* <div className="">
+              <VideoSlider prop1='false' />
+            </div>  */}
+
         </div>
         </div>
-        <div>
-        <h1 style={subHeadingStyle}>ANGER & FORGIVENESS</h1>
-        <div className='flex justify-between mt-4 ml-0'>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+        <div className='ml-[-50px]'>
+        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>ANGER & FORGIVENESS</h1>
+        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
+            {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/> */}
+
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+
+            {/* <div className="">
+              <VideoSlider prop1='false' />
+            </div>  */}
+
         </div>
         </div>
-        <div>
-        <h1 style={subHeadingStyle}>ANXIETY & DEPRESSION</h1>
-        <div className='flex justify-between mt-4 ml-0'>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+        <div className='ml-[-50px]'>
+        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>ANXIETY & DEPRESSION</h1>
+        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
+            {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/> */}
+
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+
+            {/* <div className="">
+              <VideoSlider prop1='false' />
+            </div>  */}
+
         </div>
         </div>
-        <div>
-        <h1 style={subHeadingStyle}>CANCER</h1>
-        <div className='flex justify-between mt-4 ml-0'>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+        <div className='ml-[-50px]'>
+        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>CANCER</h1>
+        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
+            {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
-            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
+            <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/> */}
+
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+            <div className="px-1">
+                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
+            </div>
+
+            {/* <div className="">
+              <VideoSlider prop1='false' />
+            </div>  */}
+
         </div>
         </div>
 {/*        
