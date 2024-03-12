@@ -2,7 +2,7 @@ import React from 'react'
 
 const Mainheading = () => {
     return (
-        <div className='bg-red-100 w- full h-80 font-sans'>
+        <div className='bg-red-100 w- full h-80 font-sans sm:pl-[3px] sm:pr-[3px]'>
             <h1 className=' text-4xl font-semibold text-center mt-1 pt-11 font-sans sm:text-2xl'>
                WELCOME TO OUR VIDEO LIBARY
             </h1>

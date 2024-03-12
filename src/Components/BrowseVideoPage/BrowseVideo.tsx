@@ -17,7 +17,8 @@ const TopicButton: React.FC<ButtonProps> = ({ label }) => {
     fontWeight: 'bold', // Make text bold
   };
 
-  return <button style={buttonStyle} >{label}</button>;
+  return <button className='bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]' >{label}</button>;
+  // style={buttonStyle}
 };
 
 
@@ -41,6 +42,7 @@ const SearchBox: React.FC = () => {
 
   return (
     <div style={searchBoxStyle}>
+      {/* style={searchBoxStyle} */}
       <input type="text" placeholder="Search"  className='w-[100%] h-[100%] border-none outline-none lg:w-[400px]' />
     </div>
     // style={inputStyle}
@@ -85,7 +87,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
 
   return (
     <div style={containerStyle}>
-      <h1 style={headingStyle}>BROWSE BY TOPIC</h1>
+      <h1 style={headingStyle} className='font-bold'>BROWSE BY TOPIC</h1>
       <div>
         <TopicButton label="Abuse" />
         <TopicButton label="Addiction" />
@@ -96,7 +98,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
       <SearchBox />
       <div style={subHeadingContainerStyle}>
         <div className='ml-[-50px]'>
-        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>ABUSE</h1>
+        <p  className=' font-bold text-2xl mb-20 mt-20'>ABUSE</p>
+        {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
             {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
@@ -128,7 +131,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         </div>
         </div>
         <div className='ml-[-50px]'>
-        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>ADDICTION</h1>
+        <p  className='font-bold text-2xl mb-20 mt-20'>ADDICTION</p>
+        {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
             {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
@@ -159,7 +163,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         </div>
         </div>
         <div className='ml-[-50px]'>
-        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>ANGER & FORGIVENESS</h1>
+        <p  className='font-bold text-2xl mb-20 mt-20'>ANGER & FORGIVENESS</p>
+        {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
             {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
@@ -190,7 +195,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         </div>
         </div>
         <div className='ml-[-50px]'>
-        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>ANXIETY & DEPRESSION</h1>
+        <p  className='font-bold text-2xl mb-20 mt-20'>ANXIETY & DEPRESSION</p>
+        {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
             {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
@@ -221,7 +227,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         </div>
         </div>
         <div className='ml-[-50px]'>
-        <h1 style={subHeadingStyle} className='sm:text-xl sm:w-[50px]'>CANCER</h1>
+        <p  className='font-bold text-2xl mb-20 mt-20'>CANCER</p>
+        {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden'>
             {/* <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl ml-0' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>
             <img className='w-60 h-40 object-cover rounded-t-xl rounded-b-xl' src='https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg' alt=''/>

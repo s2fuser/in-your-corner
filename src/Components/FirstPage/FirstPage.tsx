@@ -38,7 +38,7 @@ const FirstPageComponent = () => {
                 <div className="absolute top-auto right-auto mt-[-60px]">
                     <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[10px]' />
                 </div>
-                <div className='text-center mt-80 sm:mt-[170px] sm:pt-[20px]'>
+                <div className='text-center mt-80 sm:mt-[170px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
                     <p className='text-red-900 text-3xl font-medium font-sans sm:mt-[40px]'>
                         In Your Corner <span className='font-light font-sans'>Productions</span>
                     </p>
@@ -56,11 +56,6 @@ const FirstPageComponent = () => {
                         <div className='flex justify-center py-8 px-2'>
                             <iframe width="720" height="365" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mt-[-300px] rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" ></iframe>
                         </div>
-                        {/* <div className="flex justify-center py-8 px-2 rounded-[20px] overflow-x-hidden">
-                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl sm:w-1/2 sm:h-1/2 lg:w-[450px] lg:h-[225px]  md:h-[130px] md:w-[260px] overflow-x-hidden" ></iframe>
-                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl sm:w-1/2 sm:h-1/2 lg:w-[450px] lg:h-[225px]  md:h-[130px] md:w-[260px] overflow-x-hidden" ></iframe>
-                            <iframe width="560" height="235" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mx-4 rounded-2xl sm:w-1/2 sm:h-1/2 lg:w-[450px] lg:h-[225px]  md:h-[130px] md:w-[260px] overflow-x-hidden" ></iframe>
-                        </div> */}
                         <div className='overflow-x-hidden'>
                             <VideoSlider2 />
                         </div>
@@ -73,14 +68,8 @@ const FirstPageComponent = () => {
                             <p className="text-red-900 text-4xl font-light mb-7 font-sans">
                                 How Kerry Came to Faith in <span className="text-red-900 text-4xl font-semibold font-sans">Jesus Christ</span>
                             </p>
-                            <p className='font-sans'>
-                                Beyond the weekly TV show, Kerry Pharr expanded his ministry impact by creating compelling documentary
-                            </p>
-                            <p className='font-sans'>
-                                films. Among them are the award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,” a docu-
-                            </p>
-                            <p className='font-sans'>
-                                mentary highlighting champion boxers who discovered hope in Jesus Christ.
+                            <p className='font-sans sm:pl-[10px] sm:pr-[10px] lg:w-[800px] lg:ml-[280px]'>
+                                Beyond the weekly TV show, Kerry Pharr expanded his ministry impact by creating compelling documentary films. Among them are the award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,” a documentary highlighting champion boxers who discovered hope in Jesus Christ.
                             </p>
                         </div>
                     </div>
@@ -89,24 +78,17 @@ const FirstPageComponent = () => {
                 </div>
 
                 <div>
-                {/* <div className="mt-[-60px] pb-[60px]">
-                    <VideoSlider prop1="true" />
-                </div> */}
                 <div className="mt-[-20px] pb-[20px] relative">
-                    <div className="px-1 lg:ml-[130px] mt-[150px] absolute mt-[-40px] sm:ml-[5px] sm:w-[90px] sm:h-[90px] ">
-                    {/* lg:ml-[100px] */}
+                    <div className="px-1 lg:ml-[130px]  absolute mt-[-40px] sm:ml-[5px] sm:w-[90px] sm:h-[90px] ">
                         <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
                     </div>
-                    <div className="px-1 lg:ml-[440px] mt-[150px] absolute mt-[-40px] sm:ml-[96px] sm:w-[90px] sm:h-[90px]">
-                    {/* lg:ml-[320px] */}
+                    <div className="px-1 lg:ml-[440px]  absolute mt-[-40px] sm:ml-[96px] sm:w-[90px] sm:h-[90px]">
                         <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
                     </div>
-                    <div className="px-1 lg:ml-[750px] mt-[150px] absolute mt-[-40px] sm:ml-[188px] sm:w-[90px] sm:h-[90px]">
-                    {/* lg:ml-[550px] */}
+                    <div className="px-1 lg:ml-[750px]  absolute mt-[-40px] sm:ml-[188px] sm:w-[90px] sm:h-[90px]">
                         <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
                     </div>
-                    <div className="px-1 lg:ml-[1040px] mt-[150px] absolute mt-[-40px] sm:ml-[280px] sm:w-[90px] sm:h-[90px]">
-                    {/* lg:ml-[770px] */}
+                    <div className="px-1 lg:ml-[1040px]  absolute mt-[-40px] sm:ml-[280px] sm:w-[90px] sm:h-[90px]">
                         <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
                     </div>
                 </div>

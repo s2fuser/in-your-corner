@@ -6,12 +6,10 @@ const LandingPageNavigationBar = () => {
 
   const [nav, setNav] = useState(false);
 
-  // Toggle function to handle the navbar's display
   const handleNav = () => {
     setNav(!nav);
   };
 
-  // Array containing navigation items
   const navItems = [
     { id: 1, text: 'Home' },
     { id: 2, text: 'Team' },
@@ -33,8 +31,7 @@ const LandingPageNavigationBar = () => {
         {/* <span>Videos</span> */}
         <span>Contact</span>
       </div>
-      <div className='lg:flex-1'>
-        {/* <input type='text' placeholder='search' /> */}
+      <div className='lg:flex-1 sm:ml-[15px]'>
         <SearchBarComponent/>
       </div>
 

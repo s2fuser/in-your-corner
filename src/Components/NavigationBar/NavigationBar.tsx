@@ -23,10 +23,10 @@ const Navbar = () => {
     <div className='bg-slate-100 w-full p-7 flex justify-between items-center'>
       {/* Logo */}
       <div className= ''>
-        <img className='w-24 lg:w-32 h-15 ' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
+        <img className='w-24 lg:w-32 h-15 sm:ml-[-10px]' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
       </div>
       <div className=''>
-        <input className='rounded-full px-6 py-2 w-[80%] lg:w-96 focus:outline-none focus:ring focus:border-blue-300' type='text' placeholder='search' />
+        <input className='rounded-full px-6 py-2 w-[80%] lg:w-96 focus:outline-none focus:ring focus:border-blue-300 sm:ml-[10px]' type='text' placeholder='search' />
       </div>
       {/* Desktop Navigation */}
       <ul className='hidden md:flex text-black font-bold space-x-4 font-sans'>
