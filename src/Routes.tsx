@@ -20,7 +20,7 @@ export const Routes1 = () => {
                 <Route path="/" element={<LandingPageComponet />} />
                 <Route path="/KnowMore" element={<Story />} />
                 <Route path="/Videos" element={<AllVideosPageComponet />} />
-                <Route path="/VideoDetails/:code" element={<VideoDetailsPage />} />
+                <Route path="/VideoDetails/:Code" element={<VideoDetailsPage />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:id" element={<BlogContent />} />
                 <Route path="/LogIn" element={<LogInPage />} />
