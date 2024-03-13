@@ -48,35 +48,70 @@ export const SliderComponent2 = () => {
     return (
         <Slider {...(isSmallScreen ? settingsForSmallScreen : settings)} className="w-[1500px] flex justify-center overflow-x-hidden">
 
-            {data && data.length > 0 && data?.map((element: any, index: number) => {
+            {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
                 return (
                     <div key={index} className="px-1">
                         <Link to={`/VideoDetails/${element.Code}`}>
                             <img src={`https://i.ytimg.com/vi/${element.Code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                         </Link>
-                        {/* <iframe src={`https://www.youtube.com/embed/${element.Code}?si=bCkUnjDDE14xK6hB&amp;controls=0`} frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] md:w-[250px] lg:w-[350px] md:h-[125px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
                     </div>  
                 )
-            })}
+            })} */}
             
-            {/* <div className="px-1">
-                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>
-            </div>
-            <div className="px-1">
-                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> 
-            </div>
-            <div className="px-1">
-                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>
-            </div>
-            <div className="px-1">
-                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> 
-            </div>
-            <div className="px-1">
-                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> 
-            </div>
-            <div className="px-1">
-                <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>
-            </div> */}
+            <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`}>
+                <div className="px-1">
+
+                    <img src={`https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+
+                    {/* <iframe src="https://www.youtube.com/embed/mq1V-YQKT6k?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> */}
+                </div>
+            </Link>
+            
+            <Link to={`/VideoDetails/${"_KPn9AHXF3I"}`}>
+                <div className="px-1">
+
+                    <img src={`https://i.ytimg.com/vi/_KPn9AHXF3I/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+
+                    {/* <iframe src="https://www.youtube.com/embed/_KPn9AHXF3I?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
+                </div>
+            </Link>
+            
+            <Link to={`/VideoDetails/${"oa920gMvLaI"}`}>
+                <div className="px-1">
+
+                    <img src={`https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+
+                    {/* <iframe src="https://www.youtube.com/embed/oa920gMvLaI?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> */}
+                </div>
+            </Link>
+            
+            <Link to={`/VideoDetails/${"Z3SJJ7v8RdU"}`}>
+                <div className="px-1">
+
+                    <img src={`https://i.ytimg.com/vi/Z3SJJ7v8RdU/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+
+                    {/* <iframe src="https://www.youtube.com/embed/Z3SJJ7v8RdU?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
+                </div>
+            </Link>
+            
+            <Link to={`/VideoDetails/${"ooBN3O9G6fA"}`}>
+                <div className="px-1">
+
+                    <img src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+
+                    {/* <iframe src="https://www.youtube.com/embed/ooBN3O9G6fA?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
+                </div>
+            </Link>
+            
+            <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`}>
+                <div className="px-1">
+
+                    <img src={`https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+
+                    {/* <iframe src="https://www.youtube.com/embed/mq1V-YQKT6k?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> */}
+                </div>
+            </Link>
+            
         </Slider>
     );
 };
