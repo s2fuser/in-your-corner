@@ -9,6 +9,8 @@ import LogInPage from "./Pages/LogIn/LogIn";
 import RegisterPage from "./Pages/Register/Register";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Contact from "./Pages/Contact/Contact";
+import Team from "./Pages/Team/Team";
 
 export const Routes1 = () => {
     return (
@@ -23,6 +25,8 @@ export const Routes1 = () => {
                 <Route path="/blog/:id" element={<BlogContent />} />
                 <Route path="/LogIn" element={<LogInPage />} />
                 <Route path="/Register" element={<RegisterPage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/team" element={<Team />} />
             </Routes>
         </Router>
     )

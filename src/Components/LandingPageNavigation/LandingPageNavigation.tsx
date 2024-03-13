@@ -29,12 +29,16 @@ const LandingPageNavigationBar = () => {
         <Link to="/">
           <span>Home</span>
         </Link>
-        <span>Team</span>
+        <Link to="/team">
+          <span>Team</span>
+        </Link>
         <Link to="/blog">
           <span>Blogs</span>
         </Link>
         {/* <span>Videos</span> */}
-        <span>Contact</span>
+        <Link to="/contact">
+          <span>Contact</span>
+        </Link>
       </div>
       <div className='lg:flex-1 sm:ml-[15px]'>
         <SearchBarComponent/>
