@@ -15,7 +15,7 @@ const Navbar = () => {
   const navItems = [
     { id: 1, text: 'Home', routeName: "/" },
     { id: 2, text: 'Team', routeName: "" },
-    { id: 3, text: 'Blog', routeName: "" },
+    { id: 3, text: 'Blog', routeName: "/blog" },
     { id: 4, text: 'Videos', routeName: "/Videos" },
     { id: 5, text: 'Contact', routeName: "" },
   ];
@@ -64,12 +64,15 @@ const Navbar = () => {
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
-          <li
+          <Link to={item.routeName}>
+            <li
             key={item.id}
             className='p-4 border-b font-bold text-black rounded-xl cursor-pointer border-gray-600'
-          >
-            {item.text}
-          </li>
+            >
+              {item.text}
+            </li>
+          </Link>
+          
         ))}
       </ul>
     </div>

@@ -27,11 +27,30 @@ export const settingsForSmallScreen = {
     centerMode: false,
 };
 
-const VideoSlider2: React.FC = () => {
+export const settingsForBrowseVideos = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    centerMode: false,
+};
+
+type SizeProp = {
+    type?: string
+}
+
+type SizeProp2 = {
+    type2?: string
+}
+
+const VideoSlider2: React.FC<SizeProp> = ({ type }) => {
     return (
         <div className="flex justify-center m-auto overflow-x-hidden mt-[20px]">
             { 
-                <SliderComponent2 />
+                <SliderComponent2 type2 = {type == "true" ? "true" : "false"} />
             }
         </div>
     );
@@ -40,13 +59,13 @@ const VideoSlider2: React.FC = () => {
 
 export default VideoSlider2;
 
-export const SliderComponent2 = () => {
+export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
 
     const {data} = useFetch('code');
 
     const isSmallScreen = window.innerWidth <= 500;
     return (
-        <Slider {...(isSmallScreen ? settingsForSmallScreen : settings)} className="w-[1500px] flex justify-center overflow-x-hidden">
+        <Slider {...(isSmallScreen ? settingsForSmallScreen : (type2 == "true" ? settingsForBrowseVideos : settings))} className="w-[1500px] flex justify-center overflow-x-hidden">
 
             {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
                 return (
@@ -103,14 +122,11 @@ export const SliderComponent2 = () => {
                 </div>
             </Link>
             
-            <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`}>
+            {/* <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`}>
                 <div className="px-1">
-
                     <img src={`https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-
-                    {/* <iframe src="https://www.youtube.com/embed/mq1V-YQKT6k?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> */}
                 </div>
-            </Link>
+            </Link> */}
             
         </Slider>
     );
