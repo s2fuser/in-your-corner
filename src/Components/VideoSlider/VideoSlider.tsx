@@ -2,6 +2,7 @@ import React from "react";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Link } from "react-router-dom";
 
 export const settings = {
     dots: false,
@@ -36,7 +37,7 @@ const VideoSlider: React.FC<ChildProps> = ( { prop1 } ) => {
                 prop1 == "true" ? (
                     <SliderComponentForImage />
                 ) : (
-                    <SliderComponent />
+                    <SliderImage />
                 )
             }
         </div>
@@ -87,6 +88,38 @@ export const SliderComponentForImage = () => {
             </div>
             <div className="px-1 ml-[45px]">
                 <img className='w-48 h-48 rounded-2xl' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+            </div>
+        </Slider>
+    );
+};
+
+export const SliderImage = () => {
+    return (
+        <Slider {...settings} className="w-[1500px] flex justify-center overflow-x-hidden">
+            <div className="px-1">
+                <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`} state={{title: "Hope Lives in Hohenwald"}}>
+                    <img className='rounded-[25px] w-[250px] px-2' src="https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg" alt="" />
+                </Link>
+            </div>
+            <div className="px-1">
+                <Link to={`/VideoDetails/${"_KPn9AHXF3I"}`} state={{title: "Hope Lives in Hohenwald"}}>
+                    <img className='rounded-[25px] w-[250px] px-2' src="https://i.ytimg.com/vi/_KPn9AHXF3I/maxresdefault.jpg" alt="" />
+                </Link>
+            </div>
+            <div className="px-1">
+                <Link to={`/VideoDetails/${"oa920gMvLaI"}`} state={{title: "Hope Lives in Hohenwald"}}>
+                    <img className='rounded-[25px] w-[250px] px-2' src="https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg" alt="" /> 
+                </Link>
+            </div>
+            <div className="px-1">
+                <Link to={`/VideoDetails/${"Z3SJJ7v8RdU"}`} state={{title: "Hope Lives in Hohenwald"}} >
+                    <img className='rounded-[25px] w-[250px] px-2' src="https://i.ytimg.com/vi/Z3SJJ7v8RdU/maxresdefault.jpg" alt="" />
+                </Link>
+            </div>
+            <div className="px-1">
+                <Link to={`/VideoDetails/${"ooBN3O9G6fA"}`} state={{title: "Hope Lives in Hohenwald"}}> 
+                    <img className='rounded-[25px] w-[250px] px-2' src="https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg" alt="" /> 
+                </Link>
             </div>
         </Slider>
     );
