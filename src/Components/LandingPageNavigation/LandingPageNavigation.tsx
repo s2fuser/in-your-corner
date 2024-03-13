@@ -30,7 +30,9 @@ const LandingPageNavigationBar = () => {
           <span>Home</span>
         </Link>
         <span>Team</span>
-        <span>Blogs</span>
+        <Link to="/blog">
+          <span>Blogs</span>
+        </Link>
         {/* <span>Videos</span> */}
         <span>Contact</span>
       </div>
