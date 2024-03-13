@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import SearchBarComponent from '../SearchBar/SearchBar';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const LandingPageNavigationBar = () => {
 
@@ -25,7 +26,9 @@ const LandingPageNavigationBar = () => {
 
       </div>
       <div className='hidden md:flex lg:flex gap-x-7 mr-3 ml-3 font-sans ml-[200px]'>
-        <span>Home</span>
+        <Link to="/">
+          <span>Home</span>
+        </Link>
         <span>Team</span>
         <span>Blogs</span>
         {/* <span>Videos</span> */}

@@ -1,5 +1,6 @@
 {
   "name": "in-your-corner",
+  "homepage": "https://inyourcorner.brightherd.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

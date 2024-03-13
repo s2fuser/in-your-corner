@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPageComponet from "./Pages/LandingPage";
 import AllVideosPageComponet from "./Pages/AllVideosPage";
 import Story from "./Pages/Story/Story";
+import VideoDetailsPage from "./Pages/VideoDetails/VideoDetails";
 
 export const Routes1 = () => {
     return (
@@ -10,6 +11,7 @@ export const Routes1 = () => {
                 <Route path="/" element={<LandingPageComponet />} />
                 <Route path="/KnowMore" element={<Story />} />
                 <Route path="/Videos" element={<AllVideosPageComponet />} />
+                <Route path="/VideoDetails/:Code" element={<VideoDetailsPage />} />
             </Routes>
         </Router>
     )

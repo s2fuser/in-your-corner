@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   // State to manage the navbar's visibility
@@ -12,11 +13,11 @@ const Navbar = () => {
 
   // Array containing navigation items
   const navItems = [
-    { id: 1, text: 'Home' },
-    { id: 2, text: 'Team' },
-    { id: 3, text: 'Blog' },
-    { id: 4, text: 'Videos' },
-    { id: 5, text: 'Contact' },
+    { id: 1, text: 'Home', routeName: "/" },
+    { id: 2, text: 'Team', routeName: "" },
+    { id: 3, text: 'Blog', routeName: "" },
+    { id: 4, text: 'Videos', routeName: "/Videos" },
+    { id: 5, text: 'Contact', routeName: "" },
   ];
 
   return (
@@ -31,12 +32,15 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <ul className='hidden md:flex text-black font-bold space-x-4 font-sans'>
         {navItems.map(item => (
-          <li
-            key={item.id}
-            className='cursor-pointer'
-          >
-            {item.text}
-          </li>
+          <Link to={item.routeName}>
+            <li
+              key={item.id}
+              className='cursor-pointer'
+            >
+              {item.text}
+            </li>
+          </Link>
+          
         ))}
       </ul>
 

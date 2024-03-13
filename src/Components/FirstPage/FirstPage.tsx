@@ -53,13 +53,14 @@ const FirstPageComponent = () => {
 
                 <div className="h-5/6 ">
                     <div className=" bg-pink-100 pt-40 h-5/6">
-                        <div className='flex justify-center py-8 px-2'>
+                        <div className='flex justify-center py-8 px-2 sm:mb-[-50px]'>
                             <iframe width="720" height="365" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mt-[-300px] rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" ></iframe>
                         </div>
                         <div className='overflow-x-hidden'>
                             <VideoSlider2 />
+                            {/* <VideoSlider prop1='false' /> */}
                         </div>
-                        <div className="text-center mt-[150px] text-lg pb-24">
+                        <div className="text-center mt-[150px] text-lg pb-24 sm:mt-[200px]">
                             <Link to="/Videos">
                                 <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans">View All Videos</button>
                             </Link>
