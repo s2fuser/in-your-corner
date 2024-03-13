@@ -1,18 +1,19 @@
-import React from 'react';
-import { ImQuotesLeft } from 'react-icons/im';
-import JoinOurCommunityButton from '../JoinOurCommunity/JoinOurCommunitybutton';
+import React from "react";
+import { ImQuotesLeft } from "react-icons/im";
+import JoinOurCommunityButton from "../JoinOurCommunity/JoinOurCommunitybutton";
 import { Link } from "react-router-dom";
-import LandingPageVideosComponent from '../LandingPageVideos/LandingPageVideos';
-import Footer2 from '../Footer2/Footer2';
-import FooterComponent from '../Footer/Footer';
-import VideoSlider from '../VideoSlider/VideoSlider';
-import VideoSlider2 from '../VideoSlider2/VideoSlider2';
+import LandingPageVideosComponent from "../LandingPageVideos/LandingPageVideos";
+import Footer2 from "../Footer2/Footer2";
+import FooterComponent from "../Footer/Footer";
+import VideoSlider from "../VideoSlider/VideoSlider";
+import VideoSlider2 from "../VideoSlider2/VideoSlider2";
 import Image2 from '../../Assets/Images/image2.jpg';
 import Image1 from '../../Assets/Images/image1.jpg';
 import Image3 from '../../Assets/Images/image3.jpg';
 import Image4 from '../../Assets/Images/image4.jpg'
 
-// export const image_url = 'https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992';
+// export const image_url =
+  "https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992";
 
 
 const FirstPageComponent = () => {
@@ -94,46 +95,82 @@ const FirstPageComponent = () => {
                     
                 </div>
 
-                <div>
-                <div className="mt-[-20px] pb-[20px] relative">
-                    <div className="px-1 lg:ml-[130px]  absolute mt-[-40px] sm:ml-[5px] sm:w-[90px] sm:h-[90px] ">
-                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src={Image3} alt="" />
-                    </div>
-                    <div className="px-1 lg:ml-[440px]  absolute mt-[-40px] sm:ml-[96px] sm:w-[90px] sm:h-[90px]">
-                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src={Image4} alt="" />
-                    </div>
-                    <div className="px-1 lg:ml-[750px]  absolute mt-[-40px] sm:ml-[188px] sm:w-[90px] sm:h-[90px]">
-                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src={Image3} alt="" />
-                    </div>
-                    <div className="px-1 lg:ml-[1040px]  absolute mt-[-40px] sm:ml-[280px] sm:w-[90px] sm:h-[90px]">
-                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src={Image4} alt="" />
-                    </div>
-                </div>
-                <div className="relative h-screen flex items-center lg:justify-start justify-center mt-[0px] z-[-9]">
-                    <div className="absolute inset-0 bg-black" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Image2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-                    
-                    <div className="z-20 text-white lg:pl-36">
-                        <div className="text-center lg:text-left">
-                            <h2 className='md:text-5xl lg:text-5xl text-3xl font-bold py-2 font-sans'>Reach out to us today</h2>
-                            <p className='md:text-5xl lg:text-5xl text-3xl font-light font-sans'>to fulfill all your ministry <span className='md:text-5xl lg:text-5xl text-4xl font-semibold font-sans'>video</span></p>
-                            <h2 className='md:text-5xl lg:text-5xl text-3xl font-bold pt-2 font-sans'>production requirements.</h2>
-                        </div>
-                        <div className="mt-14 text-center lg:text-left">
-                            <button className="border border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans" >Contact Us</button>
-                        </div>
-                    </div>
-                </div>
-                </div>
+        <div>
+          <div className="relative">
+            <div className="pb-[20px] flex justify-center absolute lg:top-[-80px] top-[-60px] z-[99] lg:gap-[20px] gap-[2px] w-full">
+              <div className="px-1 sm:w-[90px] sm:h-[90px] ">
+                <img
+                  className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
+                  src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="px-1  sm:w-[90px] sm:h-[90px]">
+                <img
+                  className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
+                  src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="px-1 sm:w-[90px] sm:h-[90px]">
+                <img
+                  className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
+                  src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="px-1 sm:w-[90px] sm:h-[90px]">
+                <img
+                  className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
+                  src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg"
+                  alt=""
+                />
+              </div>
             </div>
+            <div className="h-screen flex items-center mt-[0px] z-[99]">
+              <div
+                className="absolute inset-0 bg-black"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${image_url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
 
-            <div className=''>
-                <FooterComponent/>
+              <div className="z-20 text-white lg:pl-36">
+                <div className="text-center lg:text-left">
+                  <h2 className="md:text-5xl lg:text-5xl text-3xl font-bold py-2 font-sans">
+                    Reach out to us today
+                  </h2>
+                  <p className="md:text-5xl lg:text-5xl text-3xl font-light font-sans">
+                    to fulfill all your ministry{" "}
+                    <span className="md:text-5xl lg:text-5xl text-4xl font-semibold font-sans">
+                      video
+                    </span>
+                  </p>
+                  <h2 className="md:text-5xl lg:text-5xl text-3xl font-bold pt-2 font-sans">
+                    production requirements.
+                  </h2>
+                </div>
+                <div className="mt-14 text-center lg:text-left">
+                  <button className="border border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans">
+                    Contact Us
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className="">
-                <Footer2/>
-            </div>
+          </div>
         </div>
-    )
-}
+      </div>
 
-export default FirstPageComponent
+      <div className="">
+        <FooterComponent />
+      </div>
+      <div className="">
+        <Footer2 />
+      </div>
+    </div>
+  );
+};
+
+export default FirstPageComponent;
