@@ -7,38 +7,46 @@ import Footer2 from '../Footer2/Footer2';
 import FooterComponent from '../Footer/Footer';
 import VideoSlider from '../VideoSlider/VideoSlider';
 import VideoSlider2 from '../VideoSlider2/VideoSlider2';
+import Image2 from '../../Assets/Images/image2.jpg';
+import Image1 from '../../Assets/Images/image1.jpg';
+import Image3 from '../../Assets/Images/image3.jpg';
+import Image4 from '../../Assets/Images/image4.jpg'
 
-export const image_url = 'https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992';
+// export const image_url = 'https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992';
+
 
 const FirstPageComponent = () => {
     return (
-        <div className="h-screen relative sm:h-[500px]" style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }}>
-            <div className='pt-32 pl-20 sm:ml-[-45px]'>
-                <div className='sm:mt-[-45px]'>
-                    <p className='text-white text-3xl font-light font-sans'>
+        <div className="relative w-full h-[100%] ">
+            {/* style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }} */}
+            <img src={Image1} alt="" className="object-cover object-center w-full h-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent lg:h-[21.9%] sm:h-[7.56%]"></div>
+            <div className='absolute lg:top-20 sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px]'>
+                <div className='sm:mt-[-400px]'>
+                    <p className='text-white lg:text-3xl sm:text-sm font-light font-sans'>
                         featuring
                     </p>
-                    <p className='text-white text-3xl font-medium font-sans'>
+                    <p className='text-white lg:text-3xl sm:text-sm font-medium font-sans'>
                         the testimonies of
                     </p>
-                    <p className='text-white text-3xl font-light font-sans'>
-                        men and women <span className='text-white text-3xl font-medium font-sans'>of faith</span> 
+                    <p className='text-white lg:text-3xl sm:text-sm font-light font-sans'>
+                        men and women <span className='text-white lg:text-3xl sm:text-sm font-medium font-sans'>of faith</span> 
                     </p>
                 </div>
-                <div className='pt-8'>
+                <div className='lg:pt-8 sm:7'>
                     <Link  to="/KnowMore">
-                        <button className='border-solid rounded-3xl border-2 border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
+                        <button className='border-solid rounded-3xl border-2 sm:text-sm border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
                             Know More
                         </button>
                     </Link>
                     
                 </div>
             </div>
-            <div className='relative mt-36'>
+            <div className='relative mt-36 lg:mt-[-180px] '>
                 <div className="absolute top-auto right-auto mt-[-60px]">
-                    <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[10px]' />
+                    <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-20px]' />
                 </div>
-                <div className='text-center mt-80 sm:mt-[170px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
+                <div className='text-center mt-80 sm:mt-[-65px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
                     <p className='text-red-900 text-3xl font-medium font-sans sm:mt-[40px]'>
                         In Your Corner <span className='font-light font-sans'>Productions</span>
                     </p>
@@ -49,18 +57,26 @@ const FirstPageComponent = () => {
             <div className='text-center'>
                 <JoinOurCommunityButton/>
             </div>
-            <div className='mt-16'>
+            <div className='mt-16 sm:mt-[0px]'>
 
                 <div className="h-5/6 ">
-                    <div className=" bg-pink-100 pt-40 h-5/6">
-                        <div className='flex justify-center py-8 px-2 sm:mb-[-50px]'>
-                            <iframe width="720" height="365" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mt-[-300px] rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" ></iframe>
+                    <div className=" bg-pink-100 pt-40 h-5/6 sm:pt-[0px]">
+                        <div className='flex justify-center py-8 px-2 sm:mb-[-20px] sm:ml-[-14%]'>
+                            {/* <iframe width="720" height="365" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mt-[-300px] rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" ></iframe> */}
+                            <Link to={`/VideoDetails/${"oa920gMvLaI"}`}>
+                                <div className="px-1">
+
+                                    <img src={`https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg`} alt="" className="rounded-[25px] lg:mt-[-260px] lg:w-[800px] sm:w-[250px] sm:ml-[58px] sm:mt-[-70px]" />
+
+                                    {/* <iframe src="https://www.youtube.com/embed/oa920gMvLaI?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> */}
+                                </div>
+                            </Link>
                         </div>
                         <div className='overflow-x-hidden'>
                             <VideoSlider2 />
                             {/* <VideoSlider prop1='false' /> */}
                         </div>
-                        <div className="text-center mt-[150px] text-lg pb-24 sm:mt-[200px]">
+                        <div className="text-center mt-[150px] text-lg pb-24 sm:mt-[80px]">
                             <Link to="/Videos">
                                 <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans">View All Videos</button>
                             </Link>
@@ -81,20 +97,20 @@ const FirstPageComponent = () => {
                 <div>
                 <div className="mt-[-20px] pb-[20px] relative">
                     <div className="px-1 lg:ml-[130px]  absolute mt-[-40px] sm:ml-[5px] sm:w-[90px] sm:h-[90px] ">
-                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src={Image3} alt="" />
                     </div>
                     <div className="px-1 lg:ml-[440px]  absolute mt-[-40px] sm:ml-[96px] sm:w-[90px] sm:h-[90px]">
-                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src={Image4} alt="" />
                     </div>
                     <div className="px-1 lg:ml-[750px]  absolute mt-[-40px] sm:ml-[188px] sm:w-[90px] sm:h-[90px]">
-                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src={Image3} alt="" />
                     </div>
                     <div className="px-1 lg:ml-[1040px]  absolute mt-[-40px] sm:ml-[280px] sm:w-[90px] sm:h-[90px]">
-                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg" alt="" />
+                        <img className='w-48 h-48 rounded-2xl sm:w-[90px] sm:h-[90px]' src={Image4} alt="" />
                     </div>
                 </div>
                 <div className="relative h-screen flex items-center lg:justify-start justify-center mt-[0px] z-[-9]">
-                    <div className="absolute inset-0 bg-black" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                    <div className="absolute inset-0 bg-black" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Image2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                     
                     <div className="z-20 text-white lg:pl-36">
                         <div className="text-center lg:text-left">

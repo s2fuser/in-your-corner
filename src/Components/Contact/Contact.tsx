@@ -1,5 +1,6 @@
 import React from "react";
 import VideoSlider from "../VideoSlider/VideoSlider";
+import Image2 from '../../Assets/Images/image2.jpg'
 
 export const image_url = 'https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992';
 
@@ -10,7 +11,7 @@ const Contact: React.FC = () => {
                 <VideoSlider prop1="false" />
             </div>
             <div className="relative h-screen flex items-center lg:justify-start justify-center mt-[130px] z-[-9]">
-                <div className="absolute inset-0 bg-black" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${image_url})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                <div className="absolute inset-0 bg-black" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Image2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 
                 <div className="z-20 text-white lg:pl-36">
                     <div className="text-center lg:text-left font-sans">

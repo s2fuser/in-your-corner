@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -61,11 +61,32 @@ export default VideoSlider2;
 
 export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
 
+    const [slidesToShow, setSlidesToShow] = useState(3);
+
+    useEffect(() => {
+        const handleResize = () => {
+            // Update slidesToShow based on screen size
+            if (window.innerWidth <= 1024) {
+                setSlidesToShow(1);
+            } else {
+                setSlidesToShow(3);
+            }
+        };
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Remove event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const {data} = useFetch('code');
 
     const isSmallScreen = window.innerWidth <= 500;
     return (
-        <Slider {...(isSmallScreen ? settingsForSmallScreen : (type2 == "true" ? settingsForBrowseVideos : settings))} className="w-[1500px] flex justify-center overflow-x-hidden">
+        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[1500px] flex justify-center overflow-x-hidden">
 
             {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
                 return (

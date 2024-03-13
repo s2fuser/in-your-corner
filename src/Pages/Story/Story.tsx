@@ -28,7 +28,14 @@ const Story = () => {
                     Remember, you can go from VIEWING TO DOING.
                     <span className="font-semibold"> <br /> And today is the day to start!</span></h5>
             </div>
-            <VideoPlayer />
+            {/* <VideoPlayer /> */}
+            <div className="flex justify-center py-8 px-2">
+                <Link to={`/VideoDetails/${"oa920gMvLaI"}`}>
+                    <div className="px-1">
+                        <img src={`https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg`} alt="" className="rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" />
+                    </div>
+                </Link>
+            </div>
             <div className="flex justify-center px-2 pt-2 pb-8">
                 <Link to="/Videos">
                     <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 border border-2 border-red-700 rounded-3xl font-medium" />
