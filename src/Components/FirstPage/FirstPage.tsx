@@ -13,7 +13,7 @@ import Image3 from '../../Assets/Images/image3.jpg';
 import Image4 from '../../Assets/Images/image4.jpg'
 
 // export const image_url =
-  "https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992";
+//   "https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992";
 
 
 const FirstPageComponent = () => {
@@ -101,28 +101,28 @@ const FirstPageComponent = () => {
               <div className="px-1 sm:w-[90px] sm:h-[90px] ">
                 <img
                   className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
-                  src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg"
+                  src={Image3}
                   alt=""
                 />
               </div>
               <div className="px-1  sm:w-[90px] sm:h-[90px]">
                 <img
                   className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
-                  src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg"
+                  src={Image4}
                   alt=""
                 />
               </div>
               <div className="px-1 sm:w-[90px] sm:h-[90px]">
                 <img
                   className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
-                  src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg"
+                  src={Image3}
                   alt=""
                 />
               </div>
               <div className="px-1 sm:w-[90px] sm:h-[90px]">
                 <img
                   className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
-                  src="https://cdn.pixabay.com/photo/2018/07/06/19/48/charles-chaplin-3521070_1280.jpg"
+                  src={Image4}
                   alt=""
                 />
               </div>
@@ -131,7 +131,7 @@ const FirstPageComponent = () => {
               <div
                 className="absolute inset-0 bg-black"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${image_url})`,
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Image2})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
