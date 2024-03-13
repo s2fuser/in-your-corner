@@ -42,7 +42,7 @@ export default VideoSlider2;
 
 export const SliderComponent2 = () => {
 
-    const {data} = useFetch('Code');
+    const {data} = useFetch('code');
 
     const isSmallScreen = window.innerWidth <= 500;
     return (

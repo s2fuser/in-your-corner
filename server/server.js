@@ -1,9 +1,13 @@
 const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
+const { Sequelize } = require('sequelize');
+
+
 
 const app = express();
-app.use(cors());
+// app.use(cors());
+app.use(express.json());
 
 const db = mysql.createConnection({
     host: "vision.herosite.pro",
@@ -26,7 +30,7 @@ app.get('/', (re, res) => {
 })
 
 app.get('/code', (re,res) => {
-    const sql = "select * from embeddedcode"
+    const sql = "SELECT * FROM embeddedcode"
     db.query(sql, (err, data) => {
         if(err) {
             return res.json(err);
@@ -36,6 +40,31 @@ app.get('/code', (re,res) => {
         }
     })
     // return sql
+})
+
+app.post('/Register', (req, res) => {
+    const sql = `INSERT INTO (RegisterEmail, CreatedOnDate) VALUES ()`
+    db.query(sql, (err, data) => {
+        if(err) {
+            return res.json(err);
+        }
+        else {
+            return res.json(data);
+        }
+    })
+})
+
+app.post('/login', (req, res) => {
+    let Email = req.body.Email
+    const sql = "SELECT * FROM registerdetails where RegisterEmail = '" + Email + "' "
+    db.query(sql, (err, data) => {
+        if(err) {
+            return res.json(err);
+        }
+        else {
+            return res.json(data);
+        }
+    })
 })
 
 app.listen(8000, () => {

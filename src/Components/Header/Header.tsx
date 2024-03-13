@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -13,8 +14,12 @@ const Header = () => {
                     <span className='lg:mr-16 md:mr-16 font-sans'>Our Story</span>
                 </div>
                 <div className="flex space-x-5 font-sans">
-                    <span className='font-sans'>Login</span>
-                    <span className="font-sans">Signup</span>
+                    <Link to="/Register">
+                        <span className='font-sans'>Login</span>
+                    </Link>
+                    <Link to="/Register">
+                        <span className="font-sans">Signup</span>
+                    </Link>
                 </div>
             </div>
         </div>
