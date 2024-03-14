@@ -99,7 +99,7 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
                 )
             })} */}
             
-            <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`} state={{title: "Hope Lives in Hohenwald"}}>
+            <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`} state={{title: "Legends of Boxing, The Evander Holyfield Story"}}>
                 <div className="px-1">
                     <img src={`https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                 </div>
@@ -117,14 +117,14 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
                 </div>
             </Link>
 
-            <Link to={`/VideoDetails/${"ooBN3O9G6fA"}`} state={{title: "Hope Lives in Hohenwald"}}>
+            <Link to={`/VideoDetails/${"ooBN3O9G6fA"}`} state={{title: "Country Stages to Gospel Hymns"}}>
                 <div className="px-1">
 
                     <img src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                 </div>
             </Link>
             
-            <Link to={`/VideoDetails/${"Z3SJJ7v8RdU"}`} state={{title: "Hope Lives in Hohenwald"}}>
+            <Link to={`/VideoDetails/${"Z3SJJ7v8RdU"}`} state={{title: "Fight the Good Fight Documentary"}}>
                 <div className="px-1">
                     <img src={`https://i.ytimg.com/vi/Z3SJJ7v8RdU/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                 </div>
