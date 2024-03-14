@@ -54,7 +54,7 @@ const FirstPageComponent = () => {
             </div>
             <div className='relative mt-36 lg:mt-[-180px]'>
                 <img src={WhiteBackgroundImage} alt="" className="mt-[-240px] h-[500px] w-[100%] sm:h-[240px]" />
-                <div className="absolute lg:top-[100px] md:top-[-200px] right-auto">
+                <div className="absolute lg:top-[80px] md:top-[-200px] right-auto">
                     {/* <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' /> */}
                     <img className="h-60 w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px]" src={QuotationImage} alt="" />
                 </div>
