@@ -17,6 +17,7 @@ const LandingPageNavigationBar = () => {
     { id: 3, text: 'Blog', routeName: "/blog" },
     { id: 4, text: 'Videos', routeName: "/Videos" },
     { id: 5, text: 'Contact', routeName: "/contact" },
+    { id: 6, text: 'ProLife Videos', routeName: "/prolifevideos" }
   ];
 
   return (
@@ -38,6 +39,9 @@ const LandingPageNavigationBar = () => {
         {/* <span>Videos</span> */}
         <Link to="/contact">
           <span>Contact</span>
+        </Link>
+        <Link to="/prolifevideos">
+          <span>ProLife Videos</span>
         </Link>
       </div>
       <div className='lg:flex-1 sm:ml-[15px]'>

@@ -13,14 +13,15 @@ const LogInPage = () => {
     const [Email, setEmail] = useState('');
 
     const handlesubmit = async () => {
-        try {
-            const response = await axios.post('http://localhost:8000/login', {Email: Email});
-            console.log(response)
-            SuccessToaster()
-        } catch (error) {
-            console.log(error);
-            FailureToaster();
-        }
+        // localStorage.setItem("LogInEmail", Email);
+        // try {
+        //     const response = await axios.post('http://localhost:8000/login', {Email: Email});
+        //     console.log(response)
+        //     SuccessToaster()
+        // } catch (error) {
+        //     console.log(error);
+        //     FailureToaster();
+        // }
     }
 
     const SuccessToaster = () => {

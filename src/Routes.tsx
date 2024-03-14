@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Contact from "./Pages/Contact/Contact";
 import Team from "./Pages/Team/Team";
+import ProLifeVideos from "./Pages/ProLifeVideos/ProLifeVideos";
 
 export const Routes1 = () => {
     return (
@@ -27,6 +28,7 @@ export const Routes1 = () => {
                 <Route path="/Register" element={<RegisterPage />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/team" element={<Team />} />
+                <Route path="/prolifevideos" element={<ProLifeVideos />} />
             </Routes>
         </Router>
     )

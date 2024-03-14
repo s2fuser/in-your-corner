@@ -20,8 +20,11 @@ const FirstPageComponent = () => {
     return (
         <div className="relative w-full h-[100%] ">
             {/* style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }} */}
-            <img src={Image1} alt="" className="object-cover object-center w-full h-full" />
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent lg:h-[21.9%] sm:h-[7.56%]"></div>
+            <div className="relative w-full h-[100%] ">
+              <img src={Image1} alt="" className="object-cover object-center w-full h-full" />
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent w-full h-full"></div>
+              {/* lg:h-[21.9%] sm:h-[7.56%] */}
+            </div>
             <div className='absolute lg:top-20 sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px]'>
                 <div className='sm:mt-[-400px]'>
                     <p className='text-white lg:text-3xl sm:text-sm font-light font-sans'>

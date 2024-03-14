@@ -98,56 +98,36 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
                 )
             })} */}
             
-            <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`}>
+            <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`} state={{title: "Hope Lives in Hohenwald"}}>
                 <div className="px-1">
-
                     <img src={`https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-
-                    {/* <iframe src="https://www.youtube.com/embed/mq1V-YQKT6k?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> */}
                 </div>
             </Link>
             
-            <Link to={`/VideoDetails/${"_KPn9AHXF3I"}`}>
+            <Link to={`/VideoDetails/${"_KPn9AHXF3I"}`} state={{title: "Hope Lives in Hohenwald"}}>
                 <div className="px-1">
-
                     <img src={`https://i.ytimg.com/vi/_KPn9AHXF3I/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-
-                    {/* <iframe src="https://www.youtube.com/embed/_KPn9AHXF3I?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
                 </div>
             </Link>
             
-            <Link to={`/VideoDetails/${"oa920gMvLaI"}`}>
+            <Link to={`/VideoDetails/${"oa920gMvLaI"}`} state={{title: "Forgotten No More"}}>
                 <div className="px-1">
-
                     <img src={`https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-
-                    {/* <iframe src="https://www.youtube.com/embed/oa920gMvLaI?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> */}
                 </div>
             </Link>
             
-            <Link to={`/VideoDetails/${"Z3SJJ7v8RdU"}`}>
+            <Link to={`/VideoDetails/${"Z3SJJ7v8RdU"}`} state={{title: "Hope Lives in Hohenwald"}}>
                 <div className="px-1">
-
                     <img src={`https://i.ytimg.com/vi/Z3SJJ7v8RdU/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-
-                    {/* <iframe src="https://www.youtube.com/embed/Z3SJJ7v8RdU?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
                 </div>
             </Link>
             
-            <Link to={`/VideoDetails/${"ooBN3O9G6fA"}`}>
+            <Link to={`/VideoDetails/${"ooBN3O9G6fA"}`} state={{title: "Hope Lives in Hohenwald"}}>
                 <div className="px-1">
 
                     <img src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-
-                    {/* <iframe src="https://www.youtube.com/embed/ooBN3O9G6fA?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
                 </div>
             </Link>
-            
-            {/* <Link to={`/VideoDetails/${"mq1V-YQKT6k"}`}>
-                <div className="px-1">
-                    <img src={`https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-                </div>
-            </Link> */}
             
         </Slider>
     );
