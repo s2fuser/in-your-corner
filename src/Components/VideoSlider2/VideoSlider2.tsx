@@ -116,17 +116,24 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
                     <img src={`https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                 </div>
             </Link>
+
+            <Link to={`/VideoDetails/${"ooBN3O9G6fA"}`} state={{title: "Hope Lives in Hohenwald"}}>
+                <div className="px-1">
+
+                    <img src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+                </div>
+            </Link>
             
             <Link to={`/VideoDetails/${"Z3SJJ7v8RdU"}`} state={{title: "Hope Lives in Hohenwald"}}>
                 <div className="px-1">
                     <img src={`https://i.ytimg.com/vi/Z3SJJ7v8RdU/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                 </div>
             </Link>
-            
-            <Link to={`/VideoDetails/${"ooBN3O9G6fA"}`} state={{title: "Hope Lives in Hohenwald"}}>
+
+            <Link to={`/VideoDetails/${"sZ0cOfq8JzM"}`} state={{title: "Hope Dealer aka Hope Lives in Hohenwald"}}>
                 <div className="px-1">
 
-                    <img src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+                    <img src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                 </div>
             </Link>
             
