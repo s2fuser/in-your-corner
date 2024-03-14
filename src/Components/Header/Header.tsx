@@ -10,8 +10,9 @@ const Header = () => {
                 <p>Follow Us On Instagram</p>
             </div>
             <div className='lg:mr-10 md:mr-10 flex items-center justify-center space-x-20 font-sans '>
-                <div>
-                    <span className='lg:mr-16 md:mr-16 font-sans'>Our Story</span>
+                <div className='flex items-center gap-6 lg:gap-6'>
+                    <p className='font-sans'>Our Story</p>
+                    <p className='font-sans'>Give</p>
                 </div>
                 <div className="flex space-x-5 font-sans">
                     <Link to="/Register">

@@ -11,6 +11,7 @@ import Image2 from '../../Assets/Images/image2.jpg';
 import Image1 from '../../Assets/Images/image1.jpg';
 import Image3 from '../../Assets/Images/image3.jpg';
 import Image4 from '../../Assets/Images/image4.jpg'
+import LandingPageNavigationBar from "../LandingPageNavigation/LandingPageNavigation";
 
 // export const image_url =
 //   "https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992";
@@ -20,6 +21,9 @@ const FirstPageComponent = () => {
     return (
         <div className="relative w-full h-[100%] ">
             {/* style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }} */}
+            {/* <div className="absolute top-0 z-[9] w-[100%]">
+              <LandingPageNavigationBar />
+            </div> */}
             <div className="relative w-full h-[100%] ">
               <img src={Image1} alt="" className="object-cover object-center w-full h-full" />
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent w-full h-full"></div>
@@ -46,9 +50,9 @@ const FirstPageComponent = () => {
                     
                 </div>
             </div>
-            <div className='relative mt-36 lg:mt-[-180px] '>
-                <div className="absolute top-auto right-auto mt-[-60px]">
-                    <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-20px]' />
+            <div className='relative mt-36 lg:mt-[-180px]'>
+                <div className="absolute lg:top-[-150px] md:top-[-200px] right-auto">
+                    <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' />
                 </div>
                 <div className='text-center mt-80 sm:mt-[-65px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
                     <p className='text-red-900 text-3xl font-medium font-sans sm:mt-[40px]'>
@@ -80,12 +84,12 @@ const FirstPageComponent = () => {
                             <VideoSlider2 />
                             {/* <VideoSlider prop1='false' /> */}
                         </div>
-                        <div className="text-center mt-[150px] text-lg pb-24 sm:mt-[80px]">
+                        <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                             <Link to="/Videos">
                                 <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans">View All Videos</button>
                             </Link>
                         </div>
-                        <div className="text-center pb-40 font-sans">
+                        <div className="text-center lg:pb-40 pb-20 font-sans">
                             <p className="text-red-900 text-4xl font-light mb-7 font-sans">
                                 How Kerry Came to Faith in <span className="text-red-900 text-4xl font-semibold font-sans">Jesus Christ</span>
                             </p>
@@ -100,7 +104,7 @@ const FirstPageComponent = () => {
 
         <div>
           <div className="relative">
-            <div className="pb-[20px] flex justify-center absolute lg:top-[-80px] top-[-60px] z-[99] lg:gap-[20px] gap-[2px] w-full">
+            <div className="pb-[20px] flex justify-center absolute lg:top-[-126px] top-[-60px] z-[99] lg:gap-[20px] gap-[2px] w-full">
               <div className="px-1 sm:w-[90px] sm:h-[90px] ">
                 <img
                   className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
@@ -130,7 +134,7 @@ const FirstPageComponent = () => {
                 />
               </div>
             </div>
-            <div className="h-screen flex items-center mt-[0px] z-[99]">
+            <div className="lg:h-screen h-[70vh] flex items-center mt-[0px] z-[99]">
               <div
                 className="absolute inset-0 bg-black"
                 style={{
