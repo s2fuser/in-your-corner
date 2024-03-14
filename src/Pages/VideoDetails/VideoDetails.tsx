@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import Navbar from "../../Components/NavigationBar/NavigationBar";
@@ -16,6 +16,19 @@ const VideoDetailsPage = () => {
     const { Code } = useParams(); 
     const [LogInEmail, getLogInEmail] = useState<string | null>('');
     const [ViewVideo, setViewVideo] = useState<boolean>(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+      
+        window.addEventListener('resize', handleResize);
+      
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
     const getLogInEmailLocal = () => {
         getLogInEmail(localStorage.getItem("LogInEmail")) 
@@ -41,6 +54,15 @@ const VideoDetailsPage = () => {
         player.getIframe().addEventListener('click', getLogInEmailLocal);
     };
 
+    useEffect(() => {
+        const iframe = document.querySelector('iframe[src*="youtube"]');
+        if (iframe) {
+            console.log("sinide iframwe tag");
+            iframe.classList.add('w-[100%]', 'h-44', 'lg:w-[640px]', 'lg:h-[360px]'); // Add Tailwind CSS classes for width and height
+        }
+    }, [windowWidth]);
+
+
     return (
         <div>
             <div>
@@ -49,16 +71,16 @@ const VideoDetailsPage = () => {
             <div>
                 <Navbar />
             </div>
-            <div className="flex flex-col-reverse lg:flex-row justify-end lg:justify-center text-center font-sans h-screen lg:mt-[50px] mt-[20px] lg:px-4 gap-6 lg:gap-0">
+            <div className="flex flex-col-reverse lg:flex-row justify-end lg:justify-center text-center font-sans h-screen lg:mt-[50px] mt-[20px] lg:px-4 gap-6 lg:gap-0 md:gap-[60px]">
                 <div className="lg:w-[400px] pl-4 pr-4 lg:ml-[-35px]">
                     <h2 className="text-left text-2xl font-semibold py-2">{title}</h2>
                     <p className="text-left text-2xl font-semibold">Description:</p>
                     <p className="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
-                <div className="pl-2 lg:pl-0">
+                <div className="lg:pl-2 lg:pl-0 flex justify-center">
                     {/* <iframe onClick={getLogInEmailLocal} src={`https://www.youtube.com/embed/${Code}?si=bCkUnjDDE14xK6hB&amp;controls=0`} frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] md:w-[250px] lg:w-[700px] lg:ml-[200px] md:h-[125px] lg:h-[350px] lg:justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
 
-                    {!ViewVideo ? (<div style={{ position: 'relative', width: '640px', height: '360px' }}>
+                    {!ViewVideo ? (<div style={{ position: 'relative' }}>
                         <div
                             style={{
                                 position: 'absolute',
@@ -73,27 +95,24 @@ const VideoDetailsPage = () => {
                             <YouTube
                             videoId={Code}
                             opts={{
-                                height: '390',
-                                width: '640',
                                 playerVars: {
                                 autoplay: 0,
                                 },
                             }}
                             onReady={handleVideoReady}
-                            className="rounded-[25px] md:w-[250px] lg:w-[700px] lg:ml-[90px] md:h-[125px] lg:h-[350px] lg:justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"
+                            className="rounded-[25px] md:w-[250px] lg:w-[700px] lg:ml-[90px] md:h-[125px] lg:h-[350px] lg:justify-center  sm:w-[300px] sm:h-[160px]"
                             />
-                    </div>) : (<div style={{ position: 'relative', width: '640px', height: '360px' }} >
+                    </div>) : (<div style={{ position: 'relative' }} className="second:w-[200px]" >
                             <YouTube
                             videoId={Code}
                             opts={{
-                                height: '390',
-                                width: '640',
+                                
                                 playerVars: {
                                 autoplay: 1,
                                 },
                             }}
                             onReady={handleVideoReady}
-                            className="rounded-[25px] md:w-[250px] lg:w-[700px] lg:ml-[90px] md:h-[125px] lg:h-[350px] lg:justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"
+                            className="first:w-[200px]"
                             />
                     </div>)}
                 </div>
