@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import Logo from "../../Assets/Images/logo.png"
 
 const Navbar = () => {
   // State to manage the navbar's visibility
@@ -25,7 +26,7 @@ const Navbar = () => {
     <div className='bg-slate-100 w-full p-7 flex justify-between items-center'>
       {/* Logo */}
       <div className= ''>
-        <img className='w-24 lg:w-32 h-15 sm:ml-[-10px]' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
+        <img className='w-24 lg:w-32 h-15 sm:ml-[-10px]' src={Logo} alt='logo' />
       </div>
       <div className=''>
         <input className='rounded-full px-6 py-2 w-[80%] lg:w-96 focus:outline-none focus:ring focus:border-blue-300 sm:ml-[10px]' type='text' placeholder='search' />
@@ -69,7 +70,7 @@ const Navbar = () => {
       >
         {/* Mobile Logo */}
         <div className='py-6 pl-2'>
-          <img className='w-32 h-15 ' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
+          <img className='w-32 h-15 ' src={Logo} alt='logo' />
         </div>
 
         {/* Mobile Navigation Items */}

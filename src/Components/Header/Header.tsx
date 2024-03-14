@@ -19,7 +19,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className="flex space-x-5 font-sans">
-                    <Link to="/Register">
+                    <Link to="/LogIn">
                         <span className='font-sans'>Login</span>
                     </Link>
                     <Link to="/Register">

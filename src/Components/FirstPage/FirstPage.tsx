@@ -12,6 +12,8 @@ import Image1 from '../../Assets/Images/image1.jpg';
 import Image3 from '../../Assets/Images/image3.jpg';
 import Image4 from '../../Assets/Images/image4.jpg'
 import LandingPageNavigationBar from "../LandingPageNavigation/LandingPageNavigation";
+import QuotationImage from '../../Assets/Images/Quotation.png'
+import WhiteBackgroundImage from '../../Assets/Images/Background1.png'
 
 // export const image_url =
 //   "https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992";
@@ -51,10 +53,12 @@ const FirstPageComponent = () => {
                 </div>
             </div>
             <div className='relative mt-36 lg:mt-[-180px]'>
-                <div className="absolute lg:top-[-150px] md:top-[-200px] right-auto">
-                    <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' />
+                <img src={WhiteBackgroundImage} alt="" className="mt-[-240px] h-[500px] w-[100%] sm:h-[240px]" />
+                <div className="absolute lg:top-[100px] md:top-[-200px] right-auto">
+                    {/* <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' /> */}
+                    <img className="h-60 w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px]" src={QuotationImage} alt="" />
                 </div>
-                <div className='text-center mt-80 sm:mt-[-65px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
+                <div className='text-center mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
                     <p className='text-red-900 text-3xl font-medium font-sans sm:mt-[40px]'>
                         In Your Corner <span className='font-light font-sans'>Productions</span>
                     </p>

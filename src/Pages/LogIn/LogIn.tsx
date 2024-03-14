@@ -8,13 +8,16 @@ import { useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const LogInPage = () => {
     const [Email, setEmail] = useState('');
+    const navigate = useNavigate();
 
     const handlesubmit = async () => {
         localStorage.setItem("LogInEmail", Email);
         SuccessToaster();
+        navigate('/')
         // try {
         //     const response = await axios.post('http://localhost:8000/login', {Email: Email});
         //     console.log(response)
