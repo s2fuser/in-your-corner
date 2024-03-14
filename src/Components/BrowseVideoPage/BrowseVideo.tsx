@@ -32,6 +32,7 @@ const SearchBox: React.FC = () => {
     // width: '400px', // Maintain the earlier length
     display: 'flex',
     alignItems: 'center',
+    width: '100%'
   };
 
   const inputStyle: React.CSSProperties = {
@@ -42,7 +43,7 @@ const SearchBox: React.FC = () => {
   };
 
   return (
-    <div style={searchBoxStyle}>
+    <div className="rounded-[25px] py-[5px] px-[15px] my-[15px] flex items-center bg-white lg:w-[40%] w-[100%]">
       {/* style={searchBoxStyle} */}
       <input type="text" placeholder="Search"  className='w-[100%] h-[100%] border-none outline-none lg:w-[400px]' />
     </div>
@@ -99,35 +100,35 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
       <SearchBox />
       <div style={subHeadingContainerStyle}>
         <div className='ml-[-50px]'>
-        <p  className=' font-bold text-2xl mb-20 mt-20'>ABUSE</p>
+        <p  className=' font-bold text-2xl mb-20 mt-20 pl-8'>ABUSE</p>
         {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true"/>
         </div>
         </div>
         <div className='ml-[-50px]'>
-        <p  className='font-bold text-2xl mb-20 mt-20'>ADDICTION</p>
+        <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>ADDICTION</p>
         {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true"/>
         </div>
         </div>
         <div className='ml-[-50px]'>
-        <p  className='font-bold text-2xl mb-20 mt-20'>ANGER & FORGIVENESS</p>
+        <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>ANGER & FORGIVENESS</p>
         {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true"/>
         </div>
         </div>
         <div className='ml-[-50px]'>
-        <p  className='font-bold text-2xl mb-20 mt-20'>ANXIETY & DEPRESSION</p>
+        <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>ANXIETY & DEPRESSION</p>
         {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true"/>
         </div>
         </div>
         <div className='ml-[-50px]'>
-        <p  className='font-bold text-2xl mb-20 mt-20'>CANCER</p>
+        <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>CANCER</p>
         {/* style={subHeadingStyle} */}
         <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[10px] sm:ml-[-20px]'>
            <VideoSlider2 type="true"/>
