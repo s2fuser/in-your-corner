@@ -67,7 +67,7 @@ const FirstPageComponent = () => {
                     <div className=" bg-pink-100 pt-40 h-5/6 sm:pt-[0px]">
                         <div className='flex justify-center py-8 px-2 sm:mb-[-20px] sm:ml-[-14%]'>
                             {/* <iframe width="720" height="365" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mt-[-300px] rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" ></iframe> */}
-                            <Link to={`/VideoDetails/${"oa920gMvLaI"}`}>
+                            <Link to={`/VideoDetails/${"oa920gMvLaI"}`} state={{title: "Forgotten No More"}}>
                                 <div className="px-1">
 
                                     <img src={`https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg`} alt="" className="rounded-[25px] lg:mt-[-260px] lg:w-[800px] sm:w-[250px] sm:ml-[58px] sm:mt-[-70px]" />
