@@ -18,6 +18,7 @@ const Navbar = () => {
     { id: 3, text: 'Blog', routeName: "/blog" },
     { id: 4, text: 'Videos', routeName: "/Videos" },
     { id: 5, text: 'Contact', routeName: "/contact" },
+    { id: 6, text: 'ProLife Videos', routeName: "/prolifevideos" }
   ];
 
   return (
@@ -38,6 +39,15 @@ const Navbar = () => {
               className='cursor-pointer'
             >
               {item.text}
+              {item.text === 'Videos' && (
+                <ul>
+                  <li>
+                    <Link to="/trellestune" className='cursor-pointer'>
+                      Music
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
           </Link>
           

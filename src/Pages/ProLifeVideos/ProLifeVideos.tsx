@@ -3,9 +3,9 @@ import Header from "../../Components/Header/Header";
 import NavigationBar from "../../Components/NavigationBar/NavigationBar";
 import Footer from "../../Components/Footer/Footer";
 import Footer2 from "../../Components/Footer2/Footer2";
-import ProlifevideoComponents from "./ProlifevideoComponents";
-import Prolifestoriesrow2 from "./Prolifestoriesrow2";
-import Prolifetunesrow3 from "./Prolifetunesrow3";
+import ProLifeSlider from "./ProLifeSlider";
+import StoriesComponent from "./Stories";
+import TrellesTuneComponent from "./TrellesTune";
 
 
 
@@ -20,13 +20,13 @@ const ProLifeVideos = () => {
                 <NavigationBar />
             </div>
             <div>
-                <ProlifevideoComponents />
-                <div>
-                    <Prolifestoriesrow2 />
+                <ProLifeSlider />
+                {/* <div>
+                    <StoriesComponent />
                 </div>
                 <div>
-                    <Prolifetunesrow3 />
-                </div>
+                    <TrellesTuneComponent />
+                </div> */}
             </div>
             <div>
                 <Footer />

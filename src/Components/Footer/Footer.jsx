@@ -10,13 +10,32 @@ const Footer = () => {
             </div>
             <div className='flex flex-col pt-11 text-sm mr-40 font-sans sm:flex-1 sm:ml-[10px]' >
                 <span className='pb-8 font-sans'>Navigation</span>
-                <span className='font-sans'>Home</span>
-                <span className='font-sans'>Our Story</span>
-                <span className='font-sans'>Team</span>
-                <span className='font-sans'>Contact us</span>
-                <span className='font-sans'>Blogs</span>
-                <span className='font-sans'>Videos</span>
-                <span className='font-sans sm:mb-[20px]'>Donate</span>
+                <Link to="/">
+                    <span className='font-sans'>Home</span>
+                </Link>
+                <Link to="/stories">
+                    <span className='font-sans'>Our Story</span>
+                </Link>
+                <Link to="/team">
+                    <span className='font-sans'>Team</span>
+                </Link>
+                <Link to="/contact">
+                    <span className='font-sans'>Contact us</span>
+                </Link>
+                <Link to="/blog">
+                    <span className='font-sans'>Blogs</span>
+                </Link>
+                <Link to="/Videos">
+                    <span className='font-sans'>Videos</span>
+                </Link>
+                <Link to="/trellestune">
+                    <span className='ml-[15px]'>
+                        &#x2e; Music
+                    </span>
+                </Link>
+                <Link to="/donate">
+                    <span className='font-sans sm:mb-[20px]'>Donate</span>
+                </Link>
             </div>
         </div>
     )

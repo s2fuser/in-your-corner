@@ -12,6 +12,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import Contact from "./Pages/Contact/Contact";
 import Team from "./Pages/Team/Team";
 import ProLifeVideos from "./Pages/ProLifeVideos/ProLifeVideos";
+import OurStoryComponent from "./Pages/OurStory/OurStory";
+import ProLifeSlider from "./Pages/ProLifeVideos/ProLifeSlider";
+import TrellesTuneComponent from "./Pages/ProLifeVideos/TrellesTune";
+import DonateComponent from "./Pages/Donate/Donate";
+import MusicComponent from "./Pages/Music/Music";
 
 export const Routes1 = () => {
     return (
@@ -29,6 +34,12 @@ export const Routes1 = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/prolifevideos" element={<ProLifeVideos />} />
+                {/* <Route path="/prolifevideos" element={<ProLifeSlider />} /> */}
+                <Route path="/stories" element={<OurStoryComponent />} />
+                {/* <Route path="/trellestune" element={<TrellesTuneComponent />} />
+                 */}
+                <Route path="/trellestune" element={<MusicComponent />} />
+                <Route path="/donate" element={<DonateComponent />} />
             </Routes>
         </Router>
     )
