@@ -30,7 +30,7 @@ const Story = () => {
             </div>
             {/* <VideoPlayer /> */}
             <div className="flex justify-center py-8 px-2">
-                <Link to={`/VideoDetails/${"oa920gMvLaI"}`}>
+                <Link to={`/VideoDetails/${"oa920gMvLaI"}`} state={{title: "Forgotten No More"}}>
                     <div className="px-1">
                         <img src={`https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg`} alt="" className="rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" />
                     </div>

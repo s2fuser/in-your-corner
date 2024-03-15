@@ -7,6 +7,7 @@ import Movierow3 from "../Components/Moviesimage/Movierow3";
 import BrowseVideoPage from "../Components/BrowseVideoPage/BrowseVideo";
 import Footer from "../Components/Footer/Footer";
 import Footer2 from "../Components/Footer2/Footer2";
+import StoriesComponent from "./ProLifeVideos/Stories";
 
 const AllVideosPageComponet = () => {
     return (
@@ -17,6 +18,7 @@ const AllVideosPageComponet = () => {
             <Movierow1/>
             <Movierow2/>
             <Movierow3/>
+            <StoriesComponent />
             <BrowseVideoPage/>
             <Footer/>
             <Footer2/>

@@ -8,7 +8,7 @@ const ProLifeSlider = () => {
                 <h1 className=' text-4xl font-semibold text-center mt-8 pb-4 sm:text-3xl'>
                     PRO LIFE VIDEOS
                 </h1>
-               <div className='flex justify-between mt-4 sm:mt-[-20px] sm:mb-[20px]'>
+               <div className='flex justify-between mt-4 sm:mt-[-20px] sm:mb-[60px]'>
                     <VideoSlider2 type="true" VideoType="ProLifeVideos"/>
                </div>
             </div>

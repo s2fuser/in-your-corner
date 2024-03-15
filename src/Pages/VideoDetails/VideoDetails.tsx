@@ -34,6 +34,11 @@ const VideoDetailsPage = () => {
         getLogInEmail(localStorage.getItem("LogInEmail")) 
         newFunc(localStorage.getItem("LogInEmail"))
         // localStorage.removeItem("LogInEmail")
+        const iframe = document.querySelector('iframe[src*="youtube"]');
+        if (iframe) {
+            console.log("sinide iframwe tag");
+            iframe.classList.add('w-[100%]', 'h-44', 'lg:w-[640px]', 'lg:h-[360px]'); // Add Tailwind CSS classes for width and height
+        }
     }
 
     const newFunc = (value: any) => {
@@ -52,6 +57,11 @@ const VideoDetailsPage = () => {
     const handleVideoReady = (event: any) => {
         const player = event.target;
         player.getIframe().addEventListener('click', getLogInEmailLocal);
+        const iframe = document.querySelector('iframe[src*="youtube"]');
+        if (iframe) {
+            console.log("sinide iframwe tag");
+            iframe.classList.add('w-[100%]', 'h-44', 'lg:w-[640px]', 'lg:h-[360px]'); // Add Tailwind CSS classes for width and height
+        }
     };
 
     useEffect(() => {
@@ -112,7 +122,7 @@ const VideoDetailsPage = () => {
                                 },
                             }}
                             onReady={handleVideoReady}
-                            className="first:w-[200px]"
+                            className=""
                             />
                     </div>)}
                 </div>

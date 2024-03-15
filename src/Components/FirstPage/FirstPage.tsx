@@ -164,9 +164,11 @@ const FirstPageComponent = () => {
                   </h2>
                 </div>
                 <div className="mt-14 text-center lg:text-left">
-                  <button className="border border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans">
-                    Contact Us
-                  </button>
+                  <Link to="/contact">
+                    <button className="border border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans">
+                      Contact Us
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
