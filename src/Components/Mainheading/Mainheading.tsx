@@ -4,9 +4,11 @@ import BackgroundImage3 from '../../Assets/Images/BackgrounImage3.png'
 
 const Mainheading = () => {
     return (
-        <div className='w- full h-80 font-sans sm:pl-[3px] sm:pr-[3px]' style={{ backgroundImage: "linear-gradient(170deg, red 35%, transparent 80%)" }}>
-            <img src={BackgroundImage3} alt="" className="lg:mt-[-107px] lg:h-[300px] w-[100%] sm:h-[240px]" />
-            <h1 className=' text-4xl font-semibold text-center mt-1 pt-11 font-sans sm:text-2xl lg:mt-[-290px] sm:mt-[-270px]'>
+        <div className='w- full h-80 font-sans sm:pl-[3px] sm:pr-[3px]'>
+             {/* style={{ backgroundImage: "linear-gradient(170deg, red 35%, transparent 80%)" }} */}
+            {/* <img src={BackgroundImage3} alt="" className="lg:mt-[-107px] lg:h-[300px] w-[100%] sm:h-[240px]" /> */}
+            <h1 className=' text-4xl font-semibold text-center mt-1 pt-11 font-sans sm:text-2xl'>
+            {/* lg:mt-[-290px] sm:mt-[-270px] */}
                WELCOME TO OUR VIDEO LIBARY
             </h1>
             
