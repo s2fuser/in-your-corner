@@ -130,7 +130,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         <div className='ml-[-50px]'>
         <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>CANCER</p>
         {/* style={subHeadingStyle} */}
-        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[10px] sm:ml-[-20px]'>
+        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[40px] sm:ml-[-20px]'>
            <VideoSlider2 type="true"/>
         </div>
         </div>

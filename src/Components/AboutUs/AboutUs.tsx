@@ -23,8 +23,8 @@ const AboutUsComponent = () => {
                     <img src={Image4} alt="" />
                 </div>
             </div>
-            <div className="flex justify-center mx-8 my-12 sm:block sm:mt-[200px]">
-                <img className="lg:h-[400px] lg:ml-[100px] sm:h-[280px] sm:w-[292px]  sm:mb-[30px]" src={Image3} alt="" />
+            <div className="flex justify-center mx-8 my-12 sm:block sm:mt-[260px]">
+                <img className="lg:h-[400px] lg:ml-[100px] sm:h-[280px] sm:w-[292px] md:ml-[6%] sm:mb-[30px] md:h-[200px] md:mr-[20px]" src={Image3} alt="" />
                 <div className="font-sans lg:ml-[50px] lg:pl-[10px] lg:pr-[50px] lg:mt-[180px] sm:w-[100%] sm:w-[100%]">
                     <p>
                         Beyond the weekly TV show, Kerry Pharr expanded his ministry impact by creating compelling documentary films. Among them are the award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,” a documentary highlighting champion boxers who discovered hope in Jesus Christ. Additionally, “Forgotten No More” sheds light on the plight of impoverished Haitian workers toiling in the sugar cane plantations of the Dominican Republic for meager wages as low as ten dollars a day.
@@ -49,7 +49,7 @@ const AboutUsComponent = () => {
                 <p className="font-sans sm:w-[100%] lg:mb-[30px]">
                     In Your Corner Productions specializes in creating Christian-themed television programs, acclaimed documentaries, gospel music, and ministry videos to help promote other faith-based non-profits. Operating under the banner of In Your Corner Ministries, our production arm boasts a fully equipped television studio, a skilled cinematographer, and seasoned videographers.  Reach out to us today to fulfill all your ministry video production requirements.
                 </p>
-                <img src={Image5} className="sm:mt-[30px] lg:h-[200px] lg:w-[900px] lg:h-[500px] lg:ml-[15%]" alt="" />
+                <img src={Image5} className="sm:mt-[30px] lg:h-[200px] lg:w-[900px] lg:h-[500px] lg:ml-[15%] md:w-[70%] md:ml-[5%] md:mt-[20px]" alt="" />
             </div>
             <div className="mx-8 my-12 sm:block">
                 <p className="text-4xl font-sans mb-[60px] lg:ml-[25%]">

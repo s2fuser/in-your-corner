@@ -63,6 +63,7 @@ export default VideoSlider2;
 export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
 
     const [slidesToShow, setSlidesToShow] = useState(3);
+    const [AllVideosResponse, setAllVideosResponse] = useState<any>([]);
 
     useEffect(() => {
         const handleResize = () => {

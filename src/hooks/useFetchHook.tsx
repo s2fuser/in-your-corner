@@ -13,7 +13,7 @@ const useFetch = (url: string) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/${url}`);
+                const response = await fetch(`http://localhost:8000/api/${url}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
