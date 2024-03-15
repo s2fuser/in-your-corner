@@ -108,7 +108,7 @@ const FirstPageComponent = () => {
 
         <div>
           <div className="relative">
-            <div className="pb-[20px] flex justify-center absolute lg:top-[-126px] top-[-60px] z-[99] lg:gap-[20px] gap-[2px] w-full">
+            <div className="pb-[20px] flex justify-center absolute lg:top-[-126px] top-[-60px] z-[8] lg:gap-[20px] gap-[2px] w-full">
               <div className="px-1 sm:w-[90px] sm:h-[90px] ">
                 <img
                   className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
@@ -148,7 +148,7 @@ const FirstPageComponent = () => {
                 }}
               ></div>
 
-              <div className="z-20 text-white lg:pl-36">
+              <div className="z-[8] text-white lg:pl-36">
                 <div className="text-center lg:text-left">
                   <h2 className="md:text-5xl lg:text-5xl text-3xl font-bold py-2 font-sans">
                     Reach out to us today

@@ -64,8 +64,8 @@ const Navbar = () => {
       <ul
         className={
           nav
-            ? 'fixed md:hidden left-0 top-0 w-[60%] h-full bg-slate-100 ease-in-out duration-500 text-black'
-            : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
+            ? 'fixed md:hidden left-0 top-0 w-[60%] h-full bg-slate-100 ease-in-out duration-500 text-black z-[9]'
+            : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-[9]'
         }
       >
         {/* Mobile Logo */}

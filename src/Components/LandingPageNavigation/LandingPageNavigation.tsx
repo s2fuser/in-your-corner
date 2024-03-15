@@ -55,8 +55,8 @@ const LandingPageNavigationBar = () => {
       <ul
         className={
           nav
-            ? 'fixed z-[9] md:hidden left-0 top-0 w-[35%] h-full bg-slate-100 ease-in-out duration-500 text-black'
-            : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
+            ? 'fixed z-[9] md:hidden left-0 top-0 w-[35%] h-full bg-slate-100 ease-in-out duration-500 text-black z-[9]'
+            : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-[9]'
         }
       >
         {/* Mobile Logo */}
