@@ -21,18 +21,18 @@ import WhiteBackgroundImage from '../../Assets/Images/Background1.png'
 
 const FirstPageComponent = () => {
     return (
-        <div className="relative w-full h-[100%] ">
+        <div className="relative w-full h-[100%]">
             {/* style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }} */}
-            {/* <div className="absolute top-0 z-[9] w-[100%]">
+            <div className="absolute top-0 z-[9] w-[100%]">
               <LandingPageNavigationBar />
-            </div> */}
+            </div>
             <div className="relative w-full h-[100%] ">
-              <img src={Image1} alt="" className="object-cover object-center w-full h-full" />
+              <img src={Image1} alt="" className="object-cover object-center w-full lg:h-full h-[350px] md:h-[350px]" />
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent w-full h-full"></div>
               {/* lg:h-[21.9%] sm:h-[7.56%] */}
             </div>
-            <div className='absolute lg:top-20 sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px]'>
-                <div className='sm:mt-[-400px]'>
+            <div className='absolute lg:top-[27rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px]'>
+                <div className='sm:mt-[-310px] md:mt-[-329px]'>
                     <p className='text-white lg:text-3xl sm:text-sm font-light font-sans'>
                         featuring
                     </p>
@@ -43,7 +43,7 @@ const FirstPageComponent = () => {
                         men and women <span className='text-white lg:text-3xl sm:text-sm font-medium font-sans'>of faith</span> 
                     </p>
                 </div>
-                <div className='lg:pt-8 sm:7'>
+                <div className='lg:pt-8 sm:7 pt-[16px]'>
                     <Link  to="/KnowMore">
                         <button className='border-solid rounded-3xl border-2 sm:text-sm border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
                             Know More
@@ -53,12 +53,12 @@ const FirstPageComponent = () => {
                 </div>
             </div>
             <div className='relative mt-36 lg:mt-[-180px]'>
-                <img src={WhiteBackgroundImage} alt="" className="mt-[-240px] h-[500px] w-[100%] sm:h-[240px]" />
-                <div className="absolute lg:top-[80px] md:top-[-200px] right-auto">
+                <img src={WhiteBackgroundImage} alt="" className="mt-[-284px] h-[500px] w-[100%] sm:h-[240px]" />
+                <div className="absolute lg:top-[80px] md:top-[175px] right-auto">
                     {/* <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' /> */}
                     <img className="h-60 w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px]" src={QuotationImage} alt="" />
                 </div>
-                <div className='text-center mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
+                <div className='text-center lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
                     <p className='text-red-900 text-3xl font-medium font-sans sm:mt-[40px]'>
                         In Your Corner <span className='font-light font-sans'>Productions</span>
                     </p>

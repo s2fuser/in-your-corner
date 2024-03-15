@@ -11,9 +11,9 @@ const LandingPageComponet = () => {
             <div>
                 <HeaderComponent/>
             </div>
-            <div>
+            {/* <div>
                 <LandingPageNavigationBar/>
-            </div>
+            </div> */}
             <div>
                 <FirstPageComponent/>
             </div>
