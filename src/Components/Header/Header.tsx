@@ -9,7 +9,7 @@ const Header = () => {
                 <FaInstagram className="text-white font-sans" />
                 <p>Follow Us On Instagram</p>
             </div>
-            <div className='lg:mr-10 md:mr-10 flex items-center justify-center space-x-20 font-sans '>
+            <div className='lg:mr-10 md:mr-10 flex items-center justify-center font-sans gap-6 lg:gap-6'>
                 <div className='flex items-center gap-6 lg:gap-6'>
                     <Link to="/stories">
                         <p className='font-sans'>Our Story</p>

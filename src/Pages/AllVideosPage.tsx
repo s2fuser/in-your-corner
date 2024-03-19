@@ -16,11 +16,13 @@ const AllVideosPageComponet = () => {
             <Header/>
             <NavigationBar/>
             <Mainheading/>
-            <Movierow1/>
+            <div className="">
+                <Movierow1/>
+            </div>
             <Movierow2/>
             <Movierow3/>
             <DocumentriesAndMovies />
-            <StoriesComponent />
+            {/* <StoriesComponent /> */}
             <BrowseVideoPage/>
             <Footer/>
             <Footer2/>

@@ -17,34 +17,42 @@ const LandingPageNavigationBar = () => {
     { id: 3, text: 'Blog', routeName: "/blog" },
     { id: 4, text: 'Videos', routeName: "/Videos" },
     { id: 5, text: 'Contact', routeName: "/contact" },
-    { id: 6, text: 'ProLife Videos', routeName: "/prolifevideos" }
+    { id: 6, text: 'About Us', routeName: "/stories" },
+    { id: 7, text: 'ProLife Videos', routeName: "/prolifevideos" },
+    { id: 7, text: 'Music', routeName: "/trellestune" },
   ];
 
   return (
     <div className='bg-slate-100 w-full p-7 flex items-center justify-between' style={{ backgroundColor: 'rgba(159, 159, 207, 0.65)' }}>
       <div className= ''>
-        <img className='w-24 lg:w-32 h-15 ' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
+        <img className='w-24 lg:w-32 h-15' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
 
       </div>
-      <div className='hidden md:flex lg:flex gap-x-7 mr-3  font-sans ml-[200px]'>
+      <div className='hidden md:flex lg:flex gap-x-7 mr-3 md:ml-[25px] font-sans ml-[85px] xl:ml-[130px]'>
         <Link to="/">
-          <span>Home</span>
+          <span className='xl:text-xl'>Home</span>
         </Link>
         <Link to="/team">
-          <span>Team</span>
+          <span className='xl:text-xl'>Team</span>
         </Link>
         <Link to="/blog">
-          <span>Blogs</span>
+          <span className='xl:text-xl'>Blogs</span>
         </Link>
         {/* <span>Videos</span> */}
         <Link to="/contact">
-          <span>Contact</span>
+          <span className='xl:text-xl'>Contact</span>
+        </Link>
+        <Link to="/aboutUs">
+          <span className='xl:text-xl'>About Us</span>
         </Link>
         <Link to="/prolifevideos">
-          <span>ProLife Videos</span>
+          <span className='xl:text-xl'>ProLife Videos</span>
         </Link>
+        {/* <Link to="/trellestune">
+          <span>Music</span>
+        </Link> */}
       </div>
-      <div className='lg:flex-1 sm:ml-[15px]'>
+      <div className='lg:flex-1 sm:ml-[15px] md:ml-[-50px] '>
         <SearchBarComponent/>
       </div>
 

@@ -10,14 +10,10 @@ import VideoSlider2 from "../VideoSlider2/VideoSlider2";
 import Image2 from '../../Assets/Images/image2.jpg';
 import Image1 from '../../Assets/Images/image1.jpg';
 import Image3 from '../../Assets/Images/image3.jpg';
-import Image4 from '../../Assets/Images/image4.jpg'
+import Image4 from '../../Assets/Images/image4.jpg';
 import LandingPageNavigationBar from "../LandingPageNavigation/LandingPageNavigation";
-import QuotationImage from '../../Assets/Images/Quotation.png'
-import WhiteBackgroundImage from '../../Assets/Images/Background1.png'
-
-// export const image_url =
-//   "https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992";
-
+import QuotationImage from '../../Assets/Images/Quotation.png';
+import WhiteBackgroundImage from '../../Assets/Images/Background1.png';
 
 const FirstPageComponent = () => {
     return (
@@ -31,21 +27,21 @@ const FirstPageComponent = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent w-full h-full"></div>
               {/* lg:h-[21.9%] sm:h-[7.56%] */}
             </div>
-            <div className='absolute lg:top-[27rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px]'>
+            <div className='absolute lg:top-[27rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px] 2xl:ml-[140px] 2xl:mt-[150px]'>
                 <div className='sm:mt-[-310px] md:mt-[-329px]'>
-                    <p className='text-white lg:text-3xl sm:text-sm font-light font-sans'>
+                    <p className='text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl font-light font-sans'>
                         featuring
                     </p>
-                    <p className='text-white lg:text-3xl sm:text-sm font-medium font-sans'>
+                    <p className='text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl font-semibold font-sans'>
                         the testimonies of
                     </p>
-                    <p className='text-white lg:text-3xl sm:text-sm font-light font-sans'>
-                        men and women <span className='text-white lg:text-3xl sm:text-sm font-medium font-sans'>of faith</span> 
+                    <p className='text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl font-light font-sans'>
+                        men and women <span className='text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl font-semibold font-sans'>of faith</span> 
                     </p>
                 </div>
                 <div className='lg:pt-8 sm:7 pt-[16px]'>
                     <Link  to="/KnowMore">
-                        <button className='border-solid rounded-3xl border-2 sm:text-sm border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
+                        <button className='border-solid rounded-3xl border-2 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
                             Know More
                         </button>
                     </Link>
@@ -59,10 +55,10 @@ const FirstPageComponent = () => {
                     <img className="h-60 w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px]" src={QuotationImage} alt="" />
                 </div>
                 <div className='text-center lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
-                    <p className='text-red-900 text-3xl font-medium font-sans sm:mt-[40px]'>
+                    <p className='text-red-900 text-3xl xl:text-4xl font-medium font-sans sm:mt-[40px]'>
                         In Your Corner <span className='font-light font-sans'>Productions</span>
                     </p>
-                    <p className='text-sm font-sans'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
+                    <p className='text-sm font-sans xl:text-2xl xl:mt-[20px] sm:mt-[30px] md:mt-[30px]'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
                         acclaimed documentaries, gospel music, and ministry videos to help promote other faith-based non-profits.</p>
                 </div>
             </div>
@@ -90,15 +86,16 @@ const FirstPageComponent = () => {
                         </div>
                         <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                             <Link to="/Videos">
-                                <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans">View All Videos</button>
+                                <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button>
                             </Link>
                         </div>
                         <div className="text-center lg:pb-40 pb-20 font-sans">
-                            <p className="text-red-900 text-4xl font-light mb-7 font-sans">
-                                How Kerry Came to Faith in <span className="text-red-900 text-4xl font-semibold font-sans">Jesus Christ</span>
+                            <p className="text-red-900 text-3xl font-light mb-7 font-sans xl:text-4xl">
+                                How Kerry Came to Faith in <span className="text-red-900 text-3xl xl:text-4xl font-semibold font-sans">Jesus Christ</span>
                             </p>
-                            <p className='font-sans sm:pl-[10px] sm:pr-[10px] lg:w-[800px] lg:ml-[280px]'>
-                                Beyond the weekly TV show, Kerry Pharr expanded his ministry impact by creating compelling documentary films. Among them are the award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,” a documentary highlighting champion boxers who discovered hope in Jesus Christ.
+                            <p className='font-sans xl:text-2xl'>
+                            {/* sm:pl-[10px] sm:pr-[10px] lg:w-[800px] lg:ml-[280px] xl:ml-[780px] */}
+                                Beyond the weekly TV show, Kerry Pharr expanded his ministry impact by creating compelling documentary films. <br /> Among them are the award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,” a documentary highlighting champion boxers who discovered hope in Jesus Christ.
                             </p>
                         </div>
                     </div>
@@ -148,24 +145,24 @@ const FirstPageComponent = () => {
                 }}
               ></div>
 
-              <div className="z-[8] text-white lg:pl-36">
+              <div className="z-[8] text-white grid place-items-center px-2 lg:pl-36">
                 <div className="text-center lg:text-left">
-                  <h2 className="md:text-5xl lg:text-5xl text-3xl font-bold py-2 font-sans">
+                  <h2 className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl font-bold py-2 px-2 font-sans">
                     Reach out to us today
                   </h2>
-                  <p className="md:text-5xl lg:text-5xl text-3xl font-light font-sans">
+                  <p className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl font-light font-sans px-2">
                     to fulfill all your ministry{" "}
-                    <span className="md:text-5xl lg:text-5xl text-4xl font-semibold font-sans">
+                    <span className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">
                       video
                     </span>
                   </p>
-                  <h2 className="md:text-5xl lg:text-5xl text-3xl font-bold pt-2 font-sans">
+                  <h2 className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl font-bold pt-2 font-sans px-2 ">
                     production requirements.
                   </h2>
                 </div>
-                <div className="mt-14 text-center lg:text-left">
+                <div className="mt-14 text-center lg:text-left lg:ml-[-180px] xl:ml-[-260px] 2xl:ml-[-378px] 3xl:ml-[-400px]">
                   <Link to="/contact">
-                    <button className="border border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans">
+                    <button className="border border-2 border-white py-2 px-10 rounded-3xl sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl">
                       Contact Us
                     </button>
                   </Link>

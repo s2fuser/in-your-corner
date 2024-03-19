@@ -68,11 +68,11 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
     useEffect(() => {
         const handleResize = () => {
             // Update slidesToShow based on screen size
-            if (window.innerWidth <= 1024) {
-                setSlidesToShow(1);
-            } else {
+            // if (window.innerWidth <= 1024) {
+            //     setSlidesToShow(1);
+            // } else {
                 setSlidesToShow(3);
-            }
+            // }
         };
 
         // Add event listener for window resize
@@ -149,11 +149,11 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
     useEffect(() => {
         const handleResize = () => {
             // Update slidesToShow based on screen size
-            if (window.innerWidth <= 1024) {
-                setSlidesToShow(1);
-            } else {
+            // if (window.innerWidth <= 1024) {
+            //     setSlidesToShow(1);
+            // } else {
                 setSlidesToShow(3);
-            }
+            // }
         };
 
         // Add event listener for window resize
@@ -230,11 +230,11 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
     useEffect(() => {
         const handleResize = () => {
             // Update slidesToShow based on screen size
-            if (window.innerWidth <= 1024) {
-                setSlidesToShow(1);
-            } else {
+            // if (window.innerWidth <= 1024) {
+            //     setSlidesToShow(1);
+            // } else {
                 setSlidesToShow(3);
-            }
+            // }
         };
 
         // Add event listener for window resize
@@ -285,11 +285,11 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
     useEffect(() => {
         const handleResize = () => {
             // Update slidesToShow based on screen size
-            if (window.innerWidth <= 1024) {
-                setSlidesToShow(1);
-            } else {
+            // if (window.innerWidth <= 1024) {
+            //     setSlidesToShow(1);
+            // } else {
                 setSlidesToShow(3);
-            }
+            // }
         };
 
         // Add event listener for window resize

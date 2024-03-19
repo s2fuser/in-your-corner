@@ -17,6 +17,7 @@ import ProLifeSlider from "./Pages/ProLifeVideos/ProLifeSlider";
 import TrellesTuneComponent from "./Pages/ProLifeVideos/TrellesTune";
 import DonateComponent from "./Pages/Donate/Donate";
 import MusicComponent from "./Pages/Music/Music";
+import AboutUsPage from "./Pages/AboutUs/AboutUsPage";
 
 export const Routes1 = () => {
     return (
@@ -40,6 +41,7 @@ export const Routes1 = () => {
                  */}
                 <Route path="/trellestune" element={<MusicComponent />} />
                 <Route path="/donate" element={<DonateComponent />} />
+                <Route path="/aboutUs" element={<AboutUsPage />} />
             </Routes>
         </Router>
     )

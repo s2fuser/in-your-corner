@@ -4,6 +4,7 @@ import LandingPageNavigationBar from "../../Components/LandingPageNavigation/Lan
 import BlogCard from "./BlogCard";
 import Footer2 from "../../Components/Footer2/Footer2";
 import FooterComponent from "../../Components/Footer/Footer";
+import Navbar from "../../Components/NavigationBar/NavigationBar";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([
@@ -45,7 +46,7 @@ const Blog = () => {
         <Header />
       </div>
       <div>
-        <LandingPageNavigationBar />
+        <Navbar />
       </div>
       <div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 py-10">

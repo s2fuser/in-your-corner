@@ -11,12 +11,12 @@ const OurStoryComponent = () => {
         <div>
             <Header />
             <Navbar />
-            {/* <div className="mb-[30px]">
+            <div className="mb-[30px]">
                 <StoriesComponent />
-            </div> */}
-            <div>
-                <AboutUsComponent />
             </div>
+            {/* <div>
+                <AboutUsComponent />
+            </div> */}
             <Footer />
             <Footer2 />
         </div>

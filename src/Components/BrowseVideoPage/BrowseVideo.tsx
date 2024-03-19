@@ -90,7 +90,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
   return (
     <div style={containerStyle}>
       <h1 style={headingStyle} className='font-bold'>BROWSE BY TOPIC</h1>
-      <div>
+      <div className='sm:ml-[-25px]'>
         <TopicButton label="Abuse" />
         <TopicButton label="Addiction" />
         <TopicButton label="Anger & forgiveness" />
