@@ -88,7 +88,7 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
 
     const isSmallScreen = window.innerWidth <= 500;
     return (
-        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[1500px] flex justify-center overflow-x-hidden">
+        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[100%] flex justify-center overflow-x-hidden">
 
             {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
                 return (
@@ -169,7 +169,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
 
     const isSmallScreen = window.innerWidth <= 500;
     return (
-        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[1500px] flex justify-center overflow-x-hidden">
+        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[100%] flex justify-center overflow-x-hidden">
 
             {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
                 return (
@@ -250,7 +250,7 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
 
     const isSmallScreen = window.innerWidth <= 500;
     return (
-        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[1500px] flex justify-center overflow-x-hidden">
+        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[100%] flex justify-center overflow-x-hidden">
 
             {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
                 return (
@@ -305,7 +305,7 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
 
     const isSmallScreen = window.innerWidth <= 500;
     return (
-        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[1500px] flex justify-center overflow-x-hidden">
+        <Slider {...((type2 == "true" ? settingsForBrowseVideos : settings))} slidesToShow={slidesToShow} className="w-[100%] flex justify-center overflow-x-hidden">
 
             {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
                 return (

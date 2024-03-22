@@ -48,7 +48,7 @@ export default VideoSlider;
 
 export const SliderComponent = () => {
     return (
-        <Slider {...settings} className="w-[1500px] flex justify-center overflow-x-hidden">
+        <Slider {...settings} className="w-[100%] flex justify-center overflow-x-hidden">
             <div className="px-1">
                 <iframe src="https://www.youtube.com/embed/yhB3BgJyGl8?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] w-[250px] px-2"></iframe> 
             </div>

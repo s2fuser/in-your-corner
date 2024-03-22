@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import VideoSlider from '../VideoSlider/VideoSlider';
 import VideoSlider2 from '../VideoSlider2/VideoSlider2';
+import DocumentriesAndMovies from '../../Pages/Documentries&Movies/DocumentriesAndMovies';
+import ProLifeSlider from '../../Pages/ProLifeVideos/ProLifeSlider';
+import StoriesComponent from '../../Pages/ProLifeVideos/Stories';
+import TrellesTuneComponent from '../../Pages/ProLifeVideos/TrellesTune';
+import useFetch from '../../hooks/useFetchHook';
+import axios from 'axios';
+import TopicWiseSearchComponent from '../TopicSearch/TopicSearch';
 
 interface ButtonProps {
-  label: string;
+  label: string,
+  func?: any,
 }
 
-const TopicButton: React.FC<ButtonProps> = ({ label }) => {
+type SearchProp = {
+  value?: string,
+  getValue?: any,
+}
+
+const TopicButton: React.FC<ButtonProps> = ({ label, func }) => {
   const buttonStyle: React.CSSProperties = {
     background: 'transparent',
     color: '#ffffff',
@@ -18,12 +31,12 @@ const TopicButton: React.FC<ButtonProps> = ({ label }) => {
     fontWeight: 'bold', // Make text bold
   };
 
-  return <button className='bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]' >{label}</button>;
+  return <button className='bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]' onClick={func} >{label}</button>;
   // style={buttonStyle}
 };
 
 
-const SearchBox: React.FC = () => {
+const SearchBox: React.FC<SearchProp> = ( { value, getValue } ) => {
   const searchBoxStyle: React.CSSProperties = {
     background: '#ffffff',
     borderRadius: '25px', // Adjust the value to control the curvature
@@ -45,7 +58,7 @@ const SearchBox: React.FC = () => {
   return (
     <div className="rounded-[25px] py-[5px] px-[15px] my-[15px] flex items-center bg-white lg:w-[40%] w-[100%]">
       {/* style={searchBoxStyle} */}
-      <input type="text" placeholder="Search"  className='w-[100%] h-[100%] border-none outline-none lg:w-[400px]' />
+      <input value={value} type="text" placeholder="Search" className='w-[100%] h-[100%] border-none outline-none lg:w-[400px] black' onChange={getValue} />
     </div>
     // style={inputStyle}
   );
@@ -56,6 +69,42 @@ interface BrowseVideoProps {
 }
 
 const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
+
+  // const { data } = useFetch('code');
+
+  const [SearchValue, setSearchValue] = useState<any>();
+  const [AllVideosDetails, setAllVideosDetails] = useState<any>();
+  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] = useState<any>();
+
+  useEffect(() => {
+    fetchData();
+  })
+
+  const fetchData = async() => {
+    const response: any = await axios.get('http://inc.s2ftech.in/api/code');
+    setAllVideosDetails(response.data.data);
+  }
+
+  const functionToSetSearchValue = (event: any) => {
+    let ValueOfSearch = event.target.value;
+    setSearchValue(ValueOfSearch);
+    getFilteredData()
+  }
+
+  const getFilteredData = () => {
+    let FilteredItems = AllVideosDetails && AllVideosDetails.filter((items: any) => {
+      if(SearchValue != undefined) {
+        return items && items.genre.toLowerCase().includes(SearchValue.toLowerCase())
+      }
+    })
+    if(SearchValue == '') {
+      setFilteredValuesOfAllVideos(AllVideosDetails)
+    }
+    else {
+      setFilteredValuesOfAllVideos(FilteredItems)
+    }
+  }
+
   const containerStyle: React.CSSProperties = {
     background: 'linear-gradient(to right, #990000, #FF6666)',
     width: '100%',
@@ -63,7 +112,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
     display: 'flex',
     flexDirection: 'column', // Stack items vertically
     alignItems: 'center', // Center horizontally
-    color: '#ffffff',
+    // color: '#ffffff',
     minHeight: '100vh',
   };
 
@@ -87,59 +136,87 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
     marginTop: '20px', // Add some space between heading and buttons
   };
 
+  // if(filteredValuesOfVideos && filteredValuesOfVideos.length > 0) {
+  //   return (
+  //     <div>
+  //       {filteredValuesOfVideos[0].name}
+  //     </div>
+  //   )
+  // }
+
+  const getDetailsOfClickingButton = (event: any) => {
+    let ButtonValue = event.target.textContent;
+    let FilteredItems = AllVideosDetails && AllVideosDetails.filter((items: any) => {
+      if(ButtonValue != undefined) {
+        return items && items.genre.toLowerCase().includes(ButtonValue.toLowerCase())
+      }
+    })
+    setFilteredValuesOfAllVideos(FilteredItems)
+
+  }
+
   return (
     <div style={containerStyle}>
-      <h1 style={headingStyle} className='font-bold'>BROWSE BY TOPIC</h1>
+      <h1 style={headingStyle} className='font-bold text-white'>BROWSE BY TOPIC</h1>
       <div className='sm:ml-[-25px]'>
-        <TopicButton label="Abuse" />
-        <TopicButton label="Addiction" />
-        <TopicButton label="Anger & forgiveness" />
-        <TopicButton label="Anxiety & Depression" />
-        <TopicButton label="Cancer" />
+        <TopicButton label="Documentries / Movies" func={getDetailsOfClickingButton} />
+        <TopicButton label="Pro-Life Voices" func={getDetailsOfClickingButton} />
+        <TopicButton label="Stories" func={getDetailsOfClickingButton} />
+        <TopicButton label="Trelle's Tunes" func={getDetailsOfClickingButton} />
       </div>
-      <SearchBox />
-      <div style={subHeadingContainerStyle}>
+      <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
+      {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || filteredValuesOfVideos == undefined ? <div style={subHeadingContainerStyle}>
         <div className='ml-[-50px]'>
-        <p  className=' font-bold text-2xl mb-20 mt-20 pl-8'>ABUSE</p>
-        {/* style={subHeadingStyle} */}
-        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
-            <VideoSlider2 type="true"/>
-        </div>
-        </div>
-        <div className='ml-[-50px]'>
-        <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>ADDICTION</p>
-        {/* style={subHeadingStyle} */}
-        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
-            <VideoSlider2 type="true"/>
-        </div>
+          <p className=' font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Documentries / Movies</p>
+          {/* style={subHeadingStyle} */}
+          {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
+            <VideoSlider2 type="true" />
+          </div> */}
+          <div className='sm:mt-[30px] sm:ml-[-25px]'>
+            <DocumentriesAndMovies title='false' />
+          </div>
         </div>
         <div className='ml-[-50px]'>
-        <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>ANGER & FORGIVENESS</p>
-        {/* style={subHeadingStyle} */}
-        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
-            <VideoSlider2 type="true"/>
+          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Pro-Life Voices</p>
+          {/* style={subHeadingStyle} */}
+          {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
+            <VideoSlider2 type="true" />
+          </div> */}
+
+          <div className='sm:mt-[30px] sm:ml-[-25px]'>
+            <ProLifeSlider title="false" />
+          </div>
         </div>
+        <div className='ml-[-50px] sm:mt-[-50px]'>
+          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Stories</p>
+          {/* style={subHeadingStyle} */}
+          {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
+            <VideoSlider2 type="true" />
+          </div> */}
+
+          <div className='sm:mt-[30px] sm:ml-[-25px]'>
+            <StoriesComponent title="false" />
+          </div>
         </div>
         <div className='ml-[-50px]'>
-        <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>ANXIETY & DEPRESSION</p>
-        {/* style={subHeadingStyle} */}
-        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
-            <VideoSlider2 type="true"/>
+          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Trelle's Tunes</p>
+          {/* style={subHeadingStyle} */}
+          {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
+            <VideoSlider2 type="true" />
+          </div> */}
+
+          <div className='sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]'>
+            <TrellesTuneComponent title="false" />
+          </div>
         </div>
-        </div>
-        <div className='ml-[-50px]'>
-        <p  className='font-bold text-2xl mb-20 mt-20 pl-8'>CANCER</p>
-        {/* style={subHeadingStyle} */}
-        <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[40px] sm:ml-[-20px]'>
-           <VideoSlider2 type="true"/>
-        </div>
-        </div>
-{/*        
+        {/*        
         <h1 style={subHeadingStyle}>ADDICTION</h1>
         <h1 style={subHeadingStyle}>ANGER & FORGIVENESS</h1>
         <h1 style={subHeadingStyle}>ANXIETY & DEPRESSION</h1>
         <h1 style={subHeadingStyle}>CANCER</h1> */}
-      </div>
+      </div> : <div className='w-[100%] h-[600px] sm:mb-[-400px]'>
+        <TopicWiseSearchComponent genre={filteredValuesOfVideos[0].genre} values={filteredValuesOfVideos} />
+      </div>}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import Header from "../../Components/Header/Header";
 import Navbar from "../../Components/NavigationBar/NavigationBar";
 import FooterComponent from "../../Components/Footer/Footer";
 
-const Contact = () => {
+const ContactUsPage = () => {
   return (
     <div>
       <div>
@@ -23,4 +23,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUsPage;

@@ -1,15 +1,20 @@
 import React from "react";
 import VideoSlider from "../VideoSlider/VideoSlider";
-import Image2 from '../../Assets/Images/image2.jpg'
+import Image2 from '../../Assets/Images/image2.jpg';
+import { Link } from "react-router-dom";
+import VideoSlider2 from "../VideoSlider2/VideoSlider2";
 
 export const image_url = 'https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992';
 
 const Contact: React.FC = () => {
     return (
         <div className="relative overflow-x-hidden">
-            <div className="absolute">
-                <VideoSlider prop1="false" />
-            </div>
+            {/* <div className="absolute "> */}
+                {/* <VideoSlider prop1="false" /> */}
+                <div className="mb-[-180px]">
+                    <VideoSlider2 />
+                </div>
+            {/* </div> */}
             <div className="relative h-screen flex items-center lg:justify-start justify-center mt-[130px] z-[-9]">
                 <div className="absolute inset-0 bg-black" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Image2})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 
@@ -20,7 +25,9 @@ const Contact: React.FC = () => {
                         <h2 className='md:text-5xl lg:text-5xl text-3xl font-bold pt-2 font-sans'>production requirements.</h2>
                     </div>
                     <div className="mt-14 text-center lg:text-left">
-                        <button className=" border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans" >Contact Us</button>
+                        <Link to="/contact">
+                            <button className=" border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans" >Contact Us</button>
+                        </Link>
                     </div>
                 </div>
             </div>

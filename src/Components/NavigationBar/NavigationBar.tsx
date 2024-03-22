@@ -19,26 +19,28 @@ const Navbar = () => {
     { id: 3, text: 'Blog', routeName: "/blog" },
     { id: 4, text: 'Videos', routeName: "/Videos" },
     { id: 5, text: 'Contact', routeName: "/contact" },
-    { id: 6, text: 'ProLife Videos', routeName: "/prolifevideos" },
-    { id: 7, text: 'Music', routeName: "/trellestune" },
+    { id: 6, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
+    { id: 7, text: 'About Us', routeName: "/aboutUs" },
   ];
 
   return (
     <div className='bg-slate-100 w-full p-7 flex justify-between items-center'>
       {/* Logo */}
       <div className= ''>
-        <img className='w-24 lg:w-32 h-15' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
+        <Link to="/">
+          <img className='w-24 lg:w-32 h-15' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
+        </Link>
       </div>
-      <div className=''>
-        <input className='rounded-full px-6 py-2 w-[80%] lg:w-96 focus:outline-none focus:ring focus:border-blue-300 sm:ml-[10px]' type='text' placeholder='search' />
+      <div className='md:ml-[-90px] lg:ml-[0px]'>
+        <input className='rounded-full px-6 py-2 w-[80%] md:w-[130%] lg:w-96 focus:outline-none focus:ring focus:border-blue-300 sm:ml-[10px]' type='text' placeholder='search' />
       </div>
       {/* Desktop Navigation */}
-      <ul className='hidden md:flex text-black font-bold space-x-4 font-sans'>
+      <ul className='hidden lg:flex text-black font-semibold space-x-4 font-sans'>
         {navItems.map(item => (
           <Link to={item.routeName}>
             <li
               key={item.id}
-              className='cursor-pointer'
+              className='cursor-pointer xl:text-xl 2xl:text-2xl'
             >
               {item.text}
               {/* {item.text === 'Videos' && (
@@ -57,7 +59,7 @@ const Navbar = () => {
       </ul>
 
       {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className='block md:hidden'>
+      <div onClick={handleNav} className='block lg:hidden'>
         {nav ? <AiOutlineClose size={20} color='black' /> : <AiOutlineMenu size={20} color='black' />}
       </div>
 

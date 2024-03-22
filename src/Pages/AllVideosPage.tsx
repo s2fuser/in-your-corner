@@ -21,7 +21,7 @@ const AllVideosPageComponet = () => {
             </div>
             <Movierow2/>
             <Movierow3/>
-            <DocumentriesAndMovies />
+            {/* <DocumentriesAndMovies /> */}
             {/* <StoriesComponent /> */}
             <BrowseVideoPage/>
             <Footer/>

@@ -17,6 +17,9 @@ const EmbeddedCodeModel = sequelize.define('embeddedcode', {
   },
   topics: {
     type: Sequelize.STRING
+  },
+  genre: {
+    type: Sequelize.STRING
   }
 });
 
