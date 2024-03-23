@@ -81,7 +81,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
   })
 
   const fetchData = async() => {
-    const response: any = await axios.get('http://inc.s2ftech.in/api/code');
+    const response: any = await axios.get('https://inc.s2ftech.in/api/code');
     setAllVideosDetails(response.data.data);
   }
 
@@ -163,6 +163,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         <TopicButton label="Pro-Life Voices" func={getDetailsOfClickingButton} />
         <TopicButton label="Stories" func={getDetailsOfClickingButton} />
         <TopicButton label="Trelle's Tunes" func={getDetailsOfClickingButton} />
+        <TopicButton label="In Your Corner TV Show" />
       </div>
       <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
       {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || filteredValuesOfVideos == undefined ? <div style={subHeadingContainerStyle}>

@@ -5,6 +5,7 @@ import FirstPageComponent from "../Components/FirstPage/FirstPage"
 import Footer2 from "../Components/Footer2/Footer2"
 import LandingPageNavigationBar from "../Components/LandingPageNavigation/LandingPageNavigation"
 
+
 const LandingPageComponet = () => {
     return (
         <div className="">

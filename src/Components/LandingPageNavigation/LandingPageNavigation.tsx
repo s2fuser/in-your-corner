@@ -18,7 +18,7 @@ const LandingPageNavigationBar = () => {
     { id: 4, text: 'Videos', routeName: "/Videos" },
     { id: 5, text: 'Contact', routeName: "/contact" },
     { id: 6, text: 'About Us', routeName: "/stories" },
-    { id: 7, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
+    // { id: 7, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
     { id: 7, text: 'Music', routeName: "/trellestune" },
   ];
 
@@ -47,7 +47,7 @@ const LandingPageNavigationBar = () => {
           <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>About Us</span>
         </Link>
         <Link to="/prolifevideos">
-          <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>ProLife Videos</span>
+          <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
         </Link>
         {/* <Link to="/trellestune">
           <span>Music</span>
