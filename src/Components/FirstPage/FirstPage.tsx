@@ -46,7 +46,7 @@ const FirstPageComponent = () => {
           {/* <Link  to="/Know"> */}
           <Link to="/know">
 
-            <button className='border-solid rounded-3xl border-2 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
+            <button className='border-solid rounded-3xl border-2  hover:text-red-800 hover:border-red-700 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
               Know More
             </button>
           </Link>
@@ -66,8 +66,8 @@ const FirstPageComponent = () => {
           <img className="h-60 w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px] " src={QuotationImage} alt="" />
         </div>
         <div className='text-center md:mt-[-145px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
-          <p className='text-red-900 text-3xl xl:text-4xl 2xl:text-5xl font-medium font-sans sm:mt-[40px]'>
-            In Your Corner <span className='font-light font-sans'>Productions</span>
+          <p className='text-red-900 md:text-3xl sm:text-2xl xl:text-4xl 2xl:text-5xl font-medium font-sans sm:mt-[40px]'>
+            In Your Corner <span className='font-light  font-sans'>Productions</span>
           </p>
           <p className='text-sm font-sans xl:text-xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
             acclaimed documentaries, gospel music, and ministry videos to help promote other faith-based non-profits.</p>
@@ -99,12 +99,12 @@ const FirstPageComponent = () => {
             </div>
             <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
               <Link to="/Videos">
-                <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button>
+                <button className="text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button>
               </Link>
             </div>
             <div className="text-center lg:pb-40 pb-20 font-sans">
-              <p className="text-red-900 text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
-                How Kerry Came to Faith in <span className="text-red-900 text-3xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">Jesus Christ</span>
+              <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
+                How Kerry Came to Faith in <span className="text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">Jesus Christ</span>
               </p>
               <p className='font-sans xl:text-2xl 2xl:text-3xl'>
                 {/* sm:pl-[10px] sm:pr-[10px] lg:w-[800px] lg:ml-[280px] xl:ml-[780px] */}
@@ -148,7 +148,7 @@ const FirstPageComponent = () => {
                 />
               </div>
             </div>
-            <div className="lg:h-screen h-[70vh] lg:h-[65vh] xl:h-[70vh] 2xl:h-[80vh] 3xl:h-[80vh] flex items-center mt-[0px] z-[99]">
+            <div className=" h-[52vh] sm:h-[42vh] md:h-[70vh] lg:h-[65vh] xl:h-[70vh] 2xl:h-[80vh] 3xl:h-[80vh] flex items-center justify-center   mt-[0px] z-[99]">
               <div
                 className="absolute inset-0 bg-black"
                 style={{
@@ -158,24 +158,24 @@ const FirstPageComponent = () => {
                 }}
               ></div>
 
-              <div className="z-[8] text-white grid place-items-center px-2 lg:pl-36">
+              <div className="z-[8] text-white grid place-items-center px-2 md:mt-[86px] lg:ml-[-612px] lg:pl-36">
                 <div className="text-center lg:text-left">
-                  <h2 className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold py-2 px-2 font-sans">
+                  <h2 className="sm:text-2xl md:text-3xl lg:text-3xl  xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-semibold md:font-bold py-2 px-2 font-sans">
                     Reach out to us today
                   </h2>
-                  <p className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans px-2">
+                  <p className="sm:text-2xl md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans px-2">
                     to fulfill all your ministry{" "}
-                    <span className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
+                    <span className="md:text-3xl lg:text-3xl sm:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-medium font-semibold font-sans">
                       video
                     </span>
                   </p>
-                  <h2 className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold pt-2 font-sans px-2 ">
+                  <h2 className="md:text-3xl lg:text-3xl sm:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-medium font-semibold md:font-bold pt-2 font-sans px-2 ">
                     production requirements.
                   </h2>
                 </div>
                 <div className="mt-14 text-center lg:text-left lg:ml-[-180px] xl:ml-[-260px] 2xl:ml-[-378px] 3xl:ml-[-500px]">
                   <Link to="/contact">
-                    <button className="border border-2 border-white py-2 px-10 rounded-3xl sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+                    <button className="border border-2  hover:text-black hover:border-white hover:bg-slate-100  border-white py-2 px-10 rounded-3xl sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
                       Contact Us
                     </button>
                   </Link>
