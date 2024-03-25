@@ -49,23 +49,23 @@ code {
 } */
 
 @keyframes fadeInOutWaveColors {
-  0%, 100% {
-    opacity: 0;
+  25%, 100% {
+    opacity: 1;
     transform: translateY(10px);
     color: white; /* Start color */
   }
-  25% {
+  50% {
     opacity: 1;
     transform: translateY(0);
-    color: blue; /* Middle color */
+    color: black; /* Middle color */
   }
   75% {
     opacity: 1;
     transform: translateY(0);
-    color: white; /* End color */
+    color: gray; /* End color */
   }
 }
 
 .animate-fade-in-out-wave-colors {
-  animation: fadeInOutWaveColors 4s ease-in-out infinite;
+  animation: fadeInOutWaveColors 10s ease-in-out infinite;
 }
