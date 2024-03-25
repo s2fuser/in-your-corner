@@ -4,7 +4,7 @@ import LandingPageNavigationBar from "../../Components/LandingPageNavigation/Lan
 import FooterComponent from "../../Components/Footer/Footer";
 import Navbar from "../../Components/NavigationBar/NavigationBar";
 
-const JoinOurCommunityButton = () => {
+const JoinOurCommunityPage = () => {
   return (
     <div>
       <div>
@@ -24,4 +24,4 @@ const JoinOurCommunityButton = () => {
   );
 };
 
-export default JoinOurCommunityButton ;
+export default JoinOurCommunityPage ;

@@ -22,6 +22,7 @@ import Know from "./Pages/Knowmore/Knowmore";
 // import Joincommunity from "./Pages/Join our community/join our community";
 import JoinOurCommunityButton from "./Components/JoinOurCommunity/JoinOurCommunitybutton";
 // import Join from "./Pages/Join our community/Join our community";
+import JoinOurCommunityPage from "./Pages/Join our community/Join our community";
 
 export const Routes1 = () => {
     return (
@@ -31,7 +32,7 @@ export const Routes1 = () => {
                 <Route path="/" element={<LandingPageComponet />} />
                 <Route path="/KnowMore" element={<Story />} />
                 <Route path="/Know" element={<Know />} />
-                <Route path="/JoinOurCommunity" element={<JoinOurCommunityButton/>} />
+                <Route path="/JoinOurCommunity" element={<JoinOurCommunityPage/>} />
                 <Route path="/Videos" element={<AllVideosPageComponet />} />
                 <Route path="/VideoDetails/:Code" element={<VideoDetailsPage />} />
                 <Route path="/blog" element={<Blog />} />

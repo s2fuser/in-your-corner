@@ -13,7 +13,7 @@ const Know = () => {
       <div>
         <Navbar />
       </div>
-      <div className="h-[50vh]"></div>
+      <div className="h-[50vh]"> Know More Page </div>
       <div>
         <FooterComponent />
       </div>

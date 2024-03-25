@@ -46,7 +46,7 @@ const LandingPageNavigationBar = () => {
         <Link to="/aboutUs">
           <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>About Us</span>
         </Link>
-        <Link to="/prolifevideos">
+        <Link to="/Videos">
           <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
         </Link>
         {/* <Link to="/trellestune">
