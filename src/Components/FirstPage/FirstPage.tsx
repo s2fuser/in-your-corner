@@ -86,7 +86,7 @@ const FirstPageComponent = () => {
               {/* <Link  to="/Know"> */}
               <Link to="/know">
 
-                <button className='border-solid rounded-3xl border-2 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
+                <button className='border-solid rounded-3xl border-2  hover:text-red-800 hover:border-red-700 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
                   Know More
                 </button>
               </Link>

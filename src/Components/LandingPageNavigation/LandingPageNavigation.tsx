@@ -28,31 +28,31 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
   ];
 
   return (
-    <div className='bg-slate-100 w-full p-7 flex items-center justify-between' style={{ backgroundColor: 'rgba(159, 159, 207, 0.65)' }}>
+    <div className='bg-slate-100 w-full p-7 flex items-center justify-between' style={{ backgroundColor: 'rgba(159, 159, 207, 0.65)'}}>
       <div className= ''>
         <Link to="/">
           <img className='w-24 lg:w-32 h-15' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
         </Link>
       </div>
-      <div className='hidden lg:flex gap-x-7 mr-3 md:ml-[25px] font-sans ml-[85px] xl:ml-[130px]'>
+      <div className='hidden lg:flex gap-x-7 mr-3 md:ml-[25px] md:mr-[186px] font-sans ml-[85px] xl:ml-[130px]'>
         <Link to="/">
-          <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>Home</span>
+          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Home</span>
         </Link>
         <Link to="/team">
-          <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>Team</span>
+          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Team</span>
         </Link>
         <Link to="/blog">
-          <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>Blogs</span>
+          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Blogs</span>
         </Link>
         {/* <span>Videos</span> */}
         <Link to="/contact">
-          <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>Contact</span>
+          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Contact</span>
         </Link>
         <Link to="/aboutUs">
-          <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>About Us</span>
+          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>About Us</span>
         </Link>
         <Link to="/Videos">
-          <span className='xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
+          <span className=' hover:opacity-50 hover:text-2xl hover:text-white  font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
         </Link>
         {/* <Link to="/trellestune">
           <span>Music</span>
