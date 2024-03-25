@@ -14,9 +14,9 @@ const Footer = () => {
                 <Link to="/">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Home</span>
                 </Link>
-                {/* <Link to="/stories"> */}
+                <Link to="/ourStory">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Our Story</span>
-                {/* </Link> */}
+                </Link>
                 <Link to="/team">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Team</span>
                 </Link>

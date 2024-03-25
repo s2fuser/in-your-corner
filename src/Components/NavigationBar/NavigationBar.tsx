@@ -19,7 +19,7 @@ const Navbar = () => {
     { id: 3, text: 'Blog', routeName: "/blog" },
     { id: 4, text: 'Videos', routeName: "/Videos" },
     { id: 5, text: 'Contact', routeName: "/contact" },
-    { id: 6, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
+    // { id: 6, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
     { id: 7, text: 'About Us', routeName: "/aboutUs" },
   ];
 

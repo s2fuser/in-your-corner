@@ -70,6 +70,30 @@ interface BrowseVideoProps {
 
 const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
 
+  const VideoDetails = [
+    {code : 'mq1V-YQKT6k' , topics: 'Legends of Boxing, The Evander Holyfield Story', genre: 'Documentries / Movies'},
+    {code : '_KPn9AHXF3I' , topics: 'Hope Lives in Hohenwald', genre: 'Documentries / Movies'},
+    {code : 'oa920gMvLaI' , topics: 'Forgotten No More', genre: 'Documentries / Movies'},
+    {code : 'ooBN3O9G6fA' , topics: 'Country Stages to Gospel Hymns', genre: 'Documentries / Movies'},
+    {code : 'Z3SJJ7v8RdU' , topics: 'Fight the Good Fight Documentary', genre: 'Documentries / Movies'},
+
+    {code : 'zeP1I8O8Q-o' , topics: `Famous Actress/Model Jennifer O'Neil`, genre: 'Pro-Life Voices'},
+    {code : 'zeP1I8O8Q-o' , topics: 'Coping With Abortion, The Path to Restoration', genre: 'Pro-Life Voices'},
+    {code : '_VfNxJweiGE' , topics: 'MlKs Niece Dr. Alveda Kings Story', genre: 'Pro-Life Voices'},
+    {code : 'voqmTrExetQ' , topics: 'Actress Lauren Romans Story', genre: 'Pro-Life Voices'},
+    {code : 'voqmTrExetQ' , topics: 'Pro-Life Activist Victoria Robinson', genre: 'Pro-Life Voices'},
+    {code : 'tBa8Ow8hPOI' , topics: 'Pro-Life Defender Scott Hord', genre: 'Pro-Life Voices'},
+
+    {code : 'ooBN3O9G6fA' , topics: 'Country Stages to Gospel Hymns (John Berry & Irlene Mandrell)', genre: 'Stories'},
+    {code : 'KqdfAh6QQCY' , topics: 'Zig Ziglar Last TV Interview', genre: 'Stories'},
+
+    {code : '-Nli8LqX4rU' , topics: 'Trelle, Nita & Benny Sing', genre: `Trelle's Tunes`},
+    {code : 'wftl7HABS8U' , topics: 'Trelle Sings Crossing Over', genre: `Trelle's Tunes`},
+    {code : 'rKl-jZDw2C0' , topics: 'Trelle Sings, My God is Real', genre: `Trelle's Tunes`}
+
+
+  ]
+
   // const { data } = useFetch('code');
   const DocumentsTargerRef = useRef<HTMLDivElement | null>(null);
   const ProLifeVoicesTargerRef = useRef<HTMLDivElement | null>(null);
@@ -96,13 +120,13 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
   }
 
   const getFilteredData = () => {
-    let FilteredItems = AllVideosDetails && AllVideosDetails.filter((items: any) => {
+    let FilteredItems = VideoDetails && VideoDetails.filter((items: any) => {
       if(SearchValue != undefined) {
         return items && items.genre.toLowerCase().includes(SearchValue.toLowerCase())
       }
     })
     if(SearchValue == '') {
-      setFilteredValuesOfAllVideos(AllVideosDetails)
+      setFilteredValuesOfAllVideos(VideoDetails)
     }
     else {
       setFilteredValuesOfAllVideos(FilteredItems)

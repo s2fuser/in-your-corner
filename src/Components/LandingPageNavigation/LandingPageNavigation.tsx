@@ -85,7 +85,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
           <Link to={item.routeName}>
             <li
             key={item.id}
-            className='p-4 border-b font-bold text-black rounded-xl cursor-pointer border-gray-600'
+            className='p-4 border-b font-bold text-stone-700 rounded-xl cursor-pointer border-gray-600'
             >
               {item.text}
             </li>

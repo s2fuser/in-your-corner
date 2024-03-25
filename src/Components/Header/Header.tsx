@@ -11,9 +11,9 @@ const Header = () => {
             </div>
             <div className='lg:mr-10 md:mr-10 flex items-center justify-center font-sans gap-6 lg:gap-6'>
                 <div className='flex items-center gap-6 lg:gap-6'>
-                    {/* <Link to="/stories"> */}
+                    <Link to="/ourStory">
                         <p className='font-sans'>Our Story</p>
-                    {/* </Link> */}
+                    </Link>
                     <Link to="/donate">
                         <p className='font-sans'>Give</p>
                     </Link>

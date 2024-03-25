@@ -23,6 +23,7 @@ import Know from "./Pages/Knowmore/Knowmore";
 import JoinOurCommunityButton from "./Components/JoinOurCommunity/JoinOurCommunitybutton";
 // import Join from "./Pages/Join our community/Join our community";
 import JoinOurCommunityPage from "./Pages/Join our community/Join our community";
+import SampleOurStory from "./Components/SampleStory/SampleStory";
 
 export const Routes1 = () => {
     return (
@@ -49,6 +50,7 @@ export const Routes1 = () => {
                 <Route path="/trellestune" element={<MusicComponent />} />
                 <Route path="/donate" element={<DonateComponent />} />
                 <Route path="/aboutUs" element={<AboutUsPage />} />
+                <Route path="/ourStory" element={<SampleOurStory />} />
             </Routes>
         </Router>
     )

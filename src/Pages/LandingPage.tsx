@@ -5,8 +5,7 @@ import FirstPageComponent from "../Components/FirstPage/FirstPage"
 import Footer2 from "../Components/Footer2/Footer2"
 import LandingPageNavigationBar from "../Components/LandingPageNavigation/LandingPageNavigation"
 
-
-const LandingPageComponet = () => {
+const LandingPageComponet = ( ) => {
     return (
         <div className="">
             <div>
@@ -16,7 +15,7 @@ const LandingPageComponet = () => {
                 <LandingPageNavigationBar/>
             </div> */}
             <div>
-                <FirstPageComponent/>
+                <FirstPageComponent />
             </div>
         </div>
     )
