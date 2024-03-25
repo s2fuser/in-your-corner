@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef  } from 'react';
 import VideoSlider from '../VideoSlider/VideoSlider';
 import VideoSlider2 from '../VideoSlider2/VideoSlider2';
 import DocumentriesAndMovies from '../../Pages/Documentries&Movies/DocumentriesAndMovies';
@@ -71,6 +71,10 @@ interface BrowseVideoProps {
 const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
 
   // const { data } = useFetch('code');
+  const DocumentsTargerRef = useRef<HTMLDivElement | null>(null);
+  const ProLifeVoicesTargerRef = useRef<HTMLDivElement | null>(null);
+  const StoriesTargerRef = useRef<HTMLDivElement | null>(null);
+  const TrellerTunesTargerRef = useRef<HTMLDivElement | null>(null);
 
   const [SearchValue, setSearchValue] = useState<any>();
   const [AllVideosDetails, setAllVideosDetails] = useState<any>();
@@ -145,13 +149,29 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
   // }
 
   const getDetailsOfClickingButton = (event: any) => {
-    let ButtonValue = event.target.textContent;
-    let FilteredItems = AllVideosDetails && AllVideosDetails.filter((items: any) => {
-      if(ButtonValue != undefined) {
-        return items && items.genre.toLowerCase().includes(ButtonValue.toLowerCase())
-      }
-    })
-    setFilteredValuesOfAllVideos(FilteredItems)
+    // let ButtonValue = event.target.textContent;
+    // let FilteredItems = AllVideosDetails && AllVideosDetails.filter((items: any) => {
+    //   if(ButtonValue != undefined) {
+    //     return items && items.genre.toLowerCase().includes(ButtonValue.toLowerCase())
+    //   }
+    // })
+    // setFilteredValuesOfAllVideos(FilteredItems)
+
+    if (DocumentsTargerRef.current && event.target.textContent == 'Documentries / Movies') {
+      DocumentsTargerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if (StoriesTargerRef.current && event.target.textContent == 'Stories') {
+      StoriesTargerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if (TrellerTunesTargerRef.current && event.target.textContent == `Trelle's Tunes`) {
+      TrellerTunesTargerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if (ProLifeVoicesTargerRef.current && event.target.textContent == 'Pro-Life Voices') {
+      ProLifeVoicesTargerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
 
   }
 
@@ -166,18 +186,18 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         <TopicButton label="In Your Corner TV Show" />
       </div>
       <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
-      {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || filteredValuesOfVideos == undefined ? <div style={subHeadingContainerStyle}>
-        <div className='ml-[-50px]'>
+      {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || (filteredValuesOfVideos == undefined || filteredValuesOfVideos == '') ? <div style={subHeadingContainerStyle}>
+        <div className='ml-[-50px]' ref={DocumentsTargerRef}>
           <p className=' font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Documentries / Movies</p>
           {/* style={subHeadingStyle} */}
           {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true" />
           </div> */}
-          <div className='sm:mt-[30px] sm:ml-[-25px]'>
+          <div className='sm:mt-[30px] sm:ml-[-25px]'>z
             <DocumentriesAndMovies title='false' />
           </div>
         </div>
-        <div className='ml-[-50px]'>
+        <div className='ml-[-50px]' ref={ProLifeVoicesTargerRef}>
           <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Pro-Life Voices</p>
           {/* style={subHeadingStyle} */}
           {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
@@ -188,7 +208,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             <ProLifeSlider title="false" />
           </div>
         </div>
-        <div className='ml-[-50px] sm:mt-[-50px]'>
+        <div className='ml-[-50px] sm:mt-[-50px]' ref={StoriesTargerRef}>
           <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Stories</p>
           {/* style={subHeadingStyle} */}
           {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
@@ -199,7 +219,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             <StoriesComponent title="false" />
           </div>
         </div>
-        <div className='ml-[-50px]'>
+        <div className='ml-[-50px]' ref={TrellerTunesTargerRef}>
           <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Trelle's Tunes</p>
           {/* style={subHeadingStyle} */}
           {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>

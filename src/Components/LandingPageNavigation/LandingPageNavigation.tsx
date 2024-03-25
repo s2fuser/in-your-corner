@@ -3,7 +3,12 @@ import SearchBarComponent from '../SearchBar/SearchBar';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-const LandingPageNavigationBar = () => {
+type Prop = {
+  searchValue?: string,
+  onChangeFunction?: any,
+}
+
+const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFunction } ) => {
 
   const [nav, setNav] = useState(false);
 
@@ -54,7 +59,7 @@ const LandingPageNavigationBar = () => {
         </Link> */}
       </div>
       <div className='lg:flex-1 sm:ml-[15px] md:ml-[-50px] '>
-        <SearchBarComponent/>
+        <SearchBarComponent searchValue={searchValue} onChangeFunction={onChangeFunction} />
       </div>
 
       <div onClick={handleNav} className='block lg:hidden'>
