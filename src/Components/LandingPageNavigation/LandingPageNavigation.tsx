@@ -24,7 +24,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
     { id: 5, text: 'Contact', routeName: "/contact" },
     { id: 6, text: 'About Us', routeName: "/stories" },
     // { id: 7, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
-    { id: 7, text: 'Music', routeName: "/trellestune" },
+    // { id: 7, text: 'Music', routeName: "/trellestune" },
   ];
 
   return (
@@ -45,14 +45,16 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
           <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Blogs</span>
         </Link>
         {/* <span>Videos</span> */}
+
+        <Link to="/Videos">
+          <span className=' hover:opacity-50 hover:text-2xl hover:text-white  font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
+        </Link>
+
         <Link to="/contact">
           <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Contact</span>
         </Link>
         <Link to="/aboutUs">
           <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>About Us</span>
-        </Link>
-        <Link to="/Videos">
-          <span className=' hover:opacity-50 hover:text-2xl hover:text-white  font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
         </Link>
         {/* <Link to="/trellestune">
           <span>Music</span>
