@@ -29,7 +29,7 @@ code {
   animation: wave 1s ease-in-out infinite;
 } */
 
-@keyframes fadeInOutWave {
+/* @keyframes fadeInOutWave {
   0% {
     opacity: 0;
     transform: translateY(10px);
@@ -46,4 +46,26 @@ code {
 
 .animate-fade-in-out-wave {
   animation: fadeInOutWave 2s ease-in-out infinite;
+} */
+
+@keyframes fadeInOutWaveColors {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(10px);
+    color: white; /* Start color */
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0);
+    color: blue; /* Middle color */
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+    color: white; /* End color */
+  }
+}
+
+.animate-fade-in-out-wave-colors {
+  animation: fadeInOutWaveColors 4s ease-in-out infinite;
 }

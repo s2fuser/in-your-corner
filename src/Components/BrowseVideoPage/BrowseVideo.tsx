@@ -129,7 +129,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
 
   const subHeadingContainerStyle: React.CSSProperties = {
     textAlign: 'left', // Align the subheading to the left
-    marginLeft: '100px', // Adjust the margin for additional spacing
+    // marginLeft: '100px', // Adjust the margin for additional spacing
     width: '100%', // Ensure the container takes full width
   };
 
@@ -187,18 +187,18 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
       </div>
       <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
       {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || (filteredValuesOfVideos == undefined || filteredValuesOfVideos == '') ? <div style={subHeadingContainerStyle}>
-        <div className='ml-[-50px]' ref={DocumentsTargerRef}>
-          <p className=' font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Documentries / Movies</p>
+        <div className='ml-[-50px] mr-[-50px] mt-[-50px]' ref={DocumentsTargerRef}>
+          <p className=' font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]'>Documentries / Movies</p>
           {/* style={subHeadingStyle} */}
           {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true" />
           </div> */}
-          <div className='sm:mt-[30px] sm:ml-[-25px]'>z
+          <div className='sm:mt-[30px] sm:ml-[-25px]'>
             <DocumentriesAndMovies title='false' />
           </div>
         </div>
-        <div className='ml-[-50px]' ref={ProLifeVoicesTargerRef}>
-          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Pro-Life Voices</p>
+        <div className='ml-[-50px] mr-[-50px] mt-[-50px]' ref={ProLifeVoicesTargerRef}>
+          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]'>Pro-Life Voices</p>
           {/* style={subHeadingStyle} */}
           {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true" />
@@ -208,8 +208,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             <ProLifeSlider title="false" />
           </div>
         </div>
-        <div className='ml-[-50px] sm:mt-[-50px]' ref={StoriesTargerRef}>
-          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Stories</p>
+        <div className='ml-[-50px] mr-[-50px] sm:mt-[-85px] mt-[-50px]' ref={StoriesTargerRef}>
+          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]'>Stories</p>
           {/* style={subHeadingStyle} */}
           {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true" />
@@ -219,8 +219,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             <StoriesComponent title="false" />
           </div>
         </div>
-        <div className='ml-[-50px]' ref={TrellerTunesTargerRef}>
-          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[-25px]'>Trelle's Tunes</p>
+        <div className='ml-[-50px] mr-[-50px] mt-[-50px]' ref={TrellerTunesTargerRef}>
+          <p className='font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]'>Trelle's Tunes</p>
           {/* style={subHeadingStyle} */}
           {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true" />

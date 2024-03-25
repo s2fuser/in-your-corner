@@ -195,7 +195,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             
             <Link to={`/VideoDetails/${"_VfNxJweiGE"}`} state={{title: "MlKs Niece Dr. Alveda Kings Story"}}>
                 <div className="px-1">
-                    <img src={`https://i.ytimg.com/vi/VfNxJweiGE/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+                    <img src={`https://i.ytimg.com/vi/_VfNxJweiGE/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                 </div>
             </Link>
             

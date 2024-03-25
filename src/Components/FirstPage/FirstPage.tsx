@@ -72,14 +72,14 @@ const FirstPageComponent = () => {
           </div>
           <div className='absolute lg:top-[25rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px] 2xl:ml-[70px] xl:mt-[-1px] 3xl:mt-[180px] xl:ml-[30px] 2xl:mt-[40px] 3xl:ml-[120px]'>
             <div className='sm:mt-[-310px] md:mt-[-329px]'>
-              <p className='animate-fade-in-out-wave text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans'>
+              <p className='animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans'>
                 featuring
               </p>
-              <p className='animate-fade-in-out-wave text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans'>
+              <p className='animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans'>
                 the testimonies of
               </p>
-              <p className='animate-fade-in-out-wave text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans'>
-                men and women <span className='text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans'>of faith</span>
+              <p className='animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans'>
+                men and women <span className='animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans'>of faith</span>
               </p>
             </div>
             <div className='lg:pt-8 sm:7 pt-[16px]'>
