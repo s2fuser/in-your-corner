@@ -10,6 +10,7 @@ import Footer2 from "../Footer2/Footer2";
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import '../../index.css';
 
 type Prop = {
     value?: any,
@@ -34,6 +35,7 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
     const navigate = useNavigate();
     var FilteredData: any;
     const [Title, setTitle] = useState<any>();
+    const [key, setKey] = useState(0);
 
     useEffect(() => {
         // setSearchValue(Id);
@@ -47,6 +49,20 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
         FilteredData = ValueOfSearch
         // navigate(`/firstPageSearch/${ValueOfSearch}`);
     }
+
+    const handleDataChange = () => {
+        // Update key to trigger re-render
+        setKey(prevKey => prevKey + 1);
+        // Reset animation by toggling a class
+        const elements = document.querySelectorAll('.wipe-transition');
+        elements.forEach(element => {
+          element.classList.remove('wipe-transition');
+          // Use requestAnimationFrame to trigger reflow
+          window.requestAnimationFrame(() => {
+            element.classList.add('wipe-transition');
+          });
+        });
+    };
 
     const VideoDetails = [
         {code : 'mq1V-YQKT6k' , topics: 'Legends of Boxing, The Evander Holyfield Story', genre: 'Documentries / Movies'},
@@ -77,6 +93,7 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
             return items && items.genre.toLowerCase().includes(ValueOfSearch.toLowerCase())
           }
         })
+        handleDataChange()
         if (ValueOfSearch == '') {
           setFilteredValuesOfAllVideos(VideoDetails)
 
@@ -116,12 +133,13 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
 
                                 {filteredValuesOfVideos && filteredValuesOfVideos.length > 0 && filteredValuesOfVideos?.map((element: any, index: number) => {
                                     return (
-                                        <div key={element.code} className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+                                        <div key={element.code} className="px-1 transition duration-150 ease-in-out transform hover:scale-100 wipe-transition">
                                             <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics }}>
-                                                <motion.img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" initial={{ rotate: -180 }} // Initial rotation
-  animate={{ rotate: 0 }} // Animated rotation
-  transition={{ duration: 0.5 }} key={element.code} />
+                                                <motion.img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"/>
                                             </Link>
+                                            {/* initial={{ rotate: -180 }} // Initial rotation
+  animate={{ rotate: 0 }} // Animated rotation
+  transition={{ duration: 0.5 }} key={element.code}  */}
                                         </div>
                                     )
                                 })}

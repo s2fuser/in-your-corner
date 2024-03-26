@@ -36,7 +36,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
   ];
 
   return (
-    <div className='bg-slate-100 w-full p-7 flex items-center justify-between' style={{ backgroundColor: 'rgba(159, 159, 207, 0.65)'}}>
+    <div className='bg-slate-100 w-full p-7 flex items-center md:justify-between lg:justify-around' style={{ backgroundColor: 'rgba(159, 159, 207, 0.65)'}}>
       <div className= ''>
         <Link to="/">
           <img className='w-24 lg:w-32 h-15' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
