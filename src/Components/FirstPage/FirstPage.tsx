@@ -19,8 +19,11 @@ import JoinOurCommunityButton from "../JoinOurCommunity/JoinOurCommunitybutton";
 import ShowSearchComponent from "../ShowSearch/ShowSearch";
 import axios from "axios";
 import '../../index.css';
+// import { useNavigate } from 'react-router-dom';
 
 const FirstPageComponent = () => {
+
+  // const navigate = useNavigate();
 
   const VideoDetails = [
     {code : 'mq1V-YQKT6k' , topics: 'Legends of Boxing, The Evander Holyfield Story', genre: 'Documentries / Movies'},
@@ -61,6 +64,7 @@ const FirstPageComponent = () => {
     let ValueOfSearch = event.target.value;
     setSearchValue(ValueOfSearch);
     getFilteredData()
+    // navigate(`/firstPageSearch/${ValueOfSearch}`);
   }
 
   const getFilteredData = () => {
@@ -85,15 +89,16 @@ const FirstPageComponent = () => {
           <LandingPageNavigationBar searchValue={SearchValue} onChangeFunction={functionToSetSearchValue} />
         </div>
 
-        {(SearchValue == undefined || SearchValue == '') ? <div>
+        {/* {(SearchValue == undefined || SearchValue == '') ?  */}
+        <div>
           <div className="relative w-full h-[100%] ">
-            <img src={Image1} alt="" className="object-cover object-center w-full lg:h-full h-[350px] md:h-[350px]" />
+            <img src={Image1} alt="" className="object-cover object-center w-full lg:h-full h-[350px] lg:h-[350px] md:h-[482px]" />
             <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent w-full h-full"></div>
             {/* lg:h-[21.9%] sm:h-[7.56%] */}
           </div>
           <div className='absolute lg:top-[25rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px] 2xl:ml-[70px] xl:mt-[-1px] 3xl:mt-[180px] xl:ml-[30px] 2xl:mt-[40px] 3xl:ml-[120px]'>
-            <div className='sm:mt-[-310px] md:mt-[-329px]'>
-              <p className='animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans'>
+            <div className='sm:mt-[-310px] md:mt-[-329px] lg:mt-[89px] xl:mt-[103px]'>
+              <p className='animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans md:mt-[-442px]'>
                 featuring
               </p>
               <p className='animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans'>
@@ -107,7 +112,10 @@ const FirstPageComponent = () => {
               {/* <Link  to="/Know"> */}
               <Link to="/know">
 
-                <button className='border-solid rounded-3xl border-2  hover:text-red-800 hover:border-red-700 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
+                {/* <button className='border-solid rounded-3xl border-2  hover:text-red-800 hover:border-red-700 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
+                  Know More
+                </button> */}
+                <button className='border-solid rounded-3xl border-2  hover:text-black hover:border-white hover:bg-slate-100 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
                   Know More
                 </button>
               </Link>
@@ -120,24 +128,43 @@ const FirstPageComponent = () => {
 
 
           </div>
-          <div className='relative mt-36 lg:mt-[-180px]'>
+          {/* <div className='relative mt-36 lg:mt-[-180px]'>
             <img src={WhiteBackgroundImage} alt="" className="mt-[-284px] h-[500px] w-[100%] sm:h-[240px] " />
-            <div className="absolute md:mt-[-85px] md:top-[175px] right-auto md:ml-[-9%] lg:ml-[0px] ">
+            <div className="absolute md:mt-[-85px] md:top-[175px] right-auto md:ml-[-9%] lg:ml-[0px] "> */}
               {/* <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' /> */}
-              <img className="h-60 w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px] " src={QuotationImage} alt="" />
+              {/* <img className="h-60 w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px] " src={QuotationImage} alt="" />
             </div>
-            <div className='text-center md:mt-[-145px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
-              <p className='text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-medium font-sans sm:mt-[40px]'>
+            <div className='text-center md:mt-[-145px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'> */}
+              {/* <p className='text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-medium font-sans sm:mt-[40px]'>
                 In Your Corner <span className='font-light font-sans'>Productions</span>
+              </p> */}
+              {/* <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl font-semibold font-sans">
+                In Your Corner{" "}
+                <span className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
+                  Productions
+                </span>
               </p>
               <p className='text-sm font-sans xl:text-xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
+                acclaimed documentaries, gospel music, and ministry videos to help promote other faith-based non-profits.</p>
+            </div>
+          </div> */}
+          <div className='relative mt-[-6rem] md:bottom-[6.5rem] lg:mt-[-200px]'>
+            <img src={WhiteBackgroundImage} alt="" className=" lg:h-[500px]  h-[500px]  md:h-[493px]  w-[100%] sm:h-[240px] lg:mt-[67px] " />
+            <div className="absolute md:mt-[-85px] md:top-[175px] right-auto md:ml-[-9%] lg:ml-[0px] ">
+              {/* <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' /> */}
+              <img className="h-60 md:h-[13rem] md:w-[20rem] w-96  lg:h-60 lg:w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px] " src={QuotationImage} alt="" />
+            </div>
+            <div className='text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'>
+              <p className='text-red-900 sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-medium font-sans sm:mt-[40px]'>
+                In Your Corner <span className='font-light font-sans'>Productions</span>
+              </p>
+              <p className='text-sm font-sans lg:text-2xl md:text-2xl xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
                 acclaimed documentaries, gospel music, and ministry videos to help promote other faith-based non-profits.</p>
             </div>
           </div>
           <div className='text-center'>
             <JoinOurCommunityButton />
           </div>
-
 
           <div className='mt-16 sm:mt-[0px]'>
 
@@ -161,15 +188,21 @@ const FirstPageComponent = () => {
                 <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                   <Link to="/Videos">
                     {/* <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button> */}
-                    <button className="text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button>
+                    <button className="mt-[-10px] text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button>
                   </Link>
                 </div>
                 <div className="text-center lg:pb-40 pb-20 font-sans">
                   {/* <p className="text-red-900 text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
                     How Kerry Came to Faith in <span className="text-red-900 text-3xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">Jesus Christ</span>
                   </p> */}
-                  <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
+                  {/* <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
                     How Kerry Came to Faith in <span className="text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">Jesus Christ</span>
+                  </p> */}
+                  <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
+                    How Kerry Came to Faith in{" "}
+                    <span className="text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">
+                      Jesus Christ
+                    </span>
                   </p>
                   <p className='font-sans xl:text-2xl 2xl:text-3xl'>
                     {/* sm:pl-[10px] sm:pr-[10px] lg:w-[800px] lg:ml-[280px] xl:ml-[780px] */}
@@ -286,9 +319,10 @@ const FirstPageComponent = () => {
               </div>
             </div>
           </div>
-        </div> : <div>
+        </div> 
+        {/* : <div>
           <ShowSearchComponent value={filteredValuesOfVideos} />
-        </div>}
+        </div>} */}
 
         <div className="">
           <FooterComponent />

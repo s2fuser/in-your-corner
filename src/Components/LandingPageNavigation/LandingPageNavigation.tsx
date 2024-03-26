@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import SearchBarComponent from '../SearchBar/SearchBar';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { IoSearch } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 type Prop = {
   searchValue?: string,
@@ -11,10 +13,15 @@ type Prop = {
 const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFunction } ) => {
 
   const [nav, setNav] = useState(false);
+  const navigate = useNavigate();
 
   const handleNav = () => {
     setNav(!nav);
   };
+
+  const navigateFunction = () => {
+    navigate(`/firstPageSearch/${searchValue}`);
+  }
 
   const navItems = [
     { id: 1, text: 'Home', routeName: "/" },
@@ -36,32 +43,37 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
       </div>
       <div className='hidden lg:flex gap-x-7 mr-3 md:ml-[25px] md:mr-[186px] font-sans ml-[85px] xl:ml-[130px]'>
         <Link to="/">
-          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Home</span>
+          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Home</span>
         </Link>
         <Link to="/team">
-          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Team</span>
+          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Team</span>
         </Link>
         <Link to="/blog">
-          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Blogs</span>
+          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Blogs</span>
         </Link>
         {/* <span>Videos</span> */}
 
         <Link to="/Videos">
-          <span className=' hover:opacity-50 hover:text-2xl hover:text-white  font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
+          <span className=' hover:opacity-50 hover:text-white  font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
         </Link>
 
         <Link to="/contact">
-          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Contact</span>
+          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Contact</span>
         </Link>
         <Link to="/aboutUs">
-          <span className='hover:opacity-50 hover:text-2xl hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>About Us</span>
+          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>About Us</span>
         </Link>
         {/* <Link to="/trellestune">
           <span>Music</span>
         </Link> */}
       </div>
-      <div className='lg:flex-1 sm:ml-[15px] md:ml-[-50px] '>
-        <SearchBarComponent searchValue={searchValue} onChangeFunction={onChangeFunction} />
+      <div className='flex justify-center items-center sm:ml-[15px] md:ml-[-50px] '>
+        <div>
+          <SearchBarComponent searchValue={searchValue} onChangeFunction={onChangeFunction} />
+        </div>
+        <div className='sm:ml-[-30px] md:ml-[60px] lg:ml-[10px] text-white' onClick={navigateFunction}>
+          <IoSearch />
+        </div>
       </div>
 
       <div onClick={handleNav} className='block lg:hidden'>
@@ -85,7 +97,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
           <Link to={item.routeName}>
             <li
             key={item.id}
-            className='p-4 border-b font-bold text-stone-700 rounded-xl cursor-pointer border-gray-600'
+            className='p-4 border-b font-bold text-center text-stone-700 rounded-xl cursor-pointer border-gray-600'
             >
               {item.text}
             </li>

@@ -24,6 +24,7 @@ import JoinOurCommunityButton from "./Components/JoinOurCommunity/JoinOurCommuni
 // import Join from "./Pages/Join our community/Join our community";
 import JoinOurCommunityPage from "./Pages/Join our community/Join our community";
 import SampleOurStory from "./Components/SampleStory/SampleStory";
+import ShowSearchComponent from "./Components/ShowSearch/ShowSearch";
 
 export const Routes1 = () => {
     return (
@@ -51,6 +52,7 @@ export const Routes1 = () => {
                 <Route path="/donate" element={<DonateComponent />} />
                 <Route path="/aboutUs" element={<AboutUsPage />} />
                 <Route path="/ourStory" element={<SampleOurStory />} />
+                <Route path="/firstPageSearch/:Id" element={<ShowSearchComponent />} />
             </Routes>
         </Router>
     )
