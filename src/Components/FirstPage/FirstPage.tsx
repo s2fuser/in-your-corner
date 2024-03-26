@@ -133,8 +133,8 @@ const FirstPageComponent = () => {
 
   const getFilteredData = () => {
     let FilteredItems =
-      VideoDetails &&
-      VideoDetails.filter((items: any) => {
+      AllVideosDetails &&
+      AllVideosDetails.filter((items: any) => {
         if (SearchValue != undefined) {
           return (
             items &&
@@ -143,7 +143,7 @@ const FirstPageComponent = () => {
         }
       });
     if (SearchValue == "") {
-      setFilteredValuesOfAllVideos(VideoDetails);
+      setFilteredValuesOfAllVideos(AllVideosDetails);
     } else {
       setFilteredValuesOfAllVideos(FilteredItems);
     }

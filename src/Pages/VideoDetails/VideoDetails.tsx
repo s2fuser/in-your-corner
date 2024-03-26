@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import ButtonComponent from "../../Components/Button/Button";
 import Back from "../../Assets/Images/Background1.png";
 import '../../index.css';
+import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const VideoDetailsPage = () => {
   const location = useLocation();
@@ -178,12 +179,13 @@ const VideoDetailsPage = () => {
         <Header />
       </div>
       <div>
-        <Navbar />
+        <LandingPageNavigationBar />
       </div>
       <div className="text-center pt-10 pb-4">
-        <h2 className="text-3xl font-semibold text-center mt-[-20px] font-sans sm:text-2xl">
+        {/* <h2 className="text-3xl font-semibold text-center mt-[-20px] font-sans sm:text-2xl">
           {title}
-        </h2>
+        </h2> */}
+         <h2 className="sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold font-sans">{title}</h2>
       </div>
 
       <div className="px-2">
