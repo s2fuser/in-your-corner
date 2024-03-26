@@ -6,6 +6,7 @@ import FooterComponent from "../../Components/Footer/Footer";
 import Footer2 from "../../Components/Footer2/Footer2";
 import { Link } from "react-router-dom";
 import NavigationBar from "../../Components/NavigationBar/NavigationBar";
+import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const Story = () => {
     return (
@@ -14,7 +15,7 @@ const Story = () => {
                 <Header/>
             </div>
             <div>
-                <NavigationBar />
+                <LandingPageNavigationBar />
             </div>
             <div className="text-center pt-10 pb-4">
                 <h2 className="font-bold text-4xl font-nunito">I Am Second Day</h2>

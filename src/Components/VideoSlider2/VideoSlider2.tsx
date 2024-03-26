@@ -233,7 +233,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"zeP1I8O8Q-o"}`}
         state={{ title: "Famous Actress/Model Jennifer O'Neil" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/zeP1I8O8Q-o/maxresdefault.jpg`}
             alt=""
@@ -246,7 +246,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"zeP1I8O8Q-o"}`}
         state={{ title: "Coping With Abortion, The Path to Restoration" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/zeP1I8O8Q-o/maxresdefault.jpg`}
             alt=""
@@ -259,7 +259,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"_VfNxJweiGE"}`}
         state={{ title: "MlKs Niece Dr. Alveda Kings Story" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/_VfNxJweiGE/maxresdefault.jpg`}
             alt=""
@@ -272,7 +272,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"voqmTrExetQ"}`}
         state={{ title: "Actress Lauren Romans Story" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/voqmTrExetQ/maxresdefault.jpg`}
             alt=""
@@ -285,7 +285,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"voqmTrExetQ"}`}
         state={{ title: "Pro-Life Activist Victoria Robinson" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/voqmTrExetQ/maxresdefault.jpg`}
             alt=""
@@ -298,7 +298,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"tBa8Ow8hPOI"}`}
         state={{ title: "Pro-Life Defender Scott Hord" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/tBa8Ow8hPOI/maxresdefault.jpg`}
             alt=""
@@ -358,7 +358,7 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
             "Country Stages to Gospel Hymns (John Berry & Irlene Mandrell)",
         }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`}
             alt=""
@@ -371,7 +371,7 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"KqdfAh6QQCY"}`}
         state={{ title: "Zig Ziglar Last TV Interview" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/KqdfAh6QQCY/maxresdefault.jpg`}
             alt=""
@@ -428,7 +428,7 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"-Nli8LqX4rU"}`}
         state={{ title: "Trelle, Nita & Benny Sing" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/-Nli8LqX4rU/maxresdefault.jpg`}
             alt=""
@@ -441,7 +441,7 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"wftl7HABS8U"}`}
         state={{ title: "Trelle Sings Crossing Over" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/wftl7HABS8U/maxresdefault.jpg`}
             alt=""
@@ -454,7 +454,7 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"Z3SJJ7v8RdU"}`}
         state={{ title: "Trelle Sings, My God is Real" }}
       >
-        <div className="px-1">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
             src={`https://i.ytimg.com/vi/Z3SJJ7v8RdU/maxresdefault.jpg`}
             alt=""

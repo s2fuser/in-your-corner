@@ -6,6 +6,7 @@ import Footer2 from "../../Components/Footer2/Footer2";
 import ProLifeSlider from "./ProLifeSlider";
 import StoriesComponent from "./Stories";
 import TrellesTuneComponent from "./TrellesTune";
+import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 
 
@@ -17,7 +18,7 @@ const ProLifeVideos = () => {
                 <Header />
             </div>
             <div>
-                <NavigationBar />
+                <LandingPageNavigationBar />
             </div>
             <div>
                 <ProLifeSlider />

@@ -16,6 +16,7 @@
     "@types/react-youtube": "^7.10.0",
     "@types/slick-carousel": "^1.6.40",
     "axios": "^1.6.7",
+    "framer-motion": "^11.0.20",
     "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-animations": "^1.0.0",

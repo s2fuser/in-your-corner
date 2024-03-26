@@ -20,7 +20,8 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
   };
 
   const navigateFunction = () => {
-    navigate(`/firstPageSearch/${searchValue}`);
+    navigate(`/firstPageSearch`);
+    // /${searchValue}
   }
 
   const navItems = [
@@ -68,12 +69,12 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
         </Link> */}
       </div>
       <div className='flex justify-center items-center sm:ml-[15px] md:ml-[-50px] '>
-        <div>
+        <div onClick={navigateFunction}>
           <SearchBarComponent searchValue={searchValue} onChangeFunction={onChangeFunction} />
         </div>
-        <div className='sm:ml-[-30px] md:ml-[60px] lg:ml-[10px] text-white' onClick={navigateFunction}>
+        {/* <div className='sm:ml-[-30px] md:ml-[60px] lg:ml-[10px] text-white' onClick={navigateFunction}>
           <IoSearch />
-        </div>
+        </div> */}
       </div>
 
       <div onClick={handleNav} className='block lg:hidden'>

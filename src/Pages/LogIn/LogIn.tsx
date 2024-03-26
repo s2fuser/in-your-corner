@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const LogInPage = () => {
     const [Email, setEmail] = useState('');
@@ -39,7 +40,7 @@ const LogInPage = () => {
     return (
         <div>
             <Header />
-            <Navbar />
+            <LandingPageNavigationBar />
             <div className="mt-[50px]">
                 <EmailComponent Email={Email} setEmail={setEmail} />
             </div>

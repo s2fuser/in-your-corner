@@ -4,6 +4,7 @@ import Navbar from "../../Components/NavigationBar/NavigationBar";
 import AboutUsComponent from "../../Components/AboutUs/AboutUs";
 import Footer from "../../Components/Footer/Footer";
 import Footer2 from "../../Components/Footer2/Footer2";
+import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const AboutUsPage = () => {
     return  (
@@ -12,7 +13,7 @@ const AboutUsPage = () => {
                 <Header />
             </div>
             <div>
-                <Navbar />
+                <LandingPageNavigationBar />
             </div>
             <div>
                 <AboutUsComponent />

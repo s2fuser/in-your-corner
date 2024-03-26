@@ -11,7 +11,7 @@ const Know = () => {
         <Header />
       </div>
       <div>
-        <Navbar />
+        <LandingPageNavigationBar />
       </div>
       <div className="h-[50vh]"> Know More Page </div>
       <div>

@@ -9,6 +9,7 @@ import Footer from "../Footer/Footer";
 import Footer2 from "../Footer2/Footer2";
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 type Prop = {
     value?: any,
@@ -32,16 +33,17 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
     const [SearchValue, setSearchValue] = useState<any>(); 
     const navigate = useNavigate();
     var FilteredData: any;
+    const [Title, setTitle] = useState<any>();
 
     useEffect(() => {
         // setSearchValue(Id);
-        getFilteredData()
+        // getFilteredData()
     }, []);
 
     const functionToSetSearchValue = (event: any) => {
         let ValueOfSearch = event.target.value;
         setSearchValue(ValueOfSearch);
-        getFilteredData()
+        getFilteredData(ValueOfSearch)
         FilteredData = ValueOfSearch
         // navigate(`/firstPageSearch/${ValueOfSearch}`);
     }
@@ -68,17 +70,29 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
         {code : 'rKl-jZDw2C0' , topics: 'Trelle Sings, My God is Real', genre: `Trelle's Tunes`}
     ]
 
-    const getFilteredData = () => {
+    const getFilteredData = (ValueOfSearch: any) => {
+        console.log(SearchValue);
         let FilteredItems = VideoDetails && VideoDetails.filter((items: any) => {
-          if (Id != undefined) {
-            return items && items.genre.toLowerCase().includes(Id.toLowerCase())
+          if (ValueOfSearch != undefined) {
+            return items && items.genre.toLowerCase().includes(ValueOfSearch.toLowerCase())
           }
         })
-        if (Id == '') {
+        if (ValueOfSearch == '') {
           setFilteredValuesOfAllVideos(VideoDetails)
+
+          const uniqueGenres = Array.from(new Set(VideoDetails.map(item => item.genre)));
+
+          // Check if there are multiple genres
+          const hasMultipleGenres = uniqueGenres.length > 1;
+
+          // Create an array of titles based on whether there are multiple genres
+          const titles = hasMultipleGenres ? ['All Videos'] : uniqueGenres;
+          setTitle(titles);
         }
         else {
           setFilteredValuesOfAllVideos(FilteredItems)
+          const titles = ''
+          setTitle(titles);
         }
     }
 
@@ -88,22 +102,25 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
                 <Header />
             </div>
             <div>
-                <LandingPageNavigationBar searchValue={FilteredData} onChangeFunction={functionToSetSearchValue}/>
+                <LandingPageNavigationBar searchValue={SearchValue} onChangeFunction={functionToSetSearchValue}/>
             </div>
             <div>
                 <div className="h-screen pt-[20px]">
                     {filteredValuesOfVideos && filteredValuesOfVideos.length > 0 ? <div>
                         <div className="text-2xl xl:text-3xl 2xl:text-4xl mb-[50px] mt-[10px] text-black ml-[20px]">
-                        {filteredValuesOfVideos && filteredValuesOfVideos.length > 0 ? 
+                        {Title && Title.length > 0 ? 
+                        <div>{Title[0]}</div> : filteredValuesOfVideos && filteredValuesOfVideos.length > 0 ? 
                         <div>{filteredValuesOfVideos[0].genre}</div> : <div></div>}
                         </div>
                             <Slider {...settings} className="w-[100%] flex justify-center overflow-x-hidden">
 
                                 {filteredValuesOfVideos && filteredValuesOfVideos.length > 0 && filteredValuesOfVideos?.map((element: any, index: number) => {
                                     return (
-                                        <div key={index} className="px-1">
+                                        <div key={element.code} className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
                                             <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics }}>
-                                                <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+                                                <motion.img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" initial={{ rotate: -180 }} // Initial rotation
+  animate={{ rotate: 0 }} // Animated rotation
+  transition={{ duration: 0.5 }} key={element.code} />
                                             </Link>
                                         </div>
                                     )

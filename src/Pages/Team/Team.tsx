@@ -11,7 +11,7 @@ const Team = () => {
         <Header />
       </div>
       <div>
-        <Navbar />
+        <LandingPageNavigationBar />
       </div>
       <div className="h-[50vh]">Team Page</div>
       <div>

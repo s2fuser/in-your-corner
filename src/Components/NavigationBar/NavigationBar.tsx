@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import Logo from "../../Assets/Images/logo.png"
+import Logo from "../../Assets/Images/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
+  const navigate = useNavigate();
 
   // Toggle function to handle the navbar's display
   const handleNav = () => {
@@ -23,6 +25,11 @@ const Navbar = () => {
     { id: 7, text: 'About Us', routeName: "/aboutUs" },
   ];
 
+  const navigateFunction = () => {
+    navigate(`/firstPageSearch`);
+    // /${searchValue}
+  }
+
   return (
     <div className='bg-slate-100 w-full p-7 flex justify-between items-center'>
       {/* Logo */}
@@ -31,7 +38,7 @@ const Navbar = () => {
           <img className='w-24 lg:w-32 h-15' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
         </Link>
       </div>
-      <div className='md:ml-[-90px] lg:ml-[0px]'>
+      <div className='md:ml-[-90px] lg:ml-[0px]' onClick={navigateFunction}>
         <input className='rounded-full px-6 py-2 w-[80%] md:w-[130%] lg:w-96 focus:outline-none focus:ring focus:border-blue-300 sm:ml-[10px]' type='text' placeholder='search' />
       </div>
       {/* Desktop Navigation */}
@@ -40,7 +47,7 @@ const Navbar = () => {
           <Link to={item.routeName}>
             <li
               key={item.id}
-              className='cursor-pointer xl:text-xl 2xl:text-2xl'
+              className='hover:opacity-50 hover:text-gray font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'
             >
               {item.text}
               {/* {item.text === 'Videos' && (

@@ -52,7 +52,8 @@ export const Routes1 = () => {
                 <Route path="/donate" element={<DonateComponent />} />
                 <Route path="/aboutUs" element={<AboutUsPage />} />
                 <Route path="/ourStory" element={<SampleOurStory />} />
-                <Route path="/firstPageSearch/:Id" element={<ShowSearchComponent />} />
+                <Route path="/firstPageSearch" element={<ShowSearchComponent />} />
+                {/* /:Id */}
             </Routes>
         </Router>
     )

@@ -6,6 +6,7 @@ import Footer2 from "../../Components/Footer2/Footer2";
 import Navbar from "../../Components/NavigationBar/NavigationBar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const RegisterPage = () => {
     const [Email, setEmail] = useState('');
@@ -17,7 +18,7 @@ const RegisterPage = () => {
     return (
         <div>
             <Header />
-            <Navbar />
+            <LandingPageNavigationBar />
             <div className="mt-[80px] mb-[50px]">
                 <EmailComponent Email={Email} setEmail={setEmail} />
             </div>

@@ -3,6 +3,7 @@ import Header from "../../Components/Header/Header";
 import Navbar from "../../Components/NavigationBar/NavigationBar";
 import Footer from "../../Components/Footer/Footer";
 import Footer2 from "../../Components/Footer2/Footer2";
+import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const DonateComponent = () => {
     return (
@@ -11,7 +12,7 @@ const DonateComponent = () => {
                 <Header />
             </div>
             <div>
-                <Navbar />
+                <LandingPageNavigationBar />
             </div>
             <div className="h-[50vh]">Donate Page</div>
             <div>

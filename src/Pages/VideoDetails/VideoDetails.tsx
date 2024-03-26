@@ -11,7 +11,8 @@ import YouTube from 'react-youtube';
 import Contact from "../../Components/Contact/Contact";
 import { Link } from "react-router-dom";
 import ButtonComponent from "../../Components/Button/Button";
-import Back from '../../Assets/Images/Background1.png'
+import Back from '../../Assets/Images/Background1.png';
+import '../../index.css';
 
 const VideoDetailsPage = () => {
 
@@ -216,6 +217,9 @@ const VideoDetailsPage = () => {
                 </div>
 
             <div className="flex justify-center px-2 pt-2 pb-8 lg:mt-[80px] xl:mt-[80px] 2xl:mt-[150px] 3xl:mt-[80px] md:mt-[50px]">
+                {/* <div className="wave-background">
+                    <div className="wave"></div>
+                </div> */}
                 <Link to="/Videos">
                     <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 border border-2 border-red-700 rounded-3xl font-medium" />
                 </Link>

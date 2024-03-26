@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div className="mt-14 text-center lg:text-left">
                         <Link to="/contact">
-                            <button className=" border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans" >Contact Us</button>
+                            <button className="hover:text-black hover:border-white hover:bg-slate-100 border-2 border-white py-2 px-10 rounded-3xl lg:text-2xl text-2xl font-sans" >Contact Us</button>
                         </Link>
                     </div>
                 </div>

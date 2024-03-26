@@ -11,7 +11,7 @@ const JoinOurCommunityPage = () => {
         <Header />
       </div>
       <div>
-        <Navbar />
+        <LandingPageNavigationBar />
       </div>
       <div className="h-[50vh]">Join our Community Page</div>
       <div>

@@ -9,12 +9,13 @@ import Footer from "../Components/Footer/Footer";
 import Footer2 from "../Components/Footer2/Footer2";
 import StoriesComponent from "./ProLifeVideos/Stories";
 import DocumentriesAndMovies from "./Documentries&Movies/DocumentriesAndMovies";
+import LandingPageNavigationBar from "../Components/LandingPageNavigation/LandingPageNavigation";
 
 const AllVideosPageComponet = () => {
     return (
         <div className="overflow-x-hidden">
             <Header/>
-            <NavigationBar/>
+            <LandingPageNavigationBar/>
             <Mainheading/>
             <div className="">
                 <Movierow1/>

@@ -8,6 +8,7 @@ import TrellesTuneComponent from '../../Pages/ProLifeVideos/TrellesTune';
 import useFetch from '../../hooks/useFetchHook';
 import axios from 'axios';
 import TopicWiseSearchComponent from '../TopicSearch/TopicSearch';
+import { useNavigate } from 'react-router-dom';
 
 interface ButtonProps {
   label: string,
@@ -31,12 +32,15 @@ const TopicButton: React.FC<ButtonProps> = ({ label, func }) => {
     fontWeight: 'bold', // Make text bold
   };
 
-  return <button className='bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]' onClick={func} >{label}</button>;
+  return <button className='border-solid rounded-3xl border-2 hover:text-red-600 hover:border-white hover:bg-slate-100 bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]' onClick={func} >{label}</button>;
   // style={buttonStyle}
 };
 
 
 const SearchBox: React.FC<SearchProp> = ( { value, getValue } ) => {
+
+  const navigate = useNavigate();
+  
   const searchBoxStyle: React.CSSProperties = {
     background: '#ffffff',
     borderRadius: '25px', // Adjust the value to control the curvature
@@ -55,8 +59,13 @@ const SearchBox: React.FC<SearchProp> = ( { value, getValue } ) => {
     height: '100%', // Ensure the input takes full height
   };
 
+  const navigateFunction = () => {
+    navigate(`/firstPageSearch`);
+    // /${searchValue}
+  }
+
   return (
-    <div className="rounded-[25px] py-[5px] px-[15px] my-[15px] flex items-center bg-white lg:w-[40%] w-[100%]">
+    <div onClick={navigateFunction} className="rounded-[25px] py-[5px] px-[15px] my-[15px] flex items-center bg-white lg:w-[40%] w-[100%]">
       {/* style={searchBoxStyle} */}
       <input value={value} type="text" placeholder="Search" className='w-[100%] h-[100%] border-none outline-none lg:w-[400px] black' onChange={getValue} />
     </div>
@@ -93,6 +102,13 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
 
 
   ]
+
+  const navigate = useNavigate();
+
+  const navigateFunction = () => {
+    navigate(`/firstPageSearch`);
+    // /${searchValue}
+  }
 
   // const { data } = useFetch('code');
   const DocumentsTargerRef = useRef<HTMLDivElement | null>(null);
@@ -209,7 +225,9 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         <TopicButton label="Trelle's Tunes" func={getDetailsOfClickingButton} />
         <TopicButton label="In Your Corner TV Show" />
       </div>
-      <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
+      {/* <div onClick={navigateFunction}> */}
+        <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
+      {/* </div> */}
       {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || (filteredValuesOfVideos == undefined || filteredValuesOfVideos == '') ? <div style={subHeadingContainerStyle}>
         <div className='ml-[-50px] mr-[-50px] mt-[-50px]' ref={DocumentsTargerRef}>
           <p className=' font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]'>Documentries / Movies</p>

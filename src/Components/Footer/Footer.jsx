@@ -20,9 +20,6 @@ const Footer = () => {
                 <Link to="/team">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Team</span>
                 </Link>
-                <Link to="/contact">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Contact us</span>
-                </Link>
                 <Link to="/blog">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Blogs</span>
                 </Link>
@@ -33,7 +30,13 @@ const Footer = () => {
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Music</span>
                 </Link> */}
                 <Link to="/donate">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px]'>Donate</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Donate</span>
+                </Link>
+                <Link to="/contact">
+                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Contact us</span>
+                </Link>
+                <Link to="/aboutUs">
+                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px]'>About us</span>
                 </Link>
             </div>
         </div>

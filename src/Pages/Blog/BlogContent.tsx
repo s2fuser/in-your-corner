@@ -12,7 +12,7 @@ const BlogContent = () => {
         <Header />
       </div>
       <div>
-        <Navbar />
+        <LandingPageNavigationBar />
       </div>
       <div className="sm:mb-[50px]">
         <SingleBlogContent />
