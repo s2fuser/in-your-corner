@@ -303,10 +303,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         <TopicButton label="Trelle's Tunes" func={getDetailsOfClickingButton} />
         <TopicButton label="In Your Corner TV Show" />
       </div>
-      {/* <div onClick={navigateFunction}> */}
         <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
-      {/* </div> */}
-      {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || (filteredValuesOfVideos == undefined || filteredValuesOfVideos == '') ? <div style={subHeadingContainerStyle}>
+      {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || (filteredValuesOfVideos == undefined || filteredValuesOfVideos == '') ? (<div style={subHeadingContainerStyle}>
         <div className='ml-[-50px] mr-[-50px] mt-[-50px]' ref={DocumentsTargerRef}>
           <p className=' font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]'>Documentries / Movies</p>
           {/* style={subHeadingStyle} */}
@@ -356,20 +354,10 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             <p className="font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
               Trelle's Tunes
             </p>
-            {/* style={subHeadingStyle} */}
-            {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
-            <VideoSlider2 type="true" />
-          </div> */}
-
             <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">
               <TrellesTuneComponent title="false" />
             </div>
           </div>
-          {/*        
-        <h1 style={subHeadingStyle}>ADDICTION</h1>
-        <h1 style={subHeadingStyle}>ANGER & FORGIVENESS</h1>
-        <h1 style={subHeadingStyle}>ANXIETY & DEPRESSION</h1>
-        <h1 style={subHeadingStyle}>CANCER</h1> */}
         </div>
       ) : (
         <div className="w-[100%] h-[600px] sm:mb-[-400px]">
