@@ -13,7 +13,7 @@ const Know = () => {
       <div>
         <LandingPageNavigationBar />
       </div>
-      <div className="h-[50vh]"> Know More Page </div>
+      <div className="h-[50vh]"> Coming Soon </div>
       <div>
         <FooterComponent />
       </div>
@@ -24,4 +24,4 @@ const Know = () => {
   );
 };
 
-export default Know ;
+export default Know;

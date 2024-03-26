@@ -13,7 +13,7 @@ const Team = () => {
       <div>
         <LandingPageNavigationBar />
       </div>
-      <div className="h-[50vh]">Team Page</div>
+      <div className="h-[50vh]">Coming Soon</div>
       <div>
         <FooterComponent />
       </div>
