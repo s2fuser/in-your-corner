@@ -13,7 +13,7 @@ const JoinOurCommunityPage = () => {
       <div>
         <Navbar />
       </div>
-      <div className="h-[50vh]">Join our Community Page</div>
+      <div className="h-[50vh]">Coming Soon </div>
       <div>
         <FooterComponent />
       </div>
@@ -24,4 +24,4 @@ const JoinOurCommunityPage = () => {
   );
 };
 
-export default JoinOurCommunityPage ;
+export default JoinOurCommunityPage;

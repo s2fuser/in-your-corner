@@ -12,7 +12,7 @@ const ContactUsPage = () => {
       <div>
         <Navbar />
       </div>
-      <div className="h-[50vh]">Contact Page</div>
+      <div className="h-[50vh]">Coming Soon</div>
       <div>
         <FooterComponent />
       </div>
