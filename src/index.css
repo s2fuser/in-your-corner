@@ -69,3 +69,10 @@ code {
 .animate-fade-in-out-wave-colors {
   animation: fadeInOutWaveColors 10s ease-in-out infinite;
 }
+.background-div {
+  background-image: url('./Assets/Images/wave\ \(2\).svg');
+  /* Add other background properties like background-size, background-repeat, etc. as needed */
+}
+
+/* Custom.css */
+
