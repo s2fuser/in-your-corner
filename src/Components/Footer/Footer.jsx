@@ -1,6 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import WhiteLogo from "../../Assets/Images/whiteLogo.png"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import WhiteLogo from "../../Assets/Images/whiteLogo.png";
+
+const DonateURL = 'https://give.tithe.ly/?formId=9379b56b-bd7f-4cbf-b2fb-b39ff1cc093b';
 
 const Footer = () => {
     return (
@@ -29,9 +31,11 @@ const Footer = () => {
                 {/* <Link to="/trellestune">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Music</span>
                 </Link> */}
-                <Link to="/donate">
+                {/* <Link to="/donate"> */}
+                <a href={DonateURL} target="_blank" rel="noopener noreferrer">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Donate</span>
-                </Link>
+                </a>
+                {/* </Link> */}
                 <Link to="/contact">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Contact us</span>
                 </Link>

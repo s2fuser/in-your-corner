@@ -166,10 +166,16 @@ code {
   background-image: url('./Assets/Images/VideoDetailsBG2.svg');
   height: 400px;
 }
-.background3 {
-  background-image: url('./Assets/Images/VideoDetailsBG3.svg');
-  /* height: 400px; */
-}
+/* .background3 { */
+  /* background-image: url('./Assets/Images/VideoDetailsBG3.svg'); */
+  /* height: 500px;
+  margin-top: -200px;
+} */
+
+/* .background4 {
+  background-image: url('./Assets/Images/VideoDetailsBG4.svg');
+  height: 500px;
+} */
 
 @keyframes fadeFromBottom {
   0% {

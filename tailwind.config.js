@@ -33,6 +33,9 @@ module.exports = {
         '4xl': '2560px',
         '5xl': '3840px',
       },
+      colors: {
+        customColor: 'rgba(232, 240, 246, 1)', // Define your custom color
+      },
     },
   },
   plugins: [],

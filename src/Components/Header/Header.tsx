@@ -2,6 +2,8 @@ import React from 'react'
 import { FaInstagram } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+const DonateURL = 'https://give.tithe.ly/?formId=9379b56b-bd7f-4cbf-b2fb-b39ff1cc093b';
+
 const Header = () => {
     return (
         <div className='bg-red-700 w- full h-14 lg:h-10 text-white lg:flex lg:items-center lg:justify-between md:flex md:items-center md:justify-between'>
@@ -14,9 +16,11 @@ const Header = () => {
                     <Link to="/ourStory">
                         <p className='font-sans'>Our Story</p>
                     </Link>
-                    <Link to="/donate">
+                    {/* <Link to="/donate"> */}
+                    <a href={DonateURL} target="_blank" rel="noopener noreferrer">
                         <p className='font-sans'>Give</p>
-                    </Link>
+                    </a>
+                    {/* </Link> */}
                 </div>
                 <div className="flex space-x-5 font-sans">
                     <Link to="/LogIn">

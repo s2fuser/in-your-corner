@@ -221,6 +221,9 @@ const VideoDetailsPage = () => {
             </div> */}
 
       <div className="flex justify-center py-8 px-2 lg:ml-[-170px] xl:ml-[-280px] 2xl:ml-[-350px] 3xl:ml-[-150px]">
+
+      {/* background4  */}
+
         {/* <iframe onClick={getLogInEmailLocal} src={`https://www.youtube.com/embed/${Code}?si=bCkUnjDDE14xK6hB&amp;controls=0`} frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] md:w-[250px] lg:w-[700px] lg:ml-[200px] md:h-[125px] lg:h-[350px] lg:justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
 
         {!ViewVideo ? (
@@ -268,13 +271,16 @@ const VideoDetailsPage = () => {
                     <div className="wave"></div>
                 </div> */}
                 <Link to="/Videos">
-                    <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 border border-2 border-red-700 rounded-3xl font-medium" />
+                    {/* <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 border border-2 border-red-700 rounded-3xl font-medium" /> */}
+                    <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium" />
                 </Link>
             </div>
             <div>
+            {/* className="background3 bg-customColor pt-[20px] md:pb-[200px]" */}
                 <Contact />
             </div>
-            <div>
+            <div className="sm:mt-[120px]">
+            {/* className="lg:mt-[200px]" */}
                 <Footer/>
             </div>
             <div>

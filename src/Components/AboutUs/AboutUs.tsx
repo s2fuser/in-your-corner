@@ -5,8 +5,8 @@ import Image5 from "../../Assets/Images/Image5.png";
 
 const AboutUsComponent = () => {
   return (
-    <div className="sm:px-[10px] sm:h-[100%] ">
-      <div className="lg:flex lg:justify-center mx-8 my-12 sm:block md:block ">
+    <div className="sm:px-[10px] sm:h-[100%] bg-gradient-to-l from-pink-100 to-pink-200 ">
+      <div className="lg:flex lg:justify-center mx-8 py-12 sm:block md:block ">
         <div className="lg:px-[50px] sm:w-[100%]">
           <p className="text-4xl 2xl:text-5xl font-sans mb-[60px] ">
             In Your Corner Ministries
@@ -41,7 +41,7 @@ const AboutUsComponent = () => {
           />
         </div>
       </div>
-      <div className="lg:flex lg:justify-center mx-8 my-12 sm:block sm:mt-[260px] md:block md:mt-[250px] lg:mt-[0px] background-div">
+      <div className="lg:flex lg:justify-center mx-8 sm:block sm:mt-[260px] md:block md:mt-[250px] lg:mt-[0px] background-div">
         <img
           className="md:mx-auto lg:h-[400px] lg:ml-[100px] sm:h-[280px] sm:w-[292px] sm:mb-[30px] md:h-[200px] sm:mx-auto md:mb-[30px] md:w-[500px] md:h-[400px]"
           src={Image3}
@@ -60,7 +60,7 @@ const AboutUsComponent = () => {
           </p>
         </div>
       </div>
-      <div className="mx-8 my-12 sm:block">
+      <div className="mx-8 py-12 sm:block">
         {/* <p className="font-sans">
                     Beyond the weekly TV show, Kerry Pharr expanded his ministry impact by creating compelling documentary films. Among them are the award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,” a documentary highlighting champion boxers who discovered hope in Jesus Christ. Additionally, “Forgotten No More” sheds light on the plight of impoverished Haitian workers toiling in the sugar cane plantations of the Dominican Republic for meager wages as low as ten dollars a day.
                 </p> */}
@@ -82,7 +82,7 @@ const AboutUsComponent = () => {
           ministries in building the Kingdom of God.”
         </p>
       </div>
-      <div className="mx-8 my-12 sm:block ">
+      <div className="mx-8 py-12 sm:block ">
         <p className="text-4xl 2xl:text-5xl font-sans mb-[40px]">
           In Your Corner Productions
         </p>
@@ -98,7 +98,7 @@ const AboutUsComponent = () => {
         <img src={Image5} className="mx-auto mt-[30px]" alt="" />
         {/* sm:mt-[30px] lg:h-[200px] lg:w-[900px] lg:h-[500px] lg:ml-[15%] md:w-[70%] md:ml-[5%] md:mt-[20px] */}
       </div>
-      <div className="mx-8 my-12 sm:block">
+      <div className="mx-8 py-12 sm:block">
         <p className="text-4xl 2xl:text-5xl font-sans text-center mb-[30px]">
           {/* lg:ml-[25%] */}
           How Kerry Came to Faith in Jesus Christ
