@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ImQuotesLeft } from "react-icons/im";
 // import JoinOurCommunityButton from "../JoinOurCommunity/JoinOurCommunitybutton";
 import { Link } from "react-router-dom";
@@ -115,6 +115,27 @@ const FirstPageComponent = () => {
   const [AllVideosDetails, setAllVideosDetails] = useState<any>();
   const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] = useState<any>();
 
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+  const container: any = containerRef.current;
+  if (!container) return; // Guard clause to prevent accessing null ref
+
+  const divs = container.querySelectorAll('div'); // Select all divs inside the container
+
+  divs.forEach((div: any) => {
+    div.style.color = 'white'; // Change color to white
+    div.classList.add('animate');
+  });
+
+  // Remove animate class after animation completes
+  setTimeout(() => {
+    divs.forEach((div: any) => {
+      div.classList.remove('animate');
+    });
+  }, 10000); // 10 seconds, same duration as animation
+  }, []);
+
   useEffect(() => {
     fetchData();
   });
@@ -168,6 +189,7 @@ const FirstPageComponent = () => {
           <LandingPageNavigationBar
             searchValue={SearchValue}
             onChangeFunction={functionToSetSearchValue}
+            ActiveScreen="Home"
           />
         </div>
 
@@ -182,17 +204,21 @@ const FirstPageComponent = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent w-full h-full"></div>
             {/* lg:h-[21.9%] sm:h-[7.56%] */}
           </div>
-          <div className="absolute lg:top-[25rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px] 2xl:ml-[70px] xl:mt-[-1px] 3xl:mt-[180px] xl:ml-[30px] 2xl:mt-[40px] 3xl:ml-[120px]">
+          <div ref={containerRef} className="absolute lg:top-[25rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px] 2xl:ml-[70px] xl:mt-[-1px] 3xl:mt-[180px] xl:ml-[30px] 2xl:mt-[40px] 3xl:ml-[120px]">
             <div className=" sm:mt-[-310px] md:mt-[-329px] lg:mt-[150px] xl:mt-[150px]">
-              <p className=" raleway animate-fade-in-out-wave-colors text-white lg:text-3xl mt-230 sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans md:mt-[-442px]">
+              <p className=" raleway text-white lg:text-3xl mt-230 sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans md:mt-[-442px]">
+              {/* animate-fade-in-out-wave-colors */}
                 featuring
               </p>
-              <p className=" raleway animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
+              <p className=" raleway text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
+              {/* animate-fade-in-out-wave-colors */}
                 the testimonies of
               </p>
-              <p className="raleway animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans">
+              <p className="raleway text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans">
+              {/* animate-fade-in-out-wave-colors */}
                 men and women{" "}
-                <span className=" raleway animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
+                <span className="raleway text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
+                {/* animate-fade-in-out-wave-colors */}
                   of faith
                 </span>
               </p>
@@ -305,7 +331,7 @@ const FirstPageComponent = () => {
                   </p> */}
                   <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
                     How Kerry Came to Faith in{" "}
-                    <span className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold font-sans">
+                    <span className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold font-sans xl:text-4xl 2xl:text-5xl">
                       Jesus Christ
                     </span>
                   </p>

@@ -401,9 +401,9 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             <p className="font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
               In Your Corner TV Show
             </p>
-            <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">
+            {/* <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">
               <InYourCornerTvShowComponent title="false" />
-            </div>
+            </div> */}
           </div>
         </div>
       ) : (

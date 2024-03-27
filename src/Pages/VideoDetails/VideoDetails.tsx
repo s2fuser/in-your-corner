@@ -519,7 +519,7 @@ const VideoDetailsPage = () => {
       </div>
       <div className="text-center pt-10 pb-4">
 
-        <h2 className="sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-medium font-sans">{title}</h2>
+        {/* <h2 className="sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-medium font-sans">{title}</h2> */}
         {/* <h2 className="text-3xl font-semibold text-center mt-[-20px] font-sans sm:text-2xl">
           {title}
         </h2> */}

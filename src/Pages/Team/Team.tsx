@@ -65,7 +65,7 @@ const Team = () => {
       </div>
       <div>
         <LandingPageNavigationBar searchValue={SearchValue}
-            onChangeFunction={functionToSetSearchValue} />
+            onChangeFunction={functionToSetSearchValue} ActiveScreen="Team" />
       </div>
       <div className="h-[50vh]">Coming Soon</div>
       <div>

@@ -28,7 +28,7 @@ const AllVideosPageComponet = () => {
     return (
         <div className="overflow-x-hidden">
             <Header/>
-            <LandingPageNavigationBar/>
+            <LandingPageNavigationBar ActiveScreen="Videos"/>
             <Mainheading/>
             <div className="">
                 <Movierow1/>

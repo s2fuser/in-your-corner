@@ -65,7 +65,7 @@ const ContactUsPage = () => {
       </div>
       <div>
         <LandingPageNavigationBar searchValue={SearchValue}
-            onChangeFunction={functionToSetSearchValue} />
+            onChangeFunction={functionToSetSearchValue} ActiveScreen="Contact" />
       </div>
       <div className="raleway h-[50vh]">Coming Soon</div>
       <div>

@@ -67,7 +67,7 @@ const AboutUsPage = () => {
             </div>
             <div>
                 <LandingPageNavigationBar searchValue={SearchValue}
-            onChangeFunction={functionToSetSearchValue} />
+            onChangeFunction={functionToSetSearchValue} ActiveScreen="AboutUs" />
             </div>
             <div>
                 <AboutUsComponent />

@@ -8,11 +8,13 @@ import { useNavigate } from "react-router-dom";
 type Prop = {
   searchValue?: string;
   onChangeFunction?: any;
+  ActiveScreen?: any;
 };
 
 const LandingPageNavigationBar: React.FC<Prop> = ({
   searchValue,
   onChangeFunction,
+  ActiveScreen,
 }) => {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
@@ -53,35 +55,35 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
       </div>
       <div className="hidden lg:flex gap-x-7 mr-3 md:ml-[25px] md:mr-[186px] font-sans ml-[85px] xl:ml-[130px]">
         <Link to="/">
-          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+          <span className={ActiveScreen == "Home" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Home
           </span>
         </Link>
-        <Link to="/team">
-          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+      <Link to="/team">
+          <span className={ActiveScreen == "Team" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Team
           </span>
         </Link>
         <Link to="/blog">
-          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+          <span className={ActiveScreen == "Blogs" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Blogs
           </span>
         </Link>
         {/* <span>Videos</span> */}
 
         <Link to="/Videos">
-          <span className="raleway hover:opacity-50 hover:text-white  font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+          <span className={ActiveScreen == "Videos" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Videos
           </span>
         </Link>
 
         <Link to="/contact">
-          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+          <span className={ActiveScreen == "Contact" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Contact
           </span>
         </Link>
         <Link to="/aboutUs">
-          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+          <span className={ActiveScreen == "AboutUs" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             About Us
           </span>
         </Link>
