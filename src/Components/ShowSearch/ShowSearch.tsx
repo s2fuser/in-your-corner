@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../index.css';
+import { useLocation } from 'react-router-dom';
 
 type Prop = {
     value?: any,
@@ -36,11 +37,27 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
     var FilteredData: any;
     const [Title, setTitle] = useState<any>();
     const [key, setKey] = useState(0);
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const query = searchParams.get('query');
 
     useEffect(() => {
         // setSearchValue(Id);
         // getFilteredData()
+        if(query) {
+            getFilteredData(query);
+        }
     }, []);
+
+    const history = useNavigate();
+
+    const handleClick = () => {
+        if (location.pathname === '/') {
+        window.scrollTo(0, 0);
+        } else {
+        history('/');
+        }
+    };
 
     const functionToSetSearchValue = (event: any) => {
         let ValueOfSearch = event.target.value;
@@ -150,7 +167,7 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
                 </div>
             </div>
             <div>
-                <Footer />
+                <Footer onClickToHome={handleClick} />
             </div>
             <div>
                 <Footer2 />

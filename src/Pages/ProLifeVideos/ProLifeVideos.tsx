@@ -7,11 +7,24 @@ import ProLifeSlider from "./ProLifeSlider";
 import StoriesComponent from "./Stories";
 import TrellesTuneComponent from "./TrellesTune";
 import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 
 
 const ProLifeVideos = () => {
+
+    const history = useNavigate();
+    const location = useLocation();
+
+    const handleClick = () => {
+        if (location.pathname === '/') {
+        window.scrollTo(0, 0);
+        } else {
+        history('/');
+        }
+    };
+
     return (
         <div>
             <div>
@@ -30,7 +43,7 @@ const ProLifeVideos = () => {
                 </div> */}
             </div>
             <div>
-                <Footer />
+                <Footer onClickToHome={handleClick} />
             </div>
             <div>
                 <Footer2 />

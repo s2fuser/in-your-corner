@@ -198,6 +198,35 @@ code {
   transition: background-color 0.5s ease, height 0.5s ease; /* Transition for background color and height */
 }
 
+.animation-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-container p {
+  opacity: 0;
+  position: relative;
+}
+
+.animate {
+  animation: slideUpFadeInOut 5s linear forwards;
+}
+
+@keyframes slideUpFadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Ensure paragraphs stay at top after animation */
+  }
+}
+
 @font-face {
   font-family: raleway;
   src: url(../public/Raleway-VariableFont_wght.ttf)

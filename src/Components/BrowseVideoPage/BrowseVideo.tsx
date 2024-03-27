@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
-import VideoSlider from "../VideoSlider/VideoSlider";
-import VideoSlider2 from "../VideoSlider2/VideoSlider2";
-import DocumentriesAndMovies from "../../Pages/Documentries&Movies/DocumentriesAndMovies";
-import ProLifeSlider from "../../Pages/ProLifeVideos/ProLifeSlider";
-import StoriesComponent from "../../Pages/ProLifeVideos/Stories";
-import TrellesTuneComponent from "../../Pages/ProLifeVideos/TrellesTune";
-import useFetch from "../../hooks/useFetchHook";
-import axios from "axios";
-import TopicWiseSearchComponent from "../TopicSearch/TopicSearch";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useRef  } from 'react';
+import VideoSlider from '../VideoSlider/VideoSlider';
+import VideoSlider2 from '../VideoSlider2/VideoSlider2';
+import DocumentriesAndMovies from '../../Pages/Documentries&Movies/DocumentriesAndMovies';
+import ProLifeSlider from '../../Pages/ProLifeVideos/ProLifeSlider';
+import StoriesComponent from '../../Pages/ProLifeVideos/Stories';
+import TrellesTuneComponent from '../../Pages/ProLifeVideos/TrellesTune';
+import InYourCornerTvShowComponent from '../../Pages/ProLifeVideos/inYourCornerTvShows';
+import useFetch from '../../hooks/useFetchHook';
+import axios from 'axios';
+import TopicWiseSearchComponent from '../TopicSearch/TopicSearch';
+import { useNavigate } from 'react-router-dom';
 
 interface ButtonProps {
   label: string;
@@ -190,6 +191,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
   const ProLifeVoicesTargerRef = useRef<HTMLDivElement | null>(null);
   const StoriesTargerRef = useRef<HTMLDivElement | null>(null);
   const TrellerTunesTargerRef = useRef<HTMLDivElement | null>(null);
+  const InYourCornerTvShowTargerRef = useRef<HTMLDivElement | null>(null);
 
   const [SearchValue, setSearchValue] = useState<any>();
   const [AllVideosDetails, setAllVideosDetails] = useState<any>();
@@ -301,6 +303,13 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
     ) {
       ProLifeVoicesTargerRef.current.scrollIntoView({ behavior: "smooth" });
     }
+
+    if (
+      InYourCornerTvShowTargerRef.current &&
+      event.target.textContent == "In Your Corner TV Show"
+    ) {
+      InYourCornerTvShowTargerRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -319,7 +328,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         />
         <TopicButton label="Stories" func={getDetailsOfClickingButton} />
         <TopicButton label="Trelle's Tunes" func={getDetailsOfClickingButton} />
-        <TopicButton label="In Your Corner TV Show" />
+        <TopicButton label="In Your Corner TV Show" func={getDetailsOfClickingButton} />
       </div>
       <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
       {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) ||
@@ -383,6 +392,18 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">
               <TrellesTuneComponent title="false" />
             </div>
+          </div>
+
+          <div
+            className="ml-[-50px] mr-[-50px] mt-[-50px]"
+            ref={InYourCornerTvShowTargerRef}
+          >
+            <p className="font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+              In Your Corner TV Show
+            </p>
+            {/* <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">
+              <InYourCornerTvShowComponent title="false" />
+            </div> */}
           </div>
         </div>
       ) : (

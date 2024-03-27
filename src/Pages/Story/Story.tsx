@@ -4,11 +4,23 @@ import VideoPlayer from "../../Components/VideoPlayer/VideoPlayer";
 import Header from "../../Components/Header/Header";
 import FooterComponent from "../../Components/Footer/Footer";
 import Footer2 from "../../Components/Footer2/Footer2";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import NavigationBar from "../../Components/NavigationBar/NavigationBar";
 import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const Story = () => {
+
+    const history = useNavigate();
+    const location = useLocation();
+
+    const handleClick = () => {
+        if (location.pathname === '/') {
+        window.scrollTo(0, 0);
+        } else {
+        history('/');
+        }
+    };
+
     return (
         <div>
             <div>
@@ -46,7 +58,7 @@ const Story = () => {
                 <Contact />
             </div>
             <div>
-                <FooterComponent/>
+                <FooterComponent onClickToHome={handleClick} />
             </div>
             <div>
                 <Footer2/>

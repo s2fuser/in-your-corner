@@ -4,8 +4,21 @@ import LandingPageNavigationBar from "../../Components/LandingPageNavigation/Lan
 import Navbar from "../../Components/NavigationBar/NavigationBar";
 import FooterComponent from "../../Components/Footer/Footer";
 import SingleBlogContent from "./SingleBlogContent";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const BlogContent = () => {
+
+  const history = useNavigate();
+  const location = useLocation();
+
+  const handleClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo(0, 0);
+    } else {
+      history('/');
+    }
+  };
+
   return (
     <div>
       <div>
@@ -18,7 +31,7 @@ const BlogContent = () => {
         <SingleBlogContent />
       </div>
       <div>
-        <FooterComponent />
+        <FooterComponent onClickToHome={handleClick} />
       </div>
       <div>
         <Footer2 />
