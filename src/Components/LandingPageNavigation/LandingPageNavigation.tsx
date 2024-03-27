@@ -20,7 +20,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
   };
 
   const navigateFunction = () => {
-    navigate(`/firstPageSearch`);
+    navigate(`/firstPageSearch?query=${searchValue}`);
     // /${searchValue}
   }
 
@@ -30,7 +30,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
     { id: 3, text: 'Blog', routeName: "/blog" },
     { id: 4, text: 'Videos', routeName: "/Videos" },
     { id: 5, text: 'Contact', routeName: "/contact" },
-    { id: 6, text: 'About Us', routeName: "/stories" },
+    { id: 6, text: 'About Us', routeName: "/aboutUs" },
     // { id: 7, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
     // { id: 7, text: 'Music', routeName: "/trellestune" },
   ];

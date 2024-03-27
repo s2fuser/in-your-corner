@@ -10,8 +10,21 @@ import Footer2 from "../Components/Footer2/Footer2";
 import StoriesComponent from "./ProLifeVideos/Stories";
 import DocumentriesAndMovies from "./Documentries&Movies/DocumentriesAndMovies";
 import LandingPageNavigationBar from "../Components/LandingPageNavigation/LandingPageNavigation";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AllVideosPageComponet = () => {
+
+    const history = useNavigate();
+    const location = useLocation();
+
+    const handleClick = () => {
+        if (location.pathname === '/') {
+        window.scrollTo(0, 0);
+        } else {
+        history('/');
+        }
+    };
+
     return (
         <div className="overflow-x-hidden">
             <Header/>
@@ -25,7 +38,7 @@ const AllVideosPageComponet = () => {
             {/* <DocumentriesAndMovies /> */}
             {/* <StoriesComponent /> */}
             <BrowseVideoPage/>
-            <Footer/>
+            <Footer onClickToHome={handleClick}/>
             <Footer2/>
         </div>
     )

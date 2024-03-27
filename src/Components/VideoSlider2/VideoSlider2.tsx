@@ -56,7 +56,7 @@ const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType }) => {
         <StoriesSlider type2={type == "true" ? "true" : "false"} />
       ) : VideoType == "TrellesTune" ? (
         <TrellesTuneSlider type2={type == "true" ? "true" : "false"} />
-      ) : (
+      ) : VideoType == "InYourCornerTvShow" ? (<InYourCornerTvShow type2={type == "true" ? "true" : "false"} />) : (
         <SliderComponent2 type2={type == "true" ? "true" : "false"} />
       )}
     </div>
@@ -115,7 +115,7 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg`}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[40px] hover:opacity-70"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -128,7 +128,7 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/_KPn9AHXF3I/maxresdefault.jpg`}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[40px] hover:opacity-70"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -237,7 +237,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/zeP1I8O8Q-o/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -250,7 +250,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/zeP1I8O8Q-o/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -263,7 +263,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/_VfNxJweiGE/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -276,7 +276,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/voqmTrExetQ/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -289,7 +289,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/voqmTrExetQ/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -302,7 +302,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/tBa8Ow8hPOI/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -362,7 +362,7 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -375,7 +375,7 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/KqdfAh6QQCY/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -432,7 +432,7 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/-Nli8LqX4rU/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -445,7 +445,7 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/wftl7HABS8U/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
@@ -458,10 +458,124 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
           <img
             src={`https://i.ytimg.com/vi/Z3SJJ7v8RdU/maxresdefault.jpg`}
             alt=""
-            className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"
+            className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
       </Link>
+    </Slider>
+  );
+};
+
+export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Update slidesToShow based on screen size
+      // if (window.innerWidth <= 1024) {
+      //     setSlidesToShow(1);
+      // } else {
+      setSlidesToShow(3);
+      // }
+    };
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const { data } = useFetch("code");
+
+  const isSmallScreen = window.innerWidth <= 500;
+  return (
+    <Slider
+      {...(type2 == "true" ? settingsForBrowseVideos : settings)}
+      slidesToShow={slidesToShow}
+      className="w-[100%] flex justify-center overflow-x-hidden"
+    >
+
+      <Link
+        to={`/VideoDetails/${"mq1V-YQKT6k"}`}
+        state={{ title: "Legends of Boxing, The Evander Holyfield Story" }}
+      >
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+          <img
+            src={`https://i.ytimg.com/vi/mq1V-YQKT6k/maxresdefault.jpg`}
+            alt=""
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+          />
+        </div>
+      </Link>
+
+      <Link
+        to={`/VideoDetails/${"_KPn9AHXF3I"}`}
+        state={{ title: "Hope Lives in Hohenwald" }}
+      >
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+          <img
+            src={`https://i.ytimg.com/vi/_KPn9AHXF3I/maxresdefault.jpg`}
+            alt=""
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+          />
+        </div>
+      </Link>
+
+      <Link
+        to={`/VideoDetails/${"oa920gMvLaI"}`}
+        state={{ title: "Forgotten No More" }}
+      >
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+          <img
+            src={`https://i.ytimg.com/vi/oa920gMvLaI/maxresdefault.jpg`}
+            alt=""
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+          />
+        </div>
+      </Link>
+
+      <Link
+        to={`/VideoDetails/${"ooBN3O9G6fA"}`}
+        state={{ title: "Country Stages to Gospel Hymns" }}
+      >
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+          <img
+            src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`}
+            alt=""
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+          />
+        </div>
+      </Link>
+
+      <Link
+        to={`/VideoDetails/${"Z3SJJ7v8RdU"}`}
+        state={{ title: "Fight the Good Fight Documentary" }}
+      >
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+          <img
+            src={`https://i.ytimg.com/vi/Z3SJJ7v8RdU/maxresdefault.jpg`}
+            alt=""
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+          />
+        </div>
+      </Link>
+
+      <Link
+        to={`/VideoDetails/${"sZ0cOfq8JzM"}`}
+        state={{ title: "Hope Dealer aka Hope Lives in Hohenwald" }}
+      >
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+          <img
+            src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
+            alt=""
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+          />
+        </div>
+      </Link>
+
     </Slider>
   );
 };

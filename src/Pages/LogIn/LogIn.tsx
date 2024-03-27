@@ -4,16 +4,65 @@ import Header from "../../Components/Header/Header";
 import Navbar from "../../Components/NavigationBar/NavigationBar";
 import Footer from "../../Components/Footer/Footer";
 import Footer2 from "../../Components/Footer2/Footer2";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const LogInPage = () => {
     const [Email, setEmail] = useState('');
     const navigate = useNavigate();
+
+  const [SearchValue, setSearchValue] = useState<any>();
+  const [AllVideosDetails, setAllVideosDetails] = useState<any>();
+  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] = useState<any>();
+
+  useEffect(() => {
+    fetchData();
+  });
+
+  const history = useNavigate();
+  const location = useLocation();
+
+  const handleClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo(0, 0);
+    } else {
+      history('/');
+    }
+  };
+
+  const fetchData = async () => {
+    const response: any = await axios.get("https://inc.s2ftech.in/api/code");
+    setAllVideosDetails(response.data.data);
+  };
+
+  const functionToSetSearchValue = (event: any) => {
+    let ValueOfSearch = event.target.value;
+    setSearchValue(ValueOfSearch);
+    getFilteredData();
+    // navigate(`/firstPageSearch/${ValueOfSearch}`);
+  };
+
+  const getFilteredData = () => {
+    let FilteredItems =
+      AllVideosDetails &&
+      AllVideosDetails.filter((items: any) => {
+        if (SearchValue != undefined) {
+          return (
+            items &&
+            items.genre.toLowerCase().includes(SearchValue.toLowerCase())
+          );
+        }
+      });
+    if (SearchValue == "") {
+      setFilteredValuesOfAllVideos(AllVideosDetails);
+    } else {
+      setFilteredValuesOfAllVideos(FilteredItems);
+    }
+  };
 
     const handlesubmit = async () => {
         localStorage.setItem("LogInEmail", Email);
@@ -40,7 +89,8 @@ const LogInPage = () => {
     return (
         <div>
             <Header />
-            <LandingPageNavigationBar />
+            <LandingPageNavigationBar searchValue={SearchValue}
+            onChangeFunction={functionToSetSearchValue} />
             <div className="mt-[50px]">
                 <EmailComponent Email={Email} setEmail={setEmail} />
             </div>
@@ -49,7 +99,7 @@ const LogInPage = () => {
                     Log In
                 </button>
             </div>
-            <Footer />
+            <Footer onClickToHome={handleClick} />
             <Footer2 />
         </div>
     )

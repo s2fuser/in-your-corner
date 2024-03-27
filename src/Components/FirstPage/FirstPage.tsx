@@ -20,6 +20,7 @@ import ShowSearchComponent from "../ShowSearch/ShowSearch";
 import axios from "axios";
 import "../../index.css";
 // import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const FirstPageComponent = () => {
   // const navigate = useNavigate();
@@ -112,12 +113,22 @@ const FirstPageComponent = () => {
 
   const [SearchValue, setSearchValue] = useState<any>();
   const [AllVideosDetails, setAllVideosDetails] = useState<any>();
-  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] =
-    useState<any>();
+  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] = useState<any>();
 
   useEffect(() => {
     fetchData();
   });
+
+  const history = useNavigate();
+  const location = useLocation();
+
+  const handleClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo(0, 0);
+    } else {
+      history('/');
+    }
+  };
 
   const fetchData = async () => {
     const response: any = await axios.get("https://inc.s2ftech.in/api/code");
@@ -418,7 +429,7 @@ const FirstPageComponent = () => {
         </div>} */}
 
         <div className="">
-          <FooterComponent />
+          <FooterComponent onClickToHome = {handleClick} />
         </div>
         <div className="">
           <Footer2 />

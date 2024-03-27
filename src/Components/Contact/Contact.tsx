@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
     
         <div className="h-[52vh] sm:h-[42vh] md:h-[70vh] lg:h-[65vh] xl:h-[70vh] 2xl:h-[80vh] 3xl:h-[80vh] flex items-center justify-center mt-0 z-[49]">
             <div
-                className="absolute md:top-[1024px] lg:top-[1115px] left-0 w-full h-full sm:top-[924px] sm:mt-[-73px] sm:h-[59%] sm:w-[100%] md:h-[81%] lg:h-[83%]  xl:h-[92%] bg-black"
+                className="absolute md:top-[950px] lg:top-[1220px] left-0 w-full h-full sm:top-[941px] sm:mt-[-146px] sm:h-[55%] sm:w-[100%] md:h-[81%] lg:h-[83%]  xl:h-[92%] xl:top-[1100px] 2xl:top-[1210px] 2xl:h-[100%] 3xl:top-[1210px] 3xl:h-[100%]  bg-black"
                 style={{
                     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Image2})`,
                     backgroundSize: "cover",
@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
                 }}
             ></div>
              <div className="z-[8] text-white grid place-items-center px-2 md:mt-[86px] lg:mt-[-4px] lg:ml-[-612px] lg:pl-36">
-                    <div className="text-center lg:text-left sm:mt-[-74px] md:mt-[-80px] lg:[108px] ">
+                    <div className="text-center lg:text-left sm:mt-[-10px] md:mt-[-80px] lg:[108px] ">
                       <h2 className="sm:text-2xl md:text-3xl lg:text-3xl  xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-semibold md:font-bold py-2 px-2 font-sans">
                         Reach out to us today
                       </h2>
