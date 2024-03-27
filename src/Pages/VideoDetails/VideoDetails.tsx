@@ -12,8 +12,9 @@ import Contact from "../../Components/Contact/Contact";
 import { Link } from "react-router-dom";
 import ButtonComponent from "../../Components/Button/Button";
 import Back from "../../Assets/Images/Background1.png";
-import '../../index.css';
+import "../../index.css";
 import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
+import BackgroundImage3 from "../../Assets/Images/BackgrounImage3.png";
 
 const VideoDetailsPage = () => {
   const location = useLocation();
@@ -185,11 +186,13 @@ const VideoDetailsPage = () => {
         {/* <h2 className="text-3xl font-semibold text-center mt-[-20px] font-sans sm:text-2xl">
           {title}
         </h2> */}
-         <h2 className="sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold font-sans">{title}</h2>
+        <h2 className="ralewaysm:text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold font-sans">
+          {title}
+        </h2>
       </div>
 
       <div className="px-2">
-        <p className="text-red-600 text-2xl text-center text-sm font-sans lg:text-2xl md:text-2xl xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]">
+        <p className="raleway text-red-600 text-2xl text-center text-sm font-sans sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
@@ -221,8 +224,7 @@ const VideoDetailsPage = () => {
             </div> */}
 
       <div className="flex justify-center py-8 px-2 lg:ml-[-170px] xl:ml-[-280px] 2xl:ml-[-350px] 3xl:ml-[-150px]">
-
-      {/* background4  */}
+        {/* background4  */}
 
         {/* <iframe onClick={getLogInEmailLocal} src={`https://www.youtube.com/embed/${Code}?si=bCkUnjDDE14xK6hB&amp;controls=0`} frameBorder="0" allow="autoplay; clipboard-write; encrypted-media;" allowFullScreen className="rounded-[25px] md:w-[250px] lg:w-[700px] lg:ml-[200px] md:h-[125px] lg:h-[350px] lg:justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe>  */}
 
@@ -247,11 +249,11 @@ const VideoDetailsPage = () => {
                 },
               }}
               onReady={handleVideoReady}
-              className="rounded-[25px] md:w-[450px] lg:w-[700px] lg:ml-[90px] md:h-[225px] lg:h-[350px] lg:justify-center sm:w-[300px] sm:h-[160px]"
+              className="rounded-[25px] md:w-[450px] lg:w-[700px] lg:ml-[90px] md:h-[225px] lg:h-[350px] lg:justify-center sm:w-[300px] sm:h-[160px] "
             />
           </div>
         ) : (
-          <div style={{ position: "relative" }} className="second:w-[200px]">
+          <div style={{ position: "relative" }} className="second:w-[200px] ">
             <YouTube
               videoId={Code}
               opts={{
@@ -260,34 +262,37 @@ const VideoDetailsPage = () => {
                 },
               }}
               onReady={handleVideoReady}
-              className="lg:ml-[200px] xl:ml-[280px] 2xl:ml-[350px] 2xl:mb-[-100px] 3xl:ml-[140px]"
+              className="lg:ml-[200px] xl:ml-[280px] 2xl:ml-[350px] 2xl:mb-[-100px] 3xl:ml-[140px] className=' bg-gradient-to-r from-red-100 via-indigo-100 to-indigo-200 w-full  sm:h-[339px] lg:h-[319px] font-sans mt-[7px] "
             />
           </div>
         )}
       </div>
 
-            <div className="flex justify-center px-2 pt-2 pb-8 lg:mt-[80px] xl:mt-[80px] 2xl:mt-[150px] 3xl:mt-[80px] md:mt-[50px]">
-                {/* <div className="wave-background">
+      <div className="flex justify-center px-2 pt-2 pb-8 lg:mt-[80px] xl:mt-[80px] 2xl:mt-[150px] 3xl:mt-[80px] md:mt-[50px]">
+        {/* <div className="wave-background">
                     <div className="wave"></div>
                 </div> */}
-                <Link to="/Videos">
-                    {/* <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 border border-2 border-red-700 rounded-3xl font-medium" /> */}
-                    <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium" />
-                </Link>
-            </div>
-            <div>
-            {/* className="background3 bg-customColor pt-[20px] md:pb-[200px]" */}
-                <Contact />
-            </div>
-            <div className="sm:mt-[120px]">
-            {/* className="lg:mt-[200px]" */}
-                <Footer/>
-            </div>
-            <div>
-                <Footer2/>
-            </div>
-        </div>
-    )
-}
+        <Link to="/Videos">
+          {/* <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 border border-2 border-red-700 rounded-3xl font-medium" /> */}
+          <ButtonComponent
+            name={"View All Videos"}
+            style="text-red-700 px-8 py-2 hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium"
+          />
+        </Link>
+      </div>
+      <div>
+        {/* className="background3 bg-customColor pt-[20px] md:pb-[200px]" */}
+        <Contact />
+      </div>
+      <div className="sm:mt-[120px]">
+        {/* className="lg:mt-[200px]" */}
+        <Footer />
+      </div>
+      <div>
+        <Footer2 />
+      </div>
+    </div>
+  );
+};
 
 export default VideoDetailsPage;

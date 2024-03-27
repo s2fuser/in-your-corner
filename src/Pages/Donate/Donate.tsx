@@ -14,7 +14,7 @@ const DonateComponent = () => {
       <div>
         <LandingPageNavigationBar />
       </div>
-      <div className="h-[50vh]">Coming Soon</div>
+      <div className="raleway h-[50vh]">Coming Soon</div>
       <div>
         <Footer />
       </div>

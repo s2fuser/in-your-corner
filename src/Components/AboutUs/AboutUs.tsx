@@ -8,10 +8,10 @@ const AboutUsComponent = () => {
     <div className="sm:px-[10px] sm:h-[100%] bg-gradient-to-l from-pink-100 to-pink-200 ">
       <div className="lg:flex lg:justify-center mx-8 py-12 sm:block md:block ">
         <div className="lg:px-[50px] sm:w-[100%]">
-          <p className="text-4xl 2xl:text-5xl font-sans mb-[60px] ">
+          <p className="raleway sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-sans mb-[60px] ">
             In Your Corner Ministries
           </p>
-          <p className="font-sans xl:text-xl mb-[30px]  ">
+          <p className="raleway font-sans sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl mb-[30px]  ">
             In 2008, Kerry Pharr founded In Your Corner Ministries as an
             internationally syndicated weekly television program. The ministry’s
             purpose was and is to reach the lost through media by featuring the
@@ -19,7 +19,7 @@ const AboutUsComponent = () => {
             years, In Your Corner Ministries produced more than 500 television
             programs.
           </p>
-          <p className="xl:text-xl font-sans">
+          <p className="raleway sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl font-sans">
             Throughout his ministry, Kerry has had the privilege of documenting
             and sharing inspiring words of faith from hundreds of men and women
             of God. This esteemed list includes renowned figures such as
@@ -47,7 +47,7 @@ const AboutUsComponent = () => {
           src={Image3}
           alt=""
         />
-        <div className="font-sans xl:text-xl lg:ml-[50px] lg:pl-[10px] lg:pr-[50px] lg:mt-[100px] 2xl:mt-[140px] sm:w-[100%] sm:w-[100%] 3xl:w-[1500px] 3xl:mr-[438px] 5xl:w-[2500px] 5xl:mr-[574px]">
+        <div className="raleway font-sans sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl lg:ml-[50px] lg:pl-[10px] lg:pr-[50px] lg:mt-[100px] 2xl:mt-[140px] sm:w-[100%] sm:w-[100%] 3xl:w-[1500px] 3xl:mr-[438px] 5xl:w-[2500px] 5xl:mr-[574px]">
           <p>
             Beyond the weekly TV show, Kerry Pharr expanded his ministry impact
             by creating compelling documentary films. Among them are the
@@ -64,7 +64,7 @@ const AboutUsComponent = () => {
         {/* <p className="font-sans">
                     Beyond the weekly TV show, Kerry Pharr expanded his ministry impact by creating compelling documentary films. Among them are the award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,” a documentary highlighting champion boxers who discovered hope in Jesus Christ. Additionally, “Forgotten No More” sheds light on the plight of impoverished Haitian workers toiling in the sugar cane plantations of the Dominican Republic for meager wages as low as ten dollars a day.
                 </p> */}
-        <p className="font-sans xl:text-xl sm:w-[100%]">
+        <p className="raleway font-sans sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl sm:w-[100%]">
           Our team is working on a pilot series of television programs from
           Country Stages to Gospel Hymns. This series features the testimonies
           of famous Country Singers who gladly share their faith in Jesus
@@ -73,7 +73,7 @@ const AboutUsComponent = () => {
           him, his accomplished gospel-singing wife, Latrelle Lindon Pharr,
           contributes to the ministry’s multifaceted endeavors.
         </p>
-        <p className="font-sans xl:text-xl sm:w-[100%] mt-[20px] sm:mt-[20px]">
+        <p className="raleway font-sans sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl sm:w-[100%] mt-[20px] sm:mt-[20px]">
           Kerry and Latrelle dedicate several weeks annually to travel abroad,
           where they engage in preaching, singing, and sharing the gospel with
           those whom Jesus identified as “the least of these.” Kerry expresses
@@ -83,10 +83,10 @@ const AboutUsComponent = () => {
         </p>
       </div>
       <div className="mx-8 py-12 sm:block ">
-        <p className="text-4xl 2xl:text-5xl font-sans mb-[40px]">
+        <p className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-sans mb-[40px]">
           In Your Corner Productions
         </p>
-        <p className="font-sans xl:text-xl sm:w-[100%] lg:mb-[30px]">
+        <p className="raleway font-sans sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl sm:w-[100%] lg:mb-[30px]">
           In Your Corner Productions specializes in creating Christian-themed
           television programs, acclaimed documentaries, gospel music, and
           ministry videos to help promote other faith-based non-profits.
@@ -99,7 +99,7 @@ const AboutUsComponent = () => {
         {/* sm:mt-[30px] lg:h-[200px] lg:w-[900px] lg:h-[500px] lg:ml-[15%] md:w-[70%] md:ml-[5%] md:mt-[20px] */}
       </div>
       <div className="mx-8 py-12 sm:block">
-        <p className="text-4xl 2xl:text-5xl font-sans text-center mb-[30px]">
+        <p className="raleway sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-sans text-center mb-[30px]">
           {/* lg:ml-[25%] */}
           How Kerry Came to Faith in Jesus Christ
         </p>

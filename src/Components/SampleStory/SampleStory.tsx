@@ -13,7 +13,7 @@ const SampleOurStory = () => {
       <div>
         <Navbar />
       </div>
-      <div className="h-[50vh]">Coming Soon</div>
+      <div className="raleway h-[50vh]">Coming Soon</div>
       <div>
         <Footer />
       </div>

@@ -172,16 +172,16 @@ const FirstPageComponent = () => {
             {/* lg:h-[21.9%] sm:h-[7.56%] */}
           </div>
           <div className="absolute lg:top-[25rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px] 2xl:ml-[70px] xl:mt-[-1px] 3xl:mt-[180px] xl:ml-[30px] 2xl:mt-[40px] 3xl:ml-[120px]">
-            <div className="sm:mt-[-310px] md:mt-[-329px] lg:mt-[150px] xl:mt-[150px]">
-              <p className="animate-fade-in-out-wave-colors text-white lg:text-3xl mt-230 sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans md:mt-[-442px]">
+            <div className=" sm:mt-[-310px] md:mt-[-329px] lg:mt-[150px] xl:mt-[150px]">
+              <p className=" raleway animate-fade-in-out-wave-colors text-white lg:text-3xl mt-230 sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans md:mt-[-442px]">
                 featuring
               </p>
-              <p className="animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
+              <p className=" raleway animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
                 the testimonies of
               </p>
-              <p className="animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans">
+              <p className="raleway animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans">
                 men and women{" "}
-                <span className="animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
+                <span className=" raleway animate-fade-in-out-wave-colors text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
                   of faith
                 </span>
               </p>
@@ -192,7 +192,7 @@ const FirstPageComponent = () => {
                 {/* <button className='border-solid rounded-3xl border-2  hover:text-red-800 hover:border-red-700 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
                   Know More
                 </button> */}
-                <button className="border-solid rounded-3xl border-2  hover:text-black hover:border-white hover:bg-slate-100 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans">
+                <button className=" raleway border-solid rounded-3xl border-2  hover:text-black hover:border-white hover:bg-slate-100 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans">
                   Know More
                 </button>
               </Link>
@@ -234,12 +234,14 @@ const FirstPageComponent = () => {
                 alt=""
               />
             </div>
-            <div className="text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]">
-              <p className="text-red-900 sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-medium font-sans sm:mt-[40px]">
+            <div className=" text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]">
+              <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-[0px] xl:text-4xl mt-[-60px] 2xl:text-5xl mt-[-60px] font-medium font-sans sm:mt-[40px]">
                 In Your Corner{" "}
-                <span className="font-light font-sans">Productions</span>
+                <span className="raleway font-light font-sans ">
+                  Productions
+                </span>
               </p>
-              <p className="text-sm font-sans lg:text-2xl md:text-2xl xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]">
+              <p className="raleway  font-sans   sm:text-lg  lg:text-xl mb-[-25px] md:text-lg xl:text-xl xl:mt-[20px] 2xl:text-2xl sm:mt-[30px] md:mt-[30px]">
                 In Your Corner Productions specializes in creating
                 Christian-themed television programs, <br />
                 acclaimed documentaries, gospel music, and ministry videos to
@@ -278,7 +280,7 @@ const FirstPageComponent = () => {
                 <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                   <Link to="/Videos">
                     {/* <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button> */}
-                    <button className="mt-[-10px] text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">
+                    <button className="raleway mt-[-10px] text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">
                       View All Videos
                     </button>
                   </Link>
@@ -290,13 +292,13 @@ const FirstPageComponent = () => {
                   {/* <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
                     How Kerry Came to Faith in <span className="text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">Jesus Christ</span>
                   </p> */}
-                  <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
+                  <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
                     How Kerry Came to Faith in{" "}
-                    <span className="text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">
+                    <span className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold font-sans">
                       Jesus Christ
                     </span>
                   </p>
-                  <p className="font-sans xl:text-2xl 2xl:text-3xl">
+                  <p className="raleway font-sans sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
                     {/* sm:pl-[10px] sm:pr-[10px] lg:w-[800px] lg:ml-[280px] xl:ml-[780px] */}
                     Beyond the weekly TV show, Kerry Pharr expanded his ministry
                     impact by creating compelling documentary films. <br />{" "}
@@ -387,22 +389,22 @@ const FirstPageComponent = () => {
 
                   <div className="z-[8] text-white grid place-items-center px-2 md:mt-[86px] lg:ml-[-612px] lg:pl-36">
                     <div className="text-center lg:text-left">
-                      <h2 className="sm:text-2xl md:text-3xl lg:text-3xl  xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-semibold md:font-bold py-2 px-2 font-sans">
+                      <h2 className="raleway sm:text-2xl md:text-3xl lg:text-3xl  xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-semibold md:font-bold py-2 px-2 font-sans">
                         Reach out to us today
                       </h2>
-                      <p className="sm:text-2xl md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans px-2">
+                      <p className="raleway sm:text-2xl md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans px-2">
                         to fulfill all your ministry{" "}
-                        <span className="md:text-3xl lg:text-3xl sm:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-medium font-semibold font-sans">
+                        <span className="raleway md:text-3xl lg:text-3xl sm:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-medium font-semibold font-sans">
                           video
                         </span>
                       </p>
-                      <h2 className="md:text-3xl lg:text-3xl sm:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-medium font-semibold md:font-bold pt-2 font-sans px-2 ">
+                      <h2 className="raleway md:text-3xl lg:text-3xl sm:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-medium font-semibold md:font-bold pt-2 font-sans px-2 ">
                         production requirements.
                       </h2>
                     </div>
                     <div className="mt-14 text-center lg:text-left lg:ml-[-180px] xl:ml-[-260px] 2xl:ml-[-378px] 3xl:ml-[-500px]">
                       <Link to="/contact">
-                        <button className="border border-2  hover:text-black hover:border-white hover:bg-slate-100  border-white py-2 px-10 rounded-3xl sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+                        <button className="raleway border border-2  hover:text-black hover:border-white hover:bg-slate-100  border-white py-2 px-10 rounded-3xl sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
                           Contact Us
                         </button>
                       </Link>

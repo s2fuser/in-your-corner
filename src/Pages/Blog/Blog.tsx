@@ -49,7 +49,7 @@ const Blog = () => {
         <LandingPageNavigationBar />
       </div>
       <div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 py-10">
+        <div className="raleway grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 py-10">
           {blogs.map((item, index) => (
             <BlogCard
               title={item.title}
