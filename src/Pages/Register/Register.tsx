@@ -61,9 +61,9 @@ const RegisterPage = () => {
       }
     };
 
-    const SubmittingRegister = () => {
-        console.log(Email)
-    }
+  const SubmittingRegister = () => {
+    console.log(Email);
+  };
 
     return (
         <div>
@@ -74,14 +74,14 @@ const RegisterPage = () => {
                 <EmailComponent Email={Email} setEmail={setEmail} />
             </div>
             <div className="text-center mb-[40px]">
-                <button className="border border-solid border-red-900 border-2 pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[25px] text-red-900 text-lg" onClick={SubmittingRegister}>
+                <button className="raleway border border-solid border-red-900 border-2 pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[25px] text-red-900 text-lg" onClick={SubmittingRegister}>
                     Register
                 </button>
             </div>
             <div className="text-center">
-                <p className="mb-[20px] text-2xl">Already a member?</p>
+                <p className="raleway mb-[20px] text-2xl">Already a member?</p>
                 <Link to="/LogIn">
-                    <button className="mb-[50px] border border-solid border-red-900 border-2 pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[25px] text-red-900">
+                    <button className="raleway mb-[50px] border border-solid border-red-900 border-2 pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[25px] text-red-900">
                         LOG IN HERE
                     </button>
                 </Link>
@@ -92,4 +92,4 @@ const RegisterPage = () => {
     )
 }
 
-export default RegisterPage
+export default RegisterPage;

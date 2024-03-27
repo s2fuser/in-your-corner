@@ -64,27 +64,27 @@ const LogInPage = () => {
     }
   };
 
-    const handlesubmit = async () => {
-        localStorage.setItem("LogInEmail", Email);
-        SuccessToaster();
-        navigate('/')
-        // try {
-        //     const response = await axios.post('http://localhost:8000/login', {Email: Email});
-        //     console.log(response)
-        //     SuccessToaster()
-        // } catch (error) {
-        //     console.log(error);
-        //     FailureToaster();
-        // }
-    }
+  const handlesubmit = async () => {
+    localStorage.setItem("LogInEmail", Email);
+    SuccessToaster();
+    navigate("/");
+    // try {
+    //     const response = await axios.post('http://localhost:8000/login', {Email: Email});
+    //     console.log(response)
+    //     SuccessToaster()
+    // } catch (error) {
+    //     console.log(error);
+    //     FailureToaster();
+    // }
+  };
 
-    const SuccessToaster = () => {
-        toast.success('Log In Success')
-    }
+  const SuccessToaster = () => {
+    toast.success("Log In Success");
+  };
 
-    const FailureToaster = () => {
-        toast.error('Log In Failed')
-    }
+  const FailureToaster = () => {
+    toast.error("Log In Failed");
+  };
 
     return (
         <div>
@@ -95,7 +95,7 @@ const LogInPage = () => {
                 <EmailComponent Email={Email} setEmail={setEmail} />
             </div>
             <div className="text-center mt-[50px]">
-                <button className="mb-[50px] border border-solid border-red-900 border-2 pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[25px] text-red-900" onClick={handlesubmit}>
+                <button className="raleway mb-[50px] border border-solid border-red-900 border-2 pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[25px] text-red-900" onClick={handlesubmit}>
                     Log In
                 </button>
             </div>
@@ -105,4 +105,4 @@ const LogInPage = () => {
     )
 }
 
-export default LogInPage
+export default LogInPage;

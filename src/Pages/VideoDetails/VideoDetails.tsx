@@ -356,8 +356,9 @@ import Contact from "../../Components/Contact/Contact";
 import { Link } from "react-router-dom";
 import ButtonComponent from "../../Components/Button/Button";
 import Back from "../../Assets/Images/Background1.png";
-import '../../index.css';
+import "../../index.css";
 import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
+import BackgroundImage3 from "../../Assets/Images/BackgrounImage3.png";
 import axios from "axios";
 
 const VideoDetailsPage = () => {
@@ -519,10 +520,16 @@ const VideoDetailsPage = () => {
       <div className="text-center pt-10 pb-4">
 
         <h2 className="sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-medium font-sans">{title}</h2>
+        {/* <h2 className="text-3xl font-semibold text-center mt-[-20px] font-sans sm:text-2xl">
+          {title}
+        </h2> */}
+        <h2 className="raleway sm:text-2xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold font-sans">
+          {title}
+        </h2>
       </div>
 
       <div className="px-2">
-        <p className="text-red-600 text-2xl text-center text-sm font-sans lg:text-2xl md:text-xl xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]">
+        <p className="raleway text-red-600 text-2xl text-center text-sm font-sans sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

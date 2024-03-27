@@ -33,15 +33,20 @@ const TopicButton: React.FC<ButtonProps> = ({ label, func }) => {
     fontWeight: "bold", // Make text bold
   };
 
-  return <button className='border-solid rounded-3xl border-2 hover:text-red-600 hover:border-white hover:bg-slate-100 bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]' onClick={func} >{label}</button>;
+  return (
+    <button
+      className="raleway border-solid rounded-3xl border-2 hover:text-red-600 hover:border-white hover:bg-slate-100 bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]"
+      onClick={func}
+    >
+      {label}
+    </button>
+  );
   // style={buttonStyle}
 };
 
-
-const SearchBox: React.FC<SearchProp> = ( { value, getValue } ) => {
-
+const SearchBox: React.FC<SearchProp> = ({ value, getValue }) => {
   const navigate = useNavigate();
-  
+
   const searchBoxStyle: React.CSSProperties = {
     background: "#ffffff",
     borderRadius: "25px", // Adjust the value to control the curvature
@@ -63,10 +68,13 @@ const SearchBox: React.FC<SearchProp> = ( { value, getValue } ) => {
   const navigateFunction = () => {
     navigate(`/firstPageSearch`);
     // /${searchValue}
-  }
+  };
 
   return (
-    <div onClick={navigateFunction} className="rounded-[25px] py-[5px] px-[15px] my-[15px] flex items-center bg-white lg:w-[40%] w-[100%]">
+    <div
+      onClick={navigateFunction}
+      className="rounded-[25px] py-[5px] px-[15px] my-[15px] flex items-center bg-white lg:w-[40%] w-[100%]"
+    >
       {/* style={searchBoxStyle} */}
       <input
         value={value}
@@ -154,19 +162,29 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
       genre: "Stories",
     },
 
-    {code : '-Nli8LqX4rU' , topics: 'Trelle, Nita & Benny Sing', genre: `Trelle's Tunes`},
-    {code : 'wftl7HABS8U' , topics: 'Trelle Sings Crossing Over', genre: `Trelle's Tunes`},
-    {code : 'rKl-jZDw2C0' , topics: 'Trelle Sings, My God is Real', genre: `Trelle's Tunes`}
-
-
-  ]
+    {
+      code: "-Nli8LqX4rU",
+      topics: "Trelle, Nita & Benny Sing",
+      genre: `Trelle's Tunes`,
+    },
+    {
+      code: "wftl7HABS8U",
+      topics: "Trelle Sings Crossing Over",
+      genre: `Trelle's Tunes`,
+    },
+    {
+      code: "rKl-jZDw2C0",
+      topics: "Trelle Sings, My God is Real",
+      genre: `Trelle's Tunes`,
+    },
+  ];
 
   const navigate = useNavigate();
 
   const navigateFunction = () => {
     navigate(`/firstPageSearch`);
     // /${searchValue}
-  }
+  };
 
   // const { data } = useFetch('code');
   const DocumentsTargerRef = useRef<HTMLDivElement | null>(null);
@@ -296,7 +314,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
 
   return (
     <div style={containerStyle}>
-      <h1 style={headingStyle} className="font-bold text-white">
+      <h1 style={headingStyle} className="font-bold text-white raleway">
         BROWSE BY TOPIC
       </h1>
       <div className="sm:ml-[-25px]">
@@ -312,12 +330,20 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         <TopicButton label="Trelle's Tunes" func={getDetailsOfClickingButton} />
         <TopicButton label="In Your Corner TV Show" func={getDetailsOfClickingButton} />
       </div>
-        <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
-      {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) || (filteredValuesOfVideos == undefined || filteredValuesOfVideos == '') ? (<div style={subHeadingContainerStyle}>
-        <div className='ml-[-50px] mr-[-50px] mt-[-50px]' ref={DocumentsTargerRef}>
-          <p className=' font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]'>Documentries / Movies</p>
-          {/* style={subHeadingStyle} */}
-          {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
+      <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
+      {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) ||
+      filteredValuesOfVideos == undefined ||
+      filteredValuesOfVideos == "" ? (
+        <div style={subHeadingContainerStyle}>
+          <div
+            className="ml-[-50px] mr-[-50px] mt-[-50px]"
+            ref={DocumentsTargerRef}
+          >
+            <p className=" raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+              Documentries / Movies
+            </p>
+            {/* style={subHeadingStyle} */}
+            {/* <div className='flex justify-between mt-4 ml-0 overflow-x-hidden sm:mt-[-45px] sm:mb-[-20px] sm:ml-[-20px]'>
             <VideoSlider2 type="true" />
           </div> */}
             <div className="sm:mt-[30px] sm:ml-[-25px]">
@@ -328,7 +354,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-50px]"
             ref={ProLifeVoicesTargerRef}
           >
-            <p className="font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+            <p className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
               Pro-Life Voices
             </p>
             {/* style={subHeadingStyle} */}
@@ -344,7 +370,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] sm:mt-[-85px] mt-[-50px]"
             ref={StoriesTargerRef}
           >
-            <p className="font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+            <p className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
               Stories
             </p>
             {/* style={subHeadingStyle} */}
@@ -360,7 +386,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-50px]"
             ref={TrellerTunesTargerRef}
           >
-            <p className="font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+            <p className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
               Trelle's Tunes
             </p>
             <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">

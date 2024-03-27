@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
 type Props = {
-    name: string,
-    style?: string;
-}
+  name: string;
+  style?: string;
+};
 
-const ButtonComponent  = ( {name, style } :Props ) => {
-    return (
-        <div>
-            <button className={style}>{name}</button>
-        </div>
-    )
-}
+const ButtonComponent = ({ name, style }: Props) => {
+  return (
+    <div>
+      <button className={style}>{name}</button>
+    </div>
+  );
+};
 
-export default ButtonComponent
+export default ButtonComponent;

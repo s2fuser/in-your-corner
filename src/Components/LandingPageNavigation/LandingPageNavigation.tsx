@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
-import SearchBarComponent from '../SearchBar/SearchBar';
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import SearchBarComponent from "../SearchBar/SearchBar";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 type Prop = {
-  searchValue?: string,
-  onChangeFunction?: any,
-}
+  searchValue?: string;
+  onChangeFunction?: any;
+};
 
-const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFunction } ) => {
-
+const LandingPageNavigationBar: React.FC<Prop> = ({
+  searchValue,
+  onChangeFunction,
+}) => {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
 
@@ -22,7 +24,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
   const navigateFunction = () => {
     navigate(`/firstPageSearch?query=${searchValue}`);
     // /${searchValue}
-  }
+  };
 
   const navItems = [
     { id: 1, text: 'Home', routeName: "/" },
@@ -36,78 +38,107 @@ const LandingPageNavigationBar: React.FC<Prop> = ( { searchValue, onChangeFuncti
   ];
 
   return (
-    <div className='bg-slate-100 w-full p-7 flex items-center md:justify-between lg:justify-around' style={{ backgroundColor: 'rgba(159, 159, 207, 0.65)'}}>
-      <div className= ''>
+    <div
+      className="bg-slate-100 w-full p-7 flex items-center md:justify-between lg:justify-around"
+      style={{ backgroundColor: "rgba(159, 159, 207, 0.65)" }}
+    >
+      <div className="">
         <Link to="/">
-          <img className='w-24 lg:w-32 h-15' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
+          <img
+            className="w-24 lg:w-32 h-15"
+            src="https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png"
+            alt="logo"
+          />
         </Link>
       </div>
-      <div className='hidden lg:flex gap-x-7 mr-3 md:ml-[25px] md:mr-[186px] font-sans ml-[85px] xl:ml-[130px]'>
+      <div className="hidden lg:flex gap-x-7 mr-3 md:ml-[25px] md:mr-[186px] font-sans ml-[85px] xl:ml-[130px]">
         <Link to="/">
-          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Home</span>
+          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+            Home
+          </span>
         </Link>
         <Link to="/team">
-          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Team</span>
+          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+            Team
+          </span>
         </Link>
         <Link to="/blog">
-          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Blogs</span>
+          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+            Blogs
+          </span>
         </Link>
         {/* <span>Videos</span> */}
 
         <Link to="/Videos">
-          <span className=' hover:opacity-50 hover:text-white  font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Videos</span>
+          <span className="raleway hover:opacity-50 hover:text-white  font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+            Videos
+          </span>
         </Link>
 
         <Link to="/contact">
-          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>Contact</span>
+          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+            Contact
+          </span>
         </Link>
         <Link to="/aboutUs">
-          <span className='hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer'>About Us</span>
+          <span className="raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer">
+            About Us
+          </span>
         </Link>
         {/* <Link to="/trellestune">
           <span>Music</span>
         </Link> */}
       </div>
-      <div className='flex justify-center items-center sm:ml-[15px] md:ml-[-50px] '>
+      <div className="flex justify-center items-center sm:ml-[15px] md:ml-[-50px] ">
         <div onClick={navigateFunction}>
-          <SearchBarComponent searchValue={searchValue} onChangeFunction={onChangeFunction} />
+          <SearchBarComponent
+            searchValue={searchValue}
+            onChangeFunction={onChangeFunction}
+          />
         </div>
         {/* <div className='sm:ml-[-30px] md:ml-[60px] lg:ml-[10px] text-white' onClick={navigateFunction}>
           <IoSearch />
         </div> */}
       </div>
 
-      <div onClick={handleNav} className='block lg:hidden'>
-        {nav ? <AiOutlineClose size={20} color='black' /> : <AiOutlineMenu size={20} color='black' />}
+      <div onClick={handleNav} className="block lg:hidden">
+        {nav ? (
+          <AiOutlineClose size={20} color="black" />
+        ) : (
+          <AiOutlineMenu size={20} color="black" />
+        )}
       </div>
 
       <ul
         className={
           nav
-            ? 'fixed z-[9] lg:hidden left-0 top-0 w-[35%] h-full bg-slate-100 ease-in-out duration-500 text-black z-[9]'
-            : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-[9]'
+            ? "fixed z-[9] lg:hidden left-0 top-0 w-[35%] h-full bg-slate-100 ease-in-out duration-500 text-black z-[9]"
+            : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-[9]"
         }
       >
         {/* Mobile Logo */}
-        <div className='py-6 pl-2'>
-          <img className='w-32 h-15 ' src='https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png' alt='logo' />
+        <div className="py-6 pl-2">
+          <img
+            className="w-32 h-15 "
+            src="https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png"
+            alt="logo"
+          />
         </div>
 
         {/* Mobile Navigation Items */}
-        {navItems.map(item => (
+        {navItems.map((item) => (
           <Link to={item.routeName}>
             <li
-            key={item.id}
-            className='p-4 border-b font-bold text-center text-stone-700 rounded-xl cursor-pointer border-gray-600'
+              key={item.id}
+              className="p-4 border-b font-bold text-center text-stone-700 rounded-xl cursor-pointer border-gray-600"
             >
               {item.text}
             </li>
           </Link>
         ))}
       </ul>
-
     </div>
-  )
-}
+  );
+};
 
-export default LandingPageNavigationBar
+export default LandingPageNavigationBar;
