@@ -49,22 +49,25 @@ code {
 } */
 
 @keyframes fadeInOutWaveColors {
-  25%, 100% {
+  60%, 80% {
     opacity: 1;
-    transform: translateY(10px);
-    color: white; /* Start color */
+    transform: translateY(-10px); /* Adjust for initial and final state */
+    color: white; /* Initial color */
   }
-  50% {
+  
+  30%,60% { /* Transition to middle color */
     opacity: 1;
     transform: translateY(0);
     color: black; /* Middle color */
   }
-  75% {
+  60%, 80% { /* Duration for "Ash" color to be visible */
     opacity: 1;
     transform: translateY(0);
-    color: gray; /* End color */
+    color: gray; /* "Ash" color remains visible longer */
   }
 }
+
+
 
 .animate-fade-in-out-wave-colors {
   animation: fadeInOutWaveColors 10s ease-in-out infinite;
@@ -172,10 +175,10 @@ code {
   margin-top: -200px;
 } */
 
-/* .background4 {
+.background4 {
   background-image: url('./Assets/Images/VideoDetailsBG4.svg');
   height: 500px;
-} */
+}
 
 @keyframes fadeFromBottom {
   0% {
@@ -193,4 +196,12 @@ code {
   height: 0; /* Start with height 0 */
   background-color: rgba(255, 255, 255, 0); /* Transparent */
   transition: background-color 0.5s ease, height 0.5s ease; /* Transition for background color and height */
+}
+
+@font-face {
+  font-family: raleway;
+  src: url(../public/Raleway-VariableFont_wght.ttf)
+}
+.raleway{
+  font-family: raleway;
 }
