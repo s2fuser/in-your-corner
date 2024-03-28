@@ -6,17 +6,19 @@ import LandingPageNavigationBar from "../../Components/LandingPageNavigation/Lan
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FiUser, FiMail, FiSend } from 'react-icons/fi';
+import { FiUser, FiMail, FiSend } from "react-icons/fi";
 import { CiLocationOn } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { MdOutlineAccessTime } from "react-icons/md";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactUsPage = () => {
-
   const [SearchValue, setSearchValue] = useState<any>();
   const [AllVideosDetails, setAllVideosDetails] = useState<any>();
-  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] = useState<any>();
+  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] =
+    useState<any>();
 
   useEffect(() => {
     fetchData();
@@ -26,10 +28,10 @@ const ContactUsPage = () => {
   const location = useLocation();
 
   const handleClick = () => {
-    if (location.pathname === '/') {
+    if (location.pathname === "/") {
       window.scrollTo(0, 0);
     } else {
-      history('/');
+      history("/");
     }
   };
 
@@ -69,42 +71,77 @@ const ContactUsPage = () => {
         <Header />
       </div>
       <div>
-        <LandingPageNavigationBar searchValue={SearchValue}
-          onChangeFunction={functionToSetSearchValue} ActiveScreen="Contact" />
+        <LandingPageNavigationBar
+          searchValue={SearchValue}
+          onChangeFunction={functionToSetSearchValue}
+          ActiveScreen="Contact"
+        />
+      </div>
+      <div>
+        <p className="font-bold text-3xl text-center px-[20px] py-[10px] animate-fade-in-bottom">
+          Contact Us
+        </p>
+        <hr className="centered-line" />
       </div>
       <div className="raleway text-center raleway text-xl flex justify-center items-center">
-          <div className="flex justify-center items-center mx-[30px] my-[30px]">
-            <div>
-              <div className="lg:flex lg:space-x-6">
-                <div className="sm:mb-[10px]">
-                  <input className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder" type="text" placeholder="Your Name" />
-                </div>
-                <div>
-                  <input className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder" type="text" placeholder="Your Email" />
-                </div>
+        <div className="flex justify-center items-center mx-[30px] my-[30px]">
+          <div>
+            <div className="lg:flex lg:space-x-6">
+              <div className="sm:mb-[10px]">
+                <p className="font-bold text-left text-sm ">First Name*</p>
+                <input
+                  className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder"
+                  type="text"
+                  placeholder=""
+                />
               </div>
               <div>
-              <div className="mt-[30px] mb-[30px]">
-                <input className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder" type="text" placeholder="Subject" />
-                </div>
-              </div>
-              <div>
-              <div>
-                <textarea className="px-[10px] py-[8px] w-[100%] h-[150px] text-black text-sm border border-contactUsBorder" placeholder="Message" />
-                </div>
-              </div>
-              <div>
-                <div>
-                  <textarea className="px-[10px] py-[8px] w-[100%] h-[150px] text-black text-sm border border-contactUsBorder" placeholder="Message" />
-                </div>
-              </div>
-              <div>
-                <button className="bg-contactUsBG text-white text-sm rounded-[5px] px-[8px] py-[10px] mt-[10px]">
-                  Submit
-                </button>
+                <p className="font-bold text-left text-sm">Last Name*</p>
+
+                <input
+                  className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder"
+                  type="text"
+                  placeholder=""
+                />
               </div>
             </div>
+            <div>
+              <div className="mt-[30px] mb-[30px]">
+                <p className="font-bold text-left text-sm">Email*</p>
+
+                <input
+                  className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
+                  type="text"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div>
+              <div>
+                <p className="font-bold text-sm text-left">Issue*</p>
+                <textarea
+                  className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div>
+              <div>
+                <p className="font-bold text-sm text-left">Details*</p>
+
+                <textarea
+                  className="px-[10px] py-[8px] w-[100%] h-[100px] text-black text-sm border border-contactUsBorder"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div>
+              <button className="bg-contactUsBG text-white text-sm rounded-[5px] px-[8px] py-[10px] mt-[10px]">
+                Submit
+              </button>
+            </div>
           </div>
+        </div>
       </div>
       <div>
         <FooterComponent onClickToHome="Contact Us" />
