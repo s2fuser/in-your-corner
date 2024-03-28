@@ -18,7 +18,7 @@ const Teamcontent = () => {
     return (
         <div>
             
-            <div className="text-center py-[30px]">
+            <div className="text-center py-[30px]" data-aos="zoom-in">
                 <h2 className='font-bold text-4xl font-sans mb-2'>Team</h2>
                 <p className='text-xl'>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
             </div>
