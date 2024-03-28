@@ -23,22 +23,6 @@ type SearchProp = {
 
 const TopicButton: React.FC<ButtonProps> = ({ label, func }) => {
 
-  useEffect(() => {
-    function handleScroll() {
-      const buttons = document.querySelectorAll(".topic-button");
-      buttons.forEach((button) => {
-        const position = button.getBoundingClientRect();
-        if (position.top >= 0 && position.bottom <= window.innerHeight) {
-          button.classList.add("animate-fade-in-bottom");
-        } else {
-          button.classList.remove("animate-fade-in-bottom");
-        }
-      });
-    }
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const buttonStyle: React.CSSProperties = {
     background: "transparent",
     color: "#ffffff",
@@ -52,7 +36,7 @@ const TopicButton: React.FC<ButtonProps> = ({ label, func }) => {
 
   return (
     <button
-      className="raleway topic-button border-solid rounded-3xl border-2 hover:text-red-600 hover:border-white hover:bg-slate-100 bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]"
+      className="raleway border-solid rounded-3xl border-2 hover:text-red-600 hover:border-white hover:bg-slate-100 bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]"
       onClick={func}
     >
       {label}

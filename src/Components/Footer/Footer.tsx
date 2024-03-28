@@ -18,7 +18,8 @@ const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
         if ((location.pathname === '/' && event.currentTarget.innerText == "Home") || (location.pathname === '/ourStory' && event.currentTarget.innerText == "Our Story") || (location.pathname === '/team' && event.currentTarget.innerText == "Team") || (location.pathname === '/blog' && event.currentTarget.innerText == "Blogs") || (location.pathname === '/Videos' && event.currentTarget.innerText == "Videos") || (location.pathname === '/contact' && event.currentTarget.innerText == "Contact us") || (location.pathname === '/aboutUs' && event.currentTarget.innerText == "About us")) {
           window.scrollTo(0, 0);
         } else {
-            Navigate('/');
+            let Value = (event.currentTarget.innerText == "Home" ? '/' : (event.currentTarget.innerText == "Our Story" ? '/ourStory' : (event.currentTarget.innerText == "Team" ? '/team' : (event.currentTarget.innerText == "Blogs" ? '/blog' : (event.currentTarget.innerText == "Videos" ? '/Videos' : (event.currentTarget.innerText == "Contact us" ? '/contact' : (event.currentTarget.innerText == "About us" ? '/aboutUs' : '/'))))))) 
+            Navigate(Value);
         }
     };
 
@@ -34,16 +35,16 @@ const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
                     <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Home</span>
                 {/* </Link> */}
                 {/* <Link to="/ourStory"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Our Story</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Our Story</span>
                 {/* </Link> */}
                 {/* <Link to="/team"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Team</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Team</span>
                 {/* </Link> */}
                 {/* <Link to="/blog"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Blogs</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Blogs</span>
                 {/* </Link> */}
                 {/* <Link to="/Videos"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Videos</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Videos</span>
                 {/* </Link> */}
                 {/* <Link to="/trellestune">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Music</span>
@@ -54,10 +55,10 @@ const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
                 </a>
                 {/* </Link> */}
                 {/* <Link to="/contact"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Contact us</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Contact us</span>
                 {/* </Link> */}
                 {/* <Link to="/aboutUs"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px]' onClick={handleClick}>About us</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px] cursor-pointer' onClick={handleClick}>About us</span>
                 {/* </Link> */}
             </div>
         </div>
