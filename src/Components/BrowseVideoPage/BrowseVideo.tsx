@@ -1,15 +1,17 @@
-import React, { useState, useEffect, useRef  } from 'react';
-import VideoSlider from '../VideoSlider/VideoSlider';
-import VideoSlider2 from '../VideoSlider2/VideoSlider2';
-import DocumentriesAndMovies from '../../Pages/Documentries&Movies/DocumentriesAndMovies';
-import ProLifeSlider from '../../Pages/ProLifeVideos/ProLifeSlider';
-import StoriesComponent from '../../Pages/ProLifeVideos/Stories';
-import TrellesTuneComponent from '../../Pages/ProLifeVideos/TrellesTune';
-import InYourCornerTvShowComponent from '../../Pages/ProLifeVideos/inYourCornerTvShows';
-import useFetch from '../../hooks/useFetchHook';
-import axios from 'axios';
-import TopicWiseSearchComponent from '../TopicSearch/TopicSearch';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import VideoSlider from "../VideoSlider/VideoSlider";
+import VideoSlider2 from "../VideoSlider2/VideoSlider2";
+import DocumentriesAndMovies from "../../Pages/Documentries&Movies/DocumentriesAndMovies";
+import ProLifeSlider from "../../Pages/ProLifeVideos/ProLifeSlider";
+import StoriesComponent from "../../Pages/ProLifeVideos/Stories";
+import TrellesTuneComponent from "../../Pages/ProLifeVideos/TrellesTune";
+import InYourCornerTvShowComponent from "../../Pages/ProLifeVideos/inYourCornerTvShows";
+import useFetch from "../../hooks/useFetchHook";
+import axios from "axios";
+import TopicWiseSearchComponent from "../TopicSearch/TopicSearch";
+import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface ButtonProps {
   label: string;
@@ -22,7 +24,6 @@ type SearchProp = {
 };
 
 const TopicButton: React.FC<ButtonProps> = ({ label, func }) => {
-
   const buttonStyle: React.CSSProperties = {
     background: "transparent",
     color: "#ffffff",
@@ -37,6 +38,7 @@ const TopicButton: React.FC<ButtonProps> = ({ label, func }) => {
   return (
     <button
       className="raleway border-solid rounded-3xl border-2 hover:text-red-600 hover:border-white hover:bg-slate-100 bg-transparent text-white border-2 border-white rounded-[25px] px-8 py-2 m-4 cursor-pointer font-bold sm:block sm:ml-[-25px]"
+      data-aos="zoom-in-up"
       onClick={func}
     >
       {label}
@@ -309,13 +311,19 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
       InYourCornerTvShowTargerRef.current &&
       event.target.textContent == "In Your Corner TV Show"
     ) {
-      InYourCornerTvShowTargerRef.current.scrollIntoView({ behavior: "smooth" });
+      InYourCornerTvShowTargerRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
 
   return (
     <div style={containerStyle}>
-      <h1 style={headingStyle} className="font-bold text-white raleway">
+      <h1
+        style={headingStyle}
+        className="font-bold text-white raleway "
+        data-aos="fade-right"
+      >
         BROWSE BY TOPIC
       </h1>
       <div className="sm:ml-[-25px]">
@@ -329,7 +337,10 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         />
         <TopicButton label="Stories" func={getDetailsOfClickingButton} />
         <TopicButton label="Trelle's Tunes" func={getDetailsOfClickingButton} />
-        <TopicButton label="In Your Corner TV Show" func={getDetailsOfClickingButton} />
+        <TopicButton
+          label="In Your Corner TV Show"
+          func={getDetailsOfClickingButton}
+        />
       </div>
       <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
       {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) ||
@@ -340,7 +351,10 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-50px]"
             ref={DocumentsTargerRef}
           >
-            <p className=" raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+            <p
+              className=" raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+              data-aos="zoom-out-up"
+            >
               Documentries / Movies
             </p>
             {/* style={subHeadingStyle} */}
@@ -355,7 +369,10 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-50px]"
             ref={ProLifeVoicesTargerRef}
           >
-            <p className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+            <p
+              className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+              data-aos="zoom-out-up"
+            >
               Pro-Life Voices
             </p>
             {/* style={subHeadingStyle} */}
@@ -371,7 +388,10 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] sm:mt-[-85px] mt-[-50px]"
             ref={StoriesTargerRef}
           >
-            <p className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+            <p
+              className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+              data-aos="zoom-out-up"
+            >
               Stories
             </p>
             {/* style={subHeadingStyle} */}
@@ -387,7 +407,10 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-50px]"
             ref={TrellerTunesTargerRef}
           >
-            <p className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+            <p
+              className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+              data-aos="zoom-out-up"
+            >
               Trelle's Tunes
             </p>
             <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">
@@ -399,7 +422,10 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-50px]"
             ref={InYourCornerTvShowTargerRef}
           >
-            <p className="font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]">
+            <p
+              className="font-bold text-2xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+              data-aos="zoom-out-up"
+            >
               In Your Corner TV Show
             </p>
             {/* <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">

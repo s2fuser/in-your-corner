@@ -27,6 +27,8 @@
 
 import React from "react";
 import BackgroundImage3 from "../../Assets/Images/BackgrounImage3.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Mainheading = () => {
   return (
@@ -68,7 +70,10 @@ const Mainheading = () => {
         </h3>
       </div>
       <div>
-        <h1 className="raleway lg:h-[60px] sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold text-center text-4xl sm:text-2xl font-sans text-slate-950 sm:mt-[172px] md:mt-[-25px] lg:mt-[-38px] xl:mt-[-40px] animate-fade-in-bottom">
+        <h1
+          className="raleway lg:h-[60px] sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold text-center text-4xl sm:text-2xl font-sans text-slate-950 sm:mt-[172px] md:mt-[-25px] lg:mt-[-38px] xl:mt-[-40px] animate-fade-in-bottom"
+          data-aos="zoom-in"
+        >
           FEATURED FILMS
         </h1>
       </div>
