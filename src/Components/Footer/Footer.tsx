@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import WhiteLogo from "../../Assets/Images/whiteLogo.png";
 
 const DonateURL = 'https://give.tithe.ly/?formId=9379b56b-bd7f-4cbf-b2fb-b39ff1cc093b';
@@ -9,6 +9,19 @@ type Prop = {
 }
 
 const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
+
+    const Navigate = useNavigate();
+    const location = useLocation();
+
+    const handleClick = (event: any) => {
+        console.log(event)
+        if ((location.pathname === '/' && event.currentTarget.innerText == "Home") || (location.pathname === '/ourStory' && event.currentTarget.innerText == "Our Story") || (location.pathname === '/team' && event.currentTarget.innerText == "Team") || (location.pathname === '/blog' && event.currentTarget.innerText == "Blogs") || (location.pathname === '/Videos' && event.currentTarget.innerText == "Videos") || (location.pathname === '/contact' && event.currentTarget.innerText == "Contact us") || (location.pathname === '/aboutUs' && event.currentTarget.innerText == "About us")) {
+          window.scrollTo(0, 0);
+        } else {
+            Navigate('/');
+        }
+    };
+
     return (
         <div className='bg-red-950  w- full h-96 text-white flex justify-between font-serif sm:block sm:h-fit' >
             <div className='ml-20 font-sans sm:mt-[-3px] md:mt-[-37px] lg:mt-[9px] sm:flex-1 sm:ml-[10px]'>
@@ -18,20 +31,20 @@ const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
             <div className='flex flex-col pt-11 text-sm mr-40 font-sans sm:flex-1 sm:ml-[10px]' >
                 <span className='pb-8 font-sans xl:text-xl 2xl:text-2xl'>Navigation</span>
                 {/* <Link to="/"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={onClickToHome}>Home</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Home</span>
                 {/* </Link> */}
-                <Link to="/ourStory">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Our Story</span>
-                </Link>
-                <Link to="/team">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Team</span>
-                </Link>
-                <Link to="/blog">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Blogs</span>
-                </Link>
-                <Link to="/Videos">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Videos</span>
-                </Link>
+                {/* <Link to="/ourStory"> */}
+                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Our Story</span>
+                {/* </Link> */}
+                {/* <Link to="/team"> */}
+                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Team</span>
+                {/* </Link> */}
+                {/* <Link to="/blog"> */}
+                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Blogs</span>
+                {/* </Link> */}
+                {/* <Link to="/Videos"> */}
+                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Videos</span>
+                {/* </Link> */}
                 {/* <Link to="/trellestune">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Music</span>
                 </Link> */}
@@ -40,12 +53,12 @@ const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Donate</span>
                 </a>
                 {/* </Link> */}
-                <Link to="/contact">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Contact us</span>
-                </Link>
-                <Link to="/aboutUs">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px]'>About us</span>
-                </Link>
+                {/* <Link to="/contact"> */}
+                    <span className='font-sans xl:text-xl 2xl:text-2xl' onClick={handleClick}>Contact us</span>
+                {/* </Link> */}
+                {/* <Link to="/aboutUs"> */}
+                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px]' onClick={handleClick}>About us</span>
+                {/* </Link> */}
             </div>
         </div>
     )

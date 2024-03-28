@@ -28,7 +28,7 @@ const Know = () => {
       </div>
       <div className="raleway h-[50vh]"> Coming Soon </div>
       <div>
-        <FooterComponent onClickToHome={handleClick} />
+        <FooterComponent onClickToHome="Know More" />
       </div>
       <div>
         <Footer2 />

@@ -73,7 +73,7 @@ const AboutUsPage = () => {
                 <AboutUsComponent />
             </div>
             <div>
-                <Footer onClickToHome={handleClick} />
+                <Footer onClickToHome="About Us" />
             </div>
             <div>
                 <Footer2 />

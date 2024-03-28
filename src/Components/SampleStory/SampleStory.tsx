@@ -70,7 +70,7 @@ const SampleOurStory = () => {
       </div>
       <div className="raleway h-[50vh]">Coming Soon</div>
       <div>
-        <Footer onClickToHome={handleClick} />
+        <Footer onClickToHome="Our Story" />
       </div>
       <div>
         <Footer2 />

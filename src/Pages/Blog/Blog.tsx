@@ -112,7 +112,7 @@ const Blog = () => {
         </div>
       </div>
       <div>
-        <FooterComponent onClickToHome={handleClick} />
+        <FooterComponent onClickToHome="Blogs" />
       </div>
       <div>
         <Footer2 />

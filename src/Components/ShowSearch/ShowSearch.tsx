@@ -152,7 +152,7 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
                                     return (
                                         <div key={element.code} className="px-1 transition duration-150 ease-in-out transform hover:scale-100 wipe-transition">
                                             <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics }}>
-                                                <motion.img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]"/>
+                                                <motion.img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"/>
                                             </Link>
                                             {/* initial={{ rotate: -180 }} // Initial rotation
   animate={{ rotate: 0 }} // Animated rotation

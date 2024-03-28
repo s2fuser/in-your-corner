@@ -69,7 +69,7 @@ const ContactUsPage = () => {
       </div>
       <div className="raleway h-[50vh]">Coming Soon</div>
       <div>
-        <FooterComponent onClickToHome={handleClick} />
+        <FooterComponent onClickToHome="Contact Us" />
       </div>
       <div>
         <Footer2 />

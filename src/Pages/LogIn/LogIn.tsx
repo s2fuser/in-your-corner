@@ -99,7 +99,7 @@ const LogInPage = () => {
                     Log In
                 </button>
             </div>
-            <Footer onClickToHome={handleClick} />
+            <Footer onClickToHome="Log In" />
             <Footer2 />
         </div>
     )

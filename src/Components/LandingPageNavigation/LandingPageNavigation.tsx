@@ -103,7 +103,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
         </div> */}
       </div>
 
-      <div onClick={handleNav} className="block lg:hidden">
+      <div onClick={handleNav} className="block lg:hidden sm:ml-[22px]">
         {nav ? (
           <AiOutlineClose size={20} color="black" />
         ) : (
