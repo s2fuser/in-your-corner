@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
+import { ImQuotesLeft } from "react-icons/im";
+// import JoinOurCommunityButton from "../JoinOurCommunity/JoinOurCommunitybutton";
 import { Link } from "react-router-dom";
+import LandingPageVideosComponent from "../LandingPageVideos/LandingPageVideos";
 import Footer2 from "../Footer2/Footer2";
-import FooterComponent from "../Footer/Footer";;
+import FooterComponent from "../Footer/Footer";
+import VideoSlider from "../VideoSlider/VideoSlider";
 import VideoSlider2 from "../VideoSlider2/VideoSlider2";
 import Image2 from "../../Assets/Images/image2.jpg";
 import Image1 from "../../Assets/Images/image1.jpg";
@@ -11,8 +15,11 @@ import LandingPageNavigationBar from "../LandingPageNavigation/LandingPageNaviga
 import QuotationImage from "../../Assets/Images/Quotation.png";
 import WhiteBackgroundImage from "../../Assets/Images/Background1.png";
 import JoinOurCommunityButton from "../JoinOurCommunity/JoinOurCommunitybutton";
+// import Join from "../../Pages/Join our community/Join our community";
+import ShowSearchComponent from "../ShowSearch/ShowSearch";
 import axios from "axios";
 import "../../index.css";
+// import { useNavigate } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 import AOS from "aos";
 import 'aos/dist/aos.css';
