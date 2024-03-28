@@ -58,7 +58,7 @@ const Story = () => {
                 <Contact />
             </div>
             <div>
-                <FooterComponent onClickToHome={handleClick} />
+                <FooterComponent onClickToHome="Video Details" />
             </div>
             <div>
                 <Footer2/>

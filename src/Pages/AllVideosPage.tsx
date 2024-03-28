@@ -38,7 +38,7 @@ const AllVideosPageComponet = () => {
             {/* <DocumentriesAndMovies /> */}
             {/* <StoriesComponent /> */}
             <BrowseVideoPage/>
-            <Footer onClickToHome={handleClick}/>
+            <Footer onClickToHome="Videos"/>
             <Footer2/>
         </div>
     )

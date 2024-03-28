@@ -27,7 +27,7 @@ const MusicComponent = () => {
             <div className="mb-[30px]">
                 <TrellesTuneComponent />
             </div>
-            <Footer onClickToHome={handleClick} />
+            <Footer onClickToHome="Trelles Tunes" />
             <Footer2 />
         </div>
     )

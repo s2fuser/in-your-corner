@@ -277,3 +277,18 @@ code {
     opacity: 1;
   }
 }
+
+@keyframes fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-bottom {
+  animation: fade-in-bottom 1s ease forwards;
+}

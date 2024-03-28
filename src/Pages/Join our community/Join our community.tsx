@@ -28,7 +28,7 @@ const JoinOurCommunityPage = () => {
       </div>
       <div className="raleway h-[50vh]">Coming Soon </div>
       <div>
-        <FooterComponent onClickToHome={handleClick} />
+        <FooterComponent onClickToHome="Join Our Community" />
       </div>
       <div>
         <Footer2 />

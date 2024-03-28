@@ -69,7 +69,7 @@ const Team = () => {
       </div>
       <div className="h-[50vh]">Coming Soon</div>
       <div>
-        <FooterComponent onClickToHome={handleClick} />
+        <FooterComponent onClickToHome="Team" />
       </div>
       <div>
         <Footer2 />

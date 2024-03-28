@@ -21,6 +21,8 @@ import axios from "axios";
 import "../../index.css";
 // import { useNavigate } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 const FirstPageComponent = () => {
   // const navigate = useNavigate();
@@ -449,11 +451,12 @@ const FirstPageComponent = () => {
             <div>
               <div className="relative">
                 <div className="pb-[20px] flex justify-center absolute lg:top-[-126px] top-[-60px] z-[8] lg:gap-[20px] gap-[2px] w-full">
-                  <div className="px-1 sm:w-[90px] sm:h-[90px] ">
+                  <div className="px-1 sm:w-[90px] sm:h-[90px]">
                     <img
                       className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
                       src={Image3}
                       alt=""
+                      data-aos="zoom-in-right"
                     />
                   </div>
                   <div className="px-1  sm:w-[90px] sm:h-[90px]">
@@ -461,6 +464,7 @@ const FirstPageComponent = () => {
                       className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
                       src={Image4}
                       alt=""
+                      data-aos="zoom-in-right"
                     />
                   </div>
                   <div className="px-1 sm:w-[90px] sm:h-[90px]">
@@ -468,6 +472,7 @@ const FirstPageComponent = () => {
                       className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
                       src={Image3}
                       alt=""
+                      data-aos="zoom-in-left"
                     />
                   </div>
                   <div className="px-1 sm:w-[90px] sm:h-[90px]">
@@ -475,6 +480,7 @@ const FirstPageComponent = () => {
                       className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
                       src={Image4}
                       alt=""
+                      data-aos="zoom-in-left"
                     />
                   </div>
                 </div>
@@ -556,7 +562,7 @@ const FirstPageComponent = () => {
         </div>} */}
 
         <div className="">
-          <FooterComponent onClickToHome = {handleClick} />
+          <FooterComponent onClickToHome = "Home" />
         </div>
         <div className="">
           <Footer2 />
