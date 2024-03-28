@@ -8,7 +8,7 @@ type Prop = {
     onClickToHome?: any,
 }
 
-const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
+const Footer: React.FC<Prop> = ({ onClickToHome }) => {
 
     const Navigate = useNavigate();
     const location = useLocation();
@@ -16,9 +16,9 @@ const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
     const handleClick = (event: any) => {
         console.log(event)
         if ((location.pathname === '/' && event.currentTarget.innerText == "Home") || (location.pathname === '/ourStory' && event.currentTarget.innerText == "Our Story") || (location.pathname === '/team' && event.currentTarget.innerText == "Team") || (location.pathname === '/blog' && event.currentTarget.innerText == "Blogs") || (location.pathname === '/Videos' && event.currentTarget.innerText == "Videos") || (location.pathname === '/contact' && event.currentTarget.innerText == "Contact us") || (location.pathname === '/aboutUs' && event.currentTarget.innerText == "About us")) {
-          window.scrollTo(0, 0);
+            window.scrollTo(0, 0);
         } else {
-            let Value = (event.currentTarget.innerText == "Home" ? '/' : (event.currentTarget.innerText == "Our Story" ? '/ourStory' : (event.currentTarget.innerText == "Team" ? '/team' : (event.currentTarget.innerText == "Blogs" ? '/blog' : (event.currentTarget.innerText == "Videos" ? '/Videos' : (event.currentTarget.innerText == "Contact us" ? '/contact' : (event.currentTarget.innerText == "About us" ? '/aboutUs' : '/'))))))) 
+            let Value = (event.currentTarget.innerText == "Home" ? '/' : (event.currentTarget.innerText == "Our Story" ? '/ourStory' : (event.currentTarget.innerText == "Team" ? '/team' : (event.currentTarget.innerText == "Blogs" ? '/blog' : (event.currentTarget.innerText == "Videos" ? '/Videos' : (event.currentTarget.innerText == "Contact us" ? '/contact' : (event.currentTarget.innerText == "About us" ? '/aboutUs' : '/')))))))
             Navigate(Value);
         }
     };
@@ -30,36 +30,42 @@ const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
                 <p className='text-sm font-sans font-sans mt-[-15px] xl:text-xl 2xl:text-2xl xl:pb-[50px] raleway'>IN Your Corner Productions specializes in cre-<br />ating Christian themed television programs,<br />acclaimed documentaries, gospel music,and <br />ministry videos to help promote other<br />faith based non-profits. </p>
             </div>
             <div className='flex flex-col pt-11 text-sm mr-40 font-sans sm:flex-1 sm:ml-[10px]' >
-                <span className='pb-8 font-sans xl:text-xl 2xl:text-2xl raleway'>Navigation</span>
-                {/* <Link to="/"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Home</span>
-                {/* </Link> */}
-                {/* <Link to="/ourStory"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Our Story</span>
-                {/* </Link> */}
-                {/* <Link to="/team"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Team</span>
-                {/* </Link> */}
-                {/* <Link to="/blog"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Blogs</span>
-                {/* </Link> */}
-                {/* <Link to="/Videos"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Videos</span>
-                {/* </Link> */}
-                {/* <Link to="/trellestune">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Music</span>
+                <div className='text-center pb-8 font-sans xl:text-xl 2xl:text-2xl raleway'>Navigation</div>
+                <div className='flex space-x-20'>
+                    <div>
+                        {/* <Link to="/"> */}
+                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Home</div>
+                        {/* </Link> */}
+                        {/* <Link to="/ourStory"> */}
+                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Our Story</div>
+                        {/* </Link> */}
+                        {/* <Link to="/team"> */}
+                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Team</div>
+                        {/* </Link> */}
+                        {/* <Link to="/blog"> */}
+                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Blogs</div>
+                        {/* </Link> */}
+                    </div>
+                    <div>
+                        {/* <Link to="/Videos"> */}
+                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Videos</div>
+                        {/* </Link> */}
+                        {/* <Link to="/trellestune">
+                    <div className='font-sans xl:text-xl 2xl:text-2xl'>Music</div>
                 </Link> */}
-                {/* <Link to="/donate"> */}
-                <a href={DonateURL} target="_blank" rel="noopener noreferrer">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl raleway'>Donate</span>
-                </a>
-                {/* </Link> */}
-                {/* <Link to="/contact"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Contact us</span>
-                {/* </Link> */}
-                {/* <Link to="/aboutUs"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px] cursor-pointer raleway' onClick={handleClick}>About us</span>
-                {/* </Link> */}
+                        {/* <Link to="/donate"> */}
+                        <a href={DonateURL} target="_blank" rel="noopener noreferrer">
+                            <div className='font-sans xl:text-xl 2xl:text-2xl raleway'>Donate</div>
+                        </a>
+                        {/* </Link> */}
+                        {/* <Link to="/contact"> */}
+                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Contact us</div>
+                        {/* </Link> */}
+                        {/* <Link to="/aboutUs"> */}
+                        <div className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px] cursor-pointer raleway' onClick={handleClick}>About us</div>
+                        {/* </Link> */}
+                    </div>
+                </div>
             </div>
         </div>
     )

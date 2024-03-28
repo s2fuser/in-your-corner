@@ -14,7 +14,7 @@ const BlogCard = ({ title, description, index }: BlogCardTypes) => {
       to={`${index + 1}`}
       state={{ title: title, description: description }}
     >
-      <div key={index} className="bg-gray-800 text-white mb-4">
+      <div key={index} className="bg-gray-800 text-white mb-4" data-aos="flip-right">
         <div>
           <img
             src={require(`../../Assets/blogimages/blog${index + 1}.jpg`)}

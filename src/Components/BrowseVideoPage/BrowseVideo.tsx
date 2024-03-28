@@ -82,7 +82,7 @@ const SearchBox: React.FC<SearchProp> = ({ value, getValue }) => {
       <input
         value={value}
         type="text"
-        placeholder="Search"
+        placeholder="Search Videos"
         className="w-[100%] h-[100%] border-none outline-none lg:w-[400px] black"
         onChange={getValue}
       />
