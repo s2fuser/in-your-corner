@@ -68,7 +68,7 @@ const SampleOurStory = () => {
         <LandingPageNavigationBar searchValue={SearchValue}
             onChangeFunction={functionToSetSearchValue} />
       </div>
-      <div className="raleway h-[50vh]">Coming Soon</div>
+      <div className="raleway h-[50vh] text-center raleway text-xl flex justify-center items-center">Coming Soon</div>
       <div>
         <Footer onClickToHome="Our Story" />
       </div>

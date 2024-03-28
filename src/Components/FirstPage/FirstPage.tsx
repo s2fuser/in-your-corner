@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ImQuotesLeft } from "react-icons/im";
-// import JoinOurCommunityButton from "../JoinOurCommunity/JoinOurCommunitybutton";
 import { Link } from "react-router-dom";
-import LandingPageVideosComponent from "../LandingPageVideos/LandingPageVideos";
 import Footer2 from "../Footer2/Footer2";
-import FooterComponent from "../Footer/Footer";
-import VideoSlider from "../VideoSlider/VideoSlider";
+import FooterComponent from "../Footer/Footer";;
 import VideoSlider2 from "../VideoSlider2/VideoSlider2";
 import Image2 from "../../Assets/Images/image2.jpg";
 import Image1 from "../../Assets/Images/image1.jpg";
@@ -15,11 +11,8 @@ import LandingPageNavigationBar from "../LandingPageNavigation/LandingPageNaviga
 import QuotationImage from "../../Assets/Images/Quotation.png";
 import WhiteBackgroundImage from "../../Assets/Images/Background1.png";
 import JoinOurCommunityButton from "../JoinOurCommunity/JoinOurCommunitybutton";
-// import Join from "../../Pages/Join our community/Join our community";
-import ShowSearchComponent from "../ShowSearch/ShowSearch";
 import axios from "axios";
 import "../../index.css";
-// import { useNavigate } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
 import AOS from "aos";
 import 'aos/dist/aos.css';
@@ -121,21 +114,20 @@ const FirstPageComponent = () => {
 
   useEffect(() => {
   const container: any = containerRef.current;
-  if (!container) return; // Guard clause to prevent accessing null ref
+  if (!container) return; 
 
-  const divs = container.querySelectorAll('div'); // Select all divs inside the container
+  const divs = container.querySelectorAll('div'); 
 
   divs.forEach((div: any) => {
-    div.style.color = 'white'; // Change color to white
+    div.style.color = 'white'; 
     div.classList.add('animate');
   });
 
-  // Remove animate class after animation completes
   setTimeout(() => {
     divs.forEach((div: any) => {
       div.classList.remove('animate');
     });
-  }, 10000); // 10 seconds, same duration as animation
+  }, 10000); 
   }, []);
 
   useEffect(() => {
@@ -197,8 +189,6 @@ const FirstPageComponent = () => {
         const topOffset = boundingRect.top;
         const bottomOffset = viewportHeight - boundingRect.bottom;
   
-        // Check if the top of the target div is below the top of the viewport
-        // and the bottom of the target div is above the bottom of the viewport
         const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
   
         if (isInView) {
@@ -225,8 +215,6 @@ const FirstPageComponent = () => {
         const topOffset = boundingRect.top;
         const bottomOffset = viewportHeight - boundingRect.bottom;
   
-        // Check if the top of the target div is below the top of the viewport
-        // and the bottom of the target div is above the bottom of the viewport
         const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
   
         if (isInView) {
@@ -285,7 +273,6 @@ const FirstPageComponent = () => {
   return (
     <div>
       <div className="relative w-full h-[100%]">
-        {/* style={{ backgroundImage: "linear-gradient(190deg, red 50%, transparent 80%)" }} */}
         <div className="absolute top-0 z-[9] w-[100%]">
           <LandingPageNavigationBar
             searchValue={SearchValue}
@@ -294,7 +281,6 @@ const FirstPageComponent = () => {
           />
         </div>
 
-        {/* {(SearchValue == undefined || SearchValue == '') ?  */}
         <div>
           <div className="relative w-full h-[100%] ">
             <img
@@ -303,61 +289,31 @@ const FirstPageComponent = () => {
               className="object-cover object-center w-full lg:h-full h-[350px] lg:h-[350px] md:h-[482px]"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-transparent w-full h-full"></div>
-            {/* lg:h-[21.9%] sm:h-[7.56%] */}
           </div>
           <div ref={containerRef} className="absolute lg:top-[25rem] sm:top-[300px] text-white pt-32 pl-20 sm:ml-[-45px] 2xl:ml-[70px] xl:mt-[-1px] 3xl:mt-[180px] xl:ml-[30px] 2xl:mt-[40px] 3xl:ml-[120px]">
             <div className=" sm:mt-[-310px] md:mt-[-329px] lg:mt-[150px] xl:mt-[150px]">
               <p className=" raleway text-white lg:text-3xl mt-230 sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans md:mt-[-442px]">
-              {/* animate-fade-in-out-wave-colors */}
                 featuring
               </p>
               <p className=" raleway text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
-              {/* animate-fade-in-out-wave-colors */}
                 the testimonies of
               </p>
               <p className="raleway text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans">
-              {/* animate-fade-in-out-wave-colors */}
                 men and women{" "}
                 <span className="raleway text-white lg:text-3xl sm:text-sm xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
-                {/* animate-fade-in-out-wave-colors */}
                   of faith
                 </span>
               </p>
             </div>
             <div className="lg:pt-8 sm:7 pt-[16px]">
-              {/* <Link  to="/Know"> */}
               <Link to="/know">
-                {/* <button className='border-solid rounded-3xl border-2  hover:text-red-800 hover:border-red-700 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans'>
-                  Know More
-                </button> */}
                 <button className=" raleway border-solid rounded-3xl border-2  hover:text-black hover:border-white hover:bg-slate-100 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans">
                   Know More
                 </button>
               </Link>
 
-              {/* </Link> */}
             </div>
           </div>
-          {/* <div className='relative mt-36 lg:mt-[-180px]'>
-            <img src={WhiteBackgroundImage} alt="" className="mt-[-284px] h-[500px] w-[100%] sm:h-[240px] " />
-            <div className="absolute md:mt-[-85px] md:top-[175px] right-auto md:ml-[-9%] lg:ml-[0px] "> */}
-          {/* <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' /> */}
-          {/* <img className="h-60 w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px] " src={QuotationImage} alt="" />
-            </div>
-            <div className='text-center md:mt-[-145px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]'> */}
-          {/* <p className='text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-medium font-sans sm:mt-[40px]'>
-                In Your Corner <span className='font-light font-sans'>Productions</span>
-              </p> */}
-          {/* <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl font-semibold font-sans">
-                In Your Corner{" "}
-                <span className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
-                  Productions
-                </span>
-              </p>
-              <p className='text-sm font-sans xl:text-xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]'>In Your Corner Productions specializes in creating Christian-themed television programs, <br />
-                acclaimed documentaries, gospel music, and ministry videos to help promote other faith-based non-profits.</p>
-            </div>
-          </div> */}
           <div className="relative mt-[-6rem] md:bottom-[6.5rem] lg:mt-[-200px]">
             <img
               src={WhiteBackgroundImage}
@@ -365,7 +321,6 @@ const FirstPageComponent = () => {
               className=" lg:h-[500px]  h-[500px]  md:h-[493px]  w-[100%] sm:h-[240px] lg:mt-[67px] "
             />
             <div className="absolute md:mt-[-85px] md:top-[175px] right-auto md:ml-[-9%] lg:ml-[0px] ">
-              {/* <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' /> */}
               <img
                 className="h-60 md:h-[13rem] md:w-[20rem] w-96  lg:h-60 lg:w-96 lg:ml-[-70px] sm:h-[6rem] sm:w-[13rem] sm:mt-[-194px] sm:ml-[-40px] "
                 src={QuotationImage}
@@ -395,7 +350,6 @@ const FirstPageComponent = () => {
             <div className="h-5/6 ">
               <div className=" bg-pink-100 pt-40 h-5/6 sm:pt-[0px]">
                 <div className="flex justify-center py-8 px-2 sm:mb-[-20px] sm:ml-[-14%]">
-                  {/* <iframe width="720" height="365" src="https://www.youtube.com/embed/tWYsfOSY9vY?si=BS2cklqv3dV9wM8y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="mt-[-300px] rounded-[20px] lg:w-[900px] lg:h-[450px] h-[220px] w-[500px] md:h-[260px]" ></iframe> */}
                   <Link
                     to={`/VideoDetails/${"oa920gMvLaI"}`}
                     state={{ title: "Forgotten No More" }}
@@ -406,30 +360,20 @@ const FirstPageComponent = () => {
                         alt=""
                         className="rounded-[25px] md:mt-[-260px] lg:mt-[-295px] lg:w-[800px] sm:w-[250px] sm:ml-[58px] sm:mt-[-70px]"
                       />
-
-                      {/* <iframe src="https://www.youtube.com/embed/oa920gMvLaI?si=bCkUnjDDE14xK6hB&amp;controls=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen className="rounded-[25px] md:w-[250px] md:h-[125px] lg:w-[350px] lg:h-[250px] px-2 ml-10 justify-center sm:ml-[30px] sm:w-[300px] sm:h-[160px]"></iframe> */}
                     </div>
                   </Link>
                 </div>
                 <div className="overflow-x-hidden">
                   <VideoSlider2 />
-                  {/* <VideoSlider prop1='false' /> */}
                 </div>
-                <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]" data-aos="flip-left">
+                <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                   <Link to="/Videos">
-                    {/* <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button> */}
-                    <button className="raleway mt-[-10px] text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">
+                    <button className="raleway mt-[-10px] text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl" data-aos="flip-left">
                       View All Videos
                     </button>
                   </Link>
                 </div>
                 <div ref={targetDivRef2} className={`targetDiv ${isInCenter2 ? "animate text-center lg:pb-40 pb-20 font-sans" : "text-center lg:pb-40 pb-20 font-sans"}`}>
-                  {/* <p className="text-red-900 text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
-                    How Kerry Came to Faith in <span className="text-red-900 text-3xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">Jesus Christ</span>
-                  </p> */}
-                  {/* <p className="text-red-900 sm:text-2xl md:text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
-                    How Kerry Came to Faith in <span className="text-red-900 sm:text-2xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">Jesus Christ</span>
-                  </p> */}
                   <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
                     How Kerry Came to Faith in{" "}
                     <span className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold font-sans xl:text-4xl 2xl:text-5xl">
@@ -437,7 +381,6 @@ const FirstPageComponent = () => {
                     </span>
                   </p>
                   <p className="raleway font-sans sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
-                    {/* sm:pl-[10px] sm:pr-[10px] lg:w-[800px] lg:ml-[280px] xl:ml-[780px] */}
                     Beyond the weekly TV show, Kerry Pharr expanded his ministry
                     impact by creating compelling documentary films. <br />{" "}
                     Among them are the award-winning “Hope Lives in Hohenwald”
@@ -484,40 +427,6 @@ const FirstPageComponent = () => {
                     />
                   </div>
                 </div>
-                {/* <div className="lg:h-screen h-[70vh] lg:h-[65vh] xl:h-[70vh] 2xl:h-[80vh] 3xl:h-[80vh] flex items-center mt-[0px] z-[99]">
-                  <div
-                    className="absolute inset-0 bg-black"
-                    style={{
-                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(${Image2})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  ></div>
-
-                  <div className="z-[8] text-white grid place-items-center px-2 lg:pl-36">
-                    <div className="text-center lg:text-left">
-                      <h2 className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold py-2 px-2 font-sans">
-                        Reach out to us today
-                      </h2>
-                      <p className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans px-2">
-                        to fulfill all your ministry{" "}
-                        <span className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
-                          video
-                        </span>
-                      </p>
-                      <h2 className="md:text-3xl lg:text-3xl text-3xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold pt-2 font-sans px-2 ">
-                        production requirements.
-                      </h2>
-                    </div>
-                    <div className="mt-14 text-center lg:text-left lg:ml-[-180px] xl:ml-[-260px] 2xl:ml-[-378px] 3xl:ml-[-500px]">
-                      <Link to="/contact">
-                        <button className="border border-2 border-white py-2 px-10 rounded-3xl sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
-                          Contact Us
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-                </div> */}
 
                 <div className=" h-[52vh] sm:h-[42vh] md:h-[70vh] lg:h-[65vh] xl:h-[70vh] 2xl:h-[80vh] 3xl:h-[80vh] flex items-center justify-center   mt-[0px] z-[99]">
                   <div
@@ -557,9 +466,6 @@ const FirstPageComponent = () => {
             </div>
           </div>
         </div>
-        {/* : <div>
-          <ShowSearchComponent value={filteredValuesOfVideos} />
-        </div>} */}
 
         <div className="">
           <FooterComponent onClickToHome = "Home" />

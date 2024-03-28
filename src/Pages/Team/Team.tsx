@@ -67,7 +67,7 @@ const Team = () => {
         <LandingPageNavigationBar searchValue={SearchValue}
             onChangeFunction={functionToSetSearchValue} ActiveScreen="Team" />
       </div>
-      <div className="h-[50vh]">Coming Soon</div>
+      <div className="h-[50vh] text-center raleway text-xl flex justify-center items-center">Coming Soon</div>
       <div>
         <FooterComponent onClickToHome="Team" />
       </div>

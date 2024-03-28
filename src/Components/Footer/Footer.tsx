@@ -27,38 +27,38 @@ const Footer: React.FC<Prop> = ( { onClickToHome } ) => {
         <div className='bg-red-950  w- full h-96 text-white flex justify-between font-serif sm:block sm:h-fit' >
             <div className='ml-20 font-sans sm:mt-[-3px] md:mt-[-37px] lg:mt-[9px] sm:flex-1 sm:ml-[10px]'>
                 <img className='w-[200px] h-15 pt-11 lg:mt-[-50px] lg:ml-[-45px]  sm:ml-[-35px] xl:w-[250px]' src={WhiteLogo} alt='' />
-                <p className='text-sm font-sans font-sans mt-[-15px] xl:text-xl 2xl:text-2xl xl:pb-[50px]'>IN Your Corner Productions specializes in cre-<br />ating Christian themed television programs,<br />acclaimed documentaries, gospel music,and <br />ministry videos to help promote other<br />faith based non-profits. </p>
+                <p className='text-sm font-sans font-sans mt-[-15px] xl:text-xl 2xl:text-2xl xl:pb-[50px] raleway'>IN Your Corner Productions specializes in cre-<br />ating Christian themed television programs,<br />acclaimed documentaries, gospel music,and <br />ministry videos to help promote other<br />faith based non-profits. </p>
             </div>
             <div className='flex flex-col pt-11 text-sm mr-40 font-sans sm:flex-1 sm:ml-[10px]' >
-                <span className='pb-8 font-sans xl:text-xl 2xl:text-2xl'>Navigation</span>
+                <span className='pb-8 font-sans xl:text-xl 2xl:text-2xl raleway'>Navigation</span>
                 {/* <Link to="/"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Home</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Home</span>
                 {/* </Link> */}
                 {/* <Link to="/ourStory"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Our Story</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Our Story</span>
                 {/* </Link> */}
                 {/* <Link to="/team"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Team</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Team</span>
                 {/* </Link> */}
                 {/* <Link to="/blog"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Blogs</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Blogs</span>
                 {/* </Link> */}
                 {/* <Link to="/Videos"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Videos</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Videos</span>
                 {/* </Link> */}
                 {/* <Link to="/trellestune">
                     <span className='font-sans xl:text-xl 2xl:text-2xl'>Music</span>
                 </Link> */}
                 {/* <Link to="/donate"> */}
                 <a href={DonateURL} target="_blank" rel="noopener noreferrer">
-                    <span className='font-sans xl:text-xl 2xl:text-2xl'>Donate</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl raleway'>Donate</span>
                 </a>
                 {/* </Link> */}
                 {/* <Link to="/contact"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer' onClick={handleClick}>Contact us</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Contact us</span>
                 {/* </Link> */}
                 {/* <Link to="/aboutUs"> */}
-                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px] cursor-pointer' onClick={handleClick}>About us</span>
+                    <span className='font-sans xl:text-xl 2xl:text-2xl sm:mb-[20px] sm:pb-[30px] cursor-pointer raleway' onClick={handleClick}>About us</span>
                 {/* </Link> */}
             </div>
         </div>
