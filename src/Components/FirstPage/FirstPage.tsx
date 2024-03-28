@@ -181,6 +181,105 @@ const FirstPageComponent = () => {
     }
   };
 
+  const targetDivRef = useRef(null);
+  const targetDivRef2 = useRef(null);
+  const [isInCenter, setIsInCenter] = useState(false);
+  const [isInCenter2, setIsInCenter2] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetDiv: any = targetDivRef.current;
+      if (targetDiv && !isInCenter) {
+        const boundingRect = targetDiv.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const topOffset = boundingRect.top;
+        const bottomOffset = viewportHeight - boundingRect.bottom;
+  
+        // Check if the top of the target div is below the top of the viewport
+        // and the bottom of the target div is above the bottom of the viewport
+        const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
+  
+        if (isInView) {
+          setTimeout(() => {
+            setIsInCenter(true);
+          }, 200);
+          window.removeEventListener('scroll', handleScroll);
+        }
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInCenter]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetDiv2: any = targetDivRef2.current;
+      if (targetDiv2 && !isInCenter) {
+        const boundingRect = targetDiv2.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const topOffset = boundingRect.top;
+        const bottomOffset = viewportHeight - boundingRect.bottom;
+  
+        // Check if the top of the target div is below the top of the viewport
+        // and the bottom of the target div is above the bottom of the viewport
+        const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
+  
+        if (isInView) {
+          setTimeout(() => {
+            setIsInCenter2(true);
+          }, 200);
+          window.removeEventListener('scroll', handleScroll);
+        }
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInCenter2]);
+
+  const firstDivRef = useRef(null);
+  const secondDivRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        firstDivRef.current &&
+        secondDivRef.current &&
+        !isVisible &&
+        isElementInViewport(firstDivRef.current) &&
+        isElementInViewport(secondDivRef.current)
+      ) {
+        setIsVisible(true);
+      }
+    };
+
+    // Listen for scroll events
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup scroll event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isVisible]);
+
+  // Function to check if an element is in the viewport
+  const isElementInViewport = (element: any) => {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
   return (
     <div>
       <div className="relative w-full h-[100%]">
@@ -266,13 +365,13 @@ const FirstPageComponent = () => {
             <div className="absolute md:mt-[-85px] md:top-[175px] right-auto md:ml-[-9%] lg:ml-[0px] ">
               {/* <ImQuotesLeft className='text-pink-100 h-52 w-52 sm:w-[80px] sm:h-[80px] sm:mt-[-75px]' /> */}
               <img
-                className="h-60 md:h-[13rem] md:w-[20rem] w-96  lg:h-60 lg:w-96 lg:ml-[-70px] sm:h-36 sm:w-56 sm:mt-[-180px] sm:ml-[-40px] "
+                className="h-60 md:h-[13rem] md:w-[20rem] w-96  lg:h-60 lg:w-96 lg:ml-[-70px] sm:h-[6rem] sm:w-[13rem] sm:mt-[-194px] sm:ml-[-40px] "
                 src={QuotationImage}
                 alt=""
               />
             </div>
-            <div className=" text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]">
-              <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-[0px] xl:text-4xl mt-[-60px] 2xl:text-5xl mt-[-60px] font-medium font-sans sm:mt-[40px]">
+            <div ref={targetDivRef} className={`targetDiv ${isInCenter ? "animate text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]" : "text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]"}`}>
+              <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-[0px] xl:text-4xl mt-[-60px] 2xl:text-5xl mt-[-60px] font-medium font-sans sm:mt-[-32px]">
                 In Your Corner{" "}
                 <span className="raleway font-light font-sans ">
                   Productions
@@ -286,7 +385,7 @@ const FirstPageComponent = () => {
               </p>
             </div>
           </div>
-          <div className="text-center">
+          <div ref={targetDivRef} className={`targetDiv ${isInCenter ? "animate text-center" : "text-center"}`}>
             <JoinOurCommunityButton />
           </div>
 
@@ -322,7 +421,7 @@ const FirstPageComponent = () => {
                     </button>
                   </Link>
                 </div>
-                <div className="text-center lg:pb-40 pb-20 font-sans">
+                <div ref={targetDivRef2} className={`targetDiv ${isInCenter2 ? "animate text-center lg:pb-40 pb-20 font-sans" : "text-center lg:pb-40 pb-20 font-sans"}`}>
                   {/* <p className="text-red-900 text-3xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
                     How Kerry Came to Faith in <span className="text-red-900 text-3xl xl:text-4xl 2xl:text-5xl font-semibold font-sans">Jesus Christ</span>
                   </p> */}
@@ -425,7 +524,7 @@ const FirstPageComponent = () => {
                   ></div>
 
                   <div className="z-[8] text-white grid place-items-center px-2 md:mt-[86px] lg:ml-[-612px] lg:pl-36">
-                    <div className="text-center lg:text-left">
+                    <div ref={firstDivRef} className={`animated-div ${isVisible && "animate-left-to-right text-center lg:text-left"}`}>
                       <h2 className="raleway sm:text-2xl md:text-3xl lg:text-3xl  xl:text-4xl 2xl:text-5xl 3xl:text-6xl sm:font-semibold md:font-bold py-2 px-2 font-sans">
                         Reach out to us today
                       </h2>
@@ -439,7 +538,7 @@ const FirstPageComponent = () => {
                         production requirements.
                       </h2>
                     </div>
-                    <div className="mt-14 text-center lg:text-left lg:ml-[-180px] xl:ml-[-260px] 2xl:ml-[-378px] 3xl:ml-[-500px]">
+                    <div ref={secondDivRef} className={`animated-div ${isVisible && "animate-left-to-right mt-14 text-center lg:text-left lg:ml-[-180px] xl:ml-[-260px] 2xl:ml-[-378px] 3xl:ml-[-500px]"}`}>
                       <Link to="/contact">
                         <button className="raleway border border-2  hover:text-black hover:border-white hover:bg-slate-100  border-white py-2 px-10 rounded-3xl sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
                           Contact Us

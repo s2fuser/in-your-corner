@@ -142,17 +142,29 @@
 import React from "react";
 import VideoSlider from "../VideoSlider/VideoSlider";
 import Image2 from '../../Assets/Images/image2.jpg';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import VideoSlider2 from "../VideoSlider2/VideoSlider2";
 
 export const image_url = 'https://thumbs.dreamstime.com/z/microphone-professional-recording-radio-studio-equipment-blurry-background-production-talk-station-volume-video-142075121.jpg?w=992';
 
 const Contact: React.FC = () => {
+
+  const history = useNavigate();
+  const location = useLocation();
+
+  const handleClick = () => {
+    if (location.pathname.includes('/VideoDetails')) {
+      window.scrollTo(0, 0);
+    } else {
+      history('/');
+    }
+  };
+
   return (
    
     <div className="">
       
-      <div className=" relative z-50"> {/* Increase z-index to make sure it's above the background */}
+      <div className=" relative z-50" onClick={handleClick}> {/* Increase z-index to make sure it's above the background */}
         <VideoSlider2 />
       </div>
 

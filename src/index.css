@@ -223,3 +223,57 @@ code {
     transform: translateY(0); /* Ensure paragraphs stay at top after animation */
   }
 }
+
+@font-face {
+  font-family: raleway;
+  src: url(../public/Raleway-VariableFont_wght.ttf)
+}
+.raleway{
+  font-family: raleway;
+}
+
+.input-wrapper {
+  width: fit-content; /* Adjust based on your requirement */
+  background: linear-gradient(to right, white 80%, rgb(245, 120, 120) 10%);
+  border-radius: 999px; /* To match your input's rounded corners */
+  padding: 2px; /* Adjust padding to match your design */
+}
+
+.half-bg-input {
+  background-color: transparent; 
+  color: black; /* Adjust text color as needed */
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px 20px; /* Adjust padding to match your design */
+  border-radius: 999px; /* To match your wrapper's rounded corners */
+}
+
+.half-bg-input:focus {
+  border-color: gray; /* Adjust focus border color */
+}
+
+
+
+
+
+
+
+.animated-div {
+  opacity: 0; /* Initially hide the divs */
+}
+
+.animate-left-to-right {
+  animation: slideFromLeft 1s ease-in-out forwards;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
