@@ -415,7 +415,7 @@ const FirstPageComponent = () => {
                   <VideoSlider2 />
                   {/* <VideoSlider prop1='false' /> */}
                 </div>
-                <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
+                <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]" data-aos="flip-left">
                   <Link to="/Videos">
                     {/* <button className="text-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">View All Videos</button> */}
                     <button className="raleway mt-[-10px] text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl">
