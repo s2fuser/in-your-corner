@@ -35,6 +35,11 @@ module.exports = {
       },
       colors: {
         customColor: 'rgba(232, 240, 246, 1)', // Define your custom color
+        contactus: '#f8f8f8',
+        contactUsBG: '#ff3234'
+      },
+      borderColor: {
+        contactUsBorder: '#cccdce'
       },
     },
   },

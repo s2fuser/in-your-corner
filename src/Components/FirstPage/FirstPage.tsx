@@ -313,11 +313,11 @@ const FirstPageComponent = () => {
               </p>
             </div>
             <div className="lg:pt-8 sm:7 pt-[16px]">
-              <Link to="/know">
+              {/* <Link to="/know"> */}
                 <button className=" raleway border-solid rounded-3xl border-2  hover:text-black hover:border-white hover:bg-slate-100 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans">
                   Know More
                 </button>
-              </Link>
+              {/* </Link> */}
 
             </div>
           </div>
