@@ -30,8 +30,8 @@ const Footer: React.FC<Prop> = ({ onClickToHome }) => {
                 <p className='text-sm font-sans font-sans mt-[-15px] xl:text-xl 2xl:text-2xl xl:pb-[50px] raleway'>IN Your Corner Productions specializes in cre-<br />ating Christian themed television programs,<br />acclaimed documentaries, gospel music,and <br />ministry videos to help promote other<br />faith based non-profits. </p>
             </div>
             <div className='flex flex-col pt-11 text-sm mr-40 font-sans sm:flex-1 sm:ml-[10px]' >
-                <div className='text-center pb-8 font-sans xl:text-xl 2xl:text-2xl raleway'>Navigation</div>
-                <div className='flex space-x-20'>
+                <div className='text-center pb-8 font-sans xl:text-xl 2xl:text-2xl raleway sm:ml-[-130px]'>Navigation</div>
+                <div className='lg:flex lg:space-x-20'>
                     <div>
                         {/* <Link to="/"> */}
                         <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Home</div>
