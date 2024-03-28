@@ -6,6 +6,7 @@ import Navbar from "../../Components/NavigationBar/NavigationBar";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import Teamcontent from "./Teamcontent";
 
 const Team = () => {
 
@@ -67,7 +68,7 @@ const Team = () => {
         <LandingPageNavigationBar searchValue={SearchValue}
             onChangeFunction={functionToSetSearchValue} ActiveScreen="Team" />
       </div>
-      <div className="h-[50vh] text-center raleway text-xl flex justify-center items-center">Coming Soon</div>
+      <Teamcontent/>
       <div>
         <FooterComponent onClickToHome="Team" />
       </div>
