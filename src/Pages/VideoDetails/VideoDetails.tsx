@@ -31,18 +31,19 @@ const VideoDetailsPage = () => {
   const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] = useState<any>();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchData();
-  });
+  }, []);
 
   const history = useNavigate();
 
-  const handleClick = () => {
-    if (location.pathname === '/') {
-      window.scrollTo(0, 0);
-    } else {
-      history('/');
-    }
-  };
+  // const handleClick = () => {
+  //   if (location.pathname === '/') {
+  //     window.scrollTo(0, 0);
+  //   } else {
+  //     history('/');
+  //   }
+  // };
 
   const fetchData = async () => {
     const response: any = await axios.get("https://inc.s2ftech.in/api/code");

@@ -23,6 +23,7 @@ import "../../index.css";
 import { useNavigate, useLocation } from 'react-router-dom';
 import AOS from "aos";
 import 'aos/dist/aos.css';
+import YoutubeImage from '../../Assets/Images/Youtube.png'
 
 const FirstPageComponent = () => {
   // const navigate = useNavigate();
@@ -140,6 +141,11 @@ const FirstPageComponent = () => {
   useEffect(() => {
     fetchData();
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // fetchData();
+  }, []);
 
   const history = useNavigate();
   const location = useLocation();
@@ -356,17 +362,22 @@ const FirstPageComponent = () => {
           <div className="mt-16 sm:mt-[0px]">
             <div className="h-5/6 ">
               <div className=" bg-pink-100 pt-40 h-5/6 sm:pt-[0px]">
-                <div className="flex justify-center py-8 px-2 sm:mb-[-20px] sm:ml-[-14%]">
+                <div   className="flex justify-center py-8 px-2 sm:mb-[-20px] sm:ml-[-14%] hover:opacity-70">
                   <Link
                     to={`/VideoDetails/${"sZ0cOfq8JzM"}`}
                     state={{ title: "Hope Dealer aka Hope Lives in Hohenwald", description: `Step into the heart of Hohenwald and witness the profound story of hope through the lens of its residents. "Hope Dealer" delves into the lives of everyday people who embody hope in the midst of life's trials and triumphs. From the vibrant streets to the serene countryside, this video encapsulates the resilience and spirit of a community bound together by the power of hope. Join us on a journey of inspiration, where hope isn't just a concept but a living, breathing force that shapes the very fabric of Hohenwald. Experience the stories that illuminate the human spirit and discover why hope truly lives in every corner of this remarkable town.` }}
                   >
-                    <div className="px-1">
+                    <div className="px-1 relative">
                       <img
                         src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
                         alt=""
-                        className="rounded-[25px] md:mt-[-260px] lg:mt-[-295px] lg:w-[800px] sm:w-[250px] sm:ml-[58px] sm:mt-[-70px]"
+                        className="rounded-[25px] md:mt-[-260px] lg:mt-[-295px] lg:w-[800px] sm:w-[250px] sm:ml-[58px] sm:mt-[-70px] hover:opacity-70"
                       />
+                      <div className="youtube-icon2">
+                      {/* absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 */}
+                        {/* You can replace this with your YouTube icon */}
+                        <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 wi"/>
+                      </div>
                     </div>
                   </Link>
                 </div>

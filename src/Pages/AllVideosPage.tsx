@@ -11,11 +11,17 @@ import StoriesComponent from "./ProLifeVideos/Stories";
 import DocumentriesAndMovies from "./Documentries&Movies/DocumentriesAndMovies";
 import LandingPageNavigationBar from "../Components/LandingPageNavigation/LandingPageNavigation";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const AllVideosPageComponet = () => {
 
     const history = useNavigate();
     const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        // fetchData();
+    }, [])
 
     const handleClick = () => {
         if (location.pathname === '/') {

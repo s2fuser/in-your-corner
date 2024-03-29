@@ -10,6 +10,45 @@ const getCode = async (req, res) => {
     }
 };
 
+const getProLife = async (req, res) => {
+    try{
+        const data = await EmbeddedCodeModel.findAll({
+            where: {
+                genre: 'Pro-Life Voices'
+            }
+        });
+        return res.json({message: 'success', data: data});
+    }catch(err){
+        return res.json({message: 'error', data: err.message});
+    }
+};
+
+const getStories = async (req, res) => {
+    try{
+        const data = await EmbeddedCodeModel.findAll({
+            where: {
+                genre: 'Stories'
+            }
+        });
+        return res.json({message: 'success', data: data});
+    }catch(err){
+        return res.json({message: 'error', data: err.message});
+    }
+};
+
+const getTrellesTunes = async (req, res) => {
+    try{
+        const data = await EmbeddedCodeModel.findAll({
+            where: {
+                genre: `Trelle's Tunes`
+            }
+        });
+        return res.json({message: 'success', data: data});
+    }catch(err){
+        return res.json({message: 'error', data: err.message});
+    }
+};
+
 const registerUser = async (req,res) => {
     try{
         const data = await RegisteredUsers.create({
@@ -37,5 +76,8 @@ const login = async (req, res) => {
 module.exports = {
     getCode,
     registerUser,
-    login
+    login,
+    getTrellesTunes,
+    getStories,
+    getProLife
 }

@@ -24,6 +24,11 @@ const ContactUsPage = () => {
     fetchData();
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // fetchData();
+  }, []);
+
   const history = useNavigate();
   const location = useLocation();
 

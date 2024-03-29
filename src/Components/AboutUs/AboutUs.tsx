@@ -9,7 +9,7 @@ const AboutUsComponent = () => {
   AOS.init();
   return (
 
-    <div className="sm:px-[10px] sm:h-[100%] bg-gradient-to-l from-pink-100 to-pink-200 ">
+    <div className="sm:px-[10px] sm:h-[100%] bg-gradient-to-l from-pink-100 to-pink-200 overflow-x-hidden ">
       <div className="lg:flex lg:justify-center mx-8 py-12 sm:block md:block ">
         <div className="lg:px-[50px] sm:w-[100%]" data-aos="fade-right">
           <p className="raleway sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-sans mb-[60px] ">

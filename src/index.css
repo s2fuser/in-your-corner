@@ -300,3 +300,44 @@ code {
   width: 35%; /* Adjust the width as needed */
   margin: 0 auto; /* This centers the line horizontally */
 }
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-container {
+  position: relative;
+}
+
+.youtube-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+  .youtube-icon {
+    top: 50%;
+    left: 80%
+  }
+}
+
+.youtube-icon2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+  .youtube-icon2 {
+    top: 50%;
+    left: 60%
+  }
+}

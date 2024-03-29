@@ -4,6 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useFetch from "../../hooks/useFetchHook";
 import { Link } from "react-router-dom";
+import { IoLogoYoutube } from "react-icons/io";
+import '../../index.css'
+import YoutubeImage from '../../Assets/Images/Youtube.png'
 
 export const settings = {
   dots: false,
@@ -68,14 +71,17 @@ export default VideoSlider2;
 export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [AllVideosResponse, setAllVideosResponse] = useState<any>([]);
+  const [centerPadding, setCenterPadding] = useState<string | undefined>('');
 
   useEffect(() => {
     const handleResize = () => {
       // Update slidesToShow based on screen size
       if (window.innerWidth <= 1024) {
         setSlidesToShow(2);
+        setCenterPadding('50px');
       } else {
         setSlidesToShow(3);
+        setCenterPadding(undefined);
       }
     };
 
@@ -97,6 +103,7 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
     <Slider
       {...(type2 == "true" ? settingsForBrowseVideos : settings)}
       slidesToShow={slidesToShow}
+      centerPadding={centerPadding}
       className="w-[100%] flex justify-center overflow-x-hidden"
     >
       {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
@@ -137,7 +144,7 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
         </div>
       </Link> */}
 
-      <Link
+      {/* <Link
         to={`/VideoDetails/${"oa920gMvLaI"}`}
         state={{ title: "Forgotten No More", description:"In the heart of the sun-kissed Dominican Republic, where turquoise waters meet golden sands, lies a world hidden from the gleaming resorts and bustling tourist strips. Here, nestled amidst the verdant landscape, are the humble villages known as Bateys. These pockets of life, often overlooked by the casual observer, tell a story of resilience, struggle, and hope." }}
       >
@@ -148,18 +155,22 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
-      </Link>
+      </Link> */}
 
       <Link
         to={`/VideoDetails/${"ooBN3O9G6fA"}`}
         state={{ title: "Country Stages to Gospel Hymns", description:"Country Stages to Gospel Hymns | John Berry & Irlene Mandrell Stories." }}
       >
-        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
           <img
             src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`}
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 
@@ -180,32 +191,69 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"sZ0cOfq8JzM"}`}
         state={{ title: "Hope Dealer aka Hope Lives in Hohenwald", description:`Step into the heart of Hohenwald and witness the profound story of hope through the lens of its residents. "Hope Dealer" delves into the lives of everyday people who embody hope in the midst of life's trials and triumphs. From the vibrant streets to the serene countryside, this video encapsulates the resilience and spirit of a community bound together by the power of hope. Join us on a journey of inspiration, where hope isn't just a concept but a living, breathing force that shapes the very fabric of Hohenwald. Experience the stories that illuminate the human spirit and discover why hope truly lives in every corner of this remarkable town.` }}
       >
-        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
           <img
             src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 
-      {/* This one is an extra video */}
+      {/* Extra Videos */}
       <Link
-        to={`/VideoDetails/${"I9RqB3yMfMc"}`}
-        state={{ title: "Exorcism in America Teaser", description:`Demons are evil, unclean, vicious spirits (do not have a body) who seek to possess the bodies of men and women. Demonic oppression and possession are real. 
-
-        The New Testament tells us some of the signs of demon possession The demons can speak through their victims, they can demonstrate new abilities, show different personalities, and exhibit suicidal tendencies. 
-        
-        The main thing to understand is that demon-possessed people are controlled by this demonic presence. Though the symptoms may look like mere psychological dysfunction, in actuality, the problem is demon possession. These wicked Spirits can be cast out in Christ’s name. 
-        
-        16 Once when we were going to the place of prayer, we were met by a female slave who had a spirit by which she predicted the future. She earned a great deal of money for her owners by fortune-telling. 17 She followed Paul and the rest of us, shouting, “These men are servants of the Most High God, who are telling you the way to be saved.” 18 She kept this up for many days. Finally, Paul became so annoyed that he turned around and said to the spirit, “In the name of Jesus Christ I command you to come out of her!” At that moment the spirit left her. (Acts 16:18 NIV)` }}
+        to={`/VideoDetails/${"LLQbHgtaq2M"}`}
+        state={{ title: "Hope Dealer aka Hope Lives in Hohenwald", description:`In this video professional boxer, Jake Thomas demonstrates how to shadow box for beginners and how to shadow box like a pro. Learning how to shadow box is pretty simple. Most beginners ask how to shadow box in front of a mirror. This is done very easily. Just stand in front of a mirror and begin shadow boxing at your reflection. This will allow you to see if you are holding your hands correctly and how fluid your movement is. It will also show you how to shadow box better and how to shadow box correctly.` }}
       >
-        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
           <img
-            src={`https://i.ytimg.com/vi/I9RqB3yMfMc/maxresdefault.jpg`}
+            src={`https://i.ytimg.com/vi/LLQbHgtaq2M/maxresdefault.jpg`}
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
+        </div>
+      </Link>
+      <Link
+        to={`/VideoDetails/${"PElqu9qFNyo"}`}
+        state={{ title: "Scott Thorson joins Kerry Pharr on In Your Corner", description:`Murder, Drugs, Kickboxing and Jesus: The Scott Thorson storyFormer kickboxing champion Scott Thorson joins Kerry Pharr on In Your corner to share his amazing story.` }}
+      >
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
+          <img
+            src={`https://i.ytimg.com/vi/PElqu9qFNyo/maxresdefault.jpg`}
+            alt=""
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+          />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
+        </div>
+      </Link>
+      <Link
+        to={`/VideoDetails/${"KCWAHYq5CWs"}`}
+        state={{ title: "Scott Thorson joins Kerry Pharr on In Your Corner", description:`Manny Pacquiao is one of my favorite boxers. I've been a huge fan of his for nearly 20 years. He is an incredible boxing talent. However, he is taking a huge risk in his next fight against Keith Thurman.
+        Pacquiao is not only facing a much younger fighter in Thurman who is in his natural prime but he is also facing a fight against Father Time. No fighter has ever beaten Father Time. 
+        I saw Father Time beat Ray Robinson on a black and white television when I was only seven. Later I saw many of the great champions go down in defeat to this unstoppable force called age. Ray Leonard lost to Hector Camacho, Muhammad Ali lost to Larry Holmes, Holmes to Mike Tyson and on and on because they stayed in the sport far too long.
+        Does Pacman have enough left in the tank to beat Keith Thurman?` }}
+      >
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
+          <img
+            src={`https://i.ytimg.com/vi/KCWAHYq5CWs/maxresdefault.jpg`}
+            alt=""
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+          />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
     </Slider>
@@ -279,7 +327,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
         </div>
       </Link>
 
-      <Link
+      {/* <Link
         // to={`/VideoDetails/${"_VfNxJweiGE"}`}
         to={`/VideoDetails/${"aVcKhRFeNQg"}`}
         // state={{ title: "MlKs Niece Dr. Alveda Kings Story" }}
@@ -308,15 +356,15 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
       >
         <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
-            // src={`https://i.ytimg.com/vi/_VfNxJweiGE/maxresdefault.jpg`}
-            src={`https://i.ytimg.com/vi/aVcKhRFeNQg/maxresdefault.jpg`}
+            src={`https://i.ytimg.com/vi/_VfNxJweiGE/maxresdefault.jpg`}
+            // src={`https://i.ytimg.com/vi/aVcKhRFeNQg/maxresdefault.jpg`}
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
-      </Link>
+      </Link> */}
 
-      <Link
+      {/* <Link
         // to={`/VideoDetails/${"voqmTrExetQ"}`}
         to={`/VideoDetails/${"pwd_uqdqxc0"}`}
         // state={{ title: "Actress Lauren Romans Story" }}
@@ -330,9 +378,9 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
-      </Link>
+      </Link> */}
       
-      <Link
+      {/* <Link
         // to={`/VideoDetails/${"voqmTrExetQ"}`}
         to={`/VideoDetails/${"p00CtTVAUOI"}`}
         // state={{ title: "Pro-Life Activist Victoria Robinson" }}
@@ -346,7 +394,7 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
-      </Link>
+      </Link> */}
 
       <Link
         to={`/VideoDetails/${"tBa8Ow8hPOI"}`}
@@ -560,7 +608,7 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
       className="w-[100%] flex justify-center overflow-x-hidden"
     >
 
-      {/* <Link
+      <Link
         to={`/VideoDetails/${"mq1V-YQKT6k"}`}
         state={{ title: "Legends of Boxing, The Evander Holyfield Story", description:"In this video Evander Holyfield talks to Kerry Pharr about forgiving Mike Tyson after Tyson bit part of his ear off." }}
       >
@@ -571,7 +619,7 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
         </div>
-      </Link> */}
+      </Link>
 
       <Link
         to={`/VideoDetails/${"_KPn9AHXF3I"}`}
