@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
 
   return (
    
-    <div className="">
+    <div className="overflow-x-hidden">
       
       <div className=" relative z-50" onClick={handleClick}> {/* Increase z-index to make sure it's above the background */}
         <VideoSlider2 />

@@ -72,12 +72,38 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
   useEffect(() => {
     const handleResize = () => {
       // Update slidesToShow based on screen size
-      // if (window.innerWidth <= 1024) {
-      //     setSlidesToShow(1);
-      // } else {
+      if (window.innerWidth <= 1024) {
+          setSlidesToShow(2);
+      } else {
       setSlidesToShow(3);
-      // }
+      }
+
+      const div = document.querySelector('.slick-track') as HTMLDivElement;
+      if (div) {
+        div.style.width = '100%';
+      }
     };
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Update slidesToShow based on screen size
+      if (window.innerWidth <= 1024) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
+      }
+    };
+
+    handleResize();
 
     // Add event listener for window resize
     window.addEventListener("resize", handleResize);
@@ -194,11 +220,11 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
   useEffect(() => {
     const handleResize = () => {
       // Update slidesToShow based on screen size
-      // if (window.innerWidth <= 1024) {
-      //     setSlidesToShow(1);
-      // } else {
+      if (window.innerWidth <= 1024) {
+          setSlidesToShow(2);
+      } else {
       setSlidesToShow(3);
-      // }
+      }
     };
 
     // Add event listener for window resize
@@ -316,11 +342,11 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
   useEffect(() => {
     const handleResize = () => {
       // Update slidesToShow based on screen size
-      // if (window.innerWidth <= 1024) {
-      //     setSlidesToShow(1);
-      // } else {
+      if (window.innerWidth <= 1024) {
+          setSlidesToShow(2);
+      } else {
       setSlidesToShow(3);
-      // }
+      }
     };
 
     // Add event listener for window resize
@@ -389,11 +415,11 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
   useEffect(() => {
     const handleResize = () => {
       // Update slidesToShow based on screen size
-      // if (window.innerWidth <= 1024) {
-      //     setSlidesToShow(1);
-      // } else {
+      if (window.innerWidth <= 1024) {
+          setSlidesToShow(2);
+      } else {
       setSlidesToShow(3);
-      // }
+      }
     };
 
     // Add event listener for window resize
@@ -472,11 +498,11 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
   useEffect(() => {
     const handleResize = () => {
       // Update slidesToShow based on screen size
-      // if (window.innerWidth <= 1024) {
-      //     setSlidesToShow(1);
-      // } else {
+      if (window.innerWidth <= 1024) {
+          setSlidesToShow(2);
+      } else {
       setSlidesToShow(3);
-      // }
+      }
     };
 
     // Add event listener for window resize

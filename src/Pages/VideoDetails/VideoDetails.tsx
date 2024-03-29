@@ -165,7 +165,7 @@ const VideoDetailsPage = () => {
   return (
    
 
-    <div>
+    <div className="overflow-x-hidden">
       <div>
         <Header />
       </div>

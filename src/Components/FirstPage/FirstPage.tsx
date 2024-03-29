@@ -279,7 +279,7 @@ const FirstPageComponent = () => {
 
   return (
     <div>
-      <div className="relative w-full h-[100%]">
+      <div className="relative w-full h-[100%] overflow-x-hidden">
         <div className="absolute top-0 z-[9] w-[100%]">
           <LandingPageNavigationBar
             searchValue={SearchValue}
@@ -370,8 +370,8 @@ const FirstPageComponent = () => {
                     </div>
                   </Link>
                 </div>
-                <div className="overflow-x-hidden">
-                  <VideoSlider2 />
+                <div className="w-[100%]">
+                  <VideoSlider2 type="true" />
                 </div>
                 <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                   <Link to="/Videos">
