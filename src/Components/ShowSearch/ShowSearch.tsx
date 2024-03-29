@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import '../../index.css';
 import { useLocation } from 'react-router-dom';
+import axios from "axios";
 
 type Prop = {
     value?: any,
@@ -40,16 +41,24 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const query = searchParams.get('query');
+    const [AllVideosDetails, setAllVideosDetails] = useState<any>();
 
     useEffect(() => {
         // setSearchValue(Id);
         // getFilteredData()
+        fetchData()
         if(query) {
             getFilteredData(query);
         }
     }, []);
 
     const history = useNavigate();
+
+    const fetchData = async () => {
+        const response: any = await axios.get("https://inc.s2ftech.in/api/code");
+
+        setAllVideosDetails(response.data.data);
+    };
 
     const handleClick = () => {
         if (location.pathname === '/') {
@@ -103,18 +112,21 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
         {code : 'rKl-jZDw2C0' , topics: 'Trelle Sings, My God is Real', genre: `Trelle's Tunes`}
     ]
 
-    const getFilteredData = (ValueOfSearch: any) => {
+    const getFilteredData = async(ValueOfSearch: any) => {
+
+        const response: any = await axios.get("https://inc.s2ftech.in/api/code");
+
         console.log(SearchValue);
-        let FilteredItems = VideoDetails && VideoDetails.filter((items: any) => {
+        let FilteredItems = response.data.data && response.data.data.filter((items: any) => {
           if (ValueOfSearch != undefined) {
             return items && items.genre.toLowerCase().includes(ValueOfSearch.toLowerCase())
           }
         })
         handleDataChange()
         if (ValueOfSearch == '') {
-          setFilteredValuesOfAllVideos(VideoDetails)
+          setFilteredValuesOfAllVideos(response.data.data)
 
-          const uniqueGenres = Array.from(new Set(VideoDetails.map(item => item.genre)));
+          const uniqueGenres = Array.from(new Set(response.data.data.map((item : any) => item.genre)));
 
           // Check if there are multiple genres
           const hasMultipleGenres = uniqueGenres.length > 1;
@@ -129,6 +141,29 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
           setTitle(titles);
         }
     }
+
+    const [slidesToShow, setSlidesToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Update slidesToShow based on screen size
+      if (window.innerWidth <= 1024) {
+          setSlidesToShow(2);
+      } else {
+      setSlidesToShow(3);
+      }
+    };
+
+    handleResize()
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
     return (
         <div>
@@ -146,12 +181,14 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
                         <div>{Title[0]}</div> : filteredValuesOfVideos && filteredValuesOfVideos.length > 0 ? 
                         <div>{filteredValuesOfVideos[0].genre}</div> : <div></div>}
                         </div>
-                            <Slider {...settings} className="w-[100%] flex justify-center overflow-x-hidden">
+                            <Slider {...settings} className="w-[100%] flex justify-center overflow-x-hidden"
+                            slidesToShow={slidesToShow}
+                            >
 
                                 {filteredValuesOfVideos && filteredValuesOfVideos.length > 0 && filteredValuesOfVideos?.map((element: any, index: number) => {
                                     return (
                                         <div key={element.code} className="px-1 transition duration-150 ease-in-out transform hover:scale-100 wipe-transition">
-                                            <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics }}>
+                                            <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description: element.description }}>
                                                 <motion.img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"/>
                                             </Link>
                                             {/* initial={{ rotate: -180 }} // Initial rotation

@@ -65,9 +65,15 @@ const LogInPage = () => {
   };
 
   const handlesubmit = async () => {
-    localStorage.setItem("LogInEmail", Email);
-    SuccessToaster();
-    navigate("/");
+    if(Email != undefined && Email != null && Email != '') {
+      localStorage.setItem("LogInEmail", Email);
+      SuccessToaster();
+      navigate("/");
+    }
+    else {
+      FailureToaster()
+    }
+    
     // try {
     //     const response = await axios.post('http://localhost:8000/login', {Email: Email});
     //     console.log(response)
@@ -83,7 +89,7 @@ const LogInPage = () => {
   };
 
   const FailureToaster = () => {
-    toast.error("Log In Failed");
+    toast.error("Please Enter Email Id");
   };
 
     return (

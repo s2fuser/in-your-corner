@@ -20,6 +20,7 @@ import axios from "axios";
 const VideoDetailsPage = () => {
   const location = useLocation();
   const { title } = location.state;
+  const { description } = location.state;
   const { Code } = useParams();
   const [LogInEmail, getLogInEmail] = useState<string | null>("");
   const [ViewVideo, setViewVideo] = useState<boolean>(false);
@@ -179,14 +180,14 @@ const VideoDetailsPage = () => {
         {/* <h2 className="text-3xl font-semibold text-center mt-[-20px] font-sans sm:text-2xl">
           {title}
         </h2> */}
-        <h2 className="raleway font-bold  sm:text-lg md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl " data-aos="zoom-in">
+        <h2 className="raleway font-bold sm:px-[20px] sm:text-lg md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl " data-aos="zoom-in">
           {title}
         </h2>
       </div>
 
       <div className="px-2">
         <p className="raleway text-red-600 text-center font-sans sm:text-sm   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]" data-aos="zoom-in">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
+          {/* Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived not only
@@ -194,7 +195,8 @@ const VideoDetailsPage = () => {
           remaining essentially unchanged. It was popularised in the 1960s with
           the release of Letraset sheets containing Lorem Ipsum passages, and
           more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          including versions of Lorem Ipsum. */}
+          {description}
         </p>
       </div>
 
@@ -260,7 +262,7 @@ const VideoDetailsPage = () => {
 
             <div className="flex justify-center items-center sm:mt-[14px] md:mt-[50px] lg:mt-[97px] xl:mt-[73px]  2xl:mt-[150px] 3xl:mt-[80px]" data-aos="flip-left">
               <Link to="/Videos">
-                <ButtonComponent name={'View All Videos'} style="text-red-700 px-8 py-2 lg:mt-[4px] xl:mt-[24px] hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium" />
+                <ButtonComponent name={'View All Videos'} style="raleway text-red-700 px-8 py-2 lg:mt-[4px] xl:mt-[24px] hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium" />
               </Link>
             </div>
           </div>

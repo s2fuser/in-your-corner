@@ -20,6 +20,9 @@ const EmbeddedCodeModel = sequelize.define('embeddedcode', {
   },
   genre: {
     type: Sequelize.STRING
+  },
+  description: {
+    type: Sequelize.STRING
   }
 });
 

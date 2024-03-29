@@ -40,15 +40,16 @@ const Footer: React.FC<Prop> = ({ onClickToHome }) => {
                         <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Our Story</div>
                         {/* </Link> */}
                         {/* <Link to="/team"> */}
-                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Team</div>
+                        {/* <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Team</div> */}
                         {/* </Link> */}
                         {/* <Link to="/blog"> */}
-                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Blogs</div>
+                        {/* <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Blogs</div> */}
                         {/* </Link> */}
+                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Videos</div>
                     </div>
                     <div>
                         {/* <Link to="/Videos"> */}
-                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Videos</div>
+                        
                         {/* </Link> */}
                         {/* <Link to="/trellestune">
                     <div className='font-sans xl:text-xl 2xl:text-2xl'>Music</div>

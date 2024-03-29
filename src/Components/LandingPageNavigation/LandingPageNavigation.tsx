@@ -30,11 +30,11 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
 
   const navItems = [
     { id: 1, text: 'Home', routeName: "/" },
-    { id: 2, text: 'Team', routeName: "/team" },
-    { id: 3, text: 'Blog', routeName: "/blog" },
-    { id: 4, text: 'Videos', routeName: "/Videos" },
-    { id: 5, text: 'Contact', routeName: "/contact" },
-    { id: 6, text: 'About Us', routeName: "/aboutUs" },
+    // { id: 2, text: 'Team', routeName: "/team" },
+    // { id: 3, text: 'Blog', routeName: "/blog" },
+    { id: 2, text: 'Videos', routeName: "/Videos" },
+    { id: 3, text: 'Contact', routeName: "/contact" },
+    { id: 4, text: 'About Us', routeName: "/aboutUs" },
     // { id: 7, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
     // { id: 7, text: 'Music', routeName: "/trellestune" },
   ];
@@ -59,7 +59,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
             Home
           </span>
         </Link>
-      <Link to="/team">
+      {/* <Link to="/team">
           <span className={ActiveScreen == "Team" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Team
           </span>
@@ -68,7 +68,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
           <span className={ActiveScreen == "Blogs" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Blogs
           </span>
-        </Link>
+        </Link> */}
         {/* <span>Videos</span> */}
 
         <Link to="/Videos">
