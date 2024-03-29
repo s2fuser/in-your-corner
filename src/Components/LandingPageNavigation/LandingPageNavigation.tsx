@@ -132,7 +132,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
           <Link to={item.routeName}>
             <li
               key={item.id}
-              className="p-4 border-b font-bold text-center text-stone-700 rounded-xl cursor-pointer border-gray-600"
+              className="raleway p-4 border-b font-bold text-center text-stone-700 rounded-xl cursor-pointer border-gray-600"
             >
               {item.text}
             </li>
