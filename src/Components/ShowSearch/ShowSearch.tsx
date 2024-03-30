@@ -13,6 +13,7 @@ import { motion } from 'framer-motion';
 import '../../index.css';
 import { useLocation } from 'react-router-dom';
 import axios from "axios";
+import HopeInHohemland from '../../Assets/Images/HopeInHohenwald.jpg';
 
 type Prop = {
     value?: any,
@@ -189,7 +190,7 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
                                     return (
                                         <div key={element.code} className="px-1 transition duration-150 ease-in-out transform hover:scale-100 wipe-transition">
                                             <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description: element.description }}>
-                                                <motion.img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"/>
+                                                {element.code == 'sZ0cOfq8JzM' ? <motion.img src={HopeInHohemland} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"/> : <motion.img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"/>}
                                             </Link>
                                             {/* initial={{ rotate: -180 }} // Initial rotation
   animate={{ rotate: 0 }} // Animated rotation

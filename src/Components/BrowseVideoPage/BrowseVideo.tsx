@@ -12,6 +12,7 @@ import TopicWiseSearchComponent from "../TopicSearch/TopicSearch";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import DocumentsAndMovies from '../DocumentsAndMovies/DocumentsAndMovies'
 
 interface ButtonProps {
   label: string;
@@ -362,7 +363,8 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             <VideoSlider2 type="true" />
           </div> */}
             <div className="sm:mt-[30px] sm:ml-[-25px]">
-              <DocumentriesAndMovies title="false" />
+              {/* <DocumentriesAndMovies title="false" /> */}
+              <DocumentsAndMovies />
             </div>
           </div>
           <div

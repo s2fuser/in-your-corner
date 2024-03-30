@@ -341,3 +341,17 @@ code {
     left: 60%
   }
 }
+
+.youtube-icon3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+  .youtube-icon3 {
+    top: 50%;
+    left: 70%
+  }
+}

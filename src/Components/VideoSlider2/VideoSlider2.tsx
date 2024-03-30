@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { IoLogoYoutube } from "react-icons/io";
 import '../../index.css'
 import YoutubeImage from '../../Assets/Images/Youtube.png'
+import HopeInHohenwald from '../../Assets/Images/HopeInHohenwald.jpg'
 
 export const settings = {
   dots: false,
@@ -193,7 +194,8 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
       >
         <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
           <img
-            src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
+            // src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
+            src={HopeInHohenwald}
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
@@ -311,6 +313,10 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 
@@ -324,6 +330,10 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 
@@ -406,6 +416,10 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
     </Slider>
@@ -466,6 +480,10 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
+          </div>
         </div>
       </Link>
 
@@ -487,6 +505,10 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
+          </div>
         </div>
       </Link>
     </Slider>
@@ -544,6 +566,10 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
+          </div>
         </div>
       </Link>
 
@@ -557,6 +583,10 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
+          </div>
         </div>
       </Link>
 
@@ -618,6 +648,10 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 
@@ -631,6 +665,10 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 
@@ -644,6 +682,10 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 
@@ -657,6 +699,10 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 
@@ -679,10 +725,15 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
       >
         <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
           <img
-            src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
+            // src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
+            src={HopeInHohenwald}
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
+          <div className="youtube-icon text-red">
+            {/* You can replace this with your YouTube icon */}
+            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+          </div>
         </div>
       </Link>
 

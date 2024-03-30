@@ -24,6 +24,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import YoutubeImage from '../../Assets/Images/Youtube.png'
+import HopeInHohenwald from '../../Assets/Images/HopeInHohenwald.jpg'
 
 const FirstPageComponent = () => {
   // const navigate = useNavigate();
@@ -369,7 +370,8 @@ const FirstPageComponent = () => {
                   >
                     <div className="px-1 relative">
                       <img
-                        src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
+                        // src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
+                        src={HopeInHohenwald}
                         alt=""
                         className="rounded-[25px] md:mt-[-260px] lg:mt-[-295px] lg:w-[800px] sm:w-[250px] sm:ml-[58px] sm:mt-[-70px] hover:opacity-70"
                       />
