@@ -4,6 +4,10 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import WhiteLogo from'../../Assets/Images/whiteLogo.png';
+import AOS from "aos";
+import 'aos/dist/aos.css';
+import '../../index.css';
 
 type Prop = {
   searchValue?: string;
@@ -103,26 +107,28 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
         </div> */}
       </div>
 
-      <div onClick={handleNav} className="block lg:hidden sm:ml-[22px]">
+      {/* <div onClick={handleNav} className={ nav ? `block lg:hidden sm:ml-[22px] z-[999] ${nav ? ' fixed top-[90px] right-[20px]' : 'static sm:ml-[13px] '}` : `block lg:hidden sm:ml-[22px] z-[999]`}> */}
+      <div onClick={handleNav} className="block lg:hidden sm:ml-[22px] z-[999]">
         {nav ? (
-          <AiOutlineClose size={20} color="black" />
+          <AiOutlineClose size={30} color="white" />
         ) : (
-          <AiOutlineMenu size={20} color="black" />
+          <AiOutlineMenu size={30} color="black" />
         )}
       </div>
 
       <ul
         className={
           nav
-            ? "fixed z-[9] lg:hidden left-0 top-0 w-[35%] h-full bg-slate-100 ease-in-out duration-500 text-black z-[9]"
+            ? "fixed z-[9] lg:hidden left-0 top-0 w-[100%] h-full bg-black ease-in-out duration-500 text-black z-[9] bg-opacity-80"
             : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-[9]"
         }
       >
         {/* Mobile Logo */}
         <div className="py-6 pl-2">
           <img
-            className="w-32 h-15 "
-            src="https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png"
+            className="w-44 h-36 ml-[-21px] mt-[6px]"
+            // src="https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png"
+            src={WhiteLogo}
             alt="logo"
           />
         </div>
@@ -132,7 +138,10 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
           <Link to={item.routeName}>
             <li
               key={item.id}
-              className="raleway p-4 border-b font-bold text-center text-stone-700 rounded-xl cursor-pointer border-gray-600"
+              // className="raleway p-4 font-bold text-center text-white rounded-xl cursor-pointer text-2xl animate-left-to-right"
+              className={`raleway p-4 font-bold text-center text-white rounded-xl cursor-pointer text-2xl ${
+                nav ? 'animate-left-to-right' : ''
+              }`}
             >
               {item.text}
             </li>

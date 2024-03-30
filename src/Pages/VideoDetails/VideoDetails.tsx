@@ -110,14 +110,14 @@ const VideoDetailsPage = () => {
   };
 
   const newFunc = (value: any) => {
-    if (
-      (LogInEmail != undefined && LogInEmail != null && LogInEmail != "") ||
-      (value != undefined && value != null && value != "")
-    ) {
+    // if (
+    //   (LogInEmail != undefined && LogInEmail != null && LogInEmail != "") ||
+    //   (value != undefined && value != null && value != "")
+    // ) {
       setViewVideo(true);
-    } else {
-      return toast.error("Please Log In to view video");
-    }
+    // } else {
+    //   return toast.error("Please Log In to view video");
+    // }
   };
 
   const VideoRestrict = () => {

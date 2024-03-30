@@ -122,10 +122,26 @@ const ContactUsPage = () => {
               </div>
             </div>
             <div>
-              <div>
-                <p className="font-bold text-sm text-left">Issue*</p>
-                <textarea
+              <div className="mt-[30px] mb-[30px]">
+                <p className="font-bold text-left text-sm">Phone*</p>
+
+                <input
                   className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
+                  type="number"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div>
+              <div className="mt-[30px] mb-[30px]">
+                <p className="font-bold text-sm text-left">Subject*</p>
+                {/* <textarea
+                  className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
+                  placeholder=""
+                /> */}
+                <input
+                  className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
+                  type="text"
                   placeholder=""
                 />
               </div>

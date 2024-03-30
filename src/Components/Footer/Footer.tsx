@@ -37,7 +37,7 @@ const Footer: React.FC<Prop> = ({ onClickToHome }) => {
                         <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Home</div>
                         {/* </Link> */}
                         {/* <Link to="/ourStory"> */}
-                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Our Story</div>
+                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway'>Our Story</div>
                         {/* </Link> */}
                         {/* <Link to="/team"> */}
                         {/* <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Team</div> */}
