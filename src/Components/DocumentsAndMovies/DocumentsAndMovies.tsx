@@ -63,7 +63,7 @@ export const SliderComponent2 = () => {
           setSlidesToShow(2);
           setCenterPadding('50px');
         } else {
-          setSlidesToShow(3);
+          setSlidesToShow(4);
           setCenterPadding(undefined);
         }
       };
@@ -150,10 +150,9 @@ export const SliderComponent2 = () => {
               alt=""
               className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
             />
-            <div className="youtube-icon3 text-red">
-              {/* You can replace this with your YouTube icon */}
+            {/* <div className="youtube-icon3 text-red">
               <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-            </div>
+            </div> */}
           </div>
         </Link>
   
@@ -181,10 +180,9 @@ export const SliderComponent2 = () => {
               alt=""
               className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
             />
-            <div className="youtube-icon3 text-red">
-              {/* You can replace this with your YouTube icon */}
+            {/* <div className="youtube-icon3 text-red">
               <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-            </div>
+            </div> */}
           </div>
         </Link>
   
@@ -199,10 +197,9 @@ export const SliderComponent2 = () => {
               alt=""
               className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
             />
-            <div className="youtube-icon3 text-red">
-              {/* You can replace this with your YouTube icon */}
+            {/* <div className="youtube-icon3 text-red">
               <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-            </div>
+            </div> */}
           </div>
         </Link>
         <Link
@@ -215,10 +212,9 @@ export const SliderComponent2 = () => {
               alt=""
               className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
             />
-            <div className="youtube-icon3 text-red">
-              {/* You can replace this with your YouTube icon */}
+            {/* <div className="youtube-icon3 text-red">
               <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-            </div>
+            </div> */}
           </div>
         </Link>
         <Link
@@ -234,10 +230,9 @@ export const SliderComponent2 = () => {
               alt=""
               className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
             />
-            <div className="youtube-icon3 text-red">
-              {/* You can replace this with your YouTube icon */}
+            {/* <div className="youtube-icon3 text-red">
               <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-            </div>
+            </div> */}
           </div>
         </Link>
       </Slider>

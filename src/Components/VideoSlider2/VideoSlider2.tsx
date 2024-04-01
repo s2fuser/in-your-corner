@@ -8,6 +8,12 @@ import { IoLogoYoutube } from "react-icons/io";
 import '../../index.css'
 import YoutubeImage from '../../Assets/Images/Youtube.png'
 import HopeInHohenwald from '../../Assets/Images/HopeInHohenwald.jpg'
+import axios from "axios";
+import sZ0cOfq8JzM from '../../Assets/Images/sZ0cOfq8JzM.png';
+import ooBN3O9G6fA from '../../Assets/Images/ooBN3O9G6fA.png';
+import LLQbHgtaq2M from '../../Assets/Images/LLQbHgtaq2M.png';
+import PElqu9qFNyo from '../../Assets/Images/PElqu9qFNyo.png';
+import KCWAHYq5CWs from '../../Assets/Images/KCWAHYq5CWs.png';
 
 export const settings = {
   dots: false,
@@ -45,13 +51,19 @@ export const settingsForBrowseVideos = {
 type SizeProp = {
   type?: string;
   VideoType?: string;
+  VideoStyle?: string;
+  YoutubeLogo?: string;
+  SlidesToShow?: string;
 };
 
 type SizeProp2 = {
   type2?: string;
+  VideoStyle2?: string;
+  YoutubeLogo?: string;
+  SlidesToShow?: string;
 };
 
-const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType }) => {
+const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType, VideoStyle, YoutubeLogo, SlidesToShow }) => {
   return (
     <div className="flex justify-center m-auto overflow-x-hidden mt-[20px]">
       {VideoType == "ProLifeVideos" ? (
@@ -61,7 +73,7 @@ const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType }) => {
       ) : VideoType == "TrellesTune" ? (
         <TrellesTuneSlider type2={type == "true" ? "true" : "false"} />
       ) : VideoType == "InYourCornerTvShow" ? (<InYourCornerTvShow type2={type == "true" ? "true" : "false"} />) : (
-        <SliderComponent2 type2={type == "true" ? "true" : "false"} />
+        <SliderComponent2 type2={type == "true" ? "true" : "false"} VideoStyle2={VideoStyle == "true" ? "true" : "false"} YoutubeLogo={YoutubeLogo == "true" ? "true" : "false"} SlidesToShow={SlidesToShow == "true" ? "true" : "false"} />
       )}
     </div>
   );
@@ -69,19 +81,64 @@ const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType }) => {
 
 export default VideoSlider2;
 
-export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
+export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, YoutubeLogo, SlidesToShow }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
-  const [AllVideosResponse, setAllVideosResponse] = useState<any>([]);
   const [centerPadding, setCenterPadding] = useState<string | undefined>('');
+  const [AllVideoDetails, setAllVideoDetails] = useState<any>([]);
+  const [ProLifeVideos, setProLifeVideos] = useState<any>([]);
+  const [Stories, setStories] = useState<any>([]);
+  const [TrellesTunes, setTrellesTunes] = useState<any>([]);
+  const [screenSize, setScreenSize] = useState<any>('');
+  const [MobileViewPadding, setMobileViewPadding] = useState<any>('');
+
+  const fetchData = async () => {
+    const response: any = await axios.get("https://inc.s2ftech.in/api/code");
+    setAllVideoDetails(response.data.data);
+    let filteredProLifeVideos = response.data.data.filter((e: any) => {
+      return e.genre == 'Pro-Life Voices'
+    })
+    setProLifeVideos(filteredProLifeVideos);
+    let filteredStories = response.data.data.filter((e: any) => {
+      return e.genre == 'Pro-Life Voices'
+    })
+    setStories(filteredStories);
+    let filteredTrellesTunes = response.data.data.filter((e: any) => {
+      return e.genre == 'Pro-Life Voices'
+    })
+    setTrellesTunes(filteredTrellesTunes);
+  };
 
   useEffect(() => {
+    fetchData()
     const handleResize = () => {
       // Update slidesToShow based on screen size
+      setScreenSize(window.innerWidth)
       if (window.innerWidth <= 1024) {
-        setSlidesToShow(2);
+        if(VideoStyle2 == "true"){
+          setSlidesToShow(1);
+          // setMobileViewPadding('')
+        }
+        else {
+          setSlidesToShow(2);
+        }
         setCenterPadding('50px');
       } else {
-        setSlidesToShow(3);
+        if(VideoStyle2 == "true") {
+          if(window.innerWidth <= 1024) {
+            setSlidesToShow(2);
+          }
+          else {
+            setSlidesToShow(6);
+          }
+        }
+        else {
+          if(SlidesToShow == "true") {
+            setSlidesToShow(5);
+          }
+          else {
+            setSlidesToShow(3);
+          }
+        }
         setCenterPadding(undefined);
       }
     };
@@ -107,13 +164,13 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
       centerPadding={centerPadding}
       className="w-[100%] flex justify-center overflow-x-hidden"
     >
-      {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
+      {/* {AllVideoDetails && AllVideoDetails.length > 0 && AllVideoDetails?.map((element: any, index: number) => {
                 return (
+                  <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description:element.description }}>
                     <div key={index} className="px-1">
-                        <Link to={`/VideoDetails/${element.Code}`}>
-                            <img src={`https://i.ytimg.com/vi/${element.Code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-                        </Link>
+                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                     </div>  
+                  </Link>
                 )
             })} */}
 
@@ -162,16 +219,18 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"ooBN3O9G6fA"}`}
         state={{ title: "Country Stages to Gospel Hymns", description:"Country Stages to Gospel Hymns | John Berry & Irlene Mandrell Stories." }}
       >
-        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
+        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
-            src={`https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg`}
+            src={VideoStyle2 == "false" ? `https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg` : ooBN3O9G6fA}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
+          {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> : ""}
         </div>
       </Link>
 
@@ -192,17 +251,19 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"sZ0cOfq8JzM"}`}
         state={{ title: "Hope Dealer aka Hope Lives in Hohenwald", description:`Step into the heart of Hohenwald and witness the profound story of hope through the lens of its residents. "Hope Dealer" delves into the lives of everyday people who embody hope in the midst of life's trials and triumphs. From the vibrant streets to the serene countryside, this video encapsulates the resilience and spirit of a community bound together by the power of hope. Join us on a journey of inspiration, where hope isn't just a concept but a living, breathing force that shapes the very fabric of Hohenwald. Experience the stories that illuminate the human spirit and discover why hope truly lives in every corner of this remarkable town.` }}
       >
-        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
+        <div  className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
+        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
             // src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
-            src={HopeInHohenwald}
+            src={VideoStyle2 == "false" ? HopeInHohenwald : sZ0cOfq8JzM}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
+          {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> : ""}
         </div>
       </Link>
 
@@ -211,32 +272,36 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
         to={`/VideoDetails/${"LLQbHgtaq2M"}`}
         state={{ title: "Hope Dealer aka Hope Lives in Hohenwald", description:`In this video professional boxer, Jake Thomas demonstrates how to shadow box for beginners and how to shadow box like a pro. Learning how to shadow box is pretty simple. Most beginners ask how to shadow box in front of a mirror. This is done very easily. Just stand in front of a mirror and begin shadow boxing at your reflection. This will allow you to see if you are holding your hands correctly and how fluid your movement is. It will also show you how to shadow box better and how to shadow box correctly.` }}
       >
-        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
+        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
-            src={`https://i.ytimg.com/vi/LLQbHgtaq2M/maxresdefault.jpg`}
+            src={VideoStyle2 == "false" ? `https://i.ytimg.com/vi/LLQbHgtaq2M/maxresdefault.jpg` : LLQbHgtaq2M}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
+          {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> : ""}
         </div>
       </Link>
       <Link
         to={`/VideoDetails/${"PElqu9qFNyo"}`}
         state={{ title: "Scott Thorson joins Kerry Pharr on In Your Corner", description:`Murder, Drugs, Kickboxing and Jesus: The Scott Thorson storyFormer kickboxing champion Scott Thorson joins Kerry Pharr on In Your corner to share his amazing story.` }}
       >
-        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
+        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
-            src={`https://i.ytimg.com/vi/PElqu9qFNyo/maxresdefault.jpg`}
+            src={VideoStyle2 == "false" ? `https://i.ytimg.com/vi/PElqu9qFNyo/maxresdefault.jpg` : PElqu9qFNyo}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
+          {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> : ""}
         </div>
       </Link>
       <Link
@@ -246,16 +311,18 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2 }) => {
         I saw Father Time beat Ray Robinson on a black and white television when I was only seven. Later I saw many of the great champions go down in defeat to this unstoppable force called age. Ray Leonard lost to Hector Camacho, Muhammad Ali lost to Larry Holmes, Holmes to Mike Tyson and on and on because they stayed in the sport far too long.
         Does Pacman have enough left in the tank to beat Keith Thurman?` }}
       >
-        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70">
+        <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
+        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
-            src={`https://i.ytimg.com/vi/KCWAHYq5CWs/maxresdefault.jpg`}
+            src={VideoStyle2 == "false" ? `https://i.ytimg.com/vi/KCWAHYq5CWs/maxresdefault.jpg` : KCWAHYq5CWs}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
+          {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> : ""}
         </div>
       </Link>
     </Slider>
@@ -271,9 +338,11 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
       if (window.innerWidth <= 1024) {
           setSlidesToShow(2);
       } else {
-      setSlidesToShow(3);
+      setSlidesToShow(4);
       }
     };
+
+    handleResize()
 
     // Add event listener for window resize
     window.addEventListener("resize", handleResize);
@@ -284,8 +353,6 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
     };
   }, []);
 
-  const { data } = useFetch("code");
-
   const isSmallScreen = window.innerWidth <= 500;
   return (
     <Slider
@@ -293,13 +360,13 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
       slidesToShow={slidesToShow}
       className="w-[100%] flex justify-center overflow-x-hidden"
     >
-      {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
+      {/* {ProLifeVideos && ProLifeVideos.length > 0 && ProLifeVideos?.map((element: any, index: number) => {
                 return (
+                  <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description:element.description }}>
                     <div key={index} className="px-1">
-                        <Link to={`/VideoDetails/${element.Code}`}>
-                            <img src={`https://i.ytimg.com/vi/${element.Code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-                        </Link>
+                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                     </div>  
+                  </Link>
                 )
             })} */}
 
@@ -313,10 +380,9 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -330,10 +396,9 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -416,10 +481,9 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> */}
         </div>
       </Link>
     </Slider>
@@ -435,9 +499,11 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
       if (window.innerWidth <= 1024) {
           setSlidesToShow(2);
       } else {
-      setSlidesToShow(3);
+      setSlidesToShow(4);
       }
     };
+
+    handleResize()
 
     // Add event listener for window resize
     window.addEventListener("resize", handleResize);
@@ -457,13 +523,13 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
       slidesToShow={slidesToShow}
       className="w-[100%] flex justify-center overflow-x-hidden"
     >
-      {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
+      {/* {Stories && Stories.length > 0 && Stories?.map((element: any, index: number) => {
                 return (
+                  <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description:element.description }}>
                     <div key={index} className="px-1">
-                        <Link to={`/VideoDetails/${element.Code}`}>
-                            <img src={`https://i.ytimg.com/vi/${element.Code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-                        </Link>
+                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                     </div>  
+                  </Link>
                 )
             })} */}
 
@@ -480,10 +546,9 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -505,10 +570,9 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
-          </div>
+          </div> */}
         </div>
       </Link>
     </Slider>
@@ -524,9 +588,11 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
       if (window.innerWidth <= 1024) {
           setSlidesToShow(2);
       } else {
-      setSlidesToShow(3);
+      setSlidesToShow(4);
       }
     };
+
+    handleResize()
 
     // Add event listener for window resize
     window.addEventListener("resize", handleResize);
@@ -546,13 +612,13 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
       slidesToShow={slidesToShow}
       className="w-[100%] flex justify-center overflow-x-hidden"
     >
-      {/* {data && data.length > 0 && data?.map((element: any, index: number) => {
+      {/* {TrellesTunes && TrellesTunes.length > 0 && TrellesTunes?.map((element: any, index: number) => {
                 return (
+                  <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description:element.description }}>
                     <div key={index} className="px-1">
-                        <Link to={`/VideoDetails/${element.Code}`}>
-                            <img src={`https://i.ytimg.com/vi/${element.Code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
-                        </Link>
+                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
                     </div>  
+                  </Link>
                 )
             })} */}
 
@@ -566,10 +632,9 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -583,10 +648,9 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -615,9 +679,11 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
       if (window.innerWidth <= 1024) {
           setSlidesToShow(2);
       } else {
-      setSlidesToShow(3);
+      setSlidesToShow(4);
       }
     };
+
+    handleResize()
 
     // Add event listener for window resize
     window.addEventListener("resize", handleResize);
@@ -648,10 +714,9 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -665,10 +730,9 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -682,10 +746,9 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -699,10 +762,9 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 
@@ -730,10 +792,9 @@ export const InYourCornerTvShow: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70"
           />
-          <div className="youtube-icon text-red">
-            {/* You can replace this with your YouTube icon */}
+          {/* <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div>
+          </div> */}
         </div>
       </Link>
 

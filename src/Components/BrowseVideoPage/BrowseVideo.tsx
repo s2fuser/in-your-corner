@@ -353,7 +353,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             ref={DocumentsTargerRef}
           >
             <p
-              className=" raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+              className=" raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"
               data-aos="zoom-out-up"
             >
               Documentries / Movies

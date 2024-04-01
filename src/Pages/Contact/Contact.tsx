@@ -3,7 +3,7 @@ import Header from "../../Components/Header/Header";
 import Navbar from "../../Components/NavigationBar/NavigationBar";
 import FooterComponent from "../../Components/Footer/Footer";
 import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FiUser, FiMail, FiSend } from "react-icons/fi";
@@ -13,16 +13,25 @@ import { TfiEmail } from "react-icons/tfi";
 import { MdOutlineAccessTime } from "react-icons/md";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ReCAPTCHA from "react-google-recaptcha";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUsPage = () => {
   const [SearchValue, setSearchValue] = useState<any>();
   const [AllVideosDetails, setAllVideosDetails] = useState<any>();
-  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] =
-    useState<any>();
+  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] = useState<any>();
+
+  const [FirstName, setFirstName] = useState('');
+  const [LastName, setLastName] = useState('');
+  const [Email, setEmail] = useState('');
+  const [Phone, setPhone] = useState('');
+  const [Subject, setSubject] = useState('');
+  const [Details, setDetails] = useState('');
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,6 +79,92 @@ const ContactUsPage = () => {
     }
   };
 
+  const RecaptchaChange =() => {
+    console.log('recaptcha');
+  };
+
+  // const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  //   if((FirstName != null && FirstName != undefined && FirstName != '') && (LastName != null && LastName != undefined && LastName != '') && (Email != null && Email != undefined && Email != '') && (Phone != null && Phone != undefined && Phone != '') && (Subject != null && Subject != undefined && Subject != '') && (Details != null && Details != undefined && Details != '')) {
+  //     SuccessToaster()
+  //     console.log('Submitted');
+  //     console.log('event', event);
+  //     event.preventDefault();
+  //     const recaptchaValue = await recaptchaRef.current.executeAsync();
+  //     console.log('Form submitted with reCAPTCHA token:', recaptchaValue);
+  //     console.log(FirstName)
+  //     console.log(LastName)
+  //     console.log(Email)
+  //     console.log(Phone)
+  //     console.log(Subject)
+  //     console.log(Details)
+  //   }
+  //   else{
+  //     FailureToaster()
+  //   }
+  // }
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Validate form fields
+    if (
+      FirstName.trim() &&
+      LastName.trim() &&
+      Email.trim() &&
+      Phone.trim() &&
+      Subject.trim() &&
+      Details.trim()
+    ) {
+      try {
+        const recaptchaValue = await recaptchaRef.current.executeAsync();
+        console.log('Form submitted with reCAPTCHA token:', recaptchaValue); 
+        SuccessToaster();
+        setTimeout(() => {
+          history('/');
+        }, 3000)
+      } catch (error) {
+        console.error('reCAPTCHA validation error:', error);
+        FailureToaster();
+      }
+    } else {
+      FailureToaster();
+    }
+  };
+
+  const recaptchaRef = useRef<any>();
+
+  const HandleFirstNameChange = (event: any) => {
+    setFirstName(event.target.value)
+  }
+
+  const HandleLastNameChange = (event: any) => {
+    setLastName(event.target.value)
+  }
+
+  const HandleEmailChange = (event: any) => {
+    setEmail(event.target.value)
+  }
+
+  const HandlePhoneChange = (event: any) => {
+    setPhone(event.target.value)
+  }
+
+  const HandleSubjectChange = (event: any) => {
+    setSubject(event.target.value)
+  }
+
+  const HandleDetailsChange = (event: any) => {
+    setDetails(event.target.value)
+  }
+
+  const SuccessToaster = () => {
+    toast.success('Submitted Successfully');
+  }
+
+  const FailureToaster = () => {
+    toast.error('Please Fill all the Fields')
+  }
+
   return (
     <div>
       <div>
@@ -98,6 +193,8 @@ const ContactUsPage = () => {
                   className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder"
                   type="text"
                   placeholder=""
+                  value={FirstName}
+                  onChange={HandleFirstNameChange}
                 />
               </div>
               <div>
@@ -107,6 +204,8 @@ const ContactUsPage = () => {
                   className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder"
                   type="text"
                   placeholder=""
+                  value={LastName}
+                  onChange={HandleLastNameChange}
                 />
               </div>
             </div>
@@ -118,6 +217,8 @@ const ContactUsPage = () => {
                   className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
                   type="text"
                   placeholder=""
+                  value={Email}
+                  onChange={HandleEmailChange}
                 />
               </div>
             </div>
@@ -129,6 +230,8 @@ const ContactUsPage = () => {
                   className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
                   type="number"
                   placeholder=""
+                  value={Phone}
+                  onChange={HandlePhoneChange}
                 />
               </div>
             </div>
@@ -143,6 +246,8 @@ const ContactUsPage = () => {
                   className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
                   type="text"
                   placeholder=""
+                  value={Subject}
+                  onChange={HandleSubjectChange}
                 />
               </div>
             </div>
@@ -153,13 +258,35 @@ const ContactUsPage = () => {
                 <textarea
                   className="px-[10px] py-[8px] w-[100%] h-[100px] text-black text-sm border border-contactUsBorder"
                   placeholder=""
+                  value={Details}
+                  onChange={HandleDetailsChange}
                 />
               </div>
             </div>
             <div>
+              {/* <div className="g-recaptcha"
+                    data-sitekey="6LcwwqopAAAAAD6T-F43H4n6jy3mgFP-7kZsQvyL"
+                    data-callback="onSubmit"
+                    data-size="invisible">
+              </div>
               <button className="bg-contactUsBG text-white text-sm rounded-[5px] px-[8px] py-[10px] mt-[10px]">
                 Submit
-              </button>
+              </button> */}
+              <form onSubmit={handleSubmit}>
+                {/* Form Inputs */}
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  size="invisible"
+                  sitekey="6LcwwqopAAAAAD6T-F43H4n6jy3mgFP-7kZsQvyL"
+                  onChange={RecaptchaChange}
+                />
+                <button
+                  type="submit"
+                  className="bg-contactUsBG text-white text-sm rounded-[5px] px-[8px] py-[10px] mt-[10px]"
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>

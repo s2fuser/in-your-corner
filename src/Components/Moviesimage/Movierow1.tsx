@@ -7,7 +7,7 @@ const Movierow1 = () => {
   return (
     <div className='w-full h-100 mt-1 mb-1 flex justify-between overflow-x-hidden sm:mt-[-75px]'>
         <div className='sm:mt-[80px] w-[100%]'>
-            <VideoSlider2 type="true" />
+            <VideoSlider2 type="true" VideoStyle="true" />
             {/* <FeatureFilmsComponent /> */}
         </div>
     </div>

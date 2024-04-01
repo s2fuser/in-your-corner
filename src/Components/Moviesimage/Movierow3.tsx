@@ -15,7 +15,7 @@ const Movierow3 = () => {
           COLLECTION
         </h1>
         <div className="flex justify-between mt-4 sm:mt-[-20px]">
-          <VideoSlider2 type="true" />
+          <VideoSlider2 type="true" SlidesToShow="true" />
         </div>
       </div>
     </div>

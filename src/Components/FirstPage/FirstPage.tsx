@@ -384,7 +384,7 @@ const FirstPageComponent = () => {
                   </Link>
                 </div>
                 <div className="w-[100%]">
-                  <VideoSlider2 type="true" />
+                  <VideoSlider2 type="true" YoutubeLogo="true" />
                 </div>
                 <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                   <Link to="/Videos">
