@@ -12,7 +12,8 @@ import TopicWiseSearchComponent from "../TopicSearch/TopicSearch";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import DocumentsAndMovies from '../DocumentsAndMovies/DocumentsAndMovies'
+import DocumentsAndMovies from '../DocumentsAndMovies/DocumentsAndMovies';
+import "../../index.css";
 
 interface ButtonProps {
   label: string;
@@ -199,12 +200,17 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
 
   const [SearchValue, setSearchValue] = useState<any>();
   const [AllVideosDetails, setAllVideosDetails] = useState<any>();
-  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] =
-    useState<any>();
+  const [filteredValuesOfVideos, setFilteredValuesOfAllVideos] = useState<any>();
+  const [ScreenSize, setScreenSize] = useState<any>(false);
 
   useEffect(() => {
     fetchData();
-  });
+
+    if (window.innerWidth > 2000) {
+      setScreenSize(true)
+    }
+
+  }, []);
 
   const fetchData = async () => {
     const response: any = await axios.get("https://inc.s2ftech.in/api/code");
@@ -318,6 +324,154 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
     }
   };
 
+  const targetDivRef1 = useRef(null);
+  const targetDivRef2 = useRef(null);
+  const targetDivRef3 = useRef(null);
+  const targetDivRef4 = useRef(null);
+  const targetDivRef5 = useRef(null);
+
+  const [isInCenter1, setIsInCenter1] = useState(false);
+  const [isInCenter2, setIsInCenter2] = useState(false);
+  const [isInCenter3, setIsInCenter3] = useState(false);
+  const [isInCenter4, setIsInCenter4] = useState(false);
+  const [isInCenter5, setIsInCenter5] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetDiv1: any = targetDivRef1.current;
+      if (targetDiv1) {
+        const boundingRect = targetDiv1.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const topOffset = boundingRect.top;
+        const bottomOffset = viewportHeight - boundingRect.bottom;
+
+        const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
+
+        if (isInView && !isInCenter1) {
+          setTimeout(() => {
+            setIsInCenter1(true);
+          }, 200);
+        } else if (!isInView && isInCenter1) {
+          setIsInCenter1(false); // Reset state when element goes out of view
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInCenter1]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetDiv2: any = targetDivRef2.current;
+      if (targetDiv2) {
+        const boundingRect = targetDiv2.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const topOffset = boundingRect.top;
+        const bottomOffset = viewportHeight - boundingRect.bottom;
+
+        const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
+
+        if (isInView && !isInCenter2) {
+          setTimeout(() => {
+            setIsInCenter2(true);
+          }, 200);
+        } else if (!isInView && isInCenter2) {
+          setIsInCenter2(false); // Reset state when element goes out of view
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInCenter2]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetDiv3: any = targetDivRef3.current;
+      if (targetDiv3) {
+        const boundingRect = targetDiv3.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const topOffset = boundingRect.top;
+        const bottomOffset = viewportHeight - boundingRect.bottom;
+
+        const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
+
+        if (isInView && !isInCenter3) {
+          setTimeout(() => {
+            setIsInCenter3(true);
+          }, 200);
+        } else if (!isInView && isInCenter3) {
+          setIsInCenter3(false); // Reset state when element goes out of view
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInCenter3]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetDiv4: any = targetDivRef4.current;
+      if (targetDiv4) {
+        const boundingRect = targetDiv4.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const topOffset = boundingRect.top;
+        const bottomOffset = viewportHeight - boundingRect.bottom;
+
+        const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
+
+        if (isInView && !isInCenter4) {
+          setTimeout(() => {
+            setIsInCenter4(true);
+          }, 200);
+        } else if (!isInView && isInCenter4) {
+          setIsInCenter4(false); // Reset state when element goes out of view
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInCenter4]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetDiv5: any = targetDivRef5.current;
+      if (targetDiv5) {
+        const boundingRect = targetDiv5.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const topOffset = boundingRect.top;
+        const bottomOffset = viewportHeight - boundingRect.bottom;
+
+        const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
+
+        if (isInView && !isInCenter5) {
+          setTimeout(() => {
+            setIsInCenter5(true);
+          }, 200);
+        } else if (!isInView && isInCenter5) {
+          setIsInCenter5(false); // Reset state when element goes out of view
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isInCenter5]);
+
+
   return (
     <div style={containerStyle}>
       <h1
@@ -345,16 +499,18 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
       </div>
       <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
       {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) ||
-      filteredValuesOfVideos == undefined ||
-      filteredValuesOfVideos == "" ? (
+        filteredValuesOfVideos == undefined ||
+        filteredValuesOfVideos == "" ? (
         <div style={subHeadingContainerStyle}>
           <div
             className="ml-[-50px] mr-[-50px] mt-[-50px]"
             ref={DocumentsTargerRef}
           >
-            <p
-              className=" raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"
-              data-aos="zoom-out-up"
+            <p ref={targetDivRef1} className={`targetDiv ${isInCenter1 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"
+            // data-aos="zoom-out-up"
+            // data-aos-offset={ScreenSize == true ? "200px" : ""}
+            // data-aos-anchor-placement={ScreenSize == true ? "bottom-bottom" : ""}
             >
               Documentries / Movies
             </p>
@@ -368,12 +524,14 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             </div>
           </div>
           <div
-            className="ml-[-50px] mr-[-50px] mt-[-50px]"
+            className="ml-[-50px] mr-[-50px] mt-[-20px]"
             ref={ProLifeVoicesTargerRef}
           >
-            <p
-              className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
-              data-aos="zoom-out-up"
+            <p ref={targetDivRef2} className={`targetDiv ${isInCenter2 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+            // data-aos="zoom-out-up"
+            // data-aos-offset={ScreenSize == true ? "200px" : ""}
+            // data-aos-anchor-placement={ScreenSize == true ? "bottom-bottom" : ""}
             >
               Pro-Life Voices
             </p>
@@ -387,12 +545,14 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             </div>
           </div>
           <div
-            className="ml-[-50px] mr-[-50px] sm:mt-[-85px] mt-[-50px]"
+            className="ml-[-50px] mr-[-50px] sm:mt-[-85px] mt-[-20px]"
             ref={StoriesTargerRef}
           >
-            <p
-              className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
-              data-aos="zoom-out-up"
+            <p ref={targetDivRef3} className={`targetDiv ${isInCenter3 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+            // data-aos="zoom-out-up"
+            // data-aos-offset={ScreenSize == true ? "200px" : ""}
+            // data-aos-anchor-placement={ScreenSize == true ? "bottom-bottom" : ""}
             >
               Stories
             </p>
@@ -406,12 +566,14 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             </div>
           </div>
           <div
-            className="ml-[-50px] mr-[-50px] mt-[-50px]"
+            className="ml-[-50px] mr-[-50px] mt-[-20px]"
             ref={TrellerTunesTargerRef}
           >
-            <p
-              className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
-              data-aos="zoom-out-up"
+            <p ref={targetDivRef4} className={`targetDiv ${isInCenter4 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+            // data-aos="zoom-out-up"
+            // data-aos-offset={ScreenSize == true ? "200px" : ""}
+            // data-aos-anchor-placement={ScreenSize == true ? "bottom-bottom" : ""}
             >
               Trelle's Tunes
             </p>
@@ -421,12 +583,14 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
           </div>
 
           <div
-            className="ml-[-50px] mr-[-50px] mt-[-50px]"
+            className="ml-[-50px] mr-[-50px] mt-[-20px]"
             ref={InYourCornerTvShowTargerRef}
           >
-            <p
-              className="raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
-              data-aos="zoom-out-up"
+            <p ref={targetDivRef5} className={`targetDiv ${isInCenter5 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
+            // data-aos="zoom-out-up"
+            // data-aos-offset={ScreenSize == true ? "200px" : ""}
+            // data-aos-anchor-placement={ScreenSize == true ? "bottom-bottom" : ""}
             >
               In Your Corner TV Show
             </p>

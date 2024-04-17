@@ -54,6 +54,7 @@ type SizeProp = {
   VideoStyle?: string;
   YoutubeLogo?: string;
   SlidesToShow?: string;
+  Data?: any;
 };
 
 type SizeProp2 = {
@@ -61,19 +62,20 @@ type SizeProp2 = {
   VideoStyle2?: string;
   YoutubeLogo?: string;
   SlidesToShow?: string;
+  Data?: any;
 };
 
-const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType, VideoStyle, YoutubeLogo, SlidesToShow }) => {
+const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType, VideoStyle, YoutubeLogo, SlidesToShow, Data }) => {
   return (
     <div className="flex justify-center m-auto overflow-x-hidden mt-[20px]">
       {VideoType == "ProLifeVideos" ? (
-        <ProlifeVideosSlider type2={type == "true" ? "true" : "false"} />
+        <ProlifeVideosSlider type2={type == "true" ? "true" : "false"} Data={Data} />
       ) : VideoType == "Stories" ? (
         <StoriesSlider type2={type == "true" ? "true" : "false"} />
       ) : VideoType == "TrellesTune" ? (
         <TrellesTuneSlider type2={type == "true" ? "true" : "false"} />
       ) : VideoType == "InYourCornerTvShow" ? (<InYourCornerTvShow type2={type == "true" ? "true" : "false"} />) : (
-        <SliderComponent2 type2={type == "true" ? "true" : "false"} VideoStyle2={VideoStyle == "true" ? "true" : "false"} YoutubeLogo={YoutubeLogo == "true" ? "true" : "false"} SlidesToShow={SlidesToShow == "true" ? "true" : "false"} />
+        <SliderComponent2 type2={type == "true" ? "true" : "false"} Data={Data} VideoStyle2={VideoStyle == "true" ? "true" : "false"} YoutubeLogo={YoutubeLogo == "true" ? "true" : "false"} SlidesToShow={SlidesToShow == "true" ? "true" : "false"} />
       )}
     </div>
   );
@@ -81,7 +83,7 @@ const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType, VideoStyle, Youtube
 
 export default VideoSlider2;
 
-export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, YoutubeLogo, SlidesToShow }) => {
+export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, YoutubeLogo, SlidesToShow, Data }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [centerPadding, setCenterPadding] = useState<string | undefined>('');
   const [AllVideoDetails, setAllVideoDetails] = useState<any>([]);
@@ -113,7 +115,22 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
     const handleResize = () => {
       // Update slidesToShow based on screen size
       setScreenSize(window.innerWidth)
-      if (window.innerWidth <= 1024) {
+      if(window.innerWidth > 2500) {
+        setSlidesToShow(11);
+      }
+      else if(window.innerWidth > 1900 && window.innerWidth < 2400) {
+        setSlidesToShow(9);
+      }
+      else if(window.innerWidth > 1600 && window.innerWidth < 1700) {
+        setSlidesToShow(8);
+      }
+      else if(window.innerWidth < 1300 && window.innerWidth > 1200) {
+        setSlidesToShow(7);
+      }
+      else if(window.innerWidth < 1500 && window.innerWidth > 1200) {
+        setSlidesToShow(6);
+      }
+      else if (window.innerWidth <= 640) {
         if(VideoStyle2 == "true"){
           setSlidesToShow(1);
           // setMobileViewPadding('')
@@ -122,7 +139,13 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
           setSlidesToShow(2);
         }
         setCenterPadding('50px');
-      } else {
+      } 
+      else if(window.innerWidth <= 1024 && window.innerWidth >= 641) {
+        if(VideoStyle2 == "true"){
+          setSlidesToShow(3);
+        }
+      }
+      else {
         if(VideoStyle2 == "true") {
           if(window.innerWidth <= 1024) {
             setSlidesToShow(2);
@@ -141,6 +164,41 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
         }
         setCenterPadding(undefined);
       }
+
+      if(VideoStyle2 == "true") {
+        if(window.innerWidth <= 639) {
+          setSlidesToShow(1);
+        }
+        else if(window.innerWidth <= 1024 && window.innerWidth >= 641) {
+          setSlidesToShow(3);
+        }
+        else if(window.innerWidth > 2500) {
+          setSlidesToShow(11);
+        }
+        else if(window.innerWidth > 1900 && window.innerWidth < 2400) {
+          setSlidesToShow(9);
+        }
+        else if(window.innerWidth > 1600 && window.innerWidth < 1700) {
+          setSlidesToShow(8);
+        }
+        else if(window.innerWidth < 1300 && window.innerWidth > 1200) {
+          setSlidesToShow(7);
+        }
+        else if(window.innerWidth < 1500 && window.innerWidth > 1200) {
+          setSlidesToShow(6);
+        }
+        else {
+          setSlidesToShow(6);
+        }
+      }
+      else {
+        if(SlidesToShow == "true") {
+          setSlidesToShow(5);
+        }
+        else {
+          setSlidesToShow(3);
+        }
+      }
     };
 
     handleResize();
@@ -154,9 +212,6 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
     };
   }, []);
 
-  const { data } = useFetch("code");
-
-  const isSmallScreen = window.innerWidth <= 500;
   return (
     <Slider
       {...(type2 == "true" ? settingsForBrowseVideos : settings)}
@@ -164,15 +219,19 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
       centerPadding={centerPadding}
       className="w-[100%] flex justify-center overflow-x-hidden"
     >
-      {/* {AllVideoDetails && AllVideoDetails.length > 0 && AllVideoDetails?.map((element: any, index: number) => {
+      {Data && Data.length > 0 && Data?.map((element: any, index: number) => {
                 return (
                   <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description:element.description }}>
-                    <div key={index} className="px-1">
-                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+                    <div key={index} className="px-1 py-[10px] transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[25px]"
+                    style={VideoStyle2 == "true" ? { width: '165px', height: '300px' } : undefined}>
+                      {element.code == 'sZ0cOfq8JzM' ? <img src={HopeInHohenwald} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[94px] hover:opacity-70 w-full h-full object-cover BoxShadox" /> : <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[94px] hover:opacity-70 w-full h-full object-cover BoxShadox" />}
+                      {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
+                        <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
+                      </div> : ""}
                     </div>  
                   </Link>
                 )
-            })} */}
+            })}
 
       {/* <Link
         to={`/VideoDetails/${"mq1V-YQKT6k"}`}
@@ -215,24 +274,22 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
         </div>
       </Link> */}
 
-      <Link
+      {/* <Link
         to={`/VideoDetails/${"ooBN3O9G6fA"}`}
         state={{ title: "Country Stages to Gospel Hymns", description:"Country Stages to Gospel Hymns | John Berry & Irlene Mandrell Stories." }}
       >
         <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
-        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
             src={VideoStyle2 == "false" ? `https://i.ytimg.com/vi/ooBN3O9G6fA/maxresdefault.jpg` : ooBN3O9G6fA}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[94px] hover:opacity-70 w-full h-full object-contain shadow-xl"
             
           />
-          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
           {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
           </div> : ""}
         </div>
-      </Link>
+      </Link> */}
 
       {/* <Link
         to={`/VideoDetails/${"Z3SJJ7v8RdU"}`}
@@ -247,64 +304,58 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
         </div>
       </Link> */}
 
-      <Link
+      {/* <Link
         to={`/VideoDetails/${"sZ0cOfq8JzM"}`}
         state={{ title: "Hope Dealer aka Hope Lives in Hohenwald", description:`Step into the heart of Hohenwald and witness the profound story of hope through the lens of its residents. "Hope Dealer" delves into the lives of everyday people who embody hope in the midst of life's trials and triumphs. From the vibrant streets to the serene countryside, this video encapsulates the resilience and spirit of a community bound together by the power of hope. Join us on a journey of inspiration, where hope isn't just a concept but a living, breathing force that shapes the very fabric of Hohenwald. Experience the stories that illuminate the human spirit and discover why hope truly lives in every corner of this remarkable town.` }}
       >
         <div  className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
-        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
             // src={`https://i.ytimg.com/vi/sZ0cOfq8JzM/maxresdefault.jpg`}
             src={VideoStyle2 == "false" ? HopeInHohenwald : sZ0cOfq8JzM}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[94px] hover:opacity-70 w-full h-full object-contain"
             
           />
-          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
           {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
           </div> : ""}
         </div>
-      </Link>
+      </Link> */}
 
       {/* Extra Videos */}
-      <Link
+      {/* <Link
         to={`/VideoDetails/${"LLQbHgtaq2M"}`}
         state={{ title: "Hope Dealer aka Hope Lives in Hohenwald", description:`In this video professional boxer, Jake Thomas demonstrates how to shadow box for beginners and how to shadow box like a pro. Learning how to shadow box is pretty simple. Most beginners ask how to shadow box in front of a mirror. This is done very easily. Just stand in front of a mirror and begin shadow boxing at your reflection. This will allow you to see if you are holding your hands correctly and how fluid your movement is. It will also show you how to shadow box better and how to shadow box correctly.` }}
       >
         <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
-        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
             src={VideoStyle2 == "false" ? `https://i.ytimg.com/vi/LLQbHgtaq2M/maxresdefault.jpg` : LLQbHgtaq2M}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[94px] hover:opacity-70 w-full h-full object-contain"
             
           />
-          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
           {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
           </div> : ""}
         </div>
-      </Link>
-      <Link
+      </Link> */}
+      {/* <Link
         to={`/VideoDetails/${"PElqu9qFNyo"}`}
         state={{ title: "Scott Thorson joins Kerry Pharr on In Your Corner", description:`Murder, Drugs, Kickboxing and Jesus: The Scott Thorson storyFormer kickboxing champion Scott Thorson joins Kerry Pharr on In Your corner to share his amazing story.` }}
       >
         <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
-        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
             src={VideoStyle2 == "false" ? `https://i.ytimg.com/vi/PElqu9qFNyo/maxresdefault.jpg` : PElqu9qFNyo}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[94px] hover:opacity-70 w-full h-full object-contain"
             
           />
-          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
           {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
           </div> : ""}
         </div>
-      </Link>
-      <Link
+      </Link> */}
+      {/* <Link
         to={`/VideoDetails/${"KCWAHYq5CWs"}`}
         state={{ title: "Scott Thorson joins Kerry Pharr on In Your Corner", description:`Manny Pacquiao is one of my favorite boxers. I've been a huge fan of his for nearly 20 years. He is an incredible boxing talent. However, he is taking a huge risk in his next fight against Keith Thurman.
         Pacquiao is not only facing a much younger fighter in Thurman who is in his natural prime but he is also facing a fight against Father Time. No fighter has ever beaten Father Time. 
@@ -312,27 +363,35 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
         Does Pacman have enough left in the tank to beat Keith Thurman?` }}
       >
         <div className="px-1 transition duration-150 ease-in-out transform hover:scale-100 hover:opacity-70 rounded-[20px]" style={VideoStyle2 == "true" ? { width: '200px', height: '300px' } : undefined}>
-        {/* style={VideoStyle2 == "true" ? { width: '120px', height: '200px' } : undefined} */}
           <img
             src={VideoStyle2 == "false" ? `https://i.ytimg.com/vi/KCWAHYq5CWs/maxresdefault.jpg` : KCWAHYq5CWs}
             alt=""
-            className="rounded-[20px] sm:w-[200px] sm:ml-[58px] hover:opacity-70 w-full h-full object-contain"
+            className="rounded-[20px] sm:w-[200px] sm:ml-[94px] hover:opacity-70 w-full h-full object-contain"
             
           />
-          {/* style={VideoStyle2 == "true" ? { width: '100%', height: '100%', objectFit: 'cover' } : undefined} */}
           {YoutubeLogo == "true" ? <div className="youtube-icon text-red">
             <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
           </div> : ""}
         </div>
-      </Link>
+      </Link> */}
     </Slider>
   );
 };
 
-export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
+export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2, Data }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
+  const [ProLifeVideos, setProLifeVideos] = useState<any>([]);
+
+  const fetchData = async () => {
+    const response: any = await axios.get("https://inc.s2ftech.in/api/getProLife");
+    // let filteredProLifeVideos = response.data.data.filter((e: any) => {
+    //   return e.genre == 'Pro-Life Voices'
+    // })
+    setProLifeVideos( response.data.data);
+  };
 
   useEffect(() => {
+    fetchData()
     const handleResize = () => {
       // Update slidesToShow based on screen size
       if (window.innerWidth <= 1024) {
@@ -360,11 +419,11 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
       slidesToShow={slidesToShow}
       className="w-[100%] flex justify-center overflow-x-hidden"
     >
-      {/* {ProLifeVideos && ProLifeVideos.length > 0 && ProLifeVideos?.map((element: any, index: number) => {
+      {/* {Data && Data.length > 0 && Data?.map((element: any, index: number) => {
                 return (
                   <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description:element.description }}>
-                    <div key={index} className="px-1">
-                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+                    <div key={index} className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt={element.topics} className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70" />
                     </div>  
                   </Link>
                 )
@@ -380,9 +439,6 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          {/* <div className="youtube-icon text-red">
-            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div> */}
         </div>
       </Link>
 
@@ -396,9 +452,6 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          {/* <div className="youtube-icon text-red">
-            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div> */}
         </div>
       </Link>
 
@@ -481,9 +534,6 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          {/* <div className="youtube-icon text-red">
-            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70"/>
-          </div> */}
         </div>
       </Link>
     </Slider>
@@ -492,8 +542,18 @@ export const ProlifeVideosSlider: React.FC<SizeProp2> = ({ type2 }) => {
 
 export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
+  const [Stories, setStories] = useState<any>([]);
+
+  const fetchData = async () => {
+    const response: any = await axios.get("https://inc.s2ftech.in/api/getStories");
+    // let filteredStories = response.data.data.filter((e: any) => {
+    //   return e.genre == 'Stories'
+    // })
+    setStories(response.data.data);
+  };
 
   useEffect(() => {
+    fetchData()
     const handleResize = () => {
       // Update slidesToShow based on screen size
       if (window.innerWidth <= 1024) {
@@ -512,7 +572,7 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [Stories]);
 
   const { data } = useFetch("code");
 
@@ -526,8 +586,8 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
       {/* {Stories && Stories.length > 0 && Stories?.map((element: any, index: number) => {
                 return (
                   <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description:element.description }}>
-                    <div key={index} className="px-1">
-                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+                    <div key={index} className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70" />
                     </div>  
                   </Link>
                 )
@@ -546,9 +606,6 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          {/* <div className="youtube-icon text-red">
-            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
-          </div> */}
         </div>
       </Link>
 
@@ -570,9 +627,6 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          {/* <div className="youtube-icon text-red">
-            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
-          </div> */}
         </div>
       </Link>
     </Slider>
@@ -581,8 +635,18 @@ export const StoriesSlider: React.FC<SizeProp2> = ({ type2 }) => {
 
 export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
+  const [TrellesTunes, setTrellesTunes] = useState<any>([]);
+
+  const fetchData = async () => {
+    const response: any = await axios.get("https://inc.s2ftech.in/api/getTrellesTunes");
+    // let filteredTrellesTunes = response.data.data.filter((e: any) => {
+    //   return e.genre == `Trelle's Tunes`
+    // })
+    setTrellesTunes(response.data.data);
+  };
 
   useEffect(() => {
+    fetchData()
     const handleResize = () => {
       // Update slidesToShow based on screen size
       if (window.innerWidth <= 1024) {
@@ -601,7 +665,7 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [TrellesTunes]);
 
   const { data } = useFetch("code");
 
@@ -615,8 +679,8 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
       {/* {TrellesTunes && TrellesTunes.length > 0 && TrellesTunes?.map((element: any, index: number) => {
                 return (
                   <Link to={`/VideoDetails/${element.code}`} state={{ title: element.topics, description:element.description }}>
-                    <div key={index} className="px-1">
-                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px]" />
+                    <div key={index} className="px-1 transition duration-150 ease-in-out transform hover:scale-100">
+                      <img src={`https://i.ytimg.com/vi/${element.code}/maxresdefault.jpg`} alt="" className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70" />
                     </div>  
                   </Link>
                 )
@@ -632,9 +696,6 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          {/* <div className="youtube-icon text-red">
-            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
-          </div> */}
         </div>
       </Link>
 
@@ -648,9 +709,6 @@ export const TrellesTuneSlider: React.FC<SizeProp2> = ({ type2 }) => {
             alt=""
             className="rounded-[25px] sm:w-[250px] sm:ml-[58px] hover:opacity-70"
           />
-          {/* <div className="youtube-icon text-red">
-            <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 sm:ml-[10px]"/>
-          </div> */}
         </div>
       </Link>
 

@@ -14,16 +14,18 @@ const MusicComponent = () => {
 
     const handleClick = () => {
         if (location.pathname === '/') {
-        window.scrollTo(0, 0);
+            window.scrollTo(0, 0);
         } else {
-        history('/');
+            history('/');
         }
     };
 
     return (
         <div>
             <Header />
-            <LandingPageNavigationBar />
+            <div>
+                <LandingPageNavigationBar />
+            </div>
             <div className="mb-[30px]">
                 <TrellesTuneComponent />
             </div>

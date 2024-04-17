@@ -12,8 +12,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import LandingPageNavigationBar from "../../Components/LandingPageNavigation/LandingPageNavigation";
 
 const LogInPage = () => {
-    const [Email, setEmail] = useState('');
-    const navigate = useNavigate();
+  const [Email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   const [SearchValue, setSearchValue] = useState<any>();
   const [AllVideosDetails, setAllVideosDetails] = useState<any>();
@@ -21,7 +21,7 @@ const LogInPage = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const history = useNavigate();
   const location = useLocation();
@@ -65,7 +65,7 @@ const LogInPage = () => {
   };
 
   const handlesubmit = async () => {
-    if(Email != undefined && Email != null && Email != '') {
+    if (Email != undefined && Email != null && Email != '') {
       localStorage.setItem("LogInEmail", Email);
       SuccessToaster();
       navigate("/");
@@ -73,7 +73,7 @@ const LogInPage = () => {
     else {
       FailureToaster()
     }
-    
+
     // try {
     //     const response = await axios.post('http://localhost:8000/login', {Email: Email});
     //     console.log(response)
@@ -92,23 +92,26 @@ const LogInPage = () => {
     toast.error("Please Enter Email Id");
   };
 
-    return (
-        <div>
-            <Header />
-            <LandingPageNavigationBar searchValue={SearchValue}
-            onChangeFunction={functionToSetSearchValue} />
-            <div className="mt-[50px]">
-                <EmailComponent Email={Email} setEmail={setEmail} />
-            </div>
-            <div className="text-center mt-[50px]">
-                <button className="raleway mb-[50px] border border-solid border-red-900 border-2 pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[25px] text-red-900" onClick={handlesubmit}>
-                    Log In
-                </button>
-            </div>
-            <Footer onClickToHome="Log In" />
-            <Footer2 />
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      <div>
+        <LandingPageNavigationBar searchValue={SearchValue}
+          onChangeFunction={functionToSetSearchValue} />
+      </div>
+
+      <div className="mt-[50px]">
+        <EmailComponent Email={Email} setEmail={setEmail} />
+      </div>
+      <div className="text-center mt-[50px]">
+        <button className="raleway mb-[50px] border border-solid border-red-900 border-2 pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[25px] text-red-900" onClick={handlesubmit}>
+          Log In
+        </button>
+      </div>
+      <Footer onClickToHome="Log In" />
+      <Footer2 />
+    </div>
+  )
 }
 
 export default LogInPage;

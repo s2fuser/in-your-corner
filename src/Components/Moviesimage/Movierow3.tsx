@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import VideoSlider from "../VideoSlider/VideoSlider";
 import VideoSlider2 from "../VideoSlider2/VideoSlider2";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import MostPopularFilmsComponent from "../MostPopularFilms/MostPopularFilms";
+import axios from "axios";
 
 const Movierow3 = () => {
+
+  const [AllMovies, setAllMovies] = useState<any>([]);
+
+  useEffect(() => {
+    fetchData();
+  }, [])
+
+  const fetchData = async () => {
+    const response: any = await axios.get("https://inc.s2ftech.in/api/getMovies");
+    setAllMovies(response.data.data);
+  };
+
   return (
     <div>
       <div className="w-full h-100 mb-8 overflow-x-hidden sm:mt-[-45px]">
@@ -15,7 +29,8 @@ const Movierow3 = () => {
           COLLECTION
         </h1>
         <div className="flex justify-between mt-4 sm:mt-[-20px]">
-          <VideoSlider2 type="true" SlidesToShow="true" />
+          {/* <VideoSlider2 type="true" SlidesToShow="true" /> */}
+          <MostPopularFilmsComponent Data={AllMovies} />
         </div>
       </div>
     </div>

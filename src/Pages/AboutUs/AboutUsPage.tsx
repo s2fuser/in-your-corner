@@ -17,7 +17,7 @@ const AboutUsPage = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -65,26 +65,26 @@ const AboutUsPage = () => {
     }
   };
 
-    return  (
-        <div>
-            <div>
-                <Header />
-            </div>
-            <div>
-                <LandingPageNavigationBar searchValue={SearchValue}
-            onChangeFunction={functionToSetSearchValue} ActiveScreen="AboutUs" />
-            </div>
-            <div>
-                <AboutUsComponent />
-            </div>
-            <div>
-                <Footer onClickToHome="About Us" />
-            </div>
-            <div>
-                <Footer2 />
-            </div>
-        </div>
-    )
+  return (
+    <div>
+      <div>
+        <Header />
+      </div>
+      <div>
+        <LandingPageNavigationBar searchValue={SearchValue}
+          onChangeFunction={functionToSetSearchValue} ActiveScreen="AboutUs" />
+      </div>
+      <div>
+        <AboutUsComponent />
+      </div>
+      <div>
+        <Footer onClickToHome="About Us" />
+      </div>
+      <div>
+        <Footer2 />
+      </div>
+    </div>
+  )
 }
 
 export default AboutUsPage

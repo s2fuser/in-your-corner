@@ -321,10 +321,17 @@ code {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
   .youtube-icon {
     top: 50%;
-    left: 80%
+    left: 25%
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 769px) {
+  .youtube-icon {
+    top: 50%;
+    left: 50%
   }
 }
 
@@ -360,4 +367,26 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.BoxShadox {
+  box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.5);
+}
+
+.BoxShadowForAllVideo {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.animated-element {
+  opacity: 0; /* Initial state: Hidden */
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.image-container {
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+.image-invert {
+  width: 100%; /* Set the desired width */
+  height: auto; /* Let the height adjust proportionally */
 }

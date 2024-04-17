@@ -16,7 +16,7 @@ const SampleOurStory = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);

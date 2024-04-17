@@ -114,7 +114,7 @@ const VideoDetailsPage = () => {
     //   (LogInEmail != undefined && LogInEmail != null && LogInEmail != "") ||
     //   (value != undefined && value != null && value != "")
     // ) {
-      setViewVideo(true);
+    setViewVideo(true);
     // } else {
     //   return toast.error("Please Log In to view video");
     // }
@@ -165,7 +165,7 @@ const VideoDetailsPage = () => {
   }, [windowWidth]);
 
   return (
-   
+
 
     <div className="overflow-x-hidden">
       <div>
@@ -173,7 +173,7 @@ const VideoDetailsPage = () => {
       </div>
       <div>
         <LandingPageNavigationBar searchValue={SearchValue}
-            onChangeFunction={functionToSetSearchValue} />
+          onChangeFunction={functionToSetSearchValue} />
       </div>
       <div className="text-center pt-10 pb-4">
 
@@ -186,41 +186,32 @@ const VideoDetailsPage = () => {
         </h2>
       </div>
 
-      <div className="px-2">
-        <p className="raleway text-red-600 text-center font-sans sm:text-sm   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]" data-aos="zoom-in">
-          {/* Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum. */}
+      <div className="px-3 flex justify-center items-center">
+        <p className="xl:w-[90%] 2xl:w-[70%] 3xl:w-[70%] 4xl:w-[60%] text-center raleway text-red-800 font-bold text-center font-sans sm:text-sm md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl xl:mt-[20px] xl:text-xl sm:mt-[30px] md:mt-[30px]" data-aos="zoom-in">
           {description}
         </p>
       </div>
 
 
 
-     
+
       <div className="relative sm:py-[135px] md:py-[175px] lg:py-[300px] xl:py-[275px] ">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-center">
-                   
-                    <svg className="w-full sm:min-h-[382px] md:min-h-[612px] lg:min-h-[1012px] xl:min-h-[863px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-  <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#E8EAF6"/> 
-      <stop offset="50%" stop-color="#E8EAF6"/> 
-      <stop offset="100%" stop-color="#FECDD3"/>
-    </linearGradient>
-  </defs>
-  <path fill="url(#gradient)" fill-opacity="1" d="M0,192L80,165.3C160,139,320,85,480,96C640,107,800,181,960,186.7C1120,192,1280,128,1360,96L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-</svg>
+
+          <svg className="w-full sm:min-h-[382px] md:min-h-[612px] lg:min-h-[1012px] xl:min-h-[863px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#E8EAF6" />
+                <stop offset="50%" stop-color="#E8EAF6" />
+                <stop offset="100%" stop-color="#FECDD3" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#gradient)" fill-opacity="1" d="M0,192L80,165.3C160,139,320,85,480,96C640,107,800,181,960,186.7C1120,192,1280,128,1360,96L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+          </svg>
           {/* Video and Button Container */}
           <div className="flex flex-col items-center justify-center  h-full">
-            <div className="flex justify-center py-8 px-2 sm:mt-[-771px] md:mt-[-1206px] md:mb-[10px]   lg:mt-[-1973px]  xl:mt-[-1756px] lg:ml-[-170px] xl:ml-[-280px] 2xl:ml-[-350px] 3xl:ml-[-150px]">
+            <div className="flex justify-center py-8 px-2 sm:mt-[-771px] md:mt-[-1206px] md:mb-[10px] lg:mt-[-1973px]  xl:mt-[-1756px] lg:ml-[-170px] xl:ml-[-280px] 2xl:ml-[-350px] 3xl:ml-[-180px]">
               {!ViewVideo ? (
                 <div style={{ position: "relative" }}>
                   <div
@@ -232,7 +223,7 @@ const VideoDetailsPage = () => {
                       height: "100%",
                       cursor: "pointer",
                     }}
-                    onClick={getLogInEmailLocal}
+                    // onClick={getLogInEmailLocal}
                   />
                   <YouTube
                     videoId={Code}
@@ -255,7 +246,7 @@ const VideoDetailsPage = () => {
                       },
                     }}
                     onReady={handleVideoReady}
-                    className="lg:ml-[200px] xl:ml-[280px] 2xl:ml-[350px] 2xl:mb-[-100px] 3xl:ml-[140px] lg:mt-[25px] lg:mb-[-100px] 2xl:mt-[50px] 2xl:mb-[-198px]"
+                    className="lg:ml-[200px] xl:ml-[280px] 2xl:ml-[350px] 2xl:mb-[-100px] 3xl:ml-[200px] lg:mt-[25px] lg:mb-[-100px] 2xl:mt-[50px] 2xl:mb-[-198px] 3xl:mt-[150px] 3xl:mb-[-100px]"
                   />
                 </div>
               )}
@@ -263,7 +254,7 @@ const VideoDetailsPage = () => {
 
             <div className="flex justify-center items-center sm:mt-[14px] md:mt-[50px] lg:mt-[97px] xl:mt-[73px]  2xl:mt-[150px] 3xl:mt-[80px]" data-aos="flip-left">
               <Link to="/Videos">
-                <ButtonComponent name={'View All Videos'} style="raleway text-red-700 px-8 py-2 lg:mt-[4px] xl:mt-[24px] hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium" />
+                <ButtonComponent name={'View All Videos'} style="raleway text-red-700 px-8 py-2 lg:mt-[4px] xl:mt-[24px] hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium 2xl:text-2xl 2xl:px-[50px] 2xl:py-[15px] 2xl:rounded-[50px]" />
               </Link>
             </div>
           </div>

@@ -3,8 +3,22 @@ import VideoSlider from "../VideoSlider/VideoSlider";
 import VideoSlider2 from "../VideoSlider2/VideoSlider2";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
+import MostPopularFilmsComponent from "../MostPopularFilms/MostPopularFilms";
 
 const Movierow2 = () => {
+
+  const [AllMovies, setAllMovies] = useState<any>([]);
+
+  useEffect(() => {
+    fetchData();
+  }, [])
+
+  const fetchData = async () => {
+    const response: any = await axios.get("https://inc.s2ftech.in/api/getMovies");
+    setAllMovies(response.data.data);
+  };
+
   return (
     <div className="">
       <div className="w-full h-120 overflow-x-hidden ">
@@ -15,7 +29,8 @@ const Movierow2 = () => {
           MOST POPULAR FILMS
         </h1>
         <div className="flex justify-between mt-4 sm:mt-[-20px] sm:mb-[20px]">
-          <VideoSlider2 type="true" SlidesToShow="true"/>
+          {/* <VideoSlider2 type="true" SlidesToShow="true" Data={AllMovies}/> */}
+          <MostPopularFilmsComponent Data={AllMovies} />
         </div>
       </div>
     </div>

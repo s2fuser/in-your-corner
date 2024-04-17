@@ -48,7 +48,7 @@ const Blog = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const history = useNavigate();
   const location = useLocation();

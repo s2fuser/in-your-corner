@@ -122,32 +122,39 @@ const FirstPageComponent = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-  const container: any = containerRef.current;
-  if (!container) return; 
+    const container: any = containerRef.current;
+    if (!container) return;
 
-  const divs = container.querySelectorAll('div'); 
+    const divs = container.querySelectorAll('div');
 
-  divs.forEach((div: any) => {
-    div.style.color = 'white'; 
-    div.classList.add('animate');
-  });
-
-  setTimeout(() => {
     divs.forEach((div: any) => {
-      div.classList.remove('animate');
+      div.style.color = 'white';
+      div.classList.add('animate');
     });
-  }, 10000); 
+
+    setTimeout(() => {
+      divs.forEach((div: any) => {
+        div.classList.remove('animate');
+      });
+    }, 10000);
   }, []);
 
   useEffect(() => {
     fetchData();
-  });
+    getOnlyMovies();
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     // fetchData();
   }, []);
 
+  const [AllMovies, setAllMovies] = useState<any>([]);
+
+  const getOnlyMovies = async () => {
+    const response: any = await axios.get("https://inc.s2ftech.in/api/getMovies");
+    setAllMovies(response.data.data);
+  };
   const history = useNavigate();
   const location = useLocation();
 
@@ -202,9 +209,9 @@ const FirstPageComponent = () => {
         const viewportHeight = window.innerHeight;
         const topOffset = boundingRect.top;
         const bottomOffset = viewportHeight - boundingRect.bottom;
-  
+
         const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
-  
+
         if (isInView) {
           setTimeout(() => {
             setIsInCenter(true);
@@ -213,7 +220,7 @@ const FirstPageComponent = () => {
         }
       }
     };
-  
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -228,9 +235,9 @@ const FirstPageComponent = () => {
         const viewportHeight = window.innerHeight;
         const topOffset = boundingRect.top;
         const bottomOffset = viewportHeight - boundingRect.bottom;
-  
+
         const isInView = topOffset < viewportHeight && bottomOffset < viewportHeight;
-  
+
         if (isInView) {
           setTimeout(() => {
             setIsInCenter2(true);
@@ -239,7 +246,7 @@ const FirstPageComponent = () => {
         }
       }
     };
-  
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -279,7 +286,7 @@ const FirstPageComponent = () => {
       rect.top >= 0 &&
       rect.left >= 0 &&
       rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
+      (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   };
@@ -321,9 +328,11 @@ const FirstPageComponent = () => {
             </div>
             <div className="lg:pt-8 sm:7 pt-[16px]">
               {/* <Link to="/know"> */}
+              <Link to="/Videos">
                 <button className=" raleway border-solid rounded-3xl border-2  hover:text-black hover:border-white hover:bg-slate-100 sm:text-sm lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans">
-                  Know More
+                  Learn More
                 </button>
+              </Link>
               {/* </Link> */}
 
             </div>
@@ -341,7 +350,8 @@ const FirstPageComponent = () => {
                 alt=""
               />
             </div>
-            <div ref={targetDivRef} className={`targetDiv ${isInCenter ? "animate text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]" : "text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]"}`}>
+            {/* <div ref={targetDivRef} className={`targetDiv ${isInCenter ? "animate text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]" : "text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]"}`}> */}
+            <div data-aos="zoom-in-up" className="text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]">
               <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-[0px] xl:text-4xl mt-[-60px] 2xl:text-5xl mt-[-60px] font-medium font-sans sm:mt-[-32px]">
                 In Your Corner{" "}
                 <span className="raleway font-light font-sans ">
@@ -355,15 +365,20 @@ const FirstPageComponent = () => {
                 help promote other faith-based non-profits.
               </p>
             </div>
+            {/* </div> */}
           </div>
-          <div ref={targetDivRef} className={`targetDiv ${isInCenter ? "animate text-center" : "text-center"}`}>
-            <JoinOurCommunityButton />
+          {/* <div ref={targetDivRef} className={`targetDiv ${isInCenter ? "animate text-center" : "text-center"}`}> */}
+          <div data-aos="zoom-in-up" className="text-center">
+            <Link to="/Videos">
+              <JoinOurCommunityButton />
+            </Link>
           </div>
+          {/* </div> */}
 
           <div className="mt-16 sm:mt-[0px]">
             <div className="h-5/6 ">
               <div className=" bg-pink-100 pt-40 h-5/6 sm:pt-[0px]">
-                <div   className="flex justify-center py-8 px-2 sm:mb-[-20px] sm:ml-[-14%] hover:opacity-70">
+                <div className="flex justify-center py-8 px-2 sm:mb-[-20px] sm:ml-[-14%] hover:opacity-70">
                   <Link
                     to={`/VideoDetails/${"sZ0cOfq8JzM"}`}
                     state={{ title: "Hope Dealer aka Hope Lives in Hohenwald", description: `Step into the heart of Hohenwald and witness the profound story of hope through the lens of its residents. "Hope Dealer" delves into the lives of everyday people who embody hope in the midst of life's trials and triumphs. From the vibrant streets to the serene countryside, this video encapsulates the resilience and spirit of a community bound together by the power of hope. Join us on a journey of inspiration, where hope isn't just a concept but a living, breathing force that shapes the very fabric of Hohenwald. Experience the stories that illuminate the human spirit and discover why hope truly lives in every corner of this remarkable town.` }}
@@ -376,31 +391,43 @@ const FirstPageComponent = () => {
                         className="rounded-[25px] md:mt-[-260px] lg:mt-[-295px] lg:w-[800px] sm:w-[250px] sm:ml-[58px] sm:mt-[-70px] hover:opacity-70"
                       />
                       <div className="youtube-icon2">
-                      {/* absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 */}
+                        {/* absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 */}
                         {/* You can replace this with your YouTube icon */}
-                        <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 wi"/>
+                        <img src={YoutubeImage} alt="YouTube Icon" className="hover:opacity-70 wi" />
                       </div>
                     </div>
                   </Link>
                 </div>
                 <div className="w-[100%]">
-                  <VideoSlider2 type="true" YoutubeLogo="true" />
+                  <VideoSlider2 type="true" YoutubeLogo="true" Data={AllMovies} />
                 </div>
-                <div className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
+                <div data-aos="zoom-in-up" className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                   <Link to="/Videos">
                     <button className="raleway mt-[-10px] text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl" data-aos="flip-left">
                       View All Videos
                     </button>
                   </Link>
                 </div>
-                <div ref={targetDivRef2} className={`targetDiv ${isInCenter2 ? "animate text-center lg:pb-40 pb-20 font-sans" : "text-center lg:pb-40 pb-20 font-sans"}`}>
-                  <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
+                {/* <div ref={targetDivRef2} className={`targetDiv ${isInCenter2 ? "animate text-center lg:pb-40 pb-20 font-sans" : "text-center lg:pb-40 pb-20 font-sans"}`}> */}
+                <div className="text-center lg:pb-40 pb-20 font-sans">
+                  <p data-aos="zoom-in-up" className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
                     How Kerry Came to Faith in{" "}
                     <span className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold font-sans xl:text-4xl 2xl:text-5xl">
                       Jesus Christ
                     </span>
                   </p>
-                  <p className="raleway font-sans sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+                  <iframe
+                    width="560"
+                    height="315"
+                    className="mx-auto my-5 sm:w-[300px] sm:h-[200px] sm:mb-[70px] 2xl:w-[800px] 2xl:h-[500px]"
+                    src="https://www.youtube.com/embed/RZduf4KA6Bs?si=kOiyhfRRo36O0geQ"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    data-aos="zoom-in"
+                  ></iframe>
+                  <p data-aos="zoom-in-up" data-aos-once="true" className="raleway font-sans sm:mx-4 sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
                     Beyond the weekly TV show, Kerry Pharr expanded his ministry
                     impact by creating compelling documentary films. <br />{" "}
                     Among them are the award-winning “Hope Lives in Hohenwald”
@@ -408,6 +435,7 @@ const FirstPageComponent = () => {
                     champion boxers who discovered hope in Jesus Christ.
                   </p>
                 </div>
+                {/* </div> */}
               </div>
             </div>
 
@@ -488,7 +516,7 @@ const FirstPageComponent = () => {
         </div>
 
         <div className="">
-          <FooterComponent onClickToHome = "Home" />
+          <FooterComponent onClickToHome="Home" />
         </div>
         <div className="">
           <Footer2 />

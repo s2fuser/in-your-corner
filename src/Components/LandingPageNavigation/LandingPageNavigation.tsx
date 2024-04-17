@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBarComponent from "../SearchBar/SearchBar";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -43,10 +43,19 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
     // { id: 7, text: 'Music', routeName: "/trellestune" },
   ];
 
+  useEffect(() => {
+    document.addEventListener("DOMContentLoaded", function () {
+      const element = document.getElementById("menu");
+      if (element && window.innerWidth > 768) {
+        AOS.init();
+      }
+    });
+  }, []);
+
   return (
     <div
       className="bg-slate-100 w-full p-7 flex items-center md:justify-between lg:justify-around"
-      style={{ backgroundColor: "rgba(159, 159, 207, 0.65)" }}
+      style={{ backgroundColor: "rgba(159, 159, 207, 0.65)" }} data-aos={window.innerWidth > 768 ? "zoom-in" : ""} id="menu"
     >
       <div className="">
         <Link to="/">
@@ -57,7 +66,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
           />
         </Link>
       </div>
-      <div className="hidden lg:flex gap-x-7 mr-3 md:ml-[25px] md:mr-[186px] font-sans ml-[85px] xl:ml-[130px]">
+      <div className="grid grid-cols-4 hidden lg:flex gap-x-7 mr-3 md:ml-[25px] md:mr-[186px] font-sans ml-[85px] xl:ml-[230px]">
         <Link to="/">
           <span className={ActiveScreen == "Home" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Home
@@ -96,7 +105,8 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
         </Link> */}
       </div>
       <div className="flex justify-center items-center sm:ml-[15px] md:ml-[-50px] ">
-        <div onClick={navigateFunction}>
+        <div>
+        {/* onClick={navigateFunction} */}
           <SearchBarComponent
             searchValue={searchValue}
             onChangeFunction={onChangeFunction}
@@ -119,7 +129,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
       <ul
         className={
           nav
-            ? "fixed z-[9] lg:hidden left-0 top-0 w-[100%] h-full bg-black ease-in-out duration-500 text-black z-[9] bg-opacity-80"
+            ? "fixed z-[9] lg:hidden left-0 top-0 w-[100%] h-full bg-black ease-in-out duration-500 text-black bg-opacity-80"
             : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-[9]"
         }
       >

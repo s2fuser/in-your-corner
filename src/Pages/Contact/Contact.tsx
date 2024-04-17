@@ -79,7 +79,7 @@ const ContactUsPage = () => {
     }
   };
 
-  const RecaptchaChange =() => {
+  const RecaptchaChange = () => {
     console.log('recaptcha');
   };
 
@@ -105,7 +105,7 @@ const ContactUsPage = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent default form submission
-    
+
     // Validate form fields
     if (
       FirstName.trim() &&
@@ -117,8 +117,9 @@ const ContactUsPage = () => {
     ) {
       try {
         const recaptchaValue = await recaptchaRef.current.executeAsync();
-        console.log('Form submitted with reCAPTCHA token:', recaptchaValue); 
+        console.log('Form submitted with reCAPTCHA token:', recaptchaValue);
         SuccessToaster();
+        // const response: any = await axios.get("http://localhost:8000/api/contact");
         setTimeout(() => {
           history('/');
         }, 3000)
@@ -178,19 +179,19 @@ const ContactUsPage = () => {
         />
       </div>
       <div>
-        <p className="font-bold text-3xl text-center px-[20px] py-[10px] animate-fade-in-bottom">
+        <p className="font-bold text-4xl text-center px-[20px] py-[10px] animate-fade-in-bottom">
           Contact Us
         </p>
         <hr className="centered-line" />
       </div>
       <div className="raleway text-center raleway text-xl flex justify-center items-center">
-        <div className="flex justify-center items-center mx-[30px] my-[30px]">
+        <div className="flex justify-center items-center mx-[30px] my-[30px] border-[3px] border-y-red-900 border-l-0 border-r-0 shadow-2xl px-8 py-12">
           <div>
             <div className="lg:flex lg:space-x-6">
               <div className="sm:mb-[10px]">
                 <p className="font-bold text-left text-sm ">First Name*</p>
                 <input
-                  className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder"
+                  className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder focus:border-red-900"
                   type="text"
                   placeholder=""
                   value={FirstName}

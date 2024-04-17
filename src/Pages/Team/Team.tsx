@@ -16,7 +16,7 @@ const Team = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const history = useNavigate();
   const location = useLocation();

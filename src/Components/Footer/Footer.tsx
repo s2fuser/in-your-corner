@@ -27,7 +27,7 @@ const Footer: React.FC<Prop> = ({ onClickToHome }) => {
         <div className='bg-red-950  w- full h-96 text-white flex justify-between font-serif sm:block sm:h-fit' >
             <div className='ml-20 font-sans sm:mt-[-3px] md:mt-[-37px] lg:mt-[9px] sm:flex-1 sm:ml-[10px]'>
                 <img className='w-[200px] h-15 pt-11 lg:mt-[-50px] lg:ml-[-45px]  sm:ml-[-35px] xl:w-[250px]' src={WhiteLogo} alt='' />
-                <p className='text-sm font-sans font-sans mt-[-15px] xl:text-xl 2xl:text-2xl xl:pb-[50px] raleway'>IN Your Corner Productions specializes in cre-<br />ating Christian themed television programs,<br />acclaimed documentaries, gospel music,and <br />ministry videos to help promote other<br />faith based non-profits. </p>
+                <p className='text-sm font-sans font-sans mt-[-15px] xl:text-xl 2xl:text-2xl xl:pb-[50px] raleway'>In Your Corner Productions specializes in creating<br /> Christian themed television programs,<br />acclaimed documentaries, gospel music,and <br />ministry videos to help promote other<br />faith based non-profits. </p>
             </div>
             <div className='flex flex-col pt-11 text-sm mr-40 font-sans sm:flex-1 sm:ml-[10px]' >
                 <div className='text-center pb-8 font-sans xl:text-xl 2xl:text-2xl raleway sm:text-left'>Navigation</div>
@@ -37,7 +37,7 @@ const Footer: React.FC<Prop> = ({ onClickToHome }) => {
                         <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Home</div>
                         {/* </Link> */}
                         {/* <Link to="/ourStory"> */}
-                        <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway'>Our Story</div>
+                        {/* <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway'>Our Story</div> */}
                         {/* </Link> */}
                         {/* <Link to="/team"> */}
                         {/* <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Team</div> */}
@@ -46,18 +46,23 @@ const Footer: React.FC<Prop> = ({ onClickToHome }) => {
                         {/* <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Blogs</div> */}
                         {/* </Link> */}
                         <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Videos</div>
+                        <div>
+                            <a href={DonateURL} target="_blank" rel="noopener noreferrer">
+                                <div className='font-sans xl:text-xl 2xl:text-2xl raleway'>Donate</div>
+                            </a>
+                        </div>
                     </div>
                     <div>
                         {/* <Link to="/Videos"> */}
-                        
+
                         {/* </Link> */}
                         {/* <Link to="/trellestune">
                     <div className='font-sans xl:text-xl 2xl:text-2xl'>Music</div>
                 </Link> */}
                         {/* <Link to="/donate"> */}
-                        <a href={DonateURL} target="_blank" rel="noopener noreferrer">
+                        {/* <a href={DonateURL} target="_blank" rel="noopener noreferrer">
                             <div className='font-sans xl:text-xl 2xl:text-2xl raleway'>Donate</div>
-                        </a>
+                        </a> */}
                         {/* </Link> */}
                         {/* <Link to="/contact"> */}
                         <div className='font-sans xl:text-xl 2xl:text-2xl cursor-pointer raleway' onClick={handleClick}>Contact us</div>

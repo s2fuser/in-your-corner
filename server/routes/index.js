@@ -1,5 +1,5 @@
 const express = require('express');
-const { getCode, registerUser, login, getTrellesTunes, getStories, getProLife } =  require('../controllers/user.controller');
+const { getCode, registerUser, login, getTrellesTunes, getStories, getProLife, getShorts, getMovies, contact } =  require('../controllers/user.controller');
 
 const router = express.Router();
 
@@ -9,5 +9,11 @@ router.post('/login', login);
 router.get('/getTrellesTunes', getTrellesTunes);
 router.get('/getStories', getStories);
 router.get('/getProLife', getProLife);
+router.get('/getShorts', getShorts);
+router.get('/getMovies', getMovies);
+
+router.get('/contact', contact);
+
+
 
 module.exports = router;

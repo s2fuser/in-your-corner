@@ -44,7 +44,7 @@ const SearchBarComponent: React.FC<Prop> = ( { searchValue, onChangeFunction } )
                 ref={inputRef}
                 onKeyDown={handleKeyPress}
             />
-            <button onClick={navigateFunction}>
+            <button onClick={navigateFunction} className='cursor-pointer'>
               <AiOutlineSearch className='text-stone-500 text-[24px] sm:ml-[-28px] md:ml-[-33px]' />
             </button>
         </div>
