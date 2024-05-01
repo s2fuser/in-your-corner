@@ -26,14 +26,14 @@ const Header = () => {
             </p> */}
           {/* </Link> */}
           {/* <Link to="/donate"> */}
-          <a href={DonateURL} target="_blank" rel="noopener noreferrer">
+          {/* <a href={DonateURL} target="_blank" rel="noopener noreferrer">
             <p
               className="raleway hover:opacity-50 hover:text-white font-semibold text-base xl:text-lg 2xl:text-xl cursor-pointer
 "
             >
               Give
             </p>
-          </a>
+          </a> */}
           {/* </Link> */}
         </div>
         {/* <div className="flex space-x-5 font-sans">

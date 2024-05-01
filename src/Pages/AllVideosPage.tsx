@@ -75,8 +75,8 @@ const AllVideosPageComponet = () => {
             <div className="">
                 <Movierow1 />
             </div>
-            <Movierow2 />
-            <Movierow3 />
+            {/* <Movierow2 />
+            <Movierow3 /> */}
             {/* <DocumentriesAndMovies /> */}
             {/* <StoriesComponent /> */}
             <BrowseVideoPage />

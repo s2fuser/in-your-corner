@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import DocumentsAndMovies from '../DocumentsAndMovies/DocumentsAndMovies';
+import { AiOutlineSearch } from 'react-icons/ai';
 import "../../index.css";
 
 interface ButtonProps {
@@ -70,14 +71,14 @@ const SearchBox: React.FC<SearchProp> = ({ value, getValue }) => {
     height: "100%", // Ensure the input takes full height
   };
 
-  const navigateFunction = () => {
-    navigate(`/firstPageSearch`);
-    // /${searchValue}
-  };
+  // const navigateFunction = () => {
+  //   navigate(`/firstPageSearch`);
+  //   // /${searchValue}
+  // };
 
   return (
     <div
-      onClick={navigateFunction}
+      // onClick={navigateFunction}
       className="rounded-[25px] py-[5px] px-[15px] my-[15px] flex items-center bg-white lg:w-[40%] w-[100%]"
     >
       {/* style={searchBoxStyle} */}
@@ -88,6 +89,9 @@ const SearchBox: React.FC<SearchProp> = ({ value, getValue }) => {
         className="w-[100%] h-[100%] border-none outline-none lg:w-[400px] black"
         onChange={getValue}
       />
+        {/* <button onClick={navigateFunction} className='cursor-pointer'>
+              <AiOutlineSearch className='text-stone-500 text-[24px] sm:ml-[-28px] md:ml-[-33px]' />
+            </button> */}
     </div>
     // style={inputStyle}
   );
@@ -492,12 +496,12 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
         />
         <TopicButton label="Stories" func={getDetailsOfClickingButton} />
         <TopicButton label="Trelle's Tunes" func={getDetailsOfClickingButton} />
-        <TopicButton
+        {/* <TopicButton
           label="In Your Corner TV Show"
           func={getDetailsOfClickingButton}
-        />
+        /> */}
       </div>
-      <SearchBox value={SearchValue} getValue={functionToSetSearchValue} />
+      {/* <SearchBox value={SearchValue} getValue={functionToSetSearchValue} /> */}
       {(filteredValuesOfVideos && filteredValuesOfVideos.length == 0) ||
         filteredValuesOfVideos == undefined ||
         filteredValuesOfVideos == "" ? (
@@ -506,7 +510,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-50px]"
             ref={DocumentsTargerRef}
           >
-            <p ref={targetDivRef1} className={`targetDiv ${isInCenter1 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            <p ref={targetDivRef1} className={`targetDiv ${isInCenter1 ? "animate raleway text-center font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 text-white md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 text-white text-center md:mb-[40px]"}`}
             // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"
             // data-aos="zoom-out-up"
             // data-aos-offset={ScreenSize == true ? "200px" : ""}
@@ -527,7 +531,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-20px]"
             ref={ProLifeVoicesTargerRef}
           >
-            <p ref={targetDivRef2} className={`targetDiv ${isInCenter2 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            <p ref={targetDivRef2} className={`targetDiv ${isInCenter2 ? "animate raleway text-center text font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 text-white md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20  text-white text-center md:mb-[40px]"}`}
             // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
             // data-aos="zoom-out-up"
             // data-aos-offset={ScreenSize == true ? "200px" : ""}
@@ -548,7 +552,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] sm:mt-[-85px] mt-[-20px]"
             ref={StoriesTargerRef}
           >
-            <p ref={targetDivRef3} className={`targetDiv ${isInCenter3 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            <p ref={targetDivRef3} className={`targetDiv ${isInCenter3 ? "animate raleway text-center font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 text-white md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20  text-white text-center  md:mb-[40px]"}`}
             // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
             // data-aos="zoom-out-up"
             // data-aos-offset={ScreenSize == true ? "200px" : ""}
@@ -569,7 +573,7 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
             className="ml-[-50px] mr-[-50px] mt-[-20px]"
             ref={TrellerTunesTargerRef}
           >
-            <p ref={targetDivRef4} className={`targetDiv ${isInCenter4 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+            <p ref={targetDivRef4} className={`targetDiv ${isInCenter4 ? "animate raleway text-center font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 text-white  md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 text-white text-center  md:mb-[40px]"}`}
             // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
             // data-aos="zoom-out-up"
             // data-aos-offset={ScreenSize == true ? "200px" : ""}
@@ -581,23 +585,27 @@ const BrowseVideoPage: React.FC<BrowseVideoProps> = (props) => {
               <TrellesTuneComponent title="false" />
             </div>
           </div>
-
+{/* 
           <div
             className="ml-[-50px] mr-[-50px] mt-[-20px]"
             ref={InYourCornerTvShowTargerRef}
-          >
-            <p ref={targetDivRef5} className={`targetDiv ${isInCenter5 ? "animate raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px] md:mb-[40px]"}`}
+          > */}
+
+          
+            {/* <p ref={targetDivRef5} className={`targetDiv ${isInCenter5 ? "animate raleway text-center font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 text-white  md:mb-[40px]" : "animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 text-white  text-center  md:mb-[40px]"}`} */}
+
+{/* 
             // className="animated-element raleway font-bold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-20 pl-8 text-white sm:ml-[10px] lg:ml-[30px]"
             // data-aos="zoom-out-up"
             // data-aos-offset={ScreenSize == true ? "200px" : ""}
             // data-aos-anchor-placement={ScreenSize == true ? "bottom-bottom" : ""}
-            >
-              In Your Corner TV Show
-            </p>
+            > */}
+              {/* In Your Corner TV Show */}
+            {/* </p> */}
             {/* <div className="sm:mb-[40px] sm:ml-[-25px] sm:mt-[30px]">
               <InYourCornerTvShowComponent title="false" />
             </div> */}
-          </div>
+          {/* </div> */}
         </div>
       ) : (
         <div className="w-[100%] h-[600px] sm:mb-[-400px]">

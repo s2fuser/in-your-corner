@@ -12,7 +12,7 @@ router.get('/getProLife', getProLife);
 router.get('/getShorts', getShorts);
 router.get('/getMovies', getMovies);
 
-router.get('/contact', contact);
+router.post('/contact', contact);
 
 
 

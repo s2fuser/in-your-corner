@@ -120,7 +120,7 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
         console.log(SearchValue);
         let FilteredItems = response.data.data && response.data.data.filter((items: any) => {
           if (ValueOfSearch != undefined) {
-            return items && items.genre.toLowerCase().includes(ValueOfSearch.toLowerCase())
+            return items && items.topics.toLowerCase().includes(ValueOfSearch.toLowerCase())
           }
         })
         handleDataChange()
@@ -138,7 +138,8 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
         }
         else {
           setFilteredValuesOfAllVideos(FilteredItems)
-          const titles = ''
+          let titles = [];
+          titles.push(ValueOfSearch);
           setTitle(titles);
         }
     }
@@ -179,8 +180,11 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
                     {filteredValuesOfVideos && filteredValuesOfVideos.length > 0 ? <div>
                         <div className="text-2xl xl:text-3xl 2xl:text-4xl mb-[50px] mt-[10px] text-black ml-[20px]">
                         {Title && Title.length > 0 ? 
-                        <div>{Title[0]}</div> : filteredValuesOfVideos && filteredValuesOfVideos.length > 0 ? 
-                        <div>{filteredValuesOfVideos[0].genre}</div> : <div></div>}
+                        <div>{Title[0]}</div> : (filteredValuesOfVideos && filteredValuesOfVideos.length > 0 ? 
+                        <div>{SearchValue}</div> : <div>  </div>)}
+                        
+                        {/* <div>{SearchValue}</div> : <div></div>} */}
+
                         </div>
                             <Slider {...settings} className="w-[100%] flex justify-center overflow-x-hidden"
                             slidesToShow={slidesToShow}
@@ -199,9 +203,11 @@ const ShowSearchComponent: React.FC<Prop> = ({  }) => {
                                     )
                                 })}
                             </Slider>
+                        </div> : (filteredValuesOfVideos != undefined ? <div className="text-center text-2xl flex justify-center items-center mt-[150px]">
+                               "No results for your search query"
                         </div> : <div className="text-center text-2xl flex justify-center items-center mt-[150px]">
-                                No Record
-                        </div>}
+                               Searching....
+                        </div>)}
                 </div>
             </div>
             <div>

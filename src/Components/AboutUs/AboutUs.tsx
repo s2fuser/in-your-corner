@@ -9,21 +9,22 @@ const AboutUsComponent = () => {
   AOS.init();
   return (
     <div className="sm:px-[10px] sm:h-[100%] bg-gradient-to-l from-pink-100 to-pink-200 overflow-x-hidden ">
-      <div className="lg:flex lg:justify-center md:mx-auto font-medium sm:mx-8 py-14 sm:block md:block lg:w-[1140px]">
+      <div className="lg:flex lg:justify-center md:mx-auto font-medium sm:mx-8 py-14 sm:block md:block lg:max-w-[1536px] lg:pr-[46px]">
         <div className="lg:px-[50px] sm:w-[100%]" data-aos="fade-right">
           <p className="raleway sm:text-3xl font-bold md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-sans mb-[60px] ">
             In Your Corner Ministries
           </p>
-          <p className="raleway font-sans sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl mb-[30px]  ">
-            In 2008, Kerry Pharr founded In Your Corner Ministries as an
+          <p className="raleway font-sans sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl mb-[30px]  ">
+            {/* In 2008, Kerry Pharr founded In Your Corner Ministries as an
             internationally syndicated weekly television program. The ministry’s
             purpose was and is to reach the lost through media by featuring the
             testimonies of men and women of faith. Over the following twelve
             years, In Your Corner Ministries produced more than 500 television
-            programs.
+            programs. */}
+            In 2008, Kerry Pharr founded "In Your Corner Ministries" as an internationally syndicated weekly television program on Daystar TV & National Religious Broadcasting TV. The ministry’s purpose was, and is, to reach the masses through media by featuring the testimonies of men and women of faith. Over the following twelve years, In Your Corner Ministries produced more than 500 television programs, now available on GoodVue TV.
           </p>
-          <p className="raleway sm:text-lg   md:text-lg   lg:text-xl   xl:text-xl   2xl:text-2xl font-sans">
-            Throughout his ministry, Kerry has had the privilege of documenting
+          <p className="raleway sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl font-sans">
+            {/* Throughout his ministry, Kerry has had the privilege of documenting
             and sharing inspiring words of faith from hundreds of men and women
             of God. This esteemed list includes renowned figures such as
             motivational speaker Zig Ziglar, Hall of Fame NASCAR driver Darrell
@@ -33,7 +34,8 @@ const AboutUsComponent = () => {
             Fortune, Platinum recording artist John Berry, Country music stars
             Barbara Fairchild, and Irlene Mandrell. Additionally, he has had the
             honor of featuring Dr. Martin Luther King’s niece, Dr. Alveda King,
-            along with a multitude of others.
+            along with a multitude of others. */}
+            Throughout his ministry, Kerry had the privilege of documenting and sharing inspiring words of faith from hundreds of men and women of God. This esteemed list includes renowned figures such as: motivational speaker Zig Ziglar, Hall of Fame NASCAR driver Darrell Waltrip, former world champion boxers Evander Holyfield, James “Bonecrusher” Smith, Troy Dorsey, Gene Hatcher, Hall of Fame football player Raymond Berry, Hall of Fame Country Singer Jimmy Fortune, Platinum Recording Artist John Berry, Country Music Stars Barbara Fairchild and Irlene Mandrell. Additionally, he had the honor of featuring Dr. Martin Luther King’s niece, Dr. Alveda King, along with a multitude of others.
           </p>
         </div>
         <div className="mt-[40px] h-[200px] sm:mb-[50px]" data-aos="fade-left">
@@ -44,7 +46,7 @@ const AboutUsComponent = () => {
           />
         </div>
       </div>
-      <div className="lg:flex lg:justify-center md:mx-auto font-medium sm:mx-8 py-12 sm:block sm:mt-[260px] md:block md:mt-[250px] lg:mt-[0px] background-div lg:w-[1140px]" data-aos="fade-right" >
+      <div className="lg:flex lg:justify-center md:mx-auto font-medium sm:mx-8 sm:pt-[180px] sm:block  md:block md:mt-[250px] lg:mt-[0px] background-div lg:max-w-[1536px] lg:pr-[46px] lg:pl-[30px]" data-aos="fade-right" >
         <img
           className="md:mx-auto lg:h-[400px]  sm:h-[280px] sm:w-[292px] sm:mb-[30px] md:h-[200px] sm:mx-auto md:mb-[30px] md:w-[500px] md:h-[400px]"
           // lg:ml-[100px]
@@ -64,20 +66,21 @@ const AboutUsComponent = () => {
           </p>
         </div> */}
       </div>
-      <div className="md:mx-auto font-medium sm:mx-8 py-12 sm:block lg:w-[1140px]" data-aos="flip-left">
-
-        <p className="lg:mx-auto raleway font-sans sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl sm:w-[100%]">
-          Beyond the weekly TV show, Kerry Pharr expanded his ministry impact
+      <div className="md:mx-auto font-medium sm:mx-8 py-12 sm:block lg:max-w-[1536px] lg:pr-[46px] lg:pl-[30px] " data-aos="flip-left">
+ 
+        <p className="lg:mx-auto raleway font-sans sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%]">
+          {/* Beyond the weekly TV show, Kerry Pharr expanded his ministry impact
           by creating compelling documentary films. Among them are the
           award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,”
           a documentary highlighting champion boxers who discovered hope in
           Jesus Christ. Additionally, “Forgotten No More” sheds light on the
           plight of impoverished Haitian workers toiling in the sugar cane
           plantations of the Dominican Republic for meager wages as low as ten
-          dollars a day.
+          dollars a day. */}
+          Kerry expanded the ministry impact by creating compelling documentary films. Among them are the award-winning best Christian documentary “Hope Lives in Hohenwald” also titled “Hope Dealer.”  Another highly acclaimed film, “Fight the Good Fight” is a documentary highlighting a dozen champion boxers who discovered hope in Jesus Christ, most of whom Kerry trained in his career as a 25 year professional boxing coach. Additionally, “Forgotten No More” sheds light on the plight of impoverished Haitian workers toiling in the sugar cane plantations of the Dominican Republic for meager wages and struggling to have food or shelter.   Kerry is also collaborating with Saylors Brothers Entertainment on an upcoming film, “Exorcism in America," a documentary exploring the contrast between demonic possession and deliverance, Christianity and Satanism.” 
         </p>
 
-        <p className="lg:mx-auto raleway font-sans sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl sm:w-[100%]">
+        {/* <p className="lg:mx-auto raleway font-sans sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl sm:w-[100%]">
           Our team is working on a pilot series of television programs from
           Country Stages to Gospel Hymns. This series features the testimonies
           of famous Country Singers who gladly share their faith in Jesus
@@ -85,28 +88,30 @@ const AboutUsComponent = () => {
           Entertainment on an upcoming film, “Exorcism in America.” Alongside
           him, his accomplished gospel-singing wife, Latrelle Lindon Pharr,
           contributes to the ministry’s multifaceted endeavors.
-        </p>
-        <p className="lg:mx-auto raleway font-sans sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl sm:w-[100%] mt-[20px] sm:mt-[20px]">
-          Kerry and Latrelle dedicate several weeks annually to travel abroad,
+        </p> */}
+        <p className="lg:mx-auto raleway font-sans sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%] mt-[20px] sm:mt-[20px]">
+          {/* Kerry and Latrelle dedicate several weeks annually to travel abroad,
           where they engage in preaching, singing, and sharing the gospel with
           those whom Jesus identified as “the least of these.” Kerry expresses
           their shared aspiration, saying, “Our ultimate goal is to devote the
           remainder of our lives to the Lord’s work and actively support other
-          ministries in building the Kingdom of God.”
+          ministries in building the Kingdom of God.” */}
+          Alongside him is his accomplished wife, Latrelle Lindon Pharr, who contributes to the ministry’s multifaceted endeavors with her singing, songwriting, speaking and evangelism. In addition to multiple video shorts and a weekly livestream program, Kerry and Latrelle dedicate time and ministry in other countries, where they engage in preaching, singing, feeding, supporting, and sharing the gospel with those whom Jesus called “the least of these.” Kerry expresses their shared aspiration, saying, “Our ultimate goal is to devote the remainder of our lives to the Lord’s work and actively support other ministries in building the Kingdom of God.”
         </p>
       </div>
-      <div className="md:mx-auto font-medium sm:mx-8 py-12 sm:block lg:w-[1140px]" data-aos="flip-left" >
+      <div className="md:mx-auto font-medium sm:mx-8 py-12 sm:block lg:max-w-[1536px] lg:pr-[46px] lg:pl-[30px]" data-aos="flip-left" >
         <p className="lg:mx-auto sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-sans mb-[40px]">
           In Your Corner Productions
         </p>
-        <p className="lg:mx-auto raleway font-sans sm:text-lg md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl sm:w-[100%] lg:mb-[30px]">
-          In Your Corner Productions specializes in creating Christian-themed
+        <p className="lg:mx-auto raleway font-sans sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%] lg:mb-[30px]">
+          {/* In Your Corner Productions specializes in creating Christian-themed
           television programs, acclaimed documentaries, gospel music, and
           ministry videos to help promote other faith-based non-profits.
           Operating under the banner of In Your Corner Ministries, our
           production arm boasts a fully equipped television studio, a skilled
           cinematographer, and seasoned videographers. Reach out to us today to
-          fulfill all your ministry video production requirements.
+          fulfill all your ministry video production requirements. */}
+          "In Your Corner Productions" specializes in creating Christian-themed television programs, acclaimed documentaries, gospel music, and ministry videos to promote Jesus Christ and help other faith-based non-profits. Operating under the banner of "In Your Corner Ministries," our production arm includes a fully equipped television studio, skilled cinematographer and seasoned videographers. Check out the various promos we have on the website. Our team is working on a pilot series of television programs from "Country Stages to Gospel Hymns" with famous country singers who gladly share their faith in Jesus Christ.  Another great witness for Christ are the Pro-Life-Voices and abortion testimonies on our website, some of which are aired on television stations and other online venues.”  Reach out to us today to fulfill all your ministry video production requirements. 
         </p>
         <img src={Image5} className="mx-auto mt-[30px]" alt="" />
       </div>

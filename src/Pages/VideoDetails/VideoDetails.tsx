@@ -104,7 +104,9 @@ const VideoDetailsPage = () => {
         "2xl:h-[500px]",
         "3xl:w-[800px]",
         "3xl:h-[450px]",
-        "md:h-[300px]"
+        "md:h-[300px]",
+        "absolute",
+        "z-[99]"
       ); // Add Tailwind CSS classes for width and height
     }
   };
@@ -140,7 +142,9 @@ const VideoDetailsPage = () => {
         "2xl:h-[500px]",
         "3xl:w-[800px]",
         "3xl:h-[450px]",
-        "md:h-[300px]"
+        "md:h-[300px]",
+        "absolute",
+        "z-[99]"
       ); // Add Tailwind CSS classes for width and height
     }
   };
@@ -159,7 +163,9 @@ const VideoDetailsPage = () => {
         "2xl:h-[500px]",
         "3xl:w-[800px]",
         "3xl:h-[450px]",
-        "md:h-[300px]"
+        "md:h-[300px]",
+        "absolute",
+        "z-[99]"
       ); // Add Tailwind CSS classes for width and height
     }
   }, [windowWidth]);
@@ -253,9 +259,9 @@ const VideoDetailsPage = () => {
             </div>
 
             <div className="flex justify-center items-center sm:mt-[14px] md:mt-[50px] lg:mt-[97px] xl:mt-[73px]  2xl:mt-[150px] 3xl:mt-[80px]" data-aos="flip-left">
-              <Link to="/Videos">
-                <ButtonComponent name={'View All Videos'} style="raleway text-red-700 px-8 py-2 lg:mt-[4px] xl:mt-[24px] hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium 2xl:text-2xl 2xl:px-[50px] 2xl:py-[15px] 2xl:rounded-[50px]" />
-              </Link>
+              {/* <Link to="/Videos">
+                <ButtonComponent name={'View All Videos'} style="raleway text-red-700 px-8 py-2 sm:px-[15px]  sm:py-[5px] lg:mt-[4px] xl:mt-[24px] hover:text-white hover:bg-red-950 hover:border-red-900 border border-2 border-red-700 rounded-3xl font-medium 2xl:text-2xl 2xl:px-[50px] 2xl:py-[15px] 2xl:rounded-[50px]" />
+              </Link> */}
             </div>
           </div>
         </div>

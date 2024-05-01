@@ -67,7 +67,7 @@ type SizeProp2 = {
 
 const VideoSlider2: React.FC<SizeProp> = ({ type, VideoType, VideoStyle, YoutubeLogo, SlidesToShow, Data }) => {
   return (
-    <div className="flex justify-center m-auto overflow-x-hidden mt-[20px]">
+    <div className="flex justify-center md:mr-[-38px] xl:mr-[-77px] m-auto overflow-x-hidden mt-[20px]">
       {VideoType == "ProLifeVideos" ? (
         <ProlifeVideosSlider type2={type == "true" ? "true" : "false"} Data={Data} />
       ) : VideoType == "Stories" ? (
@@ -167,10 +167,10 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
 
       if(VideoStyle2 == "true") {
         if(window.innerWidth <= 639) {
-          setSlidesToShow(1);
+          setSlidesToShow(2);
         }
-        else if(window.innerWidth <= 1024 && window.innerWidth >= 641) {
-          setSlidesToShow(3);
+        else if(window.innerWidth <= 1023 && window.innerWidth >= 640) {
+          setSlidesToShow(4);
         }
         else if(window.innerWidth > 2500) {
           setSlidesToShow(11);
@@ -195,9 +195,14 @@ export const SliderComponent2: React.FC<SizeProp2> = ({ type2, VideoStyle2, Yout
         if(SlidesToShow == "true") {
           setSlidesToShow(5);
         }
-        else {
-          setSlidesToShow(3);
+       
+        else if(window.innerWidth < 1024 ) {
+          setSlidesToShow(2);
         }
+        else {
+          setSlidesToShow(4);
+        }
+        
       }
     };
 

@@ -1,5 +1,6 @@
 const EmbeddedCodeModel = require("../models/EmbeddedCode");
 const RegisteredUsers = require("../models/RegisteredUsers");
+// const { Op } = require('sequelize');
 
 const getCode = async (req, res) => {
     try {
@@ -68,7 +69,16 @@ const getMovies = async (req, res) => {
             where: {
                 genre: `Documentries / Movies`
             }
+            // where: {
+            //     [Op.or]: [
+            //         { genre: `Documentries / Movies` },
+            //         { genre: `Pro-Life Voices` },
+            //         { genre: `Stories` },
+            //         { genre: `Trelle's Tunes`}
+            //     ]
+            // }
         });
+        console.log('Query executed successfully. Data:', data);
         return res.json({ message: 'success', data: data });
     } catch (err) {
         return res.json({ message: 'error', data: err.message });
@@ -104,23 +114,40 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 
 const contact = async (req, res) => {
-    let name = 'Sample'
-    let email = 'sample'
-    let message = 'sample'
+    // let name = 'Sample'
+    // let email = 'sample'
+    // let message = 'sample'
 
     let transporter = nodemailer.createTransport({
-        service: 'Gmail',
+        // service: ' secure.emailsrvr.com',
+        host: 'secure.emailsrvr.com',
+        port: 465, // SMTP port
+        secure: true, // Use SSL/TLS
         auth: {
-            user: 'magizhan009@gmail.com',
-            pass: 'Magizhan@1879'
+            user: 'webmaster@inyourcorner.tv',
+            pass: 'FxqJh6QBrMe3@gJ'
         }
     });
 
     let info = await transporter.sendMail({
-        from: 'magizhan009@gmail.com',
-        to: 'manimaranraina2501@gmail.com',
-        subject: 'New Contact Form Submission',
-        html: `<p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`
+        from: 'webmaster@inyourcorner.tv',
+        to: 'sathishravikumar46@gmail.com',
+        // to: 'steven@brightherd.com',
+        subject: req.body.subject,
+        html: `<h2>Contact Us</h2>
+    
+        <p>You have received a new message from a visitor:</p>
+        
+        <p><strong>Name:</strong> ${req.body.fname} ${req.body.lname}</p>
+        <p><strong>Email:</strong> ${req.body.email}</p>
+        <p><strong>Phone:</strong> ${req.body.phone}</p>
+        <p><strong>Subject:</strong> ${req.body.subject}</p>
+        
+        <p><strong>Details:</strong></p>
+        <p>${req.body.Details}</p>
+        
+        <p>Thank You.<br>
+        </p>`
     });
 
     console.log('Message sent: %s', info.messageId);

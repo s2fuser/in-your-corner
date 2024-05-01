@@ -35,7 +35,8 @@ const Contact: React.FC = () => {
    
     <div className="overflow-x-hidden">
       
-      <div className=" relative z-50" onClick={handleClick}> {/* Increase z-index to make sure it's above the background */}
+      <div className=" relative z-50 " onClick={handleClick}> 
+      {/* Increase z-index to make sure it's above the background */}
         <VideoSlider2 Data={AllMovies} />
       </div>
 
@@ -68,7 +69,7 @@ const Contact: React.FC = () => {
           </div>
           <div className="mt-14 ">
             <Link to="/contact">
-              <button className="raleway border-2  hover:text-black hover:border-white hover:bg-slate-100  border-white py-2 px-10 rounded-3xl 2xl:py-5 2xl:rounded-[50px] sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+              <button className="raleway border-2  hover:text-black hover:border-white hover:bg-slate-100  border-white py-2 px-10 rounded-3xl 2xl:py-5 2xl:rounded-[50px] sm:text-sm lg:text-2xl text-2xl font-sans xl:text-2xl 2xl:text-3xl 3xl:text-4xl ">
                 Contact Us
               </button>
             </Link>

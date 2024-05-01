@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import WhiteLogo from'../../Assets/Images/whiteLogo.png';
+import mainlogo from "../../Assets/Images/logo.png"
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import '../../index.css';
@@ -36,9 +37,10 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
     { id: 1, text: 'Home', routeName: "/" },
     // { id: 2, text: 'Team', routeName: "/team" },
     // { id: 3, text: 'Blog', routeName: "/blog" },
-    { id: 2, text: 'Videos', routeName: "/Videos" },
+    // { id: 2, text: 'Videos', routeName: "/Videos" },
+    { id: 2, text: 'About Us', routeName: "/aboutUs" },
     { id: 3, text: 'Contact', routeName: "/contact" },
-    { id: 4, text: 'About Us', routeName: "/aboutUs" },
+    
     // { id: 7, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
     // { id: 7, text: 'Music', routeName: "/trellestune" },
   ];
@@ -60,8 +62,9 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
       <div className="">
         <Link to="/">
           <img
-            className="w-24 lg:w-32 h-15"
-            src="https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png"
+            className="w-[110px] lg:w-[140px] h-15"
+            // src="https://inyourcorner.info/wp-content/uploads/2023/04/cropped-new-300x127-1.png"
+            src={mainlogo}
             alt="logo"
           />
         </Link>
@@ -84,9 +87,14 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
         </Link> */}
         {/* <span>Videos</span> */}
 
-        <Link to="/Videos">
+        {/* <Link to="/Videos">
           <span className={ActiveScreen == "Videos" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Videos
+          </span>
+        </Link> */}
+         <Link to="/aboutUs">
+          <span className={ActiveScreen == "AboutUs" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
+            About Us
           </span>
         </Link>
 
@@ -95,11 +103,12 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
             Contact
           </span>
         </Link>
-        <Link to="/aboutUs">
-          <span className={ActiveScreen == "AboutUs" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
-            About Us
+        <Link to={"https://give.tithe.ly/?formId=9379b56b-bd7f-4cbf-b2fb-b39ff1cc093b"}>
+          <span className={ActiveScreen == "support" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
+            Support
           </span>
         </Link>
+      
         {/* <Link to="/trellestune">
           <span>Music</span>
         </Link> */}
@@ -156,7 +165,16 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
               {item.text}
             </li>
           </Link>
+          
+
         ))}
+        <Link to={"https://give.tithe.ly/?formId=9379b56b-bd7f-4cbf-b2fb-b39ff1cc093b"}>
+        <li  className={`raleway p-4 font-bold text-center text-white rounded-xl cursor-pointer text-2xl ${
+                nav ? 'animate-left-to-right' : ''
+              }`}>
+          Support
+        </li>
+        </Link>
       </ul>
     </div>
   );

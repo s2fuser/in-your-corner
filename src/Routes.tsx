@@ -35,7 +35,7 @@ export const Routes1 = () => {
                 <Route path="/KnowMore" element={<Story />} />
                 <Route path="/Know" element={<Know />} />
                 <Route path="/JoinOurCommunity" element={<JoinOurCommunityPage/>} />
-                <Route path="/Videos" element={<AllVideosPageComponet />} />
+                {/* <Route path="/Videos" element={<AllVideosPageComponet />} /> */}
                 <Route path="/VideoDetails/:Code" element={<VideoDetailsPage />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:id" element={<BlogContent />} />

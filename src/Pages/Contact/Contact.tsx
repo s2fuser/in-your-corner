@@ -11,6 +11,8 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { MdOutlineAccessTime } from "react-icons/md";
+// for changes
+// import contactbgimg from "../../Assets/Images/image1.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -28,7 +30,7 @@ const ContactUsPage = () => {
   const [Phone, setPhone] = useState('');
   const [Subject, setSubject] = useState('');
   const [Details, setDetails] = useState('');
-
+  const [Formdata, setFormdata] = useState('');
   useEffect(() => {
     fetchData();
   }, []);
@@ -51,6 +53,7 @@ const ContactUsPage = () => {
 
   const fetchData = async () => {
     const response: any = await axios.get("https://inc.s2ftech.in/api/code");
+    // const response: any = await axios.get("http://localhost:8000/api/code");
     setAllVideosDetails(response.data.data);
   };
 
@@ -115,11 +118,22 @@ const ContactUsPage = () => {
       Subject.trim() &&
       Details.trim()
     ) {
+
+      let formdata = {
+        fname: FirstName,
+        lname: LastName,
+        email: Email,
+        phone: Phone,
+        subject: Subject,
+        Details: Details
+
+      }
       try {
         const recaptchaValue = await recaptchaRef.current.executeAsync();
         console.log('Form submitted with reCAPTCHA token:', recaptchaValue);
+        const response: any = await axios.post("https://inc.s2ftech.in/api/contact", formdata);
+        // const response: any = await axios.post("http://localhost:8000/api/contact",formdata);
         SuccessToaster();
-        // const response: any = await axios.get("http://localhost:8000/api/contact");
         setTimeout(() => {
           history('/');
         }, 3000)
@@ -165,6 +179,7 @@ const ContactUsPage = () => {
   const FailureToaster = () => {
     toast.error('Please Fill all the Fields')
   }
+  // const handlesubmit=async(event: any)=>{}
 
   return (
     <div>
@@ -178,6 +193,15 @@ const ContactUsPage = () => {
           ActiveScreen="Contact"
         />
       </div>
+      {/* backgroundimg  */}
+      {/* <div className="">
+        <div className="absolute bg-cover bg-center bg-fixed  w-full lg:h-[752px] md:h-[811px] sm:h-[817px] m-[0px] md: ">
+          <img src={contactbgimg} alt="contactbgimg" className="w-full h-full " />
+        </div> */}
+
+      {/* withbg only if no bg cmd this line */}
+      {/* <div className=" relative  lg:right-[20%] md:right-[20%]  sm:right-[13%]  "> */}
+
       <div>
         <p className="font-bold text-4xl text-center px-[20px] py-[10px] animate-fade-in-bottom">
           Contact Us
@@ -292,6 +316,10 @@ const ContactUsPage = () => {
           </div>
         </div>
       </div>
+      {/* </div>
+
+      </div> */}
+
       <div>
         <FooterComponent onClickToHome="Contact Us" />
       </div>
