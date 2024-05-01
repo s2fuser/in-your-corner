@@ -20,12 +20,12 @@ import homebgimg from "../../Assets/Images/homepagebgimg.jpg";
 // import videobg from "../../Assets/videoplayback (1).mp4";
 
 
-import Image3 from "../../Assets/Images/image3.jpg";
+import Image3 from "../../Assets/Images/image3(1).jpg";
 import mainpgsliderimg1 from "../../Assets/Images/mainpgslidrimg.jpeg"
 import mainpgsliderimg2 from "../../Assets/Images/mainpgslidrimg2.jpeg";
 import mainpgsliderimg3 from "../../Assets/Images/mainpgsliderimg3.jpeg";
 import mainpgsliderimg4 from "../../Assets/Images/mainpglsiderimg4.jpeg";
-import Image4 from "../../Assets/Images/image4.jpg";
+import Image4 from "../../Assets/Images/image4 (1) (2).jpg";
 import LandingPageNavigationBar from "../LandingPageNavigation/LandingPageNavigation";
 import QuotationImage from "../../Assets/Images/Quotation.png";
 import WhiteBackgroundImage from "../../Assets/Images/Background1.png";
