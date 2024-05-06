@@ -86,6 +86,8 @@ export const SliderComponent2 = () => {
 
   const fetchData = async () => {
     const response: any = await axios.get("https://inc.s2ftech.in/api/getMovies");
+    // const response: any = await axios.get("http://localhost:8000/api/getMovies");
+    console.log(response.data.data)
     setAllVideosResponse(response.data.data);
   };
 

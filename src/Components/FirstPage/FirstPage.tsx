@@ -13,15 +13,16 @@ import Image2 from "../../Assets/Images/image2.jpg";
 // import Image1 from "../../Assets/Images/image1.jpg";
 
 // newbgimg
-import homebgimg from "../../Assets/Images/homepagebgimg.jpg";
+// import homebgimg from "../../Assets/Images/homepagebgimg.jpg";
 
 
 // newvideobg
-// import videobg from "../../Assets/videoplayback (1).mp4";
+import videobg from "../../Assets/videoplayback (1).mp4";
 
 
 import Image3 from "../../Assets/Images/image3(1).jpg";
-import mainpgsliderimg1 from "../../Assets/Images/mainpgslidrimg.jpeg"
+// import mainpgsliderimg1 from "../../Assets/Images/mainpgslidrimg.jpeg"
+import mainpgsliderimg1 from "../../Assets/Images/mainpgslidrimg (1)new.png"
 import mainpgsliderimg2 from "../../Assets/Images/mainpgslidrimg2.jpeg";
 import mainpgsliderimg3 from "../../Assets/Images/mainpgsliderimg3.jpeg";
 import mainpgsliderimg4 from "../../Assets/Images/mainpglsiderimg4.jpeg";
@@ -40,6 +41,8 @@ import AOS from "aos";
 import 'aos/dist/aos.css';
 import YoutubeImage from '../../Assets/Images/Youtube.png'
 import HopeInHohenwald from '../../Assets/Images/HopeInHohenwald.jpg'
+
+
 
 const FirstPageComponent = () => {
   // const navigate = useNavigate();
@@ -167,8 +170,8 @@ const FirstPageComponent = () => {
   const [AllMovies, setAllMovies] = useState<any>([]);
 
   const getOnlyMovies = async () => {
-    // const response: any = await axios.get("https://inc.s2ftech.in/api/getMovies");
-    const response: any = await axios.get("http://localhost:8000/api/getMovies");
+    const response: any = await axios.get("https://inc.s2ftech.in/api/getMovies");
+    // const response: any = await axios.get("http://localhost:8000/api/getMovies");
     setAllMovies(response.data.data);
   };
   const history = useNavigate();
@@ -214,7 +217,7 @@ const FirstPageComponent = () => {
 
   const targetDivRef = useRef(null);
   const targetDivRef2 = useRef(null);
-  
+
   const [isInCenter, setIsInCenter] = useState(false);
   const [isInCenter2, setIsInCenter2] = useState(false);
 
@@ -321,7 +324,7 @@ const FirstPageComponent = () => {
   const targetDivRef3 = useRef<HTMLDivElement>(null);
   const scrollToDiv = () => {
     if (targetDivRef3.current) {
-      targetDivRef3.current.scrollIntoView({ behavior: 'smooth' }); 
+      targetDivRef3.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
   return (
@@ -346,16 +349,21 @@ const FirstPageComponent = () => {
             /> */}
 
             {/* newbgimg */}
-            <img
+            {/* <img
               src={homebgimg}
 
               alt=""
-              className="object-cover object-center w-full  h-[350px] md:h-[482px] lg:h-[630px] xl:h-[883px]"
-            />
+              className="object-cover object-center w-full  h-[350px] md:h-[559px] lg:h-[630px] xl:h-[883px]"
+            /> */}
             {/* videobg */}
 
 
-            {/* <video src={videobg} autoPlay loop muted className="object-cover object-center w-full  h-[350px] md:h-[482px] lg:h-[630px] xl:h-[883px]" /> */}
+            <video src={videobg} autoPlay loop muted playsInline className="object-cover object-center w-full  h-[350px] md:h-[482px] lg:h-[630px] xl:h-[883px]" />
+
+
+            
+
+
 
 
 
@@ -364,9 +372,16 @@ const FirstPageComponent = () => {
             <div className="absolute inset-0  w-full h-full"></div>
           </div>
           <div ref={containerRef} className="absolute lg:top-[25rem] sm:top-[300px] text-white pt-32 pl-20 xl:pt-[15rem] xl:pl-[1rem] sm:ml-[-45px] 2xl:ml-[70px] xl:mt-[-1px] 3xl:mt-[180px] xl:ml-[30px] 2xl:mt-[40px] 3xl:ml-[120px]">
-            {/* xl:mt-[150px] oldbg image */}
-            <div className=" sm:mt-[-310px] md:mt-[-329px] lg:mt-[150px] xl:mt-[150px]">
+
+            {/* videobg */}
+            {/* <div className=" sm:mt-[-310px] md:mt-[-329px] lg:mt-[150px] xl:mt-[150px]">
               <p className=" raleway text-white lg:text-3xl mt-230 sm:text-lg xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans md:mt-[-442px]">
+                featuring
+              </p> */}
+
+            {/* image bg */}
+            {/* <div className=" sm:mt-[-310px] md:mt-[-329px] lg:mt-[150px] xl:mt-[150px]">
+              <p className=" raleway text-white lg:text-3xl mt-230 sm:text-lg xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-light font-sans md:mt-[-484px]">
                 featuring
               </p>
               <p className=" raleway text-white lg:text-3xl sm:text-lg xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold font-sans">
@@ -378,18 +393,18 @@ const FirstPageComponent = () => {
                   of faith
                 </span>
               </p>
-            </div>
-            <div className="lg:pt-8 sm:7 pt-[16px]">
+            </div> */}
+            {/* <div className="lg:pt-8 sm:7 pt-[16px]"> */}
               {/* <Link to="/know"> */}
               {/* <Link to="/Videos"> */}
-              <Link to="/">
+              {/* <Link to="/">
                 <button className=" raleway border-solid rounded-3xl border-2  hover:text-black hover:border-white hover:bg-slate-100 sm:text-lg lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl border-white text-white pl-7 pr-7 pt-2 pb-2 font-sans" onClick={scrollToDiv}>
                   Learn More
                 </button>
-              </Link>
+              </Link> */}
               {/* </Link> */}
 
-            </div>
+            {/* </div> */}
           </div>
           {/* for old bg img  */}
           {/* <div className="relative mt-[-6rem] md:bottom-[6.5rem] lg:mt-[-200px]  "> 
@@ -400,42 +415,53 @@ const FirstPageComponent = () => {
             /> */}
 
           {/* newbgimg */}
-          <div className="relative mt-[-6rem] md:bottom-[6.5rem] lg:mt-[-162px] ">
+          {/* <div className="relative mt-[-6rem] md:mt-[-7rem] md:bottom-[6.5rem] lg:mt-[-189px] ">
             <img
               src={WhiteBackgroundImage}
               alt=""
-              className=" lg:h-[500px]  h-[500px]  md:h-[463px]  w-[100%] sm:h-[240px] lg:mt-[67px] "
-            />
+              className=" lg:h-[500px]  h-[500px]  md:h-[463px]  w-[100%] sm:h-[180px] lg:mt-[67px] "
+            /> */}
 
             {/* newvideobg */}
-            {/* <div className="relative mt-[-5rem] md:bottom-[6.5rem] lg:mt-[-162px] ">
+            <div className="relative mt-[-5rem] md:bottom-[6.5rem] lg:mt-[-162px] ">
             <img
               src={WhiteBackgroundImage}
               alt=""
-              className=" lg:h-[500px]  h-[500px]  md:h-[463px]  w-[100%] sm:h-[203px] lg:mt-[67px] "
-            /> */}
+              className=" lg:h-[431px]    md:h-[403px]  w-[100%] sm:h-[134px] lg:mt-[67px] "
+            />
             <div className="absolute md:mt-[-85px] md:top-[175px] right-auto md:ml-[-9%] lg:ml-[0px] ">
               {/* newimgbg &oldimgbg */}
-              <img
-                className="h-60 md:h-[13rem] md:w-[20rem] w-96  lg:h-60 lg:w-96 lg:ml-[-70px] sm:h-[6rem] sm:w-[13rem] sm:mt-[-194px] sm:ml-[-40px] "
-                src={QuotationImage}
-                alt="QuotationImage"
-              />
-              {/* videbg */}
               {/* <img
-                className="h-60 md:h-[13rem] md:w-[20rem] w-96  lg:h-60 lg:w-96 lg:ml-[-70px] sm:h-[6rem] sm:w-[13rem] sm:mt-[-170px] sm:ml-[-40px] "
+                className="h-60 md:h-[13rem] md:w-[20rem] w-96  lg:h-60 lg:w-96 lg:ml-[-70px] sm:h-[6rem] sm:w-[13rem] sm:mt-[-154px] sm:ml-[-40px] "
                 src={QuotationImage}
                 alt="QuotationImage"
               /> */}
+              {/* videbg */}
+              <img
+                className="h-60 md:h-[8rem] md:w-[19rem] w-96 lg:mt-[-12px] lg:h-[11rem] lg:w-[29rem] lg:ml-[-70px] sm:h-[6rem] sm:w-[13rem] sm:mt-[-113px] sm:ml-[-40px] "
+                src={QuotationImage}
+                alt="QuotationImage"
+              />
             </div>
             {/* <div ref={targetDivRef} className={`targetDiv ${isInCenter ? "animate text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]" : "text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]"}`}> */}
             <div data-aos="zoom-in-up" className="text-center md:mt-[-193px] lg:mt-[-250px] sm:mt-[-85px] sm:pt-[20px] sm:pl-[10px] sm:pr-[10px]">
-              <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-[0px] xl:text-4xl mt-[-60px] 2xl:text-5xl mt-[-60px] font-medium font-sans sm:mt-[-32px]">
+              {/* bg image */}
+
+              {/* <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-[0px] xl:text-4xl mt-[-60px] 2xl:text-5xl mt-[-60px] font-medium font-sans sm:mt-[-16px]">
+                In Your Corner{" "}
+                <span className="raleway font-light font-sans ">
+                  Productions
+                </span>
+              </p> */}
+
+              {/* bgvideos */}
+              <p className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl mt-[0px] xl:text-4xl mt-[-60px] 2xl:text-5xl mt-[-60px] font-medium font-sans sm:mt-[32px]">
                 In Your Corner{" "}
                 <span className="raleway font-light font-sans ">
                   Productions
                 </span>
               </p>
+              {/* <p className="raleway  font-sans   sm:text-lg  lg:text-xl mb-[-25px] md:text-lg xl:text-xl xl:mt-[20px] 2xl:text-2xl sm:mt-[30px] md:mt-[30px]"> */}
               <p className="raleway  font-sans   sm:text-lg  lg:text-xl mb-[-25px] md:text-lg xl:text-xl xl:mt-[20px] 2xl:text-2xl sm:mt-[30px] md:mt-[30px]">
                 In Your Corner Productions specializes in creating
                 Christian-themed television programs,  <span className="sm:hidden md:hidden lg:inline"> <br /> </span>
@@ -446,7 +472,7 @@ const FirstPageComponent = () => {
             {/* </div> */}
           </div>
           {/* <div ref={targetDivRef} className={`targetDiv ${isInCenter ? "animate text-center" : "text-center"}`}> */}
-          <div  data-aos="zoom-in-up" className="text-center">
+          <div data-aos="zoom-in-up" className="text-center">
             {/* <Link to="/Videos"> */}
             <Link to="/">
               <JoinOurCommunityButton />
@@ -454,7 +480,7 @@ const FirstPageComponent = () => {
           </div>
           {/* </div> */}
 
-          <div   className="mt-16 sm:mt-[0px]">
+          <div className="mt-16 sm:mt-[0px]">
             <div className="h-5/6 ">
               <div className=" bg-pink-100 pt-40 h-5/6 sm:pt-[0px]">
                 <div className="flex justify-center py-8 px-2 sm:mb-[-20px] sm:ml-[-14%] hover:opacity-70">
@@ -500,12 +526,14 @@ const FirstPageComponent = () => {
 
 
 
-                <div className="w-[100%]">
+                {/* <div className="w-[100%]">
                   <VideoSlider2 type="true" YoutubeLogo="true" Data={AllMovies} />
-                </div>
+                </div> */}
 
 
                 <BrowseVideoPage />
+
+                
                 {/* <div data-aos="zoom-in-up" className="text-center mt-[100px] text-lg pb-14 sm:mt-[80px]">
                   <Link to="/Videos">
                     <button className="raleway mt-[-10px] text-red-900 hover:text-white hover:bg-red-950 hover:border-red-900 px-14 py-2.5 border border-2 border-red-900 rounded-3xl font-sans xl:text-2xl lg:text-2xl sm:text-sm 2xl:text-3xl" data-aos="flip-left">
@@ -515,7 +543,7 @@ const FirstPageComponent = () => {
                 </div> */}
                 {/* <div ref={targetDivRef2} className={`targetDiv ${isInCenter2 ? "animate text-center lg:pb-40 pb-20 font-sans" : "text-center lg:pb-40 pb-20 font-sans"}`}> */}
                 <div className="text-center lg:pb-40 pb-20 font-sans">
-                  <p data-aos="zoom-in-up" className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl">
+                  <p data-aos="zoom-in-up" className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-light mb-7 font-sans xl:text-4xl 2xl:text-5xl sm:pt-[19px] md:pt-[27px] lg:pt-[37px] xl-[47px]">
                     How Kerry Came to Faith in{" "}
                     <span className="raleway text-red-900 sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold font-sans xl:text-4xl 2xl:text-5xl">
                       Jesus Christ
@@ -548,8 +576,14 @@ const FirstPageComponent = () => {
               <div className="relative">
                 <div className="pb-[20px] flex justify-center absolute lg:top-[-126px] top-[-60px] z-[8] lg:gap-[20px] gap-[2px] w-full">
                   <div className="px-1 sm:w-[90px] sm:h-[90px]">
-                    <img
+                    {/* <img
                       className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
+                      src={mainpgsliderimg1}
+                      alt="mainpgsliderimg1"
+                      data-aos="zoom-in-right"
+                    /> */}
+                     <img
+                      className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px] object-cover object-center"
                       src={mainpgsliderimg1}
                       alt="mainpgsliderimg1"
                       data-aos="zoom-in-right"
@@ -557,7 +591,7 @@ const FirstPageComponent = () => {
                   </div>
                   <div className="px-1  sm:w-[90px] sm:h-[90px]">
                     <img
-                      className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
+                      className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]  object-cover object-center"
                       src={Image3}
                       alt="mainpgsliderimg2"
                       data-aos="zoom-in-right"
@@ -565,7 +599,7 @@ const FirstPageComponent = () => {
                   </div>
                   <div className="px-1 sm:w-[90px] sm:h-[90px]">
                     <img
-                      className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px] "
+                      className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]  object-cover object-center "
                       src={Image4}
                       alt="mainpgsliderimg3"
                       data-aos="zoom-in-left"
@@ -573,7 +607,7 @@ const FirstPageComponent = () => {
                   </div>
                   <div className="px-1 sm:w-[90px] sm:h-[90px]">
                     <img
-                      className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px]"
+                      className="w-48 h-48 rounded-2xl sm:w-[70px] sm:h-[90px] object-cover object-center"
                       src={mainpgsliderimg4}
                       alt="mainpgsliderimg4"
                       data-aos="zoom-in-left"
@@ -635,21 +669,3 @@ export default FirstPageComponent;
 
 
 
-// featureshsorts:
-// <div>
-//   <div className="lg:mt-[40px]">
-//     <h1
-//       className="raleway lg:h-[60px] sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-semibold text-center text-4xl sm:text-2xl font-sans text-slate-950 sm:mt-[130px] md:mt-[-25px] lg:mt-[-38px] xl:mt-[-40px] animate-fade-in-bottom"
-//       data-aos="zoom-in"
-//     >
-//       FEATURED SHORTS
-//     </h1>
-//   </div>
-
-//   <div className='w-full h-100 mt-1 mb-1 flex justify-between overflow-x-hidden sm:mt-[-75px]'>
-//     <div className='sm:mt-[80px] w-[100%]'>
-//       <VideoSlider2 type="true" VideoStyle="true" Data={Shorts} />
-      // <FeatureFilmsComponent />
-//     </div>
-//   </div>
-// </div>

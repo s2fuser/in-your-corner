@@ -29,6 +29,7 @@ const TrellesTuneComponent: React.FC<Prop> = ({ title }) => {
 
   const fetchData = async () => {
     const response: any = await axios.get("https://inc.s2ftech.in/api/getTrellesTunes");
+    // const response: any = await axios.get("http://localhost:8000/api/getTrellesTunes");
     setTrellesTunes(response.data.data);
   };
 

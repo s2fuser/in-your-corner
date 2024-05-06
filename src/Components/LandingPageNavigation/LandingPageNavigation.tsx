@@ -4,7 +4,7 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import WhiteLogo from'../../Assets/Images/whiteLogo.png';
+import WhiteLogo from '../../Assets/Images/whiteLogo.png';
 import mainlogo from "../../Assets/Images/logo.png"
 import AOS from "aos";
 import 'aos/dist/aos.css';
@@ -14,12 +14,14 @@ type Prop = {
   searchValue?: string;
   onChangeFunction?: any;
   ActiveScreen?: any;
+  opacity?:any;
 };
 
 const LandingPageNavigationBar: React.FC<Prop> = ({
   searchValue,
   onChangeFunction,
   ActiveScreen,
+  opacity
 }) => {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
@@ -40,7 +42,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
     // { id: 2, text: 'Videos', routeName: "/Videos" },
     { id: 2, text: 'About Us', routeName: "/aboutUs" },
     { id: 3, text: 'Contact', routeName: "/contact" },
-    
+
     // { id: 7, text: 'Pro-Life Voices', routeName: "/prolifevideos" },
     // { id: 7, text: 'Music', routeName: "/trellestune" },
   ];
@@ -55,10 +57,17 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
   }, []);
 
   return (
+    // <div
+    //   className="bg-slate-100 w-full p-7 flex items-center md:justify-between lg:justify-around "
+    //   style={{ backgroundColor: "rgba(159, 159, 207, 0.65)" }} data-aos={window.innerWidth > 768 ? "zoom-in" : ""} id="menu"
+    // >
     <div
-      className="bg-slate-100 w-full p-7 flex items-center md:justify-between lg:justify-around"
-      style={{ backgroundColor: "rgba(159, 159, 207, 0.65)" }} data-aos={window.innerWidth > 768 ? "zoom-in" : ""} id="menu"
-    >
+    className="bg-slate-100 w-full p-7 flex items-center md:justify-between lg:justify-around "
+    style={{
+      backgroundColor: opacity == true ? "rgba(159, 159, 207, 0.4)" : "rgba(159, 159, 207, 0.95)"
+    }} data-aos={window.innerWidth > 768 ? "zoom-in" : ""} id="menu"
+  >
+  
       <div className="">
         <Link to="/">
           <img
@@ -75,7 +84,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
             Home
           </span>
         </Link>
-      {/* <Link to="/team">
+        {/* <Link to="/team">
           <span className={ActiveScreen == "Team" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Team
           </span>
@@ -92,7 +101,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
             Videos
           </span>
         </Link> */}
-         <Link to="/aboutUs">
+        <Link to="/aboutUs">
           <span className={ActiveScreen == "AboutUs" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             About Us
           </span>
@@ -108,14 +117,14 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
             Support
           </span>
         </Link>
-      
+
         {/* <Link to="/trellestune">
           <span>Music</span>
         </Link> */}
       </div>
       <div className="flex justify-center items-center sm:ml-[15px] md:ml-[-50px] ">
         <div>
-        {/* onClick={navigateFunction} */}
+          {/* onClick={navigateFunction} */}
           <SearchBarComponent
             searchValue={searchValue}
             onChangeFunction={onChangeFunction}
@@ -158,22 +167,20 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
             <li
               key={item.id}
               // className="raleway p-4 font-bold text-center text-white rounded-xl cursor-pointer text-2xl animate-left-to-right"
-              className={`raleway p-4 font-bold text-center text-white rounded-xl cursor-pointer text-2xl ${
-                nav ? 'animate-left-to-right' : ''
-              }`}
+              className={`raleway p-4 font-bold text-center text-white rounded-xl cursor-pointer text-2xl ${nav ? 'animate-left-to-right' : ''
+                }`}
             >
               {item.text}
             </li>
           </Link>
-          
+
 
         ))}
         <Link to={"https://give.tithe.ly/?formId=9379b56b-bd7f-4cbf-b2fb-b39ff1cc093b"}>
-        <li  className={`raleway p-4 font-bold text-center text-white rounded-xl cursor-pointer text-2xl ${
-                nav ? 'animate-left-to-right' : ''
-              }`}>
-          Support
-        </li>
+          <li className={`raleway p-4 font-bold text-center text-white rounded-xl cursor-pointer text-2xl ${nav ? 'animate-left-to-right' : ''
+            }`}>
+            Support
+          </li>
         </Link>
       </ul>
     </div>

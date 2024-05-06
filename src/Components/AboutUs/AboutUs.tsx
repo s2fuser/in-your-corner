@@ -14,7 +14,7 @@ const AboutUsComponent = () => {
           <p className="raleway sm:text-3xl font-bold md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-sans mb-[60px] ">
             In Your Corner Ministries
           </p>
-          <p className="raleway font-sans sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl mb-[30px]  ">
+          <p className="raleway font-sans sm:text-base   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl mb-[30px]  ">
             {/* In 2008, Kerry Pharr founded In Your Corner Ministries as an
             internationally syndicated weekly television program. The ministry’s
             purpose was and is to reach the lost through media by featuring the
@@ -23,7 +23,7 @@ const AboutUsComponent = () => {
             programs. */}
             In 2008, Kerry Pharr founded "In Your Corner Ministries" as an internationally syndicated weekly television program on Daystar TV & National Religious Broadcasting TV. The ministry’s purpose was, and is, to reach the masses through media by featuring the testimonies of men and women of faith. Over the following twelve years, In Your Corner Ministries produced more than 500 television programs, now available on GoodVue TV.
           </p>
-          <p className="raleway sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl font-sans">
+          <p className="raleway sm:text-base   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl font-sans">
             {/* Throughout his ministry, Kerry has had the privilege of documenting
             and sharing inspiring words of faith from hundreds of men and women
             of God. This esteemed list includes renowned figures such as
@@ -68,7 +68,7 @@ const AboutUsComponent = () => {
       </div>
       <div className="md:mx-auto font-medium sm:mx-8 py-12 sm:block lg:max-w-[1536px] lg:pr-[46px] lg:pl-[30px] " data-aos="flip-left">
  
-        <p className="lg:mx-auto raleway font-sans sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%]">
+        <p className="lg:mx-auto raleway font-sans sm:text-base    md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%]">
           {/* Beyond the weekly TV show, Kerry Pharr expanded his ministry impact
           by creating compelling documentary films. Among them are the
           award-winning “Hope Lives in Hohenwald” and “Fight the Good Fight,”
@@ -89,7 +89,7 @@ const AboutUsComponent = () => {
           him, his accomplished gospel-singing wife, Latrelle Lindon Pharr,
           contributes to the ministry’s multifaceted endeavors.
         </p> */}
-        <p className="lg:mx-auto raleway font-sans sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%] mt-[20px] sm:mt-[20px]">
+        <p className="lg:mx-auto raleway font-sans sm:text-base    md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%] mt-[20px] sm:mt-[20px]">
           {/* Kerry and Latrelle dedicate several weeks annually to travel abroad,
           where they engage in preaching, singing, and sharing the gospel with
           those whom Jesus identified as “the least of these.” Kerry expresses
@@ -103,7 +103,7 @@ const AboutUsComponent = () => {
         <p className="lg:mx-auto sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-sans mb-[40px]">
           In Your Corner Productions
         </p>
-        <p className="lg:mx-auto raleway font-sans sm:text-sm   md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%] lg:mb-[30px]">
+        <p className="lg:mx-auto raleway font-sans sm:text-base    md:text-base  lg:text-lg   xl:text-xl   2xl:text-2xl sm:w-[100%] lg:mb-[30px]">
           {/* In Your Corner Productions specializes in creating Christian-themed
           television programs, acclaimed documentaries, gospel music, and
           ministry videos to help promote other faith-based non-profits.

@@ -32,6 +32,8 @@ const ProLifeSlider: React.FC<Prop> = ({ title }) => {
 
   const fetchData = async () => {
     const response: any = await axios.get("https://inc.s2ftech.in/api/getProLife");
+    // const response: any = await axios.get("http://localhost:8000/api/getProLife");
+    console.log(response.data.data);
     setProLifeVideos(response.data.data);
   };
 

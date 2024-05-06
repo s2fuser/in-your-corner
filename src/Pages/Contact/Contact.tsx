@@ -13,11 +13,17 @@ import { TfiEmail } from "react-icons/tfi";
 import { MdOutlineAccessTime } from "react-icons/md";
 // for changes
 // import contactbgimg from "../../Assets/Images/image1.jpg";
+import contactbgimg from "../../Assets/Images/contactbg.jpg";
+import contactbg2 from "../../Assets/Images/contactbg2.jpg";
+import contactbg3 from "../../Assets/Images/contactbg3.jpg"
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import { setInterval } from "timers";
 
 const ContactUsPage = () => {
   const [SearchValue, setSearchValue] = useState<any>();
@@ -180,116 +186,142 @@ const ContactUsPage = () => {
     toast.error('Please Fill all the Fields')
   }
   // const handlesubmit=async(event: any)=>{}
+  //   let [imageindex,setimageindex] =useState <number>(0);
+  // const images=[contactbgimg ,contactbg2,contactbg3]
+  // useEffect(()=>{
+  //  const interval= setInterval (()=>{
+  //     setimageindex(previndex=>(previndex+1)%images.length)
+  //   },2000);
+  //   return ()=>{
+  //     clearInterval(interval);
+  //   };
+  // },[]);
+
+
+  // useEffect(()=>{
+  //   const interval= setTimeout (()=>{
+  //      setimageindex(previndex=>(previndex+1)%images.length)
+  //    },2000);
+  //    return ()=>{
+  //     clearTimeout(interval);
+  //    };
+  //  },[]);
+
 
   return (
     <div>
       <div>
         <Header />
       </div>
-      <div>
+     
+      {/* backgroundimg  */}
+      <div className="">
+      
+
+
+        <div className="absolute bg-cover bg-center bg-fixed  w-full lg:h-[862px] md:h-[909px] sm:h-[917px] m-[0px] opacity-100">
+          <img src={contactbgimg } alt="contactbgimg" className="w-full h-full " />
+        </div>
+
+
+        
+        <div className=" relative    ">
+        <div>
         <LandingPageNavigationBar
           searchValue={SearchValue}
           onChangeFunction={functionToSetSearchValue}
           ActiveScreen="Contact"
-        />
+          opacity={true}
+         />
       </div>
-      {/* backgroundimg  */}
-      {/* <div className="">
-        <div className="absolute bg-cover bg-center bg-fixed  w-full lg:h-[752px] md:h-[811px] sm:h-[817px] m-[0px] md: ">
-          <img src={contactbgimg} alt="contactbgimg" className="w-full h-full " />
-        </div> */}
-
-      {/* withbg only if no bg cmd this line */}
-      {/* <div className=" relative  lg:right-[20%] md:right-[20%]  sm:right-[13%]  "> */}
-
-      <div>
-        <p className="font-bold text-4xl text-center px-[20px] py-[10px] animate-fade-in-bottom">
-          Contact Us
-        </p>
-        <hr className="centered-line" />
-      </div>
-      <div className="raleway text-center raleway text-xl flex justify-center items-center">
-        <div className="flex justify-center items-center mx-[30px] my-[30px] border-[3px] border-y-red-900 border-l-0 border-r-0 shadow-2xl px-8 py-12">
           <div>
-            <div className="lg:flex lg:space-x-6">
-              <div className="sm:mb-[10px]">
-                <p className="font-bold text-left text-sm ">First Name*</p>
-                <input
-                  className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder focus:border-red-900"
-                  type="text"
-                  placeholder=""
-                  value={FirstName}
-                  onChange={HandleFirstNameChange}
-                />
-              </div>
+            <p className="font-bold text-4xl text-center px-[20px] py-[10px] animate-fade-in-bottom">
+              Contact Us
+            </p>
+            <hr className="centered-line" />
+          </div>
+          <div className="raleway text-center raleway text-xl flex justify-center items-center">
+            <div className="flex justify-center items-center mx-[30px] my-[30px] border-[3px] border-y-red-900 border-l-0 border-r-0 shadow-2xl px-8 py-12">
               <div>
-                <p className="font-bold text-left text-sm">Last Name*</p>
+                <div className="lg:flex lg:space-x-6">
+                  <div className="sm:mb-[10px]">
+                    <p className="font-bold text-left text-sm ">First Name*</p>
+                    <input
+                      className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder focus:border-red-900"
+                      type="text"
+                      placeholder=""
+                      value={FirstName}
+                      onChange={HandleFirstNameChange}
+                    />
+                  </div>
+                  <div>
+                    <p className="font-bold text-left text-sm">Last Name*</p>
 
-                <input
-                  className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder"
-                  type="text"
-                  placeholder=""
-                  value={LastName}
-                  onChange={HandleLastNameChange}
-                />
-              </div>
-            </div>
-            <div>
-              <div className="mt-[30px] mb-[30px]">
-                <p className="font-bold text-left text-sm">Email*</p>
+                    <input
+                      className="px-[10px] py-[8px] text-black text-sm border border-contactUsBorder"
+                      type="text"
+                      placeholder=""
+                      value={LastName}
+                      onChange={HandleLastNameChange}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="mt-[30px] mb-[30px]">
+                    <p className="font-bold text-left text-sm">Email*</p>
 
-                <input
-                  className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
-                  type="text"
-                  placeholder=""
-                  value={Email}
-                  onChange={HandleEmailChange}
-                />
-              </div>
-            </div>
-            <div>
-              <div className="mt-[30px] mb-[30px]">
-                <p className="font-bold text-left text-sm">Phone*</p>
+                    <input
+                      className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
+                      type="text"
+                      placeholder=""
+                      value={Email}
+                      onChange={HandleEmailChange}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="mt-[30px] mb-[30px]">
+                    <p className="font-bold text-left text-sm">Phone*</p>
 
-                <input
-                  className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
-                  type="number"
-                  placeholder=""
-                  value={Phone}
-                  onChange={HandlePhoneChange}
-                />
-              </div>
-            </div>
-            <div>
-              <div className="mt-[30px] mb-[30px]">
-                <p className="font-bold text-sm text-left">Subject*</p>
-                {/* <textarea
+                    <input
+                      className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
+                      type="number"
+                      placeholder=""
+                      value={Phone}
+                      onChange={HandlePhoneChange}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="mt-[30px] mb-[30px]">
+                    <p className="font-bold text-sm text-left">Subject*</p>
+                    {/* <textarea
                   className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
                   placeholder=""
                 /> */}
-                <input
-                  className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
-                  type="text"
-                  placeholder=""
-                  value={Subject}
-                  onChange={HandleSubjectChange}
-                />
-              </div>
-            </div>
-            <div>
-              <div>
-                <p className="font-bold text-sm text-left">Details*</p>
+                    <input
+                      className="px-[10px] py-[8px] w-[100%] text-black text-sm border border-contactUsBorder"
+                      type="text"
+                      placeholder=""
+                      value={Subject}
+                      onChange={HandleSubjectChange}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <p className="font-bold text-sm text-left">Details*</p>
 
-                <textarea
-                  className="px-[10px] py-[8px] w-[100%] h-[100px] text-black text-sm border border-contactUsBorder"
-                  placeholder=""
-                  value={Details}
-                  onChange={HandleDetailsChange}
-                />
-              </div>
-            </div>
-            <div>
-              {/* <div className="g-recaptcha"
+                    <textarea
+                      className="px-[10px] py-[8px] w-[100%] h-[100px] text-black text-sm border border-contactUsBorder"
+                      placeholder=""
+                      value={Details}
+                      onChange={HandleDetailsChange}
+                    />
+                  </div>
+                </div>
+                <div>
+                  {/* <div className="g-recaptcha"
                     data-sitekey="6LcwwqopAAAAAD6T-F43H4n6jy3mgFP-7kZsQvyL"
                     data-callback="onSubmit"
                     data-size="invisible">
@@ -297,28 +329,28 @@ const ContactUsPage = () => {
               <button className="bg-contactUsBG text-white text-sm rounded-[5px] px-[8px] py-[10px] mt-[10px]">
                 Submit
               </button> */}
-              <form onSubmit={handleSubmit}>
-                {/* Form Inputs */}
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  size="invisible"
-                  sitekey="6LcwwqopAAAAAD6T-F43H4n6jy3mgFP-7kZsQvyL"
-                  onChange={RecaptchaChange}
-                />
-                <button
-                  type="submit"
-                  className="bg-contactUsBG text-white text-sm rounded-[5px] px-[8px] py-[10px] mt-[10px]"
-                >
-                  Submit
-                </button>
-              </form>
+                  <form onSubmit={handleSubmit}>
+                    {/* Form Inputs */}
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      size="invisible"
+                      sitekey="6LcwwqopAAAAAD6T-F43H4n6jy3mgFP-7kZsQvyL"
+                      onChange={RecaptchaChange}
+                    />
+                    <button
+                      type="submit"
+                      className="bg-contactUsBG text-white text-sm rounded-[5px] px-[8px] py-[10px] mt-[10px]"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* </div>
 
-      </div> */}
+      </div>
 
       <div>
         <FooterComponent onClickToHome="Contact Us" />

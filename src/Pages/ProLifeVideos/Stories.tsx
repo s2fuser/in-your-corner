@@ -29,6 +29,7 @@ const StoriesComponent: React.FC<Prop> = ({ title }) => {
 
   const fetchData = async () => {
     const response: any = await axios.get("https://inc.s2ftech.in/api/getStories");
+    // const response: any = await axios.get("http://localhost:8000/api/getStories");
     setStories(response.data.data);
   };
 
