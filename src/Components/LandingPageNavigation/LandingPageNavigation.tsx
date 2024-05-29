@@ -108,7 +108,7 @@ const LandingPageNavigationBar: React.FC<Prop> = ({
         </Link>
 
         <Link to="/contact">
-          <span className={ActiveScreen == "Contact" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50 hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
+          <span className={ActiveScreen == "Contact" ? "raleway opacity-50 text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer" : "raleway hover:opacity-50  hover:text-white font-semibold xl:text-xl 2xl:text-2xl cursor-pointer"}>
             Contact
           </span>
         </Link>

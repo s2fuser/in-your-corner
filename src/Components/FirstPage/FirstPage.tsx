@@ -41,8 +41,8 @@ import AOS from "aos";
 import 'aos/dist/aos.css';
 import YoutubeImage from '../../Assets/Images/Youtube.png'
 import HopeInHohenwald from '../../Assets/Images/HopeInHohenwald.jpg'
-
-
+import Bgvideo from "../Video/Bgvideo"
+ 
 
 const FirstPageComponent = () => {
   // const navigate = useNavigate();
@@ -358,9 +358,9 @@ const FirstPageComponent = () => {
             {/* videobg */}
 
 
-            <video src={videobg} autoPlay loop muted playsInline className="object-cover object-center w-full  h-[350px] md:h-[482px] lg:h-[630px] xl:h-[883px]" />
-
-
+            {/* <video src={videobg} autoPlay loop muted playsInline className="object-cover object-center w-full  h-[350px] md:h-[482px] lg:h-[630px] xl:h-[883px]" /> */}
+           
+         <Bgvideo/>
             
 
 
